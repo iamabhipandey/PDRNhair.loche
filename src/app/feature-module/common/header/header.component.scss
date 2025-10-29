@@ -1,0 +1,106 @@
+.search-section {
+      align-self: center;
+}
+.header-two-top {
+    padding: 10px;
+}
+.search-bar {
+  position: relative;
+  margin: 0 auto;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+
+
+.search-bar input:focus {
+  outline: none;
+  border-color: #fd0da5;
+  box-shadow: 0 4px 12px #ffe7f6;
+}
+
+.search-bar .fa-search {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #6c757d;
+  font-size: 1.1rem;
+}
+@media only screen and (min-width: 992px) {
+
+.display-hide-tabs{
+    display: none !important;
+}
+.header .main-menu-wrapper {
+    margin: 0 15px 0;
+    display: flex;
+    justify-content: space-between;
+}
+.borderhead{
+    border: 0.5px solid #eaeaea;
+}
+.search-bar input {
+    min-width: 170px;
+    padding: 7px 50px 7px 12px;
+    border-radius: 10px;
+    border: 1px solid #dee2e6;
+    // box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    transition: 0.3s ease;
+}
+}
+@media only screen and (max-width: 992px) {
+.search-section {
+      align-self: center;
+      padding-bottom: 10px;
+}
+.header-two-top {
+    padding: 0px;
+}
+.display-hide-mobile{
+    display: none !important;
+}
+    .container{
+        padding: 0px;
+    }
+    .search-bar input {
+    padding: 10px 50px 10px 12px;
+    border-radius: 10px;
+    border: 1px solid #dee2e6;
+    // box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    transition: 0.3s ease;
+}
+}
+
+
+.categories-heading {
+      font-size: 15px;
+    font-weight: 500;
+    background-image: linear-gradient(to right, #e1e1e1, #ffffff);
+    /* border-bottom: 1px solid gray; */
+}
+.product-type-name ul li a {
+    font-size: 14px;
+}
+
+// header one
+.header-address {
+    display: flex
+;
+    align-items: center;
+}
+.header-address li {
+    font-size: 14px;
+    margin-right: 15px;
+}
+.header-address li span {
+    margin-right: 5px;
+}
+.header-top-social-links ul {
+    display: flex
+;
+    align-items: center;
+    padding-left: 15px;
+    margin-left: 20px;
+    border-left: 1px solid #DBDBDB;
+}

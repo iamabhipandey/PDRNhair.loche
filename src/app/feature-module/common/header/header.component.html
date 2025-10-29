@@ -1,0 +1,307 @@
+<!-- Header -->
+<header class="header header-three">
+
+	<!-- second header -->
+	 <div class="header-two-top">
+	<div class="container ">
+		<div class="main-menu-wrapper">
+			<ul class="header-address">
+				<!-- <li><span><i class="bx bxs-phone"></i></span>+91 98101 40839</li> -->
+				<li><span><i class="bx bx-map"></i></span>Room 303, Daegwang Building, 23 Bongeunsa-ro 108-gil, Gangnam-gu, Seoul</li>
+			</ul>
+			<div class="header-address">
+				<div class="header-top-flag-drops d-flex align-items-center">
+					<div class="header-top-drpodowns">
+						<div class="dropdown header-dropdown country-flag">
+							<a class="dropdown-toggle nav-tog" data-bs-toggle="dropdown" href="javascript:void(0);">
+								<img src="assets/img/flags/us.png" alt="Img">English
+							</a>
+							<div class="dropdown-menu dropdown-menu-end">
+								<a href="javascript:void(0);" class="dropdown-item">
+									<img src="assets/img/flags/flag-04.png" alt="Img">Hindi
+								</a>
+								<a href="javascript:void(0);" class="dropdown-item">
+									<img src="assets/img/flags/flag-koria.png" alt="Img">Korean
+								</a>
+								<a href="javascript:void(0);" class="dropdown-item">
+									<img src="assets/img/flags/de.png" alt="Img">German
+								</a>
+							</div>
+						</div>
+					</div>
+					<!-- <div class="header-top-drpodowns">
+						<div class="dropdown header-dropdown country-flag">
+							<a class="dropdown-toggle nav-tog" data-bs-toggle="dropdown" href="javascript:void(0);">
+								<i class="bx bx-globe me-2"></i>USD
+							</a>
+							<div class="dropdown-menu dropdown-menu-end">
+								<a href="javascript:void(0);" class="dropdown-item">
+									Euro
+								</a>
+								<a href="javascript:void(0);" class="dropdown-item">
+									INR
+								</a>
+								<a href="javascript:void(0);" class="dropdown-item">
+									Won
+								</a>
+							</div>
+						</div>
+					</div> -->
+				</div>
+				<div class="header-top-social-links">
+					<ul>
+						<li>
+							<a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+						</li>
+						<li>
+							<a href="#"><i class="fa-brands fa-instagram"></i></a>
+						</li>
+						<!-- <li>
+							<a href="#"><i class="fa-brands fa-behance"></i></a>
+						</li> -->
+						<li>
+							<a href="#"><i class="fa-brands fa-x"></i></a>
+						</li>
+						<!-- <li>
+							<a href="#"><i class="fa-brands fa-pinterest-p"></i></a>
+						</li> -->
+						<li>
+							<a href="#"><i class="fa-brands fa-linkedin"></i></a>
+						</li>
+					</ul>
+				</div>
+			</div>
+
+
+
+
+
+
+		</div>
+	</div>
+	 </div>
+
+	<!-- /second header -->
+	<div class="borderhead"></div>
+	<!-- /first header -->
+
+	<div class="container-fluid">
+		<!-- hirst header -->
+		<div class="container">
+			<nav class="navbar navbar-expand-lg header-nav">
+				<div class="navbar-header">
+					<a (click)="toggleSidebar()" id="mobile_btn" href="javascript:void(0);">
+						<span class="bar-icon">
+							<span></span>
+							<span></span>
+							<span></span>
+						</span>
+					</a>
+					<a [routerLink]="routes.home" class="navbar-brand logo">
+						<img src="assets/img/Loche-India-Logo-PNG.png" class="img-fluid" width="75px" alt="Logo">
+					</a>
+					<a [routerLink]="routes.home" class="navbar-brand logo-small">
+						<img src="assets/img/Loche-India-Logo-PNG.png" class="img-fluid" width="75px" alt="Logo">
+					</a>
+
+					<div class="main-menu-wrapper">
+						<div class="menu-header">
+							<a [routerLink]="routes.home" class="menu-logo">
+								<img src="assets/img/Loche-India-Logo-PNG.png" alt="Logo" />
+							</a>
+							<a (click)="hideSidebar()" id="menu_close" class="menu-close" href="javascript:void(0);">
+								<i class="fas fa-times"></i></a>
+						</div>
+						<ul class="main-nav ">
+							@for (mainMenus of header; track mainMenus) {
+							@if (mainMenus.separateRoute === true) {
+							<li routerLinkActive="active">
+								<a [routerLink]="mainMenus.routes">{{ mainMenus.tittle }}</a>
+							</li>
+							}
+							@if (mainMenus.separateRoute === false) {
+							<li class="has-submenu" routerLinkActive="active">
+								<a href="javascript:void(0);" (click)="mainMenus.showAsTab = !mainMenus.showAsTab">{{
+									mainMenus.tittle }} <i class="fas fa-chevron-down"></i></a>
+								<ul class="submenu" [ngClass]="{
+                            'd-block': mainMenus.showAsTab === true
+                          }">
+									@for (menu of mainMenus.menu; track menu) {
+									@if (menu.hasSubRoute === false) {
+									<li routerLinkActive="active">
+										<a [routerLink]="menu.routes">{{ menu.menuValue }}</a>
+									</li>
+									}
+									@if (menu.hasSubRoute === true) {
+									<li class="has-submenu" routerLinkActive="active">
+										<a (click)="menu.showSubRoute = !menu.showSubRoute"
+											[routerLink]="menu.routes">{{
+											menu.menuValue }}</a>
+										<ul class="submenu" [ngClass]="{
+                                    'd-block': menu.showSubRoute === true
+                                  }">
+											@for (subMenu of menu.subMenus; track subMenu) {
+											<li routerLinkActive="active">
+												<a [routerLink]="subMenu.routes">{{
+													subMenu.menuValue
+													}}</a>
+											</li>
+											}
+										</ul>
+									</li>
+									}
+									}
+								</ul>
+							</li>
+							}
+							}
+						</ul>
+					</div>
+
+				</div>
+
+
+
+				<ul class="nav header-navbar-rht">
+					<section class="search-section display-hide-mobile">
+						<div class="search-bar">
+							<input type="text" class="form-control" placeholder="Search ..." />
+							<i class="fas fa-search"></i>
+						</div>
+					</section>
+					<li class="nav-item user-link">
+						<!-- <a class="nav-link header-user" [routerLink]="routes.register"><i class="bx bx-user"></i></a> -->
+						<a class="nav-link header-user"><i class="bx bx-user"></i></a>
+					</li>
+					<!-- Notifications -->
+					<li class="nav-item dropdown logged-item noti-nav noti-wrapper ms-1">
+						<a href="#" class="dropdown-toggle nav-link" data-bs-toggle="dropdown" aria-expanded="false">
+							<span class="bell-icon"><img src="assets/img/icons/bell-icon.svg" alt="Bell"></span>
+							<span class="badge badge-pill"></span>
+						</a>
+						<div class="dropdown-menu notifications">
+							<div class="topnav-dropdown-header">
+								<span class="notification-title">Notifications</span>
+								<a href="javascript:void(0)" class="clear-noti"> Clear All </a>
+							</div>
+							<div class="noti-content">
+								<ul class="notification-list">
+									<!-- <li class="notification-message">
+										<a href="#">
+											<div class="media d-flex">
+												<span class="avatar avatar-lg flex-shrink-0">
+													<img class="avatar-img rounded-circle" alt="User Image"
+														src="assets/img/profiles/avatar-01.jpg">
+												</span>
+												<div class="media-body flex-grow-1">
+													<p class="noti-details"><span class="noti-title">Your order </span>
+														#12345 <span class="noti-title">has been shipped</span></p>
+													<p class="noti-time"><span class="notification-time">2 Hours
+															ago</span></p>
+												</div>
+											</div>
+										</a>
+									</li>
+									<li class="notification-message">
+										<a href="#">
+											<div class="media d-flex">
+												<span class="avatar avatar-lg flex-shrink-0">
+													<img class="avatar-img rounded-circle" alt="User Image"
+														src="assets/img/profiles/avatar-03.jpg">
+												</span>
+												<div class="media-body flex-grow-1">
+													<p class="noti-details"><span class="noti-title">20% off on all
+															summer collection</span></p>
+													<p class="noti-time"><span class="notification-time">3 Day
+															ago</span></p>
+												</div>
+											</div>
+										</a>
+									</li>
+									<li class="notification-message">
+										<a href="#">
+											<div class="media d-flex">
+												<span class="avatar avatar-lg flex-shrink-0">
+													<img class="avatar-img rounded-circle" alt="User Image"
+														src="assets/img/profiles/avatar-02.jpg">
+												</span>
+												<div class="media-body flex-grow-1">
+													<p class="noti-details"><span class="noti-title">Order Confirmed
+															Your Beauty Essentials Are on the Way!</span></p>
+													<p class="noti-time"><span class="notification-time">8 mins
+															ago</span></p>
+												</div>
+											</div>
+										</a>
+									</li> -->
+									<li class="notification-message">
+										<a href="#">
+											<div class="media d-flex">
+												<span class="avatar avatar-lg flex-shrink-0">
+													<img class="avatar-img rounded-circle" alt="User Image"
+														src="assets/img/profiles/avatar-04.jpg">
+												</span>
+												<div class="media-body flex-grow-1">
+													<p class="noti-details"><span class="noti-title">Your Glow Kit Has
+															Shipped.</span></p>
+													<p class="noti-time"><span class="notification-time">12 mins
+															ago</span></p>
+												</div>
+											</div>
+										</a>
+									</li>
+									<li class="notification-message">
+										<a href="#">
+											<div class="media d-flex">
+												<span class="avatar avatar-lg flex-shrink-0">
+													<img class="avatar-img rounded-circle" alt="User Image"
+														src="assets/img/profiles/avatar-03.jpg">
+												</span>
+												<div class="media-body flex-grow-1">
+													<p class="noti-details"><span class="noti-title">20% off on all
+															summer collection</span></p>
+													<p class="noti-time"><span class="notification-time">3 Day
+															ago</span></p>
+												</div>
+											</div>
+										</a>
+									</li>
+									<li class="notification-message">
+										<a href="#">
+											<div class="media d-flex">
+												<span class="avatar avatar-lg flex-shrink-0">
+													<img class="avatar-img rounded-circle" alt="User Image"
+														src="assets/img/profiles/avatar-02.jpg">
+												</span>
+												<div class="media-body flex-grow-1">
+													<p class="noti-details"><span class="noti-title">Order Confirmed
+															Your Beauty Essentials Are on the Way!</span></p>
+													<p class="noti-time"><span class="notification-time">8 mins
+															ago</span></p>
+												</div>
+											</div>
+										</a>
+									</li>
+								</ul>
+							</div>
+							<div class="topnav-dropdown-footer">
+								<a href="#">View all Notifications</a>
+							</div>
+						</div>
+					</li>
+					<!-- /Notifications -->
+				</ul>
+
+			</nav>
+		</div>
+
+
+		<section class="search-section display-hide-tabs">
+			<div class="search-bar">
+				<input type="text" class="form-control" placeholder="Search your favorite products..." />
+				<i class="fas fa-search"></i>
+			</div>
+		</section>
+	</div>
+</header>
+<!-- /Header -->

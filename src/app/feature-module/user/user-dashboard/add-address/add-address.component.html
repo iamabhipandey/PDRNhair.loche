@@ -1,0 +1,38 @@
+<div class="modal fade show custom-modal" style="display: block;" tabindex="-1">
+    <div class="modal-dialog modal-dialog-slide modal-dialog-scrollable">
+        <div class="modal-content shadow">
+            <div class="modal-header">
+                <h5 class="head-text"><span (click)="close()"><i class="fa-solid fa-chevron-left"></i></span>
+                    Add New Address
+                </h5>
+            </div>
+
+            <form class="modal-form">
+                <label>Country</label>
+                <select>
+                    <option>India</option>
+                    <option>Koria</option>
+                </select>
+
+                <label>Name</label>
+                <input type="text" placeholder="Name" value="Abhi" />
+
+                <label>Mobile Number</label>
+                <input type="tel" placeholder="+91 XXXXX XXXXX" value="+91 8723468746" />
+
+                <label>Postal Code</label>
+                <input type="text" placeholder="Postal Code" value="201309" />
+
+                <label>Address</label>
+                <textarea placeholder="Enter your address">noida sector</textarea>
+
+                <div class="checkbox">
+                    <input type="checkbox" id="defaultAddress" checked />
+                    <label for="defaultAddress">Use this as my default Shipping Address</label>
+                </div>
+
+                <button type="submit" class="update-btn">Add Address</button>
+            </form>
+        </div>
+    </div>
+</div>

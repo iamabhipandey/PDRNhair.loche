@@ -1,0 +1,63 @@
+<div class="modal fade show custom-modal" style="display: block;" tabindex="-1">
+    <div class="modal-dialog modal-dialog-slide modal-dialog-scrollable">
+        <div class="modal-content shadow">
+            <div class="modal-header">
+                <h5 class="head-text"><span (click)="close()"><i class="fa-solid fa-chevron-left"></i></span> Edit
+                    Profile</h5>
+            </div>
+
+            <div class="custom-image-wrapper">
+                <label for="profileImageInput" class="img-set">
+                    <img id="profileImage"src="assets/img/profiles/male-avatar.webp"
+                        class="rounded-circle" alt="Profile" />
+                    <div class="profile-image-edit-icon">
+                        <i class="fa fa-camera"></i>
+                    </div>
+                </label>
+                <input type="file" id="profileImageInput" accept="image/*" style="display: none;"
+                    (change)="onImageSelected($event)" />
+            </div>
+
+            <form>
+                <div class="gender-sec">
+                    <label class="form-label me-2">Gender:</label>
+                    <div class="btn-group" role="group">
+                        <input type="radio" class="btn-check" name="gender" id="male" checked />
+                        <label class="btn btn-outline-dark" for="male">♂ Male</label>
+                        <input type="radio" class="btn-check" name="gender" id="female" />
+                        <label class="btn btn-outline-dark" for="female">♀ Female</label>
+                    </div>
+                </div>
+
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="fullName" placeholder="Full Name" value="abhi pandey" />
+                    <label for="fullName">Full Name</label>
+                </div>
+
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="phone-number" placeholder="Phone Number" />
+                    <label for="phone-number">Phone Number</label>
+                </div>
+
+                <div class="form-floating mb-3 position-relative">
+                    <input type="email" class="form-control pe-5" id="email" placeholder="Email Address"
+                        value="abhipandey1997akp@gmail.com" readonly />
+                    <label for="email">E-Mail Address</label>
+                    <span class="custom-position">Verified</span>
+                </div>
+
+                <div class="form-floating mb-4">
+                    <input type="date" class="form-control" id="dob" value="2005-11-01" />
+                    <label for="dob">DOB</label>
+                </div>
+                <div class="sidebar-section">
+                   <button type="submit" class="btn w-100 btn-primary submit-btn"  (click)="close()" >
+                	   DONE
+              		</button>
+                </div>
+                
+                <!-- <button type="submit" class="btn btn-fuchsia w-100 fw-bold" (click)="close()">DONE</button> -->
+            </form>
+        </div>
+    </div>
+</div>

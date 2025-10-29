@@ -1,0 +1,170 @@
+<div class="login-wrapper" style="background: linear-gradient( rgba(255, 200, 230, 0.7), rgba(255, 150, 200, 0.7)),
+ url('assets/img/bg/login-bg.jpeg');">
+  <div class="container">
+    <div class="card-container">
+      <div class="form-section">
+        <div class="row">
+          <div class="col-md-6 col-lg-6 col-xl-7 hide-for-mobile">
+            <div class="visual-section ">
+              <img src="assets/img/bg/log-in.webp" class="img-fluid " alt="Access Card" />
+            </div>
+          </div>
+          <div class="col-md-9 col-lg-6 col-xl-5 form-sec">
+
+        <div class="loginbox">
+          <div class="login-auth">
+            <div class="login-auth-wrap">
+              <!-- <div class="sign-group">
+                <a [routerLink]="routes.home" class="btn sign-up">
+                  <span>
+                    <i class="feather icon-corner-down-left" aria-hidden="true"></i>
+                  </span>
+                  Back To Home</a>
+              </div> -->
+              <h1>Sign In</h1>
+              <p class="account-subtitle">
+                Get started & grab best offers on top brands!
+              </p>
+              <form [formGroup]="form" (ngSubmit)="signin()">
+                <div class="input-block">
+                  <label for="email" class="form-label">Email Or Mobile Number <span class="text-danger">*</span></label>
+                  <div class="input-group mb-3">
+                    <input type="text" class="form-control" placeholder="Enter Email or Number..." aria-label="Recipient's username" aria-describedby="basic-addon2">
+                    <div class="input-group-append">
+                      <span class="input-group-text btn btn-primary" id="basic-addon2">Get OTP</span>
+                    </div>
+                  </div>
+                </div>
+                
+                <!-- <div class="input-block">
+                  <label for="email" class="form-label">Email <span class="text-danger">*</span>
+                  </label>
+                  <input type="email" class="form-control pass-input" placeholder=" Enter email..." />
+                  <input type="email" class="form-control" placeholder=" Enter email..."
+                      formControlName="email" placeholder=""
+                       [ngClass]="{'is-invalid': f['email'].touched && f['email'].invalid }"/>
+                  @if (f['email'].touched && f['email'].invalid) {
+                        <div
+                          class="invalid-feedback"
+                          >
+                          @if (f['email'].errors && f['email'].errors['required']) {
+                            <div
+                              >
+                              Email is required.
+                            </div>
+                          }
+                          @if (f['email'].errors && f['email'].errors['email']) {
+                            <div>
+                              Please, enter valid email address.
+                            </div>
+                          }
+                        </div>
+                      }
+                </div> -->
+
+                <!-- <div class="input-block">
+                  <label for="password" class="form-label">OTP <span class="text-danger">*</span></label>
+                  <div class="pass-group">
+                    <input type="password" class="form-control pass-input" placeholder=""
+                      [type]="show_password ? 'password' : 'text'" formControlName="password" [ngClass]="{
+                          'is-invalid':
+                            f['password'].touched && f['password'].invalid
+                        }" />
+                    <span [ngClass]="
+                      show_password === true
+                        ? 'fas fa-eye-slash toggle-password'
+                        : 'fas fa-eye toggle-password'
+                    " (click)="togglePassword()" (keydown.enter)="togglePassword()" tabindex="0" role="button"></span>
+                    @if (f['password'].touched && f['password'].invalid) {
+                    <div class="invalid-feedback">
+                      @if (
+                      f['password'].errors && f['password'].errors['required']
+                      ) {
+                      <div>
+                        Password is required.
+                      </div>
+                      }
+                    </div>
+                    }
+                  </div>
+                </div> -->
+  <div class="input-block">
+                      <label for="password" class="form-label">
+                        Password <span class="text-danger">*</span>
+                      </label>
+
+                      <div class="position-relative">
+                        <!-- Input -->
+                        <input class="form-control pe-5" placeholder="Enter your password"
+                          [type]="show_password ? 'password' : 'text'" formControlName="password" [ngClass]="{
+                   'is-invalid': f['password'].touched && f['password'].invalid}" />
+                        <!-- Eye Icon (fixed inside input) -->
+                        <span class="position-absolute top-50 end-0 translate-middle-y me-3" style="cursor: pointer;"
+                          (click)="togglePassword()" (keydown.enter)="togglePassword()"
+                          (keydown.space)="togglePassword()" tabindex="0" role="button">
+                          <i [ngClass]="show_password ? 'fas fa-eye-slash' : 'fas fa-eye'"></i>
+                        </span>
+                      </div>
+
+                      <!-- Validation Message -->
+                      @if (f['password'].touched && f['password'].invalid) {
+                      <div class="invalid-feedback d-block">
+                        @if (f['password'].errors?.['required']) {
+                        <div>Password is required.</div>
+                        }
+                      </div>
+                      }
+                    </div>
+
+                <!-------------------------- forget password section ------------------------------------------>
+                <!-- <div class="justy-content">
+                  <div class="input-block m-0">
+                    <label class="custom_check d-inline-flex"><span>Remember me</span>
+                      <input type="checkbox" name="remeber" />
+                      <span class="checkmark"></span>
+                    </label>
+                  </div>
+                  <div class="input-block">
+                    <a class="forgot-link" [routerLink]="routes.forgotPassword">Forgot Password ?</a>
+                  </div>
+                 
+                </div> -->
+                
+      
+                <button class="btn btn-outline-light w-100 btn-size mt-1" type="submit"> Sign In</button>
+      
+                <div class="login-or">
+                            <span class="or-line"></span>
+                            <span class="span-or-log">Or, log in with your email</span>
+                          </div>
+      
+                <!------------------------- Social Login ----------------------------->
+      
+                <div class="social-login">
+                  <a href=javascript:void(0);
+                    class="d-flex align-items-center justify-content-center input-block btn google-login w-100"><span><img
+                        src="assets/img/icons/google.svg" class="img-fluid" alt="Google" /></span>Log in with Google</a>
+                </div>
+                <!-- <div class="social-login">
+                  <a href=javascript:void(0);
+                    class="d-flex align-items-center justify-content-center input-block btn google-login w-100"><span><img
+                        src="assets/img/icons/facebook.svg" class="img-fluid" alt="Facebook" /></span>Log in with Facebook</a>
+                </div> -->
+                <!--------------------------------- /Social Login -------------------------------->
+      
+                <div class="text-center dont-have">
+                  Don't have an account yet?
+                  <a [routerLink]="routes.register">Register</a>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>

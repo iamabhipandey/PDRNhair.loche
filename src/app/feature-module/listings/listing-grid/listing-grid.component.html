@@ -1,0 +1,570 @@
+
+
+
+
+
+
+
+
+<!-- Featured Services -->
+<section class="section features-section top-brand-banners">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="second-slider nav-center">
+          <owl-carousel-o [options]="secondsection">
+            <ng-template carouselSlide>
+              <div class="item">
+                <div class="offer-sec-two">
+                  <a class="sec-one-img">
+                    <img src="assets/img/banner-section2/OSEQUE.webp" class="img-fluid" alt="img" />
+                  </a>
+                </div>
+              </div>
+            </ng-template>
+            <ng-template carouselSlide>
+              <div class="item">
+                <div class="offer-sec-two">
+                  <a class="sec-one-img">
+                    <img src="assets/img/banner-section2/TOAS.webp" class="img-fluid" alt="img" />
+                  </a>
+                </div>
+              </div>
+            </ng-template>
+            <ng-template carouselSlide>
+              <div class="item">
+                <div class="offer-sec-two">
+                  <a class="sec-one-img">
+                    <img src="assets/img/banner-section2/V21.webp" class="img-fluid" alt="img" />
+                  </a>
+                </div>
+              </div>
+            </ng-template>
+            <ng-template carouselSlide>
+              <div class="item">
+                <div class="offer-sec-two">
+                  <a class="sec-one-img">
+                    <img src="assets/img/banner-section2/BIONES.webp" class="img-fluid" alt="img" />
+                  </a>
+                </div>
+              </div>
+            </ng-template>
+            <ng-template carouselSlide>
+              <div class="item">
+                <div class="offer-sec-two">
+                  <a class="sec-one-img">
+                    <img src="assets/img/banner-section2/DR.BLUE 2.webp" class="img-fluid" alt="img" />
+                  </a>
+                </div>
+              </div>
+            </ng-template>
+            <ng-template carouselSlide>
+              <div class="item">
+                <div class="offer-sec-two">
+                  <a>
+                    <img src="assets/img/banner-section2/DR.BLUE.webp" class="img-fluid" alt="img" />
+                  </a>
+                </div>
+              </div>
+            </ng-template>
+            <ng-template carouselSlide>
+              <div class="item">
+                <div class="offer-sec-two">
+                  <a>
+                    <img src="assets/img/banner-section2/GLOSSYS (2).webp" class="img-fluid" alt="img" />
+                  </a>
+                </div>
+              </div>
+            </ng-template>
+            <ng-template carouselSlide>
+              <div class="item">
+                <div class="offer-sec-two">
+                  <a>
+                    <img src="assets/img/banner-section2/GLOSSYS.webp" class="img-fluid" alt="img" />
+                  </a>
+                </div>
+              </div>
+            </ng-template>
+            <ng-template carouselSlide>
+              <div class="item">
+                <div class="offer-sec-two">
+                  <a>
+                    <img src="assets/img/banner-section2/LALACHUU.webp" class="img-fluid" alt="img" />
+                  </a>
+                </div>
+              </div>
+            </ng-template>
+          </owl-carousel-o>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="feature-bg">
+    <img src="assets/img/bg/destination-bg-01.png" class="img-fluid shape-01" alt="img" />
+    <img src="assets/img/bg/feature-bg.png" class="img-fluid shape-02" alt="img" />
+  </div>
+</section>
+<!-- /Featured Services -->
+<!-- brands -->
+<section class="brand-sec">
+  <div class="container-fluid mb-5">
+    <section class="new-launches-section text-center mb-3">
+      <h2 class="section-title">Global Brands <span class="count">(28)</span></h2>
+      <!-- <button class="btn-gradient mt-3">See All New Launches</button> -->
+    </section>
+    <div class="brands-grid">
+      <div class="brand-card" *ngFor="let brand of brands">
+        <a [routerLink]="brand.link">
+          <img [src]="brand.logo" [alt]="brand.name" class="img-fluid" />
+          <!-- <p>{{ brand.name }}</p> -->
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- end brands -->
+<!-- about us  -->
+<!-- about -->
+
+<!-- why us  -->
+<section class="brand-sec why-us-container container-fluid">
+  <!-- <div class="floating-shapes">
+            <div class="shape shape-1"></div>
+            <div class="shape shape-2"></div>
+        </div> -->
+  <div class="container-fluid">
+    <div class="section-header">
+      <h2 class="section-title">Why Choose Us</h2>
+      <p class="section-subtitle">We combine innovation with excellence to deliver unmatched services that drive your
+        success forward</p>
+    </div>
+
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-icon">
+          <i class="fas fa-clock"></i>
+        </div>
+        <h3 class="feature-title">24/7 Access</h3>
+        <p class="feature-desc">Real-time inventory updates and order tracking anytime, anywhere with our cutting-edge
+          platform.</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">
+          <i class="fas fa-globe-americas"></i>
+        </div>
+        <h3 class="feature-title">Global Network</h3>
+        <p class="feature-desc">500+ distribution channels across 60+ countries ensuring seamless worldwide delivery.
+        </p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">
+          <i class="fas fa-rocket"></i>
+        </div>
+        <h3 class="feature-title">Growth Partners</h3>
+        <p class="feature-desc">Strategic partnerships with top influencers and brands to accelerate your business
+          growth.</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">
+          <i class="fas fa-language"></i>
+        </div>
+        <h3 class="feature-title">Multilingual Support</h3>
+        <p class="feature-desc">Communicate effortlessly in 9 languages with our dedicated international team.</p>
+        <div class="language-badges">
+          <span class="language-badge">Korean</span>
+          <span class="language-badge">English</span>
+          <span class="language-badge">Hindi</span>
+          <!-- <span class="language-badge">Chinese</span>
+                    <span class="language-badge">Arabic</span>
+                    <span class="language-badge">Spanish</span> -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+</section>
+<!-- end why us -->
+
+<!-- Wholesele process -->
+<section class="brand-sec wholesale-section container-fluid py-5">
+  <div class="container-fluid">
+    <h2 class="text-center section-title mb-5 animate__animated animate__fadeInDown">
+      Wholesale Processing
+    </h2>
+
+    <div class="row g-4">
+      <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-3" *ngFor="let step of steps; let i = index">
+        <div class="process-box animate__animated animate__fadeInUp" [ngClass]="'animate__delay-' + (i + 1) + 's'">
+         
+          <h5>{{ step.title }}</h5>
+          <p>{{ step.description }}</p>
+           <div class="icon-wrap">
+            <div class="process-icon">
+              <img  [src]="step.image" alt="Icon" class="step-img">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Wholesale Process -->
+
+<!-- new arrivel -->
+<section class="brand-sec NewArrival-section our-product-brand">
+  <div class="container-fluid">
+    <h2 class="text-center section-title mb-5 pt-4 animate__animated animate__fadeInDown"> New Arrival </h2>
+    <owl-carousel-o [options]="NewArrival">
+      <ng-container *ngFor="let Newarrival of newArrivalProducts">
+        <ng-template carouselSlide>
+          <div class="product-sec">
+            <div class="listing-item product-list">
+              <div class="listing-img">
+                <a class="product-image">
+                  <img [src]="Newarrival.image" class="img-fluid" alt="product" />
+                </a>
+                <!-- <div class="fav-item justify-content-end">
+                  <a href="javascript:void(0)" class="fav-icon">
+                    <i class="feather icon-heart"></i>
+                  </a>
+                </div> -->
+                <span class="featured-text">{{Newarrival.brandname}}</span>
+
+              </div>
+              <div class="listing-content">
+                <div class="listing-features d-flex align-items-end justify-content-between">
+                  <div class="list-rating">
+
+                    <h3 class="listing-title">
+                      <a>{{ Newarrival.title }}</a>
+                    </h3>
+                    <div class="list-rating">
+                      <i class="fas fa-star filled"></i>
+                      <i class="fas fa-star filled"></i>
+                      <i class="fas fa-star filled"></i>
+                      <i class="fas fa-star filled"></i>
+                      <i class="fas fa-star"></i>
+                      <span>(4.0) 150 Reviews</span>
+                    </div>
+                  </div>
+                </div>
+                <!-- <div class="listing-location-details">
+                  <div class="listing-price">
+                    <h5>₹{{ Newarrival.price }}</h5>
+                    <p *ngIf="Newarrival.oldPrice">{{ Newarrival.oldPrice }}</p>
+                    <span *ngIf="Newarrival.discount">₹{{ Newarrival.discount }}%</span>
+                  </div>
+                </div>
+                <div class="listing-button">
+                  <a   class="btn btn-order"><span><i
+                        class="fa-solid fa-bag-shopping"></i></span>Add to Cart</a>
+                </div> -->
+                <div class="listing-location-details">
+                  <div class="listing-price">
+                    <h5 title="Login To See Wholesale Price">Wholesale Price <i
+                        class="fa-solid fa-circle-exclamation"></i></h5>
+                    <!-- <p *ngIf="Newarrival.oldPrice">{{ Newarrival.oldPrice }}</p>
+                    <span *ngIf="Newarrival.discount">₹{{ Newarrival.discount }}%</span> -->
+                  </div>
+                </div>
+
+                <div class="listing-button">
+                  <div class="listing-price">
+                    <h6>₹{{ Newarrival.price }}</h6>
+                  </div>
+                  <div class="d-flex align-items-center">
+                    <a href="javascript:void(0)" class="fav-icon" (click)="toggleClass(2)" (keydown)="toggleClass(2)"
+                      tabindex="1" [ngClass]="{ selected: isClassAdded[2] }">
+                      <i class="feather icon-heart"></i>
+                    </a>
+                    <a class="btn btn-order">Add to Cart</a>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </ng-template>
+      </ng-container>
+    </owl-carousel-o>
+    <!-- <div class="view-all-btn mb-5 mt-4 pb-3 text-center aos" data-aos="fade-down">
+    
+      <a [routerLink]="routes.listingGrid" class="btn btn-secondary">View All Products</a>
+    </div> -->
+  </div>
+</section>
+<!-- end new arrival -->
+
+<!-- Pramotion -->
+<section class="brand-sec NewArrival-section our-Stores-product">
+  <div class="container-fluid">
+    <h2 class="text-center section-title mb-5 pt-5 animate__animated animate__fadeInDown"> Promotion </h2>
+    <owl-carousel-o [options]="pramotionsec">
+      <ng-container *ngFor="let pramotion of promotionProducts">
+        <ng-template carouselSlide>
+          <div class="product-sec">
+            <div class="listing-item product-list">
+              <div class="listing-img">
+                <a class="product-image">
+                  <img [src]="pramotion.image" class="img-fluid" alt="product" />
+                </a>
+                <!-- <div class="fav-item justify-content-end">
+                  <a href="javascript:void(0)" class="fav-icon">
+                    <i class="feather icon-heart"></i>
+                  </a>
+                </div> -->
+                  <span class="featured-text">{{pramotion.brandname}}</span>
+
+              </div>
+              <div class="listing-content">
+                <div class="listing-features d-flex align-items-end justify-content-between">
+                  <div class="list-rating">
+
+                    <h3 class="listing-title">
+                      <a>{{ pramotion.title }}</a>
+                    </h3>
+                    <div class="list-rating">
+                      <i class="fas fa-star filled"></i>
+                      <i class="fas fa-star filled"></i>
+                      <i class="fas fa-star filled"></i>
+                      <i class="fas fa-star filled"></i>
+                      <i class="fas fa-star"></i>
+                      <span>(4.0) 150 Reviews</span>
+                    </div>
+                  </div>
+                </div>
+                <!-- <div class="listing-location-details">
+                  <div class="listing-price">
+                    <h5>₹{{ pramotion.price }}</h5>
+                    <p *ngIf="pramotion.oldPrice">{{ pramotion.oldPrice }}</p>
+                    <span *ngIf="pramotion.discount">₹{{ pramotion.discount }}%</span>
+                  </div>
+                </div>
+                <div class="listing-button">
+                  <a class="btn btn-order"><span><i class="fa-solid fa-bag-shopping"></i></span>Add to Cart</a>
+                </div> -->
+                  <div class="listing-location-details">
+                  <div class="listing-price">
+                    <h5 title="Login To See Wholesale Price">Wholesale Price <i
+                        class="fa-solid fa-circle-exclamation"></i></h5>
+                    <!-- <p *ngIf="Newarrival.oldPrice">{{ Newarrival.oldPrice }}</p>
+                    <span *ngIf="Newarrival.discount">₹{{ Newarrival.discount }}%</span> -->
+                  </div>
+                </div>
+
+
+ <div class="listing-button">
+                  <div class="listing-price">
+                    <h6>₹{{ pramotion.price }}</h6>
+                  </div>
+                  <div class="d-flex align-items-center">
+                    <a href="javascript:void(0)" class="fav-icon" (click)="toggleClass(2)" (keydown)="toggleClass(2)"
+                      tabindex="1" [ngClass]="{ selected: isClassAdded[2] }">
+                      <i class="feather icon-heart"></i>
+                    </a>
+                    <a class="btn btn-order">Add to Cart</a>
+                  </div>
+                </div>
+
+
+              </div>
+            </div>
+          </div>
+        </ng-template>
+      </ng-container>
+    </owl-carousel-o>
+    <!-- <div class="view-all-btn pb-3 text-center aos" data-aos="fade-down">
+      <a [routerLink]="routes.listingGrid" class="btn btn-secondary">View Second page</a>
+    </div> -->
+  </div>
+</section>
+<!-- end Pramotion -->
+
+<!-- most seller product -->
+<section class="brand-sec premium-section py-5">
+  <!-- <div class="container bordered-box px-4"> -->
+    <div class="container-fluid px-4">
+    <!-- <div class="premius-head"> -->
+       <div class="text-center section-title mb-5 animate__animated animate__fadeInDown">
+      <span class="section-title">
+        <span class="lightning-icon">⚡</span> Most Loved Premium Products
+      </span>
+    </div>
+
+    <owl-carousel-o [options]="TopBrands">
+      <ng-container *ngFor="let product of mostLovedProducts">
+        <ng-template carouselSlide>
+          <div class="product-sec">
+            <div class="listing-item  product-list">
+              <div class="listing-img">
+                <a class="product-image-container">
+                  <img [src]="product.image" class="img-fluid" alt="product" />
+                </a>
+                <!-- <div class="fav-item justify-content-end">
+                  <a href="javascript:void(0)" class="fav-icon">
+                    <i class="feather icon-heart"></i>
+                  </a>
+                </div> -->
+                 <span class="featured-text">{{product.brandname}}</span>
+
+              </div>
+              <div class="listing-content">
+                <div class="listing-features d-flex align-items-end justify-content-between">
+                  <div class="list-rating">
+
+                    <h3 class="listing-title">
+                      <a>{{ product.title }}</a>
+                    </h3>
+                    <div class="list-rating">
+                      <i class="fas fa-star filled"></i>
+                      <i class="fas fa-star filled"></i>
+                      <i class="fas fa-star filled"></i>
+                      <i class="fas fa-star filled"></i>
+                      <i class="fas fa-star"></i>
+                      <span>(4.0) 150 Reviews</span>
+                    </div>
+                  </div>
+                </div>
+                <!-- <div class="listing-location-details">
+                  <div class="listing-price">
+                    <h5>₹{{ product.price }}</h5>
+                    <p *ngIf="product.oldPrice">{{ product.oldPrice }}</p>
+                    <span *ngIf="product.discount">₹{{ product.discount }}%</span>
+                  </div>
+                </div>
+                <div class="listing-button">
+                  <a href="javascript:void(0)" class="fav-icon" (click)="toggleClass(4)" (keydown)="toggleClass(4)"
+                    tabindex="1" [ngClass]="{ selected: isClassAdded[4] }">
+                    <i class="feather icon-heart"></i>
+                  </a>
+                  <a class="btn btn-order"><span><i class="fa-solid fa-bag-shopping"></i></span>Add to Cart</a>
+                </div> -->
+  <div class="listing-location-details">
+                  <div class="listing-price">
+                    <h5 title="Login To See Wholesale Price">Wholesale Price <i
+                        class="fa-solid fa-circle-exclamation"></i></h5>
+                    <!-- <p *ngIf="Newarrival.oldPrice">{{ Newarrival.oldPrice }}</p>
+                    <span *ngIf="Newarrival.discount">₹{{ Newarrival.discount }}%</span> -->
+                  </div>
+                </div>
+
+                 <div class="listing-button">
+                  <div class="listing-price">
+                    <h6>₹{{ product.price }}</h6>
+                  </div>
+                  <div class="d-flex align-items-center">
+                    <a href="javascript:void(0)" class="fav-icon" (click)="toggleClass(2)" (keydown)="toggleClass(2)"
+                      tabindex="1" [ngClass]="{ selected: isClassAdded[2] }">
+                      <i class="feather icon-heart"></i>
+                    </a>
+                    <a class="btn btn-order">Add to Cart</a>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </ng-template>
+      </ng-container>
+    </owl-carousel-o>
+  </div>
+</section>
+<!-- end most selling product -->
+
+<!-- Category  Section -->
+<!-- <section class="section category-section">
+  <div class="category-bg">
+    <img src="assets/img/bg/category-bg.png" class="img-fluid shape-01" alt="image" />
+    <img src="assets/img/bg/ban-bg-05.png" class="img-fluid shape-02" alt="image" />
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="section-heading heading-three" data-aos="fade-down">
+          <h2>Shop By Categories</h2>
+        </div>
+        <div class="trending-category-slider nav-center" data-aos="fade-down">
+          <owl-carousel-o [options]="categorysec">
+            <ng-template carouselSlide>
+              <div class="item">
+                <a class="category-wrap category-images">
+                  <img src="assets/img/Trending Categories/acne.webp" class="img-fluid" alt="image" />
+                  <span class="category-text">
+                    <h6>Acne</h6>
+                    <p>88 Products</p>
+                  </span>
+                </a>
+              </div>
+            </ng-template>
+            <ng-template carouselSlide>
+              <div class="item">
+                <a class="category-wrap category-images">
+                  <img src="assets/img/Trending Categories/cleanser.webp" class="img-fluid" alt="image" />
+                  <span class="category-text">
+                    <h6>Cleansers</h6>
+                    <p>150 Products</p>
+                  </span>
+                </a>
+              </div>
+            </ng-template>
+            <ng-template carouselSlide>
+              <div class="item">
+                <a class="category-wrap category-images">
+                  <img src="assets/img/Trending Categories/cream.webp" class="img-fluid" alt="image" />
+                  <span class="category-text">
+                    <h6>Cream</h6>
+                    <p>150 Products</p>
+                  </span>
+                </a>
+              </div>
+            </ng-template>
+            <ng-template carouselSlide>
+              <div class="item">
+                <a class="category-wrap category-images">
+
+                  <img src="assets/img/Trending Categories/scar  and marks.webp" class="img-fluid" alt="image" />
+                  <span class="category-text">
+                    <h6>Scars and Marks</h6>
+                    <p>17 Products</p>
+                  </span>
+
+                </a>
+              </div>
+            </ng-template>
+            <ng-template carouselSlide>
+              <div class="item">
+                <a class="category-wrap category-images">
+                  <img src="assets/img/Trending Categories/serum.webp" class="img-fluid" alt="image" />
+                  <span class="category-text">
+                    <h6>Serume</h6>
+                    <p>191 Products</p>
+                  </span>
+                </a>
+              </div>
+            </ng-template>
+            <ng-template carouselSlide>
+              <div class="item">
+                <a class="category-wrap category-images">
+                  <img src="assets/img/Trending Categories/skin routien.webp" class="img-fluid" alt="image" />
+                  <span class="category-text">
+                    <h6>Skin Routine</h6>
+                    <p>30 Products</p>
+                  </span>
+                </a>
+              </div>
+            </ng-template>
+          </owl-carousel-o>
+        </div>
+
+        <div class="view-all-btn text-center aos" data-aos="fade-down">
+            <a [routerLink]="routes.listingGrid" class="btn btn-secondary">View all Categories</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section> -->
+<!-- /Category  Section -->

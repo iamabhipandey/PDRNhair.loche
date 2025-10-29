@@ -1,0 +1,38 @@
+.banner-wrapper {
+  height: 250px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ffffff; /* Optional: fallback bg */
+}
+
+.banner-img {
+  width: auto;
+  height: 100%;
+  object-fit: cover;
+}
+
+h2.breadcrumb-title {
+    text-align: center;
+}
+.count-search {
+    text-align: center;
+    margin: 20px;
+}
+.count-search p {
+    font-size: 20px;
+    font-weight: 600;
+}
+.slide-images{
+  height: 275px;
+}
+@media only screen and (max-width: 767px) {
+.banner-wrapper {
+  height: 190px;
+ 
+}
+.slide-images{
+  height: auto;
+}
+}
