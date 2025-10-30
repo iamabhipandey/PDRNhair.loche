@@ -9,11 +9,10 @@
                 border-radius: 50%;
             }
             a {
-                color: black;
+                color: $__white;
                 font-size: $__font__size__14;
-                    text-decoration: none;
                 &.dropdown-toggle {
-                    background: white;
+                    background: transparent;
                     border: 1px solid $__blue__light;
                     border-radius: 10pxpx;
                     display: inline-flex;
@@ -48,7 +47,7 @@
 		&::after {
             content: "";
 			border-width: 0 2px 2px 0;
-			border-color: black;
+			border-color: $__white;
 			padding: 3px;
 			transform: rotate(45deg) translateY(-50%);
 			-webkit-transform: rotate(45deg) translateY(-50%);
@@ -83,7 +82,7 @@
 }
 .hero-sec-main {
     .header-two {
-        background: white;
+        background: transparent;
         box-shadow: none;
         &.header-fixed {
             background: #0A152F;
@@ -95,11 +94,10 @@
         }
         .header-two-top {
             padding: 10px;
-            border-bottom: 1px solid #d1d1d1;
-            background: #f6f6f6;
-            // @include respond-below(custom991) {
-            //     display: none;
-            // }
+            border-bottom: 1px solid #676767;
+            @include respond-below(custom991) {
+                display: none;
+            }
             .header-top-items {
                 display: flex;
                 align-items: center;
@@ -107,10 +105,8 @@
                 .header-address {
                     display: flex;
                     align-items: center;
-                    cursor: pointer;
-                    white-space: pre;
                     li {
-                        color: black;
+                        color: $__white;
                         font-size: $__font__size__14;
                         margin-right: 15px;
                         &:last-child {
@@ -128,7 +124,7 @@
             .main-nav {
                 >li {
                     a {
-                        color: black;
+                        color: $__white;
                         font-weight: $__normal;
                         &.active {
                             color: $__primarycolor;
@@ -169,10 +165,11 @@
     ul {
         display: flex;
         align-items: center;
+        padding-left: 15px;
+        margin-left: 20px;
+        border-left: 1px solid $__blue__light;
         li {
-            font-size: 14px;
             margin-right: 5px;
-            white-space: pre;
             &:last-child {
                 margin-right: 0;
             }
@@ -193,8 +190,7 @@
                     color: $__primarycolor;
                 }
                 i {
-                    color: black;
-                    font-size: 17px;
+                    color: $__light__vampire;
                     background: transparent;
                     transition: 0.5s all;
                 }
@@ -204,39 +200,36 @@
 }
 
 //---------------------------- new big nave css -----------------------------//
-.display-hide-mobile{
-   .nav-item>a {
-    text-decoration: none;
-    color: #000000;
-    font-weight: 500;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 15px;
-    padding: 17px 7px;
-    padding-right: 50px;
-    white-space: nowrap;
-    display: inline-block;
-} 
-@media only screen and (max-width: 1200px) {
-      .nav-item>a {
-    text-decoration: none;
-    color: #000000;
-    font-weight: 500;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 15px;
-    padding: 17px 7px;
-    padding-right: 35px;
-    white-space: nowrap;
-    display: inline-block;
-} 
+.header-two{
+
+.nav-area {
+    .nav-link::after {
+        content: '';
+        display: block;
+        width: 0;
+        height: 2px;
+        background: #fc2779;
+        transition: width 0.3s;
+    }
+
+    .nav-link:hover::after {
+        width: 50%;
+        margin: 0 auto;
+    }
+
+    li.add-border:hover {
+        // background: #f7f7f7;
+        border-bottom: 3px solid #eb0766;
+    }
 }
-}
+
 .header-nav {
     position: relative;
 }
 
-// .nav-area {
-//     position: absolute;
-// }
+.nav-area {
+    position: absolute;
+}
 
 .nav-area .nav-menu {
     list-style: none;
@@ -246,15 +239,24 @@
     // gap: 30px;
 }
 
-
+.nav-item>a {
+    text-decoration: none;
+    color: #000000;
+    font-weight: 500;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 15px;
+    padding: 24px 7px;
+    white-space: nowrap;
+    display: inline-block;
+}
 
 .mega-menu {
     position: absolute;
     top: 100%;
     width: 1114px;
- left: 8px;
-    height: 510px;
-    // overflow: auto;
+    left: -155px;
+    height: 525px;
+    overflow: auto;
     display: none;
     justify-content: center;
     align-items: start;
@@ -268,15 +270,14 @@
 @media only screen and (max-width: 1200px) {
     .mega-menu {
         width: 1114px;
-        left: 8pxpx;
+        left: -195px;
     }
 }
 
 @media only screen and (max-width: 1120px) {
     .mega-menu {
-        width: 992px;
-        height: 568px;
-        left: 8px;
+        width: 996px;
+        left: -190px;
     }
 }
 
@@ -292,8 +293,8 @@
 .allBrandssearch {
     width: 360px;
     float: left;
+    border-right: 1px dashed black;
     background: #fff;
-    height: 510px;
     border-bottom-left-radius: 3px;
 }
 
@@ -315,81 +316,7 @@
     border: solid 1px rgba(151, 151, 151, 0.4);
     position: relative;
 }
-  .Luxe-section {
-        .nav-tabs {
-            border: none;
-            justify-content: center;
-            padding-bottom: 10px;
-            border-bottom: 1px solid #e1e0e0;
-        }
-    
-        .nav-tabs .nav-link {
-            border: 1px solid #e2dbdb;
-            border-radius: 30px;
-            margin: 0 5px;
-            color: #6c757d;
-            background-color: #fff;
-            padding: 10px 20px;
-            font-size: 13px !important;
-            font-weight: 500;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-            transition: all 0.3s ease;
-        }
-    
-        .nav-tabs .nav-link.active {
-            // font-size: 14px !important;
-            // font-weight: 600;
-            // box-shadow: 0 6px 12px #ffb8d1;
-            font-weight: 500;
-            border: 1px solid #ff4081;
-            color: #ff4081;
-            box-shadow: 0 6px 12px #ffedf3;
-        }
-    
-        .tab-pane {
-            animation: fadein 0.5s ease;
-        }
-    
-        @keyframes fadein {
-            from {
-                opacity: 0;
-            }
-    
-            to {
-                opacity: 1;
-            }
-        }
-    }
-        .categories-contener-box {
-        width: 190px;
-        min-height: 442px;
-        float: left;
-        padding: 12px;
-        text-align: left;
-    }
-    @media only screen and (max-width: 1120px) {
-.categories-contener-box {
-        width: 190px;
-         min-height: 487px;
-        float: left;
-        padding: 12px;
-        text-align: left;
-    }
-}
-    .Luxe-section {
-        margin-top: 15px;
-        width: 100%;
-    }
-    
-    .bgWhite {
-        background-color: #fff;
-    }
-    
-    .bgGrey {
-        // background-color: #f7f7f7;
-        border-left: 1px solid #bfbfbf;
-        border-right: 1px solid #e7e7e7;
-    }
+
 .input-group-prepend {
     color: #737373;
     pointer-events: none;
@@ -412,6 +339,8 @@
 
 .brand-list-container {
     width: 295px;
+    height: 430px;
+    overflow: auto;
 }
 
 .brand-name-container {
@@ -454,9 +383,9 @@
     color: #161616;
 }
 
-// .brand-name a:hover {
-//     color: $__primarycolor;
-// }
+.brand-name a:hover {
+    color: $__primarycolor;
+}
 
 .brand-name {
     line-height: 25px;
@@ -498,7 +427,6 @@ li.Nav-item {
 .nav-area {
     .brandsCategoryBox {
     width: 68.4%;
-        overflow: auto;
     height: 100%;
     float: right;
     border-left: 1px dashed gray;
@@ -517,11 +445,11 @@ li.Nav-item {
     }
 
     .BrandsnameWrapper ul li.brand-logo {
-        width: 165px !important;
-        // height: 35px;
+        width: 170px !important;
+        height: 35px;
         display: inline-block;
         vertical-align: middle;
-        // margin: 0 auto 4%;
+        margin: 0 auto 4%;
     }
 
     ul.HeaderNav li>a {
@@ -540,8 +468,7 @@ li.Nav-item {
     }
 
     li.brand-logo a .brand-only-b {
-        // height: 70px;
-        width: 120px;
+        height: 70px;
     }
 
     .tab-btn {
@@ -594,9 +521,214 @@ li.Nav-item {
         // background: #f7f7f7;
         border-bottom: 3px solid #eb0766;
     }
-    img.brand-only-b.btn-new-launches {
-    height: 41px !important;
-    margin-top: 13px;
-    margin-left: 30px;
+}
+
+.tab-content {
+    margin-top: 15px;
+    // box-shadow: 0 0 10px rgba(0,0,0,0.05);
+}
+
+//   ------------------------------LUXE section-------------------------------//
+.nav-area{
+    .categories-content {
+    border-top: 1px solid #d8d8d8;
+}
+.product-type-name {
+    margin-bottom: 20px;
+}
+    .Luxe-section {
+        margin-top: 20px;
+        width: 100%;
+    }
+    
+    .bgWhite {
+        background-color: #ffffff00;
+    }
+    
+    .bgGrey {
+        background-color: #f7f7f7;
+        border-left: 1px solid #bfbfbf;
+        border-right: 1px solid #e7e7e7;
+    }
+    .coming-soon{
+    .categories-contener-box {
+        width: 190px;
+        min-height: 442px;
+        float: left;
+        padding: 12px;
+        text-align: left;
+    }
+    }
+  
+  
+    .skin-care{
+          .categories-contener-box {
+        width: 190px;
+        min-height: 522px;
+        float: left;
+        padding: 12px;
+        text-align: left;
+    }
+    }
+    
+    .product-type-name li a {
+        color: #666666;
+        font-size: 14px;
+        font-weight: 500;
+    }
+    
+    .product-type-name li:hover>a {
+        color: #fc2779;
+    }
+    
+    .categories-heading a {
+    font-weight: 500;
+    letter-spacing: -0.1px;
+    line-height: 25px;
+    text-transform: capitalize;
+    text-decoration: none;
+    color: rgba(3, 2, 26, 0.8) !important;
+    position: relative;
+    }
+    
+    .megaDropdown ul>li a {
+        font-size: 14px;
+        font-weight: 400;
+        letter-spacing: 0;
+        line-height: 20px;
+        margin: 2% auto;
+        display: block;
+        color: rgba(3, 2, 26, 0.5);
+        text-transform: capitalize;
+    }
+    
+    .Luxe-section {
+        .nav-tabs {
+            border: none;
+            justify-content: center;
+        }
+    
+        .nav-tabs .nav-link {
+            border: none;
+            border-radius: 50px;
+            margin: 0 5px;
+            color: #6c757d;
+            background-color: #fff;
+            padding: 10px 20px;
+            font-size: 13px !important;
+            font-weight: 500;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+    
+        .nav-tabs .nav-link.active {
+            font-size: 14px !important;
+            font-weight: 600;
+            box-shadow: 0 6px 12px #ffb8d1;
+        }
+    
+        .tab-pane {
+            animation: fadein 0.5s ease;
+        }
+    
+        @keyframes fadein {
+            from {
+                opacity: 0;
+            }
+    
+            to {
+                opacity: 1;
+            }
+        }
+    }
+}
+
+//  ----------------------------- advice section---------------//
+.mega-advice-sec {
+    position: absolute;
+    top: 100%;
+    overflow: auto;
+    display: none;
+    justify-content: center;
+    align-items: start;
+    gap: 0px;
+    background: white;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    z-index: 999;
+    justify-content: space-between;
+}
+
+.mega-advice-sec .mega-column {
+    flex: 1;
+    min-width: 100px;
+}
+
+.nav-item:hover .mega-advice-sec {
+    display: flex;
+    padding: 15px 25px;
+    border-radius: 0px 0px 15px 15px;
+}
+
+a.BeautyAdvicesec {
+    width: 240px;
+    height: auto;
+    display: inline-block;
+    vertical-align: top;
+    margin: 0 10px 15px;
+    text-align: left;
+}
+
+a.BeautyAdvicesec .beautyadvicetext1 {
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: -0.1px;
+    color: rgba(3, 2, 26, 0.8);
+    text-transform: uppercase;
+    line-height: 20px;
+    padding-top: 7px;
+}
+
+a.BeautyAdvicesec .beautyadvicetext2 {
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: 0;
+    color: rgba(4, 1, 20, 0.6);
+    text-transform: capitalize;
+    line-height: 16px;
+}
+
+.BeautyAdvicesec .beautyadvicetext1,
+.BeautyAdvicesec .beautyadvicetext2 {
+    transition: color 0.3s ease;
+}
+
+.BeautyAdvicesec img {
+    width: 100%;
+    height: 150px;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+    border-radius: 8px;
+}
+
+.mega-column a:hover img {
+    border: 2px solid #fc2779;
+}
+
+.BeautyAdvicesec:hover .beautyadvicetext1,
+.BeautyAdvicesec:hover .beautyadvicetext2 {
+    color: #fc2779;
+}
+
+//  ------ end advice section---------------//
+p.brand-text {
+    font-size: 27px;
+    font-weight: 700;
+    line-height: 25px;
+    font-style: italic;
+    padding-top: 10px;
+    color: #ab47d3;
+}
+.btn-new-launches {
+    padding: 15px;
 }
 }

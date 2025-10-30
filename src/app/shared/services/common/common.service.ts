@@ -17,26 +17,41 @@ export class CommonService {
   public userLogin: boolean = false;
 
   private API_URL = environment.apiUrl;
-  private imgUrl = environment.imgurl;
+  // private imgUrl = environment.imgurl;
 
   private token: string | null = null;
 
-  currentUser: any;
+  loggedCurrentUser: any;
   loggedUserId: string = '';
   loggedUserEmail: string = '';
   loggedUserType: string = '';
+  loggedMobile: string = '';
 
   // BehaviorSubject to track login state
-  private userLoginSubject: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
-  public userLogin$: Observable<boolean> = this.userLoginSubject.asObservable();
+   private userLoginSubject = new BehaviorSubject<boolean>(false);
+  userLogin$: Observable<boolean> = this.userLoginSubject.asObservable();
+
+    // Cart count observable
+  private cartCountSource = new BehaviorSubject<number>(0);
+  cartCount$ = this.cartCountSource.asObservable();
+
+
+  private wishlistCountSource = new BehaviorSubject<number>(0);
+wishlistCount$ = this.wishlistCountSource.asObservable();
 
   constructor(private http: HttpClient,
     private dataFactoryService: DataFactoryService,
-    
+
   ) {
     this.loadFromDataFactory();
   }
 
+    // agar login success hota hai to yeh call karo
+  setUserLoggedIn() {
+    this.userLoginSubject.next(true);
+  }
+
+  
 
 
   private loadFromDataFactory(): void {
@@ -46,7 +61,7 @@ export class CommonService {
       this.token = storedToken;
     }
     if (storedUser) {
-      this.currentUser = storedUser;
+      this.loggedCurrentUser = storedUser;
     }
 
     this.userLoginSubject.next(!!this.token);
@@ -70,19 +85,55 @@ export class CommonService {
   //     );
   // }
 
+
+
+  signin(credentials: any): Observable<any> {
+    return this.http.post<any>(`${this.API_URL}/login/user-signin`, credentials)
+      .pipe(
+        map(response => {
+          if (response.status === 'true') {
+            this.dataFactoryService.setToken(response.data.token);
+            this.dataFactoryService.setCurrentUser(response.data);
+
+            this.loggedUserEmail = response.data.userEmail;
+            this.loggedCurrentUser = response.data.name;
+            this.loggedMobile = response.data.mobile;
+            this.loggedUserType = response.data.userType;
+
+            if (this.loggedUserType === 'supplier') {
+              this.loggedUserId = response.data.supplierId;
+            } else if (this.loggedUserType === 'user') {
+              this.loggedUserId = response.data.userProfileId;
+            } else if (this.loggedUserType === 'admin') {
+              this.loggedUserId = response.data.adminId;
+            }
+
+            this.userLoginSubject.next(true);
+          }
+          return response;
+        })
+      );
+  }
+
   currentLoginStatus() {
     return this.http.post<any>(`${this.API_URL}/auth/currentLoginStatus`, {})
   }
 
-  logout(): void {
-    this.token = null;
-    this.currentUser = null;
-   // this.loggedUserType = null || '';
-    this.dataFactoryService.setToken('');
-    this.dataFactoryService.setCurrentUser(null);
-    this.userLoginSubject.next(false);
-    
-  }
+logout(): void {
+  this.token = null;
+  this.loggedCurrentUser = '';
+  this.loggedUserType = '';
+  this.loggedUserId = '';
+
+  this.dataFactoryService.setToken('');
+  this.dataFactoryService.setCurrentUser(null);
+
+  this.userLoginSubject.next(false);
+
+  // ✅ local storage bhi clear karo
+  localStorage.clear();
+  sessionStorage.clear();
+}
 
 
   logoutCurrentSession(): void {
@@ -96,52 +147,17 @@ export class CommonService {
       );
   }
 
+
  
-  uploadFile(imageFile: File) {
-    this.fatchLoggerUser();
-    let payLoad = new FormData();
-    payLoad.append('loggedUserId', this.loggedUserId);
-    payLoad.append('loggedUserEmail', this.loggedUserEmail);
-    payLoad.append('loggedUserType', this.loggedUserType);
-    payLoad.append('ipAddress', '');
-    payLoad.append('loggebrowserdUserId', '');
-    payLoad.append('file', imageFile);
-
-    return this.http.post<any>(
-      `${this.imgUrl}/lab/document/uploadFile`,
-      payLoad
-    );
-  }
 
 
-
-  deleteFile(payLoad: any) {
-    return this.http.post<any>(
-      `${this.imgUrl}/lab/document/deleteDocument`,
-      payLoad
-    );
-  }
-
-  downloadFile(payLoad: any) {
-    return this.http.post<any>(
-      `${this.imgUrl}/lab/document/downloadFile`,
-      payLoad
-    );
-  }
-
-  viewFile(payLoad: any): Observable<any> {
-    return this.http.post<any>(
-      `${this.imgUrl}/lab/document/viewFile`,
-      payLoad, { responseType: 'blob' as 'json' }
-    );
-  }
 
   private fatchLoggerUser() {
-    this.currentUser = this.dataFactoryService.getCurrentUser();
-    if (this.currentUser) {
-      this.loggedUserEmail = this.currentUser.loggedUserEmail;
-      this.loggedUserId = this.currentUser.loggedUserId;
-      this.loggedUserType = this.currentUser.loggedUserType;
+    this.loggedCurrentUser = this.dataFactoryService.getCurrentUser();
+    if (this.loggedCurrentUser) {
+      this.loggedUserEmail = this.loggedCurrentUser.loggedUserEmail;
+      this.loggedUserId = this.loggedCurrentUser.loggedUserId;
+      this.loggedUserType = this.loggedCurrentUser.loggedUserType;
     }
   }
 
@@ -165,41 +181,65 @@ export class CommonService {
   }
 
 
-  // date time conversion 
-  changeInputDateFormat(inputDate: string): string {
-    let formattedDate = '';
-    if (inputDate) {
-      const date = new Date(inputDate).getDate();
-      const month = new Date(inputDate).getMonth() + 1;
-      const Year = new Date(inputDate).getFullYear();
-      formattedDate = ((date.toString().length == 1) ? '0' + date.toString() : date.toString()) + '/' + ((month.toString().length == 1) ? '0' + month.toString() : month.toString()) + '/' + Year.toString();
+  // date time conversion
+  // changeInputDateFormat(inputDate: string): string {
+  //   let formattedDate = '';
+  //   if (inputDate) {
+  //     const date = new Date(inputDate).getDate();
+  //     const month = new Date(inputDate).getMonth() + 1;
+  //     const Year = new Date(inputDate).getFullYear();
+  //     formattedDate = ((date.toString().length == 1) ? '0' + date.toString() : date.toString()) + '/' + ((month.toString().length == 1) ? '0' + month.toString() : month.toString()) + '/' + Year.toString();
+  //   }
+  //   return formattedDate;
+  // }
+
+ changeInputDateFormat(inputDate: Date): string {
+    if (!inputDate) return '';
+    let dateObj: Date;
+
+    // अगर input पहले से ही Date object है
+    if (inputDate instanceof Date) {
+      dateObj = inputDate;
+    } else {
+      // String को Date object में बदलें
+      dateObj = new Date(inputDate);
     }
-    return formattedDate;
+
+    if (isNaN(dateObj.getTime())) {
+      console.error("Invalid date:", inputDate);
+      return '';
+    }
+
+    const year = dateObj.getFullYear();
+    const month = (dateObj.getMonth() + 1).toString().padStart(2, '0');
+    const day = dateObj.getDate().toString().padStart(2, '0');
+
+    return `${year}-${month}-${day}`;
   }
 
-  changeInputDateTimeFormat(inputDateTime: string): string {
-    let formattedDateTime = '';
-    let time = '';
-    if (inputDateTime) {
-      formattedDateTime = this.changeInputDateFormat(inputDateTime);
-      const hours = new Date(inputDateTime).getHours();
-      const minutes = (new Date(inputDateTime).getMinutes() > 9) ? new Date(inputDateTime).getMinutes().toString() : '0' + new Date(inputDateTime).getMinutes().toString();
-      if (hours >= 12) {
-        if (hours > 12) {
-          time = (hours - 12).toString() + ':' + minutes + ' PM';
-        } else {
-          time = hours + ':' + minutes + ' PM';
-        }
+  // changeInputDateTimeFormat(inputDateTime: string): string {
+  //   let formattedDateTime = '';
+  //   let time = '';
+  //   if (inputDateTime) {
+  //     formattedDateTime = this.changeInputDateFormat(inputDateTime);
+  //     const hours = new Date(inputDateTime).getHours();
+  //     const minutes = (new Date(inputDateTime).getMinutes() > 9) ? new Date(inputDateTime).getMinutes().toString() : '0' + new Date(inputDateTime).getMinutes().toString();
+  //     if (hours >= 12) {
+  //       if (hours > 12) {
+  //         time = (hours - 12).toString() + ':' + minutes + ' PM';
+  //       } else {
+  //         time = hours + ':' + minutes + ' PM';
+  //       }
 
-      } else if (hours == 0) {
-        time = '12' + ':' + minutes + ' AM';
-      } else {
-        time = hours + ':' + minutes + ' AM';
-      }
-      formattedDateTime += ' ' + time;
-    }
-    return formattedDateTime;
-  }
+  //     } else if (hours == 0) {
+  //       time = '12' + ':' + minutes + ' AM';
+  //     } else {
+  //       time = hours + ':' + minutes + ' AM';
+  //     }
+  //     formattedDateTime += ' ' + time;
+  //   }
+  //   return formattedDateTime;
+  // }
 
   changeInputTimeFormat(inputTime: Date): string {
     let formattedTime = '';
@@ -265,8 +305,8 @@ export class CommonService {
 
   splitDateToTime(date: string): string {
     let dateFormat: any
-    if(date) {
-      if(date.includes(' ')) {
+    if (date) {
+      if (date.includes(' ')) {
         dateFormat = date.split(' ');
       }
     }
@@ -312,119 +352,199 @@ export class CommonService {
 
 
 
-
-
-
-   getAllProductVerifiedData(): Observable<any> {
+ getAllActiveProductData(): Observable<any> {
   const headers = new HttpHeaders({
     "ngrok-skip-browser-warning": "true"
   });
-  return this.http.get(`${this.API_URL}/product/get-all-verified-product-by-admin`, { headers });
+  return this.http.get(`${this.API_URL}/product/get-all-active-products`, { headers });
 }
 
 
-
-   getVerifiedProductById(id:number): Observable<any> {
-  const headers = new HttpHeaders({
-    "ngrok-skip-browser-warning": "true"
-  });
-  return this.http.get(`${this.API_URL}/product/get-product/${id}`, { headers });
-}
-
-
-
-
- private userDocAppointmentData: any;
-  setUserProductData(data: any) {
-    this.userDocAppointmentData = data;
+ getAllActiveProductById(id: number): Observable<any> {
+    const headers = new HttpHeaders({
+      "ngrok-skip-browser-warning": "true"
+    });
+    return this.http.get(`${this.API_URL}/product/get-all-active-products/${id}`, { headers });
   }
+
+
+  getAllProductVerifiedData(): Observable<any> {
+    const headers = new HttpHeaders({
+      "ngrok-skip-browser-warning": "true"
+    });
+    return this.http.get(`${this.API_URL}/product/get-all-verified-product-by-admin`, { headers });
+  }
+
+
+
+  getVerifiedProductById(id: number): Observable<any> {
+    const headers = new HttpHeaders({
+      "ngrok-skip-browser-warning": "true"
+    });
+    return this.http.get(`${this.API_URL}/product/get-product/${id}`, { headers });
+  }
+
+
+
+
+  
+
+
+  addToCart(payload: any): Observable<any> {
+    const headers = new HttpHeaders({
+      "ngrok-skip-browser-warning": "true"
+    });
+    return this.http.post(`${this.API_URL}/cart/add`, payload, { headers });
+  }
+
+   // Update cart count
+  updateCartCount(count: number) {
+    this.cartCountSource.next(count);
+  }
+
+  removeCart(payload: any): Observable<any> {
+    const headers = new HttpHeaders({
+      "ngrok-skip-browser-warning": "true"
+    });
+    return this.http.post(`${this.API_URL}/cart/remove`, payload, { headers });
+  }
+
+
+  viewCart(userId: any): Observable<any> {
+    const headers = new HttpHeaders({
+      "ngrok-skip-browser-warning": "true"
+    });
+    return this.http.get(`${this.API_URL}/cart/view-cart/${userId}`, { headers });
+  }
+
+
+
+
+  placeOrder(payload: any): Observable<any> {
+    const headers = new HttpHeaders({
+      "ngrok-skip-browser-warning": "true"
+    });
+    return this.http.post(`${this.API_URL}/order/place`, payload, { headers });
+  }
+
+
+ getAllOrders(userId: any): Observable<any> {
+    const headers = new HttpHeaders({
+      "ngrok-skip-browser-warning": "true"
+    });
+    return this.http.get(`${this.API_URL}/order/get-all-orders-by-userid/${userId}`, { headers });
+  }
+
+   getOrderDetails(orderId: any): Observable<any> {
+    const headers = new HttpHeaders({
+      "ngrok-skip-browser-warning": "true"
+    });
+    return this.http.get(`${this.API_URL}/order/detail/${orderId}`, { headers });
+  }
+
+
+
+  
+
+  addAddress(payload: any): Observable<any> {
+    const headers = new HttpHeaders({
+      "ngrok-skip-browser-warning": "true"
+    });
+    return this.http.post(`${this.API_URL}/address/add`, payload, { headers });
+  }
+
+
+getAllAddress(userProfileId: any): Observable<any> {
+  const headers = new HttpHeaders({
+    "ngrok-skip-browser-warning": "true"
+  });
+
+  return this.http.get(`${this.API_URL}/address/get-address`, {
+    headers,
+    params: { userProfileId: userProfileId}   
+  });
+}
+
+
+  updateUserData(payload: any): Observable<any> {
+    const headers = new HttpHeaders({
+      "ngrok-skip-browser-warning": "true"
+    });
+    return this.http.post(`${this.API_URL}/user/update`, payload, { headers });
+  }
+
+
+  addReview(payload: FormData): Observable<any> {
+    const headers = new HttpHeaders({
+      "ngrok-skip-browser-warning": "true"
+    });
+    return this.http.post(`${this.API_URL}/review/add`, payload, { headers });
+  }
+
+
+  getReviewById(productId: string): Observable<any> {
+    const headers = new HttpHeaders({
+      "ngrok-skip-browser-warning": "true"
+    });
+    return this.http.get(`${this.API_URL}/review/${productId}`, { headers });
+  }
+
+
+  searhProductData(formData: FormData): Observable<any> {
+    const headers = new HttpHeaders({
+      "ngrok-skip-browser-warning": "true"
+    });
+    return this.http.post(`${this.API_URL}/product/search-product`, formData,  { headers });
+  }
+
+
+  getImgesById(id: number): Observable<any> {
+    const headers = new HttpHeaders({
+      "ngrok-skip-browser-warning": "true"
+    });
+    return this.http.get(`${this.API_URL}/images/get-images/${id}`, { headers });
+  }
+
+
+  // Update wishlist count method
+updateWishlistCount(count: number) {
+  this.wishlistCountSource.next(count);
+}
+
+// Wishlist API call (example)
+addToWishlist(payload: any) {
+   const headers = new HttpHeaders({
+      "ngrok-skip-browser-warning": "true"
+    });
+  return this.http.post(`${this.API_URL}/wishlist/add`, payload, { headers });
+}
+
+
+getWishListData(userId: any): Observable<any> {
+    const headers = new HttpHeaders({
+      "ngrok-skip-browser-warning": "true"
+    });
+    return this.http.get(`${this.API_URL}/wishlist/${userId}`, { headers });
+  }
+
+  removeFromWishlist(payload: any) {
+   const headers = new HttpHeaders({
+      "ngrok-skip-browser-warning": "true"
+    });
+  return this.http.post(`${this.API_URL}/wishlist/remove`, payload, { headers });
+}
+
+
+
+
+ private productData: any;
+ setUserProductData(data: any) {
+    this.productData = data;
+  }
+
   getUserProductData() {
-    return this.userDocAppointmentData;
+    return this.productData;
   }
 
-
-  addToCart(payload:any): Observable<any> {
-  const headers = new HttpHeaders({
-    "ngrok-skip-browser-warning": "true"
-  });
-  return this.http.post(`${this.API_URL}/cart/add`, payload);
-}
-
- removeCart(payload:any): Observable<any> {
-  const headers = new HttpHeaders({
-    "ngrok-skip-browser-warning": "true"
-  });
-  return this.http.post(`${this.API_URL}/cart/remove`, payload);
-}
-
-
- viewCart(userId:any): Observable<any> {
-  const headers = new HttpHeaders({
-    "ngrok-skip-browser-warning": "true"
-  });
-  return this.http.get(`${this.API_URL}/cart/view-cart/${userId}`, {headers});
-}
-
-
-
-
- placeOrder(payload:any): Observable<any> {
-  const headers = new HttpHeaders({
-    "ngrok-skip-browser-warning": "true"
-  });
-  return this.http.post(`${this.API_URL}/order/place`, payload);
-}
-
-
-
-
-
-
- addAddress(payload:any): Observable<any> {
-  const headers = new HttpHeaders({
-    "ngrok-skip-browser-warning": "true"
-  });
-  return this.http.post(`${this.API_URL}/address/add`, payload);
-}
-
-
- getAllAddress(payload:any): Observable<any> {
-  const headers = new HttpHeaders({
-    "ngrok-skip-browser-warning": "true"
-  });
-  return this.http.get(`${this.API_URL}/address/get-address`, payload);
-}
-
-
-updateUserData(payload:any): Observable<any> {
-  const headers = new HttpHeaders({
-    "ngrok-skip-browser-warning": "true"
-  });
-  return this.http.post(`${this.API_URL}/user/update`, payload);
-}
-
-
-addReview(payload:FormData): Observable<any> {
-  const headers = new HttpHeaders({
-    "ngrok-skip-browser-warning": "true"
-  });
-  return this.http.post(`${this.API_URL}/review/add`, payload);
-}
-
-
-getReviewById(productId:string): Observable<any> {
-  const headers = new HttpHeaders({
-    "ngrok-skip-browser-warning": "true"
-  });
-  return this.http.get(`${this.API_URL}/review/${productId}`, {headers});
-}
-
-
-searhProductData(formData:FormData): Observable<any> {
-  const headers = new HttpHeaders({
-    "ngrok-skip-browser-warning": "true"
-  });
-  return this.http.post(`${this.API_URL}/product/search-product`,  formData );
-}
 
 }

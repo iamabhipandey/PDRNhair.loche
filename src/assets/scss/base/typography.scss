@@ -53,7 +53,7 @@ a {
 h1 {
 	font-weight: 900;
 	font-size: $__font__size__62;
-	color: #201F1D;
+	color: #374756;
 	@include respond-below(custom1199){
 		font-size:$__font__size__36;
 	}
@@ -61,7 +61,7 @@ h1 {
 h2 {
 	font-weight: 900;
 	font-size:$__font__size__36;
-	color: #111111;;
+	color: #374756;
 	@include respond-below(custom991){
 		font-size:$__font__size__26;
 	}
@@ -69,14 +69,14 @@ h2 {
 h3 {
 	font-weight: 700;
 	font-size:$__font__size__24;
-	color: #111111;
+	color: #374756;
 	@include respond-below(custom991){
 		font-size:$__font__size__18;
 	}
 }
 h4 {
 	font-size:$__font__size__28;
-	color: #2F2F2F;
+	color: #374756;
 	@include respond-below(custom991){
 		font-size:$__font__size__20;
 	}
@@ -90,7 +90,7 @@ h5 {
 h6 {
 	font-weight:$__medium;
 	font-size:$__font__size__18;
-	color: #111111;
+	color: #374756;
 	@include respond-below(custom991){
 		font-size:$__font__size__16;
 	}

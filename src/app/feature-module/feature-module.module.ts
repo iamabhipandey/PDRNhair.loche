@@ -6,6 +6,9 @@ import { FeatureModuleComponent } from './feature-module.component';
 import { HeaderComponent } from './common/header/header.component';
 import { FooterComponent } from './common/footer/footer.component';
 import { ModalComponent } from './common/modal/modal.component';
+import { FormsModule } from "@angular/forms";
+import { ViewCartComponent } from './view-cart/view-cart.component';
+import { NgxImageZoomModule } from 'ngx-image-zoom';
 
 
 @NgModule({
@@ -13,11 +16,14 @@ import { ModalComponent } from './common/modal/modal.component';
     FeatureModuleComponent,
     HeaderComponent,
     FooterComponent,
-    ModalComponent
+    ModalComponent,
+    ViewCartComponent,
   ],
   imports: [
     CommonModule,
-    FeatureModuleRoutingModule
-  ]
+    FeatureModuleRoutingModule,
+    FormsModule,
+    NgxImageZoomModule
+]
 })
 export class FeatureModuleModule { }

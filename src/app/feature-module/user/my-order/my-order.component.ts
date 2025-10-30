@@ -7,6 +7,9 @@ import { DataService } from 'src/app/shared/services/data/data.service';
 import { apiResultFormat, pageSelection, userBookings } from 'src/app/shared/services/model/model';
 import { WriteReviewComponent } from '../../reviews/write-review/write-review.component';
 import { MatDialog } from '@angular/material/dialog';
+import { ViewportScroller } from '@angular/common';
+import { DataFactoryService } from 'src/app/shared/services/common/data-factory.service';
+import { CommonService } from 'src/app/shared/services/common/common.service';
 
 @Component({
   selector: 'app-my-order',
@@ -31,13 +34,40 @@ export class MyOrderComponent {
   public pageSelection: Array<pageSelection> = [];
   public totalPages = 0;
 
-  constructor(
-    private data: DataService,
-    private router: Router,
-    private pagination: PaginationService,
-     private matDialog: MatDialog
-  ) {
-    this.data.getUserBookings().subscribe((apiRes: apiResultFormat) => {
+
+
+
+
+
+    loggedUserData: any;
+    loggedUserName: any;
+    loggedMobile: any;
+    loggedUserId: string = '';
+    loggedUserEmail: any = '';
+    loggedUserType: string = '';
+  
+    constructor(
+      private router: Router,
+     private commonService: CommonService,
+      private dataFactory:DataFactoryService,
+      private matDialog: MatDialog, 
+      private viewportScroller: ViewportScroller,
+        private data: DataService,
+          private pagination: PaginationService,
+    ) {
+      
+  this.loggedUserData = this.dataFactory.getCurrentUser();
+        if (this.loggedUserData) {
+        this.loggedUserName = this.loggedUserData.name;
+        this.loggedUserEmail = this.loggedUserData.email;
+        this.loggedMobile = this.loggedUserData.mobile;
+        this.loggedUserType = this.loggedUserData.userType;
+        this.loggedUserId = this.loggedUserData.userProfileId;
+  
+        }
+      this.getAllMyOrder(this.loggedUserId);
+
+      this.data.getUserBookings().subscribe((apiRes: apiResultFormat) => {
       this.totalData = apiRes.totalData;
       this.pagination.tablePageSize.subscribe((res: tablePageSize) => {
         if (this.router.url == this.routes.userBookings) {
@@ -46,7 +76,47 @@ export class MyOrderComponent {
         }
       });
     });
-  }
+     
+    }
+
+    
+allOredersData:any=[];
+    getAllMyOrder(id:any){
+       this.commonService.getAllOrders(this.loggedUserId).subscribe({
+      next: (res: any) => {
+        if (res.status === 'true') {
+          this.allOredersData = res.data;
+          // this.cartItems = res.data.items;
+          console.log(this.allOredersData);
+        } else {
+
+        }
+      },
+      error: (err: any) => {
+        console.error(err);
+      }
+    });
+    }
+
+
+orderDetails:any;
+      getMyOrderDetails(id:any){
+       this.commonService.getOrderDetails(id).subscribe({
+      next: (res: any) => {
+        if (res.status === 'true') {
+          this.orderDetails = res.data;
+         console.log(this.orderDetails);
+        } else {
+
+        }
+      },
+      error: (err: any) => {
+        console.error(err);
+      }
+    });
+    }
+
+ 
 
   private getTableData(pageOption: pageSelection): void {
     this.data.getUserBookings().subscribe((apiRes: apiResultFormat) => {

@@ -23,6 +23,8 @@ import { BookingCompleteCalendarComponent } from './booking-complete-calendar/bo
 import { BookingInprogressCalendarComponent } from './booking-inprogress-calendar/booking-inprogress-calendar.component';
 import { BookingUpcomingCalendarComponent } from './booking-upcoming-calendar/booking-upcoming-calendar.component';
 import { BookingsCalendarComponent } from './bookings-calendar/bookings-calendar.component';
+import { AccountInfoComponent } from './account-info/account-info.component';
+import { FrequentlyAskedQuestionsComponent } from './frequently-asked-questions/frequently-asked-questions.component';
 
 const routes: Routes = [
   {
@@ -33,7 +35,14 @@ const routes: Routes = [
         path: 'user-booking-cancelled',
         component: UserBookingCancelledComponent,
       },
-
+      {
+        path: 'accountInfo',
+        component: AccountInfoComponent,
+      },
+              {
+        path: 'faquestions',
+        component: FrequentlyAskedQuestionsComponent,
+      },
       {
         path: 'user-wallet',
         component: UserWalletComponent,

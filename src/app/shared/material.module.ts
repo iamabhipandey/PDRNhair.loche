@@ -4,6 +4,7 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatNativeDateModule} from '@angular/material/core';
 import { MatIconModule } from '@angular/material/icon';
 import { MatFormFieldModule } from "@angular/material/form-field";
+import { MatSliderModule } from "@angular/material/slider";
 
 @NgModule({
 declarations:[],
@@ -12,14 +13,16 @@ imports: [
     MatDatepickerModule,
     MatNativeDateModule,
     MatIconModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    MatSliderModule
 ],
 exports: [
     CommonModule,
     MatDatepickerModule,
     MatNativeDateModule,
     MatIconModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    MatSliderModule
 ],
 })
 

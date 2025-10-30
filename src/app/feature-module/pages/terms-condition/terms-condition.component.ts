@@ -8,4 +8,7 @@ import { routes } from 'src/app/shared/routes/routes';
 })
 export class TermsConditionComponent {
   public routes = routes;
+   ngOnInit() {
+    window.scrollTo(0, 0); // <— scrolls to top on load
+  }
 }

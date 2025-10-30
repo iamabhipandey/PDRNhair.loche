@@ -420,8 +420,12 @@
         overflow: $__hidden;
     }
     img {
+        
         width: 100%;
         border-radius: 10px;
+        // @media (min-width: 991px) {
+        //    max-height: 400px;
+        // }
     }
 }
 .detail-bigimg {
@@ -444,8 +448,7 @@
             @include position($__absolute,50%,null,null,10px);
             transform: translateY(-50%);
             &:hover {
-                background: $__primarycolor !important;
-                color: $__white;
+                color: $__primarycolor !important;
                 -webkit-transition: 500ms all ease;
                 -o-transition: 500ms all ease;
                 transition: 500ms all ease;
@@ -453,7 +456,7 @@
                 -ms-transition: 500ms all ease;
             }
             &:before {
-                content: "\f060";
+                content: "\f100";
                 display:$__inline__block;
                 font-family: "Font Awesome 5 Free";
                 font-size: $__font__size__15;
@@ -467,8 +470,7 @@
             @include position($__absolute,50%,10px,null,null);
             transform: translateY(-50%);
             &:hover {
-                background: $__primarycolor !important;
-                color: $__white;
+                color: $__primarycolor !important;
                 -webkit-transition: 500ms all ease;
                 -o-transition: 500ms all ease;
                 transition: 500ms all ease;
@@ -476,7 +478,7 @@
                 -ms-transition: 500ms all ease;
             }
             &:before {
-                content: "\f061";
+                content: "\f101";
                 display:$__inline__block;
                 font-family: "Font Awesome 5 Free";
                 font-size: $__font__size__15;
@@ -502,6 +504,7 @@
     span {
         color: $__gray;
         font-weight: $__medium;
+        font-size: 18px;
     }
 }
 .specification-card {

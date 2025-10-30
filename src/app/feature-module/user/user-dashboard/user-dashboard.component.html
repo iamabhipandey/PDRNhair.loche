@@ -4,22 +4,30 @@
             <span class="edit-icon" (click)="openModal()" >
                 <a class="edit-link"><i class="fa-solid fa-pen-to-square"></i></a> Edit
             </span>
-            <img src="assets/img/profiles/female-avatar.webp" alt="user" class="profile-avatar">
+            <img src="assets/img/profiles/profile (1).png" alt="user" class="profile-avatar">
             <div class="profile-info">
-                <strong class="user-name">Shruti Pandey</strong>
+                <strong class="user-name">{{loggedUserName}}</strong>
                 <div class="info-row">
                     <span class="label">Email: </span>
-                    <span class="user-email">shrutipandey420gmail.com</span>
-                    <span class="verified">Verified</span>
+                    <span class="user-email">{{loggedUserEmail}}</span>
+                      <span class="mobile-hide">
+                         <img src="assets/img/profiles/check-mark.png" alt="user" class="mobile-hide">
+                        </span>
+                    <!-- <span class="verified">Verified</span> -->
                 </div>
                 <div class="info-row"></div>
-                <div class="info-row">
-                    <span class="label">Date of Birth:</span>
-                    <span class="user-dob">dd/mm/yyyy</span>
+                <div class="info-row" (click)="VerifiedAdhar()">
+                    <span class="label">Aadhar Number:</span>
+                    <span class="user-dob">{{userProfileData?.aadharNumber}} || 697897980979</span>
+                    <span class="mobile-hide">
+                         <img src="assets/img/profiles/check-mark.png" alt="user" class="mobile-hide">
+                        </span>
+                     <span class="verified">* Aadhar card is mandatory for Cross-Border Products</span>
                 </div>
             </div>
         </div>
     </div>
+
     <div class="address-section">
         <div class="address-header">
             <div class="address-title">
@@ -35,14 +43,14 @@
         </div>
         <div class="address-list">
             <!-- Address Block 1 -->
-            <div class="address-card">
-                <div class="address-tag">Noida</div>
-                <div class="address-name">Abhi </div>
-                <div>noida sector, Noida - 201309, Uttar Pradesh</div>
+            <div class="address-card"  *ngFor="let add of useraddressData">
+                <div class="address-tag">{{add.address}}</div>
+                <div class="address-name">{{loggedUserName}} </div>
+                <div>{{add.city}}, {{add.pincode}}, {{add.state}}</div>
                 <div class="contact-info">
-                    <div class="phone-number"> +91- 8723468746</div>
+                    <div class="phone-number">{{loggedMobile}} {{add.mobileNo}}</div>
                 </div>
-                <div class="address-actions">
+                <!-- <div class="address-actions">
                     <div class="action-button">
                         <a class="action-icon">
                             <i class="fa-solid fa-pen-to-square"></i>
@@ -53,51 +61,7 @@
                             <i class="fa-regular fa-trash-can"></i>
                         </a>Remove
                     </div>
-                </div>
-            </div>
-
-            <!-- Address Block 2 -->
-            <div class="address-card">
-                <div class="address-tag">Noida</div>
-                <div class="address-name">abhipandey</div>
-                <div>noida sector 63, Noida - 201301, Uttar Pradesh</div>
-                <div class="contact-info">
-                    <div class="phone-number"> +91- 6546464868</div>
-                </div>
-                <div class="address-actions">
-                    <div class="action-button">
-                        <a class="action-icon">
-                            <i class="fa-solid fa-pen-to-square"></i>
-                        </a>Edit
-                    </div>
-                    <div class="action-button">
-                        <a class="action-icon">
-                            <i class="fa-regular fa-trash-can"></i>
-                        </a>Remove
-                    </div>
-                </div>
-            </div>
-
-            <!-- Address Block 3 -->
-            <div class="address-card">
-                <div class="address-tag">Noida</div>
-                <div class="address-name">pandey</div>
-                <div>noida sector 52, Noida - 201301, Uttar Pradesh</div>
-                <div class="contact-info">
-                    <div class="phone-number"> +91- 7645865875</div>
-                </div>
-                <div class="address-actions">
-                    <div class="action-button">
-                        <a class="action-icon">
-                            <i class="fa-solid fa-pen-to-square"></i>
-                        </a>Edit
-                    </div>
-                    <div class="action-button">
-                        <a class="action-icon">
-                            <i class="fa-regular fa-trash-can"></i>
-                        </a>Remove
-                    </div>
-                </div>
+                </div> -->
             </div>
         </div>
     </div>

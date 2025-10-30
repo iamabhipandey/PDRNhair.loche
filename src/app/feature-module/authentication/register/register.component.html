@@ -13,113 +13,38 @@
 
             <div class="loginbox">
               <div class="login-auth">
+
                 <div class="login-auth-wrap">
-                  <!-- <div class="sign-group">
-            <a [routerLink]="routes.home" class="btn sign-up"><span><i class="feather icon-corner-down-left"
-                  aria-hidden="true"></i></span>
-              Back To Home</a>
-          </div> -->
-          <h1>Sign Up</h1>
-          <p class="account-subtitle">
-            We'll send a confirmation code to your email.
-          </p>
-          <form [formGroup]="registerForm" (ngSubmit)="signup()">
-            <div class="input-block">
-              <label for="email" class="form-label">Email or Mobile Number <span class="text-danger">*</span></label>
-              <div class="input-group mb-3">
-                <input type="text" class="form-control" formControlName="mobileNo" placeholder="Enter Email or Number..."
-                  aria-label="Recipient's username" aria-describedby="basic-addon2">
-                <div class="input-group-append">
-                  <span class="input-group-text btn btn-primary" id="basic-addon2" (click)="sendOtpUsingWidget()">Get OTP</span>
-                </div>
-              </div>
-            </div>
-            <!-- <div class="input-block">
-            <label for="username" class="form-label">Username <span class="text-danger">*</span></label>
-            <input class="form-control" type="text" placeholder="" formControlName="Username" [ngClass]="{
-                'is-invalid': f['Username'].touched && f['Username'].invalid
-              }" />
-            @if (f['Username'].touched && f['Username'].invalid) {
-            <div class="invalid-feedback">
-              @if (f['Username'].errors && f['Username'].errors['required']) {
-              <div>
-                UserName is required.
-              </div>
-              }
-            </div>
-            }
-            @if (CustomControler !== 0) {
-            <div class="invalid-feedback">
-              {{ CustomControler }}
-            </div>
-            }
-          </div> -->
+
+                  <h1>Sign Up</h1>
+                  <p class="account-subtitle">
+                    We'll send a confirmation code to your email.
+                  </p>
+                  <form [formGroup]="registerForm">
                     <!-- <div class="input-block">
-            <label for="email" class="form-label">Email Or Number <span class="text-danger">*</span></label>
-            <input class="form-control" type="email" placeholder=" Enter Email Or Number...."  />
-            <input class="form-control" type="email" placeholder="" formControlName="email" [ngClass]="{
-                'is-invalid': f['email'].touched && f['email'].invalid
-              }" />
-            @if (f['email'].touched && f['email'].invalid) {
-            <div class="invalid-feedback">
-              @if (f['email'].errors && f['email'].errors['required']) {
-              <div>
-                Email Or Number is required.
-              </div>
-              }
-              @if (f['email'].errors && f['email'].errors['email']) {
-              <div>
-                Please, enter valid email address OR Number.
-              </div>
-              }
-              @if (CustomControler !== 0) {
-              <div class="invalid-feedback">
-                {{ CustomControler }}
-              </div>
-              }
-            </div>
-            }
-          </div> -->
-                    <!-- <div class="input-block">
-            <label for="password" class="form-label">OTP <span class="text-danger">*</span></label>
-            <div class="pass-group">
-              <input class="form-control pass-input" placeholder="" [type]="show_password ? 'password' : 'text'"
-                type="password" formControlName="password" [ngClass]="{
-                  'is-invalid': f['password'].touched && f['password'].invalid
-                }" />
+                      <label for="email" class="form-label">Email or Mobile Number <span
+                          class="text-danger">*</span></label>
+                      <div class="input-group mb-3">
+                        <input type="text" class="form-control" formControlName="mobileNo"
+                          placeholder="Enter Email or Number..." aria-label="Recipient's username"
+                          aria-describedby="basic-addon2">
+                        <div class="input-group-append">
+                          <span class="input-group-text btn btn-primary" id="basic-addon2"
+                            (click)="sendOtpUsingWidget()">Get OTP</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="input-block">
+                      <label for="otp" class="form-label">OTP <span class="text-danger">*</span></label>
 
-              <span [ngClass]="
-                show_password === true
-                  ? 'fas fa-eye-slash toggle-password'
-                  : 'fas fa-eye toggle-password'
-              " (click)="togglePassword()" (keydown.enter)="togglePassword()" (keydown.space)="togglePassword()"
-                tabindex="0" role="button"></span>
-                
-              @if (f['password'].touched && f['password'].invalid) {
-              <div class="invalid-feedback">
-                @if (
-                f['password'].errors && f['password'].errors['required']
-                ) {
-                <div>
-                  OTP is required.
-                </div>
-                }
-              </div>
-              }
-            </div>
-          </div> -->
+                      <div class="d-flex align-items-start">
 
-            <div class="input-block">
-              <label for="otp" class="form-label">OTP <span class="text-danger">*</span></label>
+                        <div class="position-relative flex-grow-1 me-2">
+                          <input class="form-control pass-input pe-5" placeholder="Enter OTP"
+                            [type]="show_password ? 'otp' : 'text'" formControlName="otp"
+                            [ngClass]="{ 'is-invalid': f['otp'].touched && f['otp'].invalid}" />
 
-              <div class="d-flex align-items-start">
-                <!-- Input & Eye icon -->
-                <div class="position-relative flex-grow-1 me-2">
-                  <input class="form-control pass-input pe-5" placeholder="Enter OTP"
-                    [type]="show_password ? 'otp' : 'text'" formControlName="otp"
-                    [ngClass]="{ 'is-invalid': f['otp'].touched && f['otp'].invalid}" />
 
-                          <!-- Eye Icon inside input -->
                           <span class="position-absolute verify end-0 translate-middle-y me-3" style="cursor: pointer;"
                             (click)="togglePassword()" (keydown.enter)="togglePassword()"
                             (keydown.space)="togglePassword()" tabindex="0" role="button">
@@ -127,32 +52,32 @@
                           </span>
                         </div>
 
-                <!-- Verify OTP Button -->
-                <button class="btn btn-primary" type="button" (click)="verifyOtp()">Verify OTP</button>
-              </div>
 
-              <!-- Validation Error -->
-              @if (f['otp'].touched && f['otp'].invalid) {
-              <div class="invalid-feedback d-block mt-1">
-                @if (f['otp'].errors?.['required']) {
-                <div>OTP is required.</div>
-                }
-              </div>
-              }
-            </div>
+                        <button class="btn btn-primary" type="button" (click)="verifyOtp()">Verify OTP</button>
+                      </div>
+
+
+                      @if (f['otp'].touched && f['otp'].invalid) {
+                      <div class="invalid-feedback d-block mt-1">
+                        @if (f['otp'].errors?.['required']) {
+                        <div>OTP is required.</div>
+                        }
+                      </div>
+                      }
+                    </div> -->
 
                     <!-- add new -->
 
                     <div class="input-block">
                       <label for="username" class="form-label">User Name <span class="text-danger">*</span></label>
-                      <input class="form-control" type="text" placeholder="" formControlName="Username" [ngClass]="{
-                'is-invalid': f['Username'].touched && f['Username'].invalid
+                      <input class="form-control" type="text" placeholder="" formControlName="userName" [ngClass]="{
+                'is-invalid': f['userName'].touched && f['userName'].invalid
               }" />
-                      @if (f['Username'].touched && f['Username'].invalid) {
+                      @if (f['userName'].touched && f['userName'].invalid) {
                       <div class="invalid-feedback">
-                        @if (f['Username'].errors && f['Username'].errors['required']) {
+                        @if (f['userName'].errors && f['userName'].errors['required']) {
                         <div>
-                          UserName is Required.
+                          User Name is Required.
                         </div>
                         }
                       </div>
@@ -165,15 +90,15 @@
                     </div>
 
                     <div class="input-block">
-                      <label for="username" class="form-label">Email <span class="text-danger">*</span></label>
-                      <input class="form-control" type="email" placeholder="" formControlName="Username" [ngClass]="{
-                'is-invalid': f['Username'].touched && f['Username'].invalid
+                      <label for="email" class="form-label">Email <span class="text-danger">*</span></label>
+                      <input class="form-control" type="email" placeholder="" formControlName="email" [ngClass]="{
+                'is-invalid': f['email'].touched && f['email'].invalid
               }" />
-                      @if (f['Username'].touched && f['Username'].invalid) {
+                      @if (f['email'].touched && f['email'].invalid) {
                       <div class="invalid-feedback">
-                        @if (f['Username'].errors && f['Username'].errors['required']) {
+                        @if (f['email'].errors && f['email'].errors['required']) {
                         <div>
-                          User mail Is Required.
+                          User Email Is Required.
                         </div>
                         }
                       </div>
@@ -220,8 +145,8 @@
                       <div class="position-relative">
                         <!-- Input -->
                         <input class="form-control pe-5" placeholder="Enter your password"
-                          [type]="show_password ? 'password' : 'text'" formControlName="password" [ngClass]="{
-                   'is-invalid': f['password'].touched && f['password'].invalid}" />
+                          [type]="show_password ? 'password' : 'text'" formControlName="confirmPassword" [ngClass]="{
+                   'is-invalid': f['confirmPassword'].touched && f['confirmPassword'].invalid}" />
                         <!-- Eye Icon (fixed inside input) -->
                         <span class="position-absolute top-50 end-0 translate-middle-y me-3" style="cursor: pointer;"
                           (click)="togglePassword()" (keydown.enter)="togglePassword()"
@@ -240,7 +165,7 @@
                       }
                     </div>
                     <!-- end new add -->
-                    <button class="btn btn-outline-light w-100 btn-size mt-1" type="submit">
+                    <button class="btn btn-outline-light w-100 btn-size mt-1" type="submit" (click)="signup()">
                       Sign Up
                     </button>
                     <div class="login-or">

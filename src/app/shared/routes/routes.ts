@@ -25,6 +25,14 @@ export class routes {
   public static get listingGrid(): string {
     return this.baseUrl + '/listings/listing-grid';
   }
+
+  
+
+  
+
+    public static get brandsProducts(): string {
+    return this.baseUrl + '/listings/brand-products';
+  }
   public static get aboutUs(): string {
     return this.baseUrl + '/pages/about-us';
   }
@@ -63,11 +71,11 @@ export class routes {
   }
 
   public static get B2B(): string {
-    return this.baseUrl + '/pages/B2B';
+    return this.baseUrl + '/pages/register-with-us';
   } 
 
   public static get B2BSection(): string {
-    return this.baseUrl + '/pages/B2B-section';
+    return this.baseUrl + '/pages/sell-on-bellaluna';
   }
 
   public static get beautyBook(): string {
@@ -91,6 +99,9 @@ public static get allbrands(): string {
   }
   public static get privacyPolicy(): string {
     return this.baseUrl + '/pages/privacy-policy';
+  }
+    public static get ReturnCancellation(): string {
+    return this.baseUrl + '/pages/ReturnCancellation';
   }
   public static get maintenance(): string {
     return this.baseUrl + '/pages/maintenance';
@@ -121,6 +132,12 @@ public static get allbrands(): string {
   }
   public static get userWallet(): string {
     return this.user + '/user-wallet';
+  }
+      public static get faquestions(): string {
+    return this.user + '/faquestions';
+  }
+    public static get accountinfo(): string {
+    return this.user + '/accountInfo';
   }
    public static get order(): string {
     return this.user + '/my-orders';
@@ -216,52 +233,5 @@ public static get allbrands(): string {
 
 
 
-    public static get drBlue(): string {
-    return this.baseUrl + '/pages/dr-blue';
-  }
-
-   public static get lalachuu(): string {
-    return this.baseUrl + '/pages/lalachuu';
-  }
-   public static get ones(): string {
-    return this.baseUrl + '/pages/ones';
-  }
-   public static get toas(): string {
-    return this.baseUrl + '/pages/toas';
-  }
-   public static get medicell(): string {
-    return this.baseUrl + '/pages/medicell';
-  }
-   public static get oseque(): string {
-    return this.baseUrl + '/pages/oseque';
-  }
-   public static get glossys(): string {
-    return this.baseUrl + '/pages/glossys';
-  }
-
- public static get v21(): string {
-    return this.baseUrl + '/pages/v21';
-  }
-
-   public static get estilo(): string {
-    return this.baseUrl + '/pages/estilo';
-  }
-
-
-
-    public static get rataplan(): string {
-    return this.baseUrl + '/pages/rataplan';
-  }
-   public static get fabyou(): string {
-    return this.baseUrl + '/pages/fabyou';
-  }
-
- public static get pureskin(): string {
-    return this.baseUrl + '/pages/pureskin';
-  }
-
-   public static get wolgoo(): string {
-    return this.baseUrl + '/pages/wolgoo';
-  }
   
 }

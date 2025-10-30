@@ -18,21 +18,16 @@ const routes: Routes = [
         (m) => m.ListingGridModule
       ),
   },
-  {
-    path: 'listing-list',
-    loadChildren: () =>
-      import('./listing-list/listing-list.module').then(
-        (m) => m.ListingListModule
-      ),
-  },
-  {
+
+   {
     path: 'listing-map',
     loadChildren: () =>
       import('./listing-map/listing-map.module').then(
         (m) => m.ListingMapModule
       ),
   },
-  {
+  
+  { 
     path: 'brand-products',
     loadChildren: () =>
       import('.//brand-products/breand-products.module').then(

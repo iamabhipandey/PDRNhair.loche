@@ -3,10 +3,13 @@ import { CommonModule } from '@angular/common';
 
 import { SharedModule } from 'src/app/shared/shared.module';
 import { ReviewsRoutingModule } from './reviews-routing.module';
+import { WriteReviewComponent } from './write-review/write-review.component';
 
 
 @NgModule({
-  declarations: [],
+  declarations: [
+    WriteReviewComponent
+  ],
   imports: [
     CommonModule,
     ReviewsRoutingModule,

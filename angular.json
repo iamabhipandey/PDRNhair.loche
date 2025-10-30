@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "bellaluna": {
+    "loche-bio": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "bellaluna",
+            "outputPath": "loche-bio",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": ["zone.js"],
@@ -76,10 +76,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "bellaluna:build:production"
+              "buildTarget": "loche-bio:build:production"
             },
             "development": {
-              "buildTarget": "bellaluna:build:development"
+              "buildTarget": "loche-bio:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -87,7 +87,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "buildTarget": "bellaluna:build"
+            "buildTarget": "loche-bio:build"
           }
         },
         "test": {

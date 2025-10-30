@@ -40,7 +40,7 @@
             "total": "$1500",
             "mode": "Stripe",
             "feature":"Self Pickup",
-            "img":"assets/img/cars/car-05.jpg",
+            "img":"",
             "status": "Pending"
           
         },

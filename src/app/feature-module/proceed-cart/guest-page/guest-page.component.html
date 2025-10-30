@@ -10,41 +10,42 @@
                 <!-- View Wishlist -->
                 <!-- </p> -->
             </div>
+              <form class="form-container"  [formGroup]="addForm">
     <div class="modal-body">
-  <form class="form-container">
+
   
     <!-- Address Section -->
     <h2 class="section-title">Address</h2>
 
     <div class="form-group">
 
-    <input type="text" id="pincode" name="pincode" formControlName="pincode" required placeholder=" ">
-       <label for="pincode">Pincode</label>
+    <input type="text" id="pincode" name="pincode" minlength="6" maxlength="6" formControlName="pincode" required placeholder=" ">
+       <label for="pincode">Pincode <span style="color: red;">*</span></label>
                        
     </div>
     <div class="d-flex justify-content-between">
         <div class="w-50 me-2">
              <div class="form-group">
-    <input type="text" id="pincode" name="city" required placeholder=" ">
-       <label for="city">City</label>               
+    <input type="text" id="pincode" name="city" formControlName="city" required  placeholder="city ">
+       <label for="city">City <span style="color: red;">*</span></label>               
     </div>
         </div>
          <div class="w-50">
               <div class="form-group">
-    <input type="text" id="pincode" name="State" required placeholder=" ">
-       <label for="State">State</label>               
+    <input type="text" id="pincode" name="State"  formControlName="state" required  placeholder="state">
+       <label for="State">State <span style="color: red;">*</span></label>               
     </div>
          </div>
     </div>
 
     <div class="form-group">
-      <input type="text" name="houseNumber" placeholder=" " required>
+      <input type="text" name="houseNumber" formControlName="houseNo" placeholder=" " required>
        <label for="houseNumber">House/ Flat/ Office No.</label>
     </div>
 
     <div class="form-group mb-1">
-     <textarea name="areaColony" rows="3" placeholder=" " required></textarea>
-       <label for="areaColony">Road Name/ Area /Colony</label>
+     <textarea name="areaColony" formControlName="address" rows="3" placeholder=" " required></textarea>
+       <label for="areaColony"> <span style="color: red;">*</span>Road Name/ Area /Colony</label>
     </div>
 
     <!-- Default Address Toggle -->
@@ -58,32 +59,33 @@
     <p class="cont-text">We’ll use this information to keep you updated about your delivery</p>
 
     <div class="form-group">
-      <input type="text" name="fullName" placeholder=" " required>
-       <label for="fullName">Name</label>
+      <input type="text" name="fullName" formControlName="contactPerson"  placeholder=" " required>
+       <label for="fullName">Name <span style="color: red;">*</span></label>
     </div>
 
     <div class="form-group">
-      <input type="tel" name="phoneNumber" placeholder=" " pattern="[0-9]{10}" required>
-       <label for="phoneNumber">Phone</label>
+      <input type="tel" name="phoneNumber" maxlength="10" minlength="10" placeholder="+91 XXXXX XXXXX" formControlName="mobileNo"  pattern="[0-9]{10}" required >
+       <label for="phoneNumber">Phone <span style="color: red;">*</span></label>
     </div>
 
     <div class="form-group">
-      <input type="email" name="email" placeholder=" ">
+      <input type="email" name="email" placeholder=" " formControlName="email">
       <label for="email">Email ID (Optional)</label>
     </div>
-  </form>
+
 
 </div>
 
 
             <div class="modal-btn">
                 <div class="">
-                    <a class="btn btn-primary proceed-btn" (click)="placeOrder()">
-                        <p>Ship to this Address</p>
+                    <a class="btn btn-primary proceed-btn" (click)="addAddress()">
+                        <p>Add Address</p>
                         <!-- <span><i class="fa-solid fa-arrow-right"></i></span> -->
                     </a>
                 </div>
             </div>
+              </form>
         </div>
     </div>
 </div>

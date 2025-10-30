@@ -3,7 +3,7 @@
 -----------------------*/
 
 .footer {
-	background: #3e3e3e;
+	background: $__gray__dark;
 	position: $__relative;
 	&::before {
 		content: "";
@@ -74,9 +74,9 @@
 		}
 		.footer-title {
 			position: $__relative;
-			font-size: $__font__size__20;
+			font-size: $__font__size__18;
 			font-weight: $__medium;
-			color: $__white;
+			color: black;   
 			@include margin-padding(0 0 40px, null);
 			&:before {
 				content: "";
@@ -98,17 +98,17 @@
 	.footer-menu {
 		ul {
 			li {
-				@include margin-padding(0 0 15px, null);
+				@include margin-padding(0 0 20px, null);
 				&:last-child {
 					margin-bottom: 0;
 				}
 				a {
-					color: #676767;
+					color: $__gray_light;
 					font-size: $__font__size__14;
 					@include transition(all 0.5s ease-in-out);
 					&:hover {
 						color: $__primarycolor;
-						// padding-left: 10px;
+						padding-left: 10px;
 						@include transition(all 0.5s ease-in-out);
 					}
 				}
@@ -132,15 +132,15 @@
 		.footer-contact-info {
 			.footer-address {
 				@extend %display-flex;
-				margin-bottom: 10px;
+				margin-bottom: 20px;
 				span {
 					margin-right: 20px;
-					width: 35px;
-					height: 35px;
+					width: 50px;
+					height: 50px;
 					background:$__primarycolor;
 					color: $__white;
-					font-size: $__font__size__14;
-					border-radius: 30px;
+					font-size: $__font__size__20;
+					border-radius: 4px;
 					@extend %flex-align-center;
 					flex-shrink: 0;
 				}
@@ -149,7 +149,7 @@
 					a {	
 						font-weight: 400;
 						font-size: $__font__size__14;
-						color: #676767;
+						color: $__gray_light;
 					}
 				}
 			}
@@ -198,8 +198,7 @@
 		
 	}
 	.footer-bottom {
-		// background:$__primarycolor;
-		background:#3e3e3e;
+		background: #212121;
 		position: $__relative;
     	z-index: 99;
 		@include margin-padding(0, 20px 0);
@@ -216,7 +215,7 @@
 				}
 
 				p {
-					color: #676767;	
+					color: $__gray_light;	
 					font-size: $__font__size__14;				
 				}
 			}
@@ -343,9 +342,7 @@
 }
 
 .footer-social-widget {
-	@include margin-padding(10px 0 0, null);
-	display: flex;
-	justify-content: center;
+	@include margin-padding(20px 0 0, null);
 	.nav-social {
 		@extend %display-flex;
 		@extend %jusflex-start;

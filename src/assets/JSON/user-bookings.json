@@ -40,7 +40,7 @@
       "bookedOn": "21 Sep 2023, 04:15 PM",
       "total": "$600",
       "status": "Cancelled",
-      "img": "assets/img/cars/car-05.jpg"
+      "img": ""
     },
     {
       "bookingId": "#1004",
@@ -68,7 +68,7 @@
       "bookedOn": "16 Oct 2023, 12:30 PM",
       "total": "$450",
       "status": "Cancelled",
-      "img": "assets/img/cars/car-05.jpg"
+      "img": ""
     },
     {
       "bookingId": "#1006",

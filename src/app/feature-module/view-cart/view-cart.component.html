@@ -5,20 +5,22 @@
             <div class="modal-header">
                 <div class="head-cart d-flex">
                     <span class="card-hicon" (click)="close()"><i class="fa-solid fa-arrow-left"></i></span>
-                    <h6>Bag</h6>
-                    <p class="count-items">{{cartData.quantity}}items</p>
+                    <h6>Cart </h6>
+                    <p class="count-items">{{cartData.quantity}} items</p>
                 </div>
-                <p class="btn-close close" (click)="wishlist()">
+                <!-- <p class="btn-close close" (click)="wishlist()">
                     View Wishlist
-                </p>
+                </p> -->
             </div>
+
+            @if(cartItems.length>0){
             <div class="modal-body">
-                <div class="get-started-card">
+                <!-- <div class="get-started-card">
                     <p class="mb-2"> Get Started &amp; grab best offers! </p>
                     <a class="btn login-btn"> Login / Register</a>
-                </div>
+                </div> -->
 
-                <div class="booking-header">
+                <!-- <div class="booking-header">
                     <div class="booking-img-wrap">
                         <input type="radio" id="reward" name="reward" value="reward">
                         <label for="reward" class="rewl2"> 1000 Reward Points (₹10)</label>
@@ -26,9 +28,9 @@
                     <div class="book-amount">
                         <p class="apply01">Apply</p>
                     </div>
-                </div>
+                </div> -->
 
-                <div class="product-info">
+                <!-- <div class="product-info">
                     <button data-test-id="product-remove" label="delete" aria-label="delete" class="prodeletsec">
                         <span class="delete-icon">
                             <i class="fa-solid fa-trash-can"></i>
@@ -59,10 +61,7 @@
                             <button aria-label="Select Quantity" label="Select Quantity" class="qunty-1">
                                 <p data-test-id="select-quantity" color="#001325" class="qunty-text">
                                     Quantity : 1</p>
-                                <!-- <span class="css-1aowomc ehes2bo0">
-                                        <img src="https://adn-static1.nykaa.com/media/wysiwyg/Payments/down.svg" alt="Image"
-                                        class="ek8d9s80">
-                                    </span> -->
+                              
                             </button>
                             <div class="propricesec">
                                 <div class="priceoff"><span color="#7692ad" class="css-1230yid e171rb9k3">₹375</span>
@@ -103,10 +102,7 @@
                             <button aria-label="Select Quantity" label="Select Quantity" class="qunty-1">
                                 <p data-test-id="select-quantity" color="#001325" class="qunty-text">
                                     Quantity : 1</p>
-                                <!-- <span class="css-1aowomc ehes2bo0">
-                                        <img src="https://adn-static1.nykaa.com/media/wysiwyg/Payments/down.svg" alt="Image"
-                                        class="ek8d9s80">
-                                    </span> -->
+                               
                             </button>
                             <div class="propricesec">
                                 <div class="priceoff"><span color="#7692ad" class="css-1230yid e171rb9k3">₹225</span>
@@ -115,10 +111,10 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> -->
 
 
-                 <!-- <div *ngIf="cartItems?.length > 0; else noItems"> -->
+               
                      @for(item of cartItems; track item; let i = $index) {
                     <div class="product-info">
                         <button data-test-id="product-remove" label="delete" aria-label="delete" class="prodeletsec">
@@ -126,10 +122,10 @@
                                 <i class="fa-solid fa-trash-can"></i>
                             </span>
                         </button>
-                        <div class="pro-desc">
+                        <div class="pro-desc" (click)="productProfile(item.productId)">
                             <div class="product-pic ">
-                                <img *ngIf="item.imageURL" [src]="item.imageURL" class="img-fluid" alt="product"
-                                    (error)="item.imageURL = 'assets/img/fallback.jpg'" />
+                                <img *ngIf="item.imageUrl" [src]="item.imageUrl" class="img-fluid" alt="product"
+                                    (error)="item.imageURL = ''" />
 
                             </div>
                             <div class="proinfo1">
@@ -138,11 +134,15 @@
                                         <span color="#001325"> {{item.productName}}</span>
                                     </div>
                                     <div class="pro-desc">
+                                        
                                         <div class="css-que1">
-                                            <p color="#001325">{{item.weight}}</p>
+                                            <p color="#001325">{{item.category}} ({{item.subCategory}})</p>
                                         </div>
+                                         <!-- <div class="css-que1">
+                                            <p color="#001325">{{item.subCategory}}</p>
+                                        </div> -->
                                         <div class="css-que2">
-                                            <p color="#001325">{{item.weight}}</p>
+                                            <p color="#001325">Rate:- ₹ {{item.price}}</p>
                                         </div>
                                     </div>
                                 </div>
@@ -156,9 +156,9 @@
 
                                 </button>
                                 <div class="propricesec">
-                                    <div class="priceoff"><span color="#7692ad"
+                                    <!-- <div class="priceoff"><span color="#7692ad"
                                             class="css-1230yid e171rb9k3">₹375</span>
-                                    </div>
+                                    </div> -->
                                     <p color="#001325" class="lastprice">₹ {{item.totalPrice}}</p>
                                 </div>
                             </div>
@@ -166,12 +166,14 @@
                     </div>
                 }
                 
+                    
+                
                 <!-- <ng-template #noItems>
                     <p>No items in cart.</p>
                 </ng-template> -->
 
 
-                <div class="booking-header offer-apply">
+      <div class="booking-header offer-apply" >
                     <div class="booking-img-wrap">
                         <span class="image-offer">
                             <img src="assets/img/icons/3d-discount.png" width="30px" class="img-fluid">
@@ -185,17 +187,22 @@
                         <p class="apply01"><i class="fa-solid fa-chevron-right"></i></p>
                     </div>
                 </div>
+
+              
+
+                 
+
                 <!----------------------------price- section -------------------------------------->
-                <div class="price-sec">
+                <div class="price-sec" *ngIf="cartData">
                     <div class="price-head">
                         <h6>Price Details</h6>
                     </div>
                     <div class="css-details">
                         <div class="css-det01">
-                            <p class="css-dec-2o">Bag MRP (4 items)</p>
+                            <p class="css-dec-2o">Bag MRP ({{cartData.quantity}})</p>
                         </div>
                         <div class="css-det02">
-                            <p class="css-dec-2o dec1os">₹2275</p>
+                            <p class="css-dec-2o dec1os">₹{{cartData.totalAmount}}</p>
                         </div>
                     </div>
                     <div class="css-details">
@@ -203,7 +210,7 @@
                             <p class="css-dec-2o">Bag Discount</p>
                         </div>
                         <div class="css-det02">
-                            <p class="css-dec-2o dec1os">₹114</p>
+                            <p class="css-dec-2o dec1os">₹ 0</p>
                         </div>
                     </div>
                     <div class="css-details">
@@ -211,7 +218,7 @@
                             <p class="css-dec-2o">Discount <i class="fa-solid fa-circle-info"></i></p>
                         </div>
                         <div class="css-det02">
-                            <p class="css-dec-2o dec1os">₹10</p>
+                            <p class="css-dec-2o dec1os">₹  0</p>
                         </div>
                     </div>
                     <div class="css-details">
@@ -229,16 +236,17 @@
                         <h6>₹ {{cartData.totalAmount}}</h6>
                     </div>
                 </div>
-                <div class="price-sec">
+                
+                <div class="price-sec" *ngIf="cartData">
                     <div class="css-last13cb">
                         <p>Redeem to get a discount on your next order</p>
                         <div class="css-last13cb2">
-                            <p>Earn 2151 Reward Points <i class="fa-solid fa-circle-info"></i></p>
+                            <p>Earn up to 2151 Reward Points <i class="fa-solid fa-circle-info"></i></p>
                         </div>
                     </div>
                 </div>
                 <!---------------------------- end price- section -------------------------------------->
-                <div class="row modal-btn">
+                <div class="row modal-btn" >
                     <div class="col-6">
                         <div class="css-amountsec">
                             <p class="tosopr1">₹ {{cartData.totalAmount}}</p>
@@ -254,6 +262,28 @@
                     </div>
                 </div>
             </div>
+        }@else{
+
+            <div class="booking-header offer-apply" >
+                    <div class="booking-img-wrap">
+                        <span class="image-offer">
+                            <img src="assets/img/icons/3d-discount.png" width="30px" class="img-fluid">
+                        </span>
+                        <label for="reward" class="rewl2">
+                            <p class="offer01"></p>
+                            <p class="offer02">No items in your cart yet!</p>
+                        </label>
+                    </div>
+                    <div class="book-amount" (click)="close()">
+                        <p class="apply01" [routerLink]="routes.listingGrid">
+                            Add Items 
+                            <i class="fa-solid fa-chevron-right"></i>
+                        </p>
+                    </div>
+                </div>
+
+        }
+           
         </div>
     </div>
 </div>

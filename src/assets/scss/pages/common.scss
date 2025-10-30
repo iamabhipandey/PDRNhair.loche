@@ -454,14 +454,12 @@
         .page-group {
             .page-item {
                 a {
-                    border: 1px solid $__light__gray;
-                    background: $__white;
+                    border: 1px solid #f7f7f7;
+                    background: #f7f7f7;
                     border-radius: 10px;
-                    padding: 10px 19px;
-                    margin: 0 12px 0 0;
+                    padding: 1px 7px;
+                    margin: 0 3px 0 0;
                     color: $__gray;
-                    width: 38px;
-                    height: 38px;
                     display: $__flex;
                     justify-content: $__center;
                     align-items: $__center;      
@@ -478,6 +476,8 @@
                 .active {
                     background-color: $__dark__blues;
                     color: $__white;
+                    border-radius: 25px;
+                    font-weight: 600;
                     border: 1px solid $__dark__blues;
                 }                  
             }
@@ -495,15 +495,15 @@
 
 .privacy-section {
     position: $__relative;
-    @include margin-padding(null, 80px 0);
+    @include margin-padding(null, 50px 0);
         @include respond-below(custom991) {
             @include margin-padding(null, 40px 0);
         }
     .terms-policy {
         p {
-            @include margin-padding(0 0 38px, null);
+            @include margin-padding(0 0 25px, null);
             @include respond-below(custom991) {
-                @include margin-padding(0 0 28px, null);
+                @include margin-padding(0 0 20px, null);
             }
         }
         ul {
@@ -513,7 +513,7 @@
                 @extend %display-flex-center;
                 span {
                     margin-right: 10px;
-                    color: $__text-warning__light;
+                    color: $__primarycolorsecondry;
                 }
             }
         }
@@ -555,7 +555,6 @@
         @include margin-padding(auto auto 30px, null);
         color: $__grey;
         font-weight: $__medium;
-        max-width: 560px;
     }
 	.btn-maintance {
 		@include rounded(5px);

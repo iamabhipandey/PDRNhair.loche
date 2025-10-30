@@ -4,9 +4,9 @@
 
 .section {
     position: $__relative;
-    @include margin-padding(null, 30px 0);
+    @include margin-padding(null, 25px 0);
     @include respond-below(custom991) {
-        @include margin-padding(null, 20px 0);
+        @include margin-padding(null, 50px 0);
     } 
 }
 .banner-slider {
@@ -207,8 +207,7 @@
     }
 }  
 .section-heading {
-    text-align: center;
-    @include margin-padding(0 0 40px, null); 
+    @include margin-padding(0 0 25px, null); 
         @include respond-below(custom991) {
             @include margin-padding(0 0 30px, null);
         }
@@ -236,12 +235,14 @@
         }
     }    
     p {
-        max-width: 439px;
         margin: auto;
         font-size: $__font__size__18;
         @include respond-below(custom991){
             font-size: $__font__size__16;
         }
+        	@include respond-below(custom767) {
+				font-size: 14px;
+			}
     }
 }
 .services {  
@@ -485,10 +486,17 @@
         border-radius: 10px;
         @include margin-padding(0 0 10px, null);
         img {
+                min-height: 150px;
             border-radius: 10px;
             width: 100%;
             transform: translateZ(0);
             transition: all 2000ms cubic-bezier(0.19, 1, 0.22, 1) 0ms;
+             @include respond-below(custom767) {
+                         min-height: 185px;
+                    }
+                     @include respond-below(custom479) {
+                         min-height: 145px;
+                    }
         }
         .featured-text {
             background: $__white;
@@ -496,7 +504,7 @@
             color: $__black-gray;
             z-index: 9;
             @include margin-padding(null, 1px 6px);
-            @include position(absolute,null, null,2px, 10px);
+            @include position(absolute,null, null,10px, 10px);
             font-size: $__font__size__12;
             @extend %display-flex-center;
             @extend %justify-content-center;
@@ -596,7 +604,6 @@
         }
         .listing-features {
             position: $__relative;
-           
             @include margin-padding(0 0 0px, 0 0 5px);
             .author-img {
                 position: $__absolute;
@@ -614,12 +621,16 @@
             }
             .listing-title {
                 margin-bottom: 5px;
-                font-size: 16px;
+                font-size: 15px;
                 font-weight: $__medium;
                 a {
                     color: $__black-gray;
+                    height: 35px;
                     font-weight: 400;
-                  
+                    display: -webkit-box;
+                    -webkit-box-orient: vertical;
+                    -webkit-line-clamp: 2;
+                    line-clamp: 2;
                     overflow: hidden;
                     @extend %inline-flex;
                     @include respond-below(custom991) {
@@ -687,10 +698,10 @@
             }
         }
         .listing-location-details {
-            // background: $__light__vampire;
+           
             @extend %display-flex-center-between;
-            @include margin-padding(null, 6px);
-            @include margin-padding(0 0 5px, null);
+            @include margin-padding(null,0px 0px 0px 5px);
+            @include margin-padding(0 0 10px, null);
             .listing-price {
                 @include respond-below(custom991) {
                     font-size: $__font__size__13;
@@ -701,25 +712,45 @@
                     font-size: 13px;
                     color: $__success__text;
                     @include respond-below(custom991) {
-                        font-size: $__font__size__12;
+                        font-size: 11px;
                     }
                 }
             }
-            .listing-price {
+             
+           .listing-price {
                 font-size: $__font__size__14;
                 display: flex;
+                width: 100%;
                 align-items: baseline;
+                @include respond-below(custom320) {
+                    display: grid;
+                }
+                .outof-stock {
+                  padding: 12px;
+                   margin-top: 15px;
+                   border-radius: 25px;
+                   font-weight: 500;
+                  background: #fff2f2;
+                  width: 100%;
+                  text-align: center;
+                 }
                 h5{
                     color: black;
-                    font-family: fangsong;
                     font-size: 16px;
                     margin-right: 4px;
+                       @include respond-below(custom767) {
+                    font-size: 13px;
+                }
                 }
                 p{
                     font-size: 13px;
                     text-decoration: line-through;
                     margin-right: 4px;
+                        @include respond-below(custom767) {
+                    font-size: 11px;
                 }
+                }
+                
                 h6 {
                     font-weight: $__bold;
                     font-size: $__font__size__24;
@@ -748,10 +779,10 @@
                 position: $__relative;
                 border-radius: 5px;
                 font-weight: $__medium;
-                font-size: $__font__size__14;
+                font-size: $__font__size__16;
                 color: $__white;
                 text-align: $__center;
-                padding: 7px 10px !important;
+                padding: 7px 10px;
                 width: 100%;
                 @include respond-below(custom991) {
                     font-size: $__font__size__14;
@@ -962,66 +993,50 @@
         }
     }
     .count-group {
-        display: flex;
-    justify-content: center;
-        // position: $__relative;
-        // width: 100%;
-        // display: $__flex;
-        // justify-content: center;
-        // top: 0;
-        // background-image: url(../../img/bg/count-bg.jpg);
-        // background-repeat: no-repeat;
-        // background-position: right;
-        // background-size: cover;
-        // border-radius: 10px;
-        // @include margin-padding(null, 20px);
-        // -webkit-transition: 500ms all ease;
-        // -o-transition: 500ms all ease;
-        // transition: 500ms all ease;
-        // -moz-transition: 500ms all ease;
-        // -ms-transition: 500ms all ease;
-        //     @include respond-below(custom991) {
-        //         @include margin-padding(0 0 15px, 15px);
-        //     }
-        // &:hover {
-        //     top: -10px;
-        //     .count-img {
-        //         background: $__dark__blues;
-        //     } 
-        // }
+        position: $__relative;
+        width: 100%;
+        display: $__flex;
+        top: 0;
+        background-image: url(../../img/bg/count-bg.jpg);
+        background-repeat: no-repeat;
+        background-position: right;
+        background-size: cover;
+        border-radius: 10px;
+        @include margin-padding(null, 20px);
+        -webkit-transition: 500ms all ease;
+        -o-transition: 500ms all ease;
+        transition: 500ms all ease;
+        -moz-transition: 500ms all ease;
+        -ms-transition: 500ms all ease;
+            @include respond-below(custom991) {
+                @include margin-padding(0 0 15px, 15px);
+            }
+        &:hover {
+            top: -10px;
+            .count-img {
+                background: $__dark__blues;
+            } 
+        }
         .count-img {
-            text-align: center;
-            // @include margin-padding(null, 24px);
-            // background: $__goose-gray;
-            // border-radius: 10px;
-            // display: $__flex;
-            // align-items: $__center; 
-            // @include margin-padding(0 20px 0 0, null);
-            // -webkit-transition: 500ms all ease;
-            // -o-transition: 500ms all ease;
-            // transition: 500ms all ease;
-            // -moz-transition: 500ms all ease;
-            // -ms-transition: 500ms all ease;
-            //     @include respond-below(custom991) {
-            //         @include margin-padding(null, 15px);
-            //     }
+            @include margin-padding(null, 24px);
+            background: $__goose-gray;
+            border-radius: 10px;
+            display: $__flex;
+            align-items: $__center; 
+            @include margin-padding(0 20px 0 0, null);
+            -webkit-transition: 500ms all ease;
+            -o-transition: 500ms all ease;
+            transition: 500ms all ease;
+            -moz-transition: 500ms all ease;
+            -ms-transition: 500ms all ease;
+                @include respond-below(custom991) {
+                    @include margin-padding(null, 15px);
+                }
         }        
         .count-content {
-            text-align: center;
-    font-style: italic;
-    border-radius: 8px;
-    color: white;
-    min-width: 160px;
-    padding: 10px;
-    margin: 5px;
-    background: #2f2f2f61;
-    -webkit-backdrop-filter: blur(10px);
-    backdrop-filter: blur(0px);
-    box-shadow: #32325d40 0 30px 60px -12px inset, #0000004d 0 18px 36px -18px inset;
             h4 {
-                // color: $__black-gray;
-                 color: white;
-                font-weight: 800;
+                color: $__black-gray;
+                font-weight: $__bold;
                 @include margin-padding(0, null);
             }
         }

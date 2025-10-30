@@ -1,20 +1,28 @@
-<!-- for tab banners -->
-  <section class="slider-for-ta">
-<div id="carouselExample" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
+<!-- Banner -->
+ <!-- for large screen -->
+<div id="carouselExample" class="carousel slide hide-for-mobile" data-bs-ride="carousel" data-bs-interval="3000">
   <div class="carousel-inner">
-    <div class="carousel-item active">
-      <img src="assets/img/banners/11.jpg" class="d-block w-100" alt="Slide 1">
+    <div class="carousel-item active" (click)="searhProductData('','glossys','','','','','')">
+      <img src="assets/img/banners/8.webp" class="d-block w-100" alt="Slide 1">
     </div>
-    <div class="carousel-item">
-      <img src="assets/img/banners/9.jpg" class="d-block w-100" alt="Slide 6">
+     <div class="carousel-item" (click)="searhProductData('','wolgoo','','','','','')">
+      <img src="assets/img/banners/new1.webp" class="d-block w-100" alt="Slide 6">
     </div>
-    <!-- <div class="carousel-item">
-      <img src="assets/img/banners/7.jpg" class="d-block w-100" alt="Slide 7"> 
-    </div> -->
-    <div class="carousel-item">
-      <img src="assets/img/banners/4.jpg" class="d-block w-100" alt="Slide 2">
+     <div class="carousel-item" (click)="searhProductData('','wolgoo','','','','','')">
+      <img src="assets/img/banners/new3.webp" class="d-block w-100" alt="Slide 7">
     </div>
-
+    <div class="carousel-item" (click)="searhProductData('','fabyou','','','','','')">
+      <img src="assets/img/banners/fabyou (1).webp" class="d-block w-100" alt="Slide 2">
+    </div>
+    <div class="carousel-item" [routerLink]="routes.comingSoon">
+      <img src="assets/img/banners/6.webp" class="d-block w-100" alt="Slide 3">
+    </div>
+    <div class="carousel-item" (click)="searhProductData('','rataplan','','','','','')">
+      <img src="assets/img/banners/rataplan.webp" class="d-block w-100" alt="Slide 4">
+    </div>
+    <div class="carousel-item" (click)="searhProductData('','glossys','','','','','')">
+      <img src="assets/img/banners/3(1).webp" class="d-block w-100" alt="Slide 5">
+    </div>
   </div>
   <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -29,349 +37,1178 @@
       aria-current="true"></button>
     <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="1"></button>
     <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="2"></button>
-    <!-- <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="3"></button> -->
-    <!-- <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="4"></button>
-    <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="5"></button>
-    <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="6"></button> -->
+    <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="3"></button>
+    <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="4"></button>
+     <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="5"></button>
+      <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="6"></button>
   </div>
 </div>
- </section>
- <!-- /for tab banners -->
+<!-- end for large screen -->
 
-
- 
-<div class="menu-section">
-    <div class="container">
-        <div class="row justify-content-center text-center">
-            <div class="col-6 col-md-3 mb-4 menu-item">
-                <i class="fa-solid fa-cloud"></i>
-                <span>ABOUT</span>
-            </div>
-            <div class="col-6 col-md-3 mb-4 menu-item">
-                <i class="fa-solid fa-award"></i>
-                <span>BRAND</span>
-            </div>
-            <div class="col-6 col-md-3 mb-4 menu-item">
-                <i class="fa-solid fa-globe"></i>
-                <span>CHANNEL</span>
-            </div>
-            <div class="col-6 col-md-3 mb-4 menu-item">
-                <i class="fa-solid fa-user-group"></i>
-                <span>CONTACT</span>
-            </div>
-        </div>
+  <!-- for small screen -->
+   <div class="container-fluid">
+<div id="carouselExample" class="carousel slide hide-for-large" data-bs-ride="carousel" data-bs-interval="3000">
+  <div class="carousel-inner">
+    <div class="carousel-item active" (click)="searhProductData('','glossys','','','','','')">
+      <img src="assets/img/banners/banner-mobile/1.jpg" class="d-block w-100" alt="Slide 1">
     </div>
+     <div class="carousel-item" (click)="searhProductData('','wolgoo','','','','','')">
+      <img src="assets/img/banners/banner-mobile/2.jpg" class="d-block w-100" alt="Slide 6">
+    </div>
+     <div class="carousel-item" (click)="searhProductData('','wolgoo','','','','','')">
+      <img src="assets/img/banners/banner-mobile/3.jpg" class="d-block w-100" alt="Slide 7">
+    </div>
+    <div class="carousel-item" (click)="searhProductData('','fabyou','','','','','')">
+      <img src="assets/img/banners/banner-mobile/4.jpg" class="d-block w-100" alt="Slide 2">
+    </div>
+    <div class="carousel-item" [routerLink]="routes.comingSoon">
+      <img src="assets/img/banners/banner-mobile/5.jpg" class="d-block w-100" alt="Slide 3">
+    </div>
+    <div class="carousel-item" (click)="searhProductData('','rataplan','','','','','')">
+      <img src="assets/img/banners/banner-mobile/6.jpg" class="d-block w-100" alt="Slide 4">
+    </div>
+    <div class="carousel-item" (click)="searhProductData('','glossys','','','','','')">
+      <img src="assets/img/banners/banner-mobile/7.jpg" class="d-block w-100" alt="Slide 5">
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="0" class="active"
+      aria-current="true"></button>
+    <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="1"></button>
+    <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="2"></button>
+    <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="3"></button>
+    <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="4"></button>
+     <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="5"></button>
+      <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="6"></button>
+  </div>
 </div>
+   </div>
+<!-- end for small screen -->
 <!-- /Banner -->
 
-  <!-- section 3 -->
-  <div class="hero-section">
-    <div class="container">
-        <div class="row align-items-center">
-        
-            <!-- LEFT CONTENT -->
-            <div class="col-lg-5 mb-4 mb-lg-0">
-                <h1 class="hero-title">
-                    Advanced Hybrid<br>Collagen Stimulator
-                </h1>
-                <button class="hero-btn">
-                    Learn more about Loche Bio
-                </button>
-            </div>
-            
-            <!-- RIGHT IMAGE -->
-            <div class="col-lg-7 text-center">
-                <img src="assets/img/banners/09.jpg" alt="Hero Image" class="hero-image">
-            </div>
-
-        </div>
-    </div>
-</div>
-
-
-<div class="lenisna-section">
-    <div class="container">
-        <div class="row align-items-center">
-
-            <!-- LEFT IMAGES (Zinzap Grid) -->
-            <div class="col-lg-8 mb-5 mb-lg-0">
-                <div class="lenisna-grid">
-                    <img src="assets/img/banners/PDRNelle.jpg" class="grid-img">
-                    <img src="assets/img/banners/section two 3.jpg" class="grid-img">
-                    <img src="assets/img/banners/Loche Tox 200Unit.jpg" class="grid-img">
+<!-- Featured Services -->
+<section class="section features-section top-brand-banners">
+  <div class="container-fluid">
+   <h1 class="glow-text">Glow Up This Season</h1>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="second-slider nav-center">
+          <owl-carousel-o [options]="secondsection">
+            <ng-template carouselSlide>
+              <div class="item" (click)="searhProductData('','Oseque','','','','','')">
+                <div class="offer-sec-two">
+                  <a>
+                    <img src="assets/img/banner-section2/5 (1).webp" class="img-fluid" alt="img" />
+                  </a>
                 </div>
-            </div>
-
-            <!-- RIGHT TEXT -->
-            <div class="col-lg-4 ps-lg-5">
-                <h2 class="lenisna-title">Restore your<br>natural volume</h2>
-                <p class="lenisna-tagline">Fullness, naturally restored.</p>
-                <button class="lenisna-button">Learn More About Loche India</button>
-            </div>
-
+              </div>
+            </ng-template>
+            <ng-template carouselSlide>
+              <div class="item" [routerLink]="routes.comingSoon">
+                <div class="offer-sec-two">
+                  <a>
+                    <img src="assets/img/banner-section2/4 (1).webp" class="img-fluid" alt="img" />
+                  </a>
+                </div>
+              </div>
+            </ng-template>
+            <ng-template carouselSlide>
+              <div class="item" [routerLink]="routes.comingSoon">
+                <div class="offer-sec-two">
+                  <a>
+                    <img src="assets/img/banner-section2/8.webp" class="img-fluid" alt="img" />
+                  </a>
+                </div>
+              </div>
+            </ng-template>
+            <ng-template carouselSlide>
+              <div class="item" [routerLink]="routes.comingSoon">
+                <div class="offer-sec-two">
+                  <a>
+                    <img src="assets/img/banner-section2/9.webp" class="img-fluid" alt="img" />
+                  </a>
+                </div>
+              </div>
+            </ng-template>
+            <ng-template carouselSlide>
+              <div class="item" (click)="searhProductData('','glossys','','','','','')">
+                <div class="offer-sec-two">
+                  <a>
+                    <img src="assets/img/banner-section2/product.- replace1.jpeg" class="img-fluid" alt="img" />
+                  </a>
+                </div>
+              </div>
+            </ng-template>
+            <ng-template carouselSlide>
+              <div class="item" (click)="searhProductData('','glossys','','','','','')">
+                <div class="offer-sec-two">
+                  <a>
+                    <img src="assets/img/banner-section2/product-replace.jpeg" class="img-fluid" alt="img" />
+                  </a>
+                </div>
+              </div>
+            </ng-template>
+          </owl-carousel-o>
         </div>
+      </div>
     </div>
-</div>
+  </div>
+  <div class="feature-bg">
+    <img src="assets/img/bg/destination-bg-01.png" class="img-fluid shape-01" alt="img" />
+    <img src="assets/img/bg/feature-bg.png" class="img-fluid shape-02" alt="img" />
+  </div>
+</section>
+<!-- /Featured Services -->
 
-<!-- end section 3 -->
 
-<!-- <section class="brand-sec">
-  <div class="container mb-5">
-    <section class="new-launches-section my-3">
-      <h2 class="section-title mb-4">Best-selling Brands </h2>
+
+<!-- Deal -->
+<section class="section features-section offers">
+  <div class="container-fluid">
+    <!-- <div class="section-heading heading-three mx-auto deal-head" data-aos="fade-down">
+      <h2>Jaw-Dropping Deals</h2>
+      <p>Ready to save big?</p>
+    </div> -->
+    <div class="sale-banner nav-center" data-aos="fade-down"  [routerLink]="routes.listingGrid">
+      <img src="assets/img/banners/offers-banner1.webp" class="img-fluid">
+    </div>
+    <div class="col-md-12 mt-3">
+      <div class="container-slider nav-center " data-aos="fade-down">
+        <owl-carousel-o [options]="offOwlOptions">
+           <ng-template carouselSlide>
+            <div class="item offer-sec" (click)="searhProductData('','glossys','','','','','')">
+              <div class="listing-item offer-list">
+                <div class="listing-img">
+                  <div class="image-slider">
+                    <div class="slide-images">
+                      <a>
+                        <img src="assets/img/offers/glossys_brand_offer.webp" class="img-fluid" alt="img" />
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </ng-template>
+          <ng-template carouselSlide>
+            <div class="item offer-sec" (click)="searhProductData('','lalachuu','','','','','')">
+              <div class="listing-item offer-list">
+                <div class="listing-img">
+                  <div class="image-slider">
+                    <div class="slide-images">
+                      <a>
+                        <img src="assets/img/offers/lalachuu_brand_offer.webp" class="img-fluid" alt="img" />
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </ng-template>
+            <ng-template carouselSlide>
+            <div class="item offer-sec" (click)="searhProductData('','Oseque','','','','','')">
+              <div class="listing-item offer-list">
+                <div class="listing-img">
+                  <div class="image-slider">
+                    <div class="slide-images">
+                      <a>
+                        <img src="assets/img/offers/brand_offer.webp" class="img-fluid" alt="img" />
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </ng-template>
+             <ng-template carouselSlide>
+            <div class="item offer-sec" (click)="searhProductData('','wolgoo','','','','','')">
+              <div class="listing-item offer-list">
+                <div class="listing-img">
+                  <div class="image-slider">
+                    <div class="slide-images">
+                      <a>
+                        <img src="assets/img/offers/got-goo1.jpeg" class="img-fluid" alt="img" />
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </ng-template>
+           <ng-template carouselSlide>
+            <div class="item offer-sec" (click)="searhProductData('','wolgoo','','','','','')">
+              <div class="listing-item offer-list">
+                <div class="listing-img">
+                  <div class="image-slider">
+                    <div class="slide-images">
+                      <a>
+                        <img src="assets/img/offers/got-goo2.jpeg" class="img-fluid" alt="img" />
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </ng-template>
+          <ng-template carouselSlide>
+            <div class="item offer-sec" [routerLink]="routes.comingSoon">
+              <div class="listing-item offer-list">
+                <div class="listing-img">
+                  <div class="image-slider">
+                    <div class="slide-images">
+                      <a>
+                        <img src="assets/img/offers/81OinZsmWVL._AC_SL1500.jpg" class="img-fluid" alt="img" />
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </ng-template>
+
+             
+          <!-- <ng-template carouselSlide>
+            <div class="item offer-sec" (click)="searhProductData('','pureskin','','','','','')">
+              <div class="listing-item offer-list">
+                <div class="listing-img">
+                  <div class="image-slider">
+                    <div class="slide-images">
+                      <a>
+                        <img src="assets/img/offers/POSTER (1).webp" class="img-fluid" alt="img" />
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </ng-template> -->
+         
+         
+          <ng-template carouselSlide>
+            <div class="item offer-sec" [routerLink]="routes.comingSoon">
+              <div class="listing-item offer-list">
+                <div class="listing-img">
+                  <div class="image-slider">
+                    <div class="slide-images">
+                      <a>
+                        <img src="assets/img/offers/ones_brand_offer_banner_updated.webp" class="img-fluid" alt="img" />
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </ng-template>
+        </owl-carousel-o>
+      </div>
+    </div>
+
+  </div>
+</section>
+<!-- end deal  -->
+
+<!-- Our top brands -->
+<section class="section features-section top-brands">
+  <div class="container">
+    <div class="section-heading heading-three mx-auto deal-head" data-aos="fade-down">
+      <h2>Explore Our Top Brands</h2>
+      <p>A-listers to obsess over</p>
+    </div>
+    <div class="col-md-12 mt-3">
+      <div class="container-slider nav-center " data-aos="fade-down">
+        <owl-carousel-o [options]="ExploreTopBrands" >
+          <ng-template carouselSlide>
+            <div class="item offer-sec" (click)="searhProductData('','glossys','','','','','')">
+              <div class="listing-item offer-list">
+                <div class="listing-brand">
+                  <div class="image-slider">
+                    <div class="slide-images">
+                      <a>
+                        <img src="assets/img/our top brand/7 (2).webp" class="img-fluid" alt="img" />
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </ng-template>
+          <ng-template carouselSlide>
+            <div class="item offer-sec" (click)="searhProductData('','Dr.Blue','','','','','')">
+              <div class="listing-item offer-list">
+                <div class="listing-brand">
+                  <div class="image-slider">
+                    <div class="slide-images">
+                      <a>
+                        <img src="assets/img/our top brand/2 (2).webp" class="img-fluid" alt="img" />
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </ng-template>
+          <ng-template carouselSlide>
+            <div class="item offer-sec" (click)="searhProductData('','Oseque','','','','','')">
+              <div class="listing-item offer-list">
+                <div class="listing-brand">
+                  <div class="image-slider">
+                    <div class="slide-images">
+                      <a>
+                        <img src="assets/img/our top brand/3 (2).webp" class="img-fluid" alt="img" />
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </ng-template>
+          <ng-template carouselSlide>
+            <div class="item offer-sec" (click)="searhProductData('','toas','','','','','')">
+              <div class="listing-item offer-list">
+                <div class="listing-brand">
+                  <div class="image-slider">
+                    <div class="slide-images">
+                      <a>
+                        <img src="assets/img/our top brand/1 (2).webp" class="img-fluid" alt="img" />
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </ng-template>
+          <ng-template carouselSlide>
+            <div class="item offer-sec" (click)="searhProductData('','lalachuu','','','','','')">
+              <div class="listing-item offer-list">
+                <div class="listing-brand">
+                  <div class="image-slider">
+                    <div class="slide-images">
+                      <a>
+                        <img src="assets/img/our top brand/4 (2).webp" class="img-fluid" alt="img" />
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </ng-template>
+          <ng-template carouselSlide>
+            <div class="item offer-sec" (click)="searhProductData('','Oseque','','','','','')">
+              <div class="listing-item offer-list">
+                <div class="listing-brand">
+                  <div class="image-slider">
+                    <div class="slide-images">
+                      <a>
+                        <img src="assets/img/our top brand/5 (3).webp" class="img-fluid" alt="img" />
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </ng-template>
+          <ng-template carouselSlide>
+            <div class="item offer-sec" [routerLink]="routes.comingSoon">
+              <div class="listing-item offer-list">
+                <div class="listing-brand">
+                  <div class="image-slider">
+                    <div class="slide-images">
+                      <a>
+                        <img src="assets/img/our top brand/6 (2).webp" class="img-fluid" alt="img" />
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </ng-template>
+        </owl-carousel-o>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- end Our top Prands  -->
+
+<!-- focus on it -->
+
+<!-- <section class="section features-section focuse-it">
+  <div class="container">
+    <div class="section-brands heading-three mx-auto deal-head" data-aos="fade-down">
+      <h2>Focus On</h2>
+      <p>Todays standout brands</p>
+    </div>
+    <div class="col-md-12 mt-3">
+      <div class="container-slider nav-center " data-aos="fade-down">
+        <owl-carousel-o [options]="TopBrands">
+          <ng-template carouselSlide>
+            <div class="item offer-sec" (click)="searhProductData('','glossys','','','','','')">
+              <div class="listing-item offer-list">
+                <div class="listing-brand">
+                  <div class="image-slider">
+                    <div class="slide-images">
+                      <a>
+                        <img src="assets/img/focus-on brands/default (1).avif" class="img-fluid" alt="img" />
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </ng-template>
+          <ng-template carouselSlide>
+            <div class="item offer-sec" (click)="searhProductData('','glossys','','','','','')">
+              <div class="listing-item offer-list">
+                <div class="listing-brand">
+                  <div class="image-slider">
+                    <div class="slide-images">
+                      <a>
+                        <img src="assets/img/focus-on brands/default (5).avif" class="img-fluid" alt="img" />
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </ng-template>
+          <ng-template carouselSlide>
+            <div class="item offer-sec" (click)="searhProductData('','glossys','','','','','')">
+              <div class="listing-item offer-list">
+                <div class="listing-brand">
+                  <div class="image-slider">
+                    <div class="slide-images">
+                      <a>
+                        <img src="assets/img/focus-on brands/default.avif" class="img-fluid" alt="img" />
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </ng-template>
+        </owl-carousel-o>
+      </div>
+    </div>
+  </div>
+</section> -->
+
+<!-- end focus on it -->
+
+<!-- Brand Slider -->
+
+<section class="section features-section our-product-brand">
+  <div class="container">
+    <div class="brand-sec">
+      <div class="section-heading heading-three" data-aos="fade-down">
+        <h2>Only At Bellaluna</h2>
+        <p>Beauty you won't find anywhere else</p>
+      </div>
       <div class="brand-slider" data-aos="fade-down">
         <owl-carousel-o [options]="BrandsliderOwlOptions">
           <ng-template carouselSlide>
-            <div class="brand-item">
+            <div class="brand-item" (click)="searhProductData('','glossys','','','','','')">
               <img src="assets/img/brand/bellaluna.png" class="img-fluid" alt="brand" />
             </div>
           </ng-template>
           <ng-template carouselSlide>
-            <div class="brand-item">
+            <div class="brand-item" (click)="searhProductData('','Dr.Blue','','','','','')"  >
               <img src="assets/img/brand/bio-ones.png" class="img-fluid" alt="brand" />
             </div>
           </ng-template>
           <ng-template carouselSlide>
-            <div class="brand-item">
+            <div class="brand-item" (click)="searhProductData('','Dr.Blue','','','','','')">
               <img src="assets/img/brand/dr.-blue.png" class="img-fluid" alt="brand" />
             </div>
           </ng-template>
           <ng-template carouselSlide>
-            <div class="brand-item">
+            <div class="brand-item" (click)="searhProductData('','estilo','','','','','')">
               <img src="assets/img/brand/estilo.png" class="img-fluid" alt="brand" />
             </div>
           </ng-template>
           <ng-template carouselSlide>
-            <div class="brand-item">
+            <div class="brand-item" (click)="searhProductData('','glossys','','','','','')">
               <img src="assets/img/brand/glossys.png" class="img-fluid" alt="brand" />
             </div>
           </ng-template>
           <ng-template carouselSlide>
-            <div class="brand-item">
+            <div class="brand-item" (click)="searhProductData('','lalachuu','','','','','')">
               <img src="assets/img/brand/lalachuu.png" class="img-fluid" alt="brand" />
             </div>
           </ng-template>
           <ng-template carouselSlide>
-            <div class="brand-item">
+            <div class="brand-item" (click)="searhProductData('','medicell','','','','','')">
               <img src="assets/img/brand/medicell-bio.png" class="img-fluid" alt="brand" />
             </div>
           </ng-template>
           <ng-template carouselSlide>
-            <div class="brand-item">
+            <div class="brand-item" (click)="searhProductData('','Oseque','','','','','')">
               <img src="assets/img/brand/OSEQUE.png" class="img-fluid" alt="brand" />
             </div>
           </ng-template>
           <ng-template carouselSlide>
-            <div class="brand-item">
+            <div class="brand-item" (click)="searhProductData('','toas','','','','','')">
               <img src="assets/img/brand/TOAS.png" class="img-fluid" alt="brand" />
             </div>
           </ng-template>
           <ng-template carouselSlide>
-            <div class="brand-item">
+            <div class="brand-item" (click)="searhProductData('','v21','','','','','')">
               <img src="assets/img/brand/V21.png" class="img-fluid" alt="brand" />
             </div>
           </ng-template>
         </owl-carousel-o>
       </div>
-    </section>
-
-  </div>
-</section> -->
-<!-- end prands -->
-
-<section class="NewArrival-section our-Stores-product">
-  <div class="container mb-5">
-    <h2 class="text-center section-title mb-5 pt-4 animate__animated animate__fadeInDown"> Loche Bio Products
-      <span>See All Products </span> <i class="fa-solid fa-chevron-right"></i>
-    </h2>
-    <owl-carousel-o [options]="pramotionsec">
-      <ng-container *ngFor="let pramotion of promotionProducts">
-        <ng-template carouselSlide>
-          <div class="product-sec">
-            <div class="listing-item product-list">
-              <div class="listing-img">
-                <a class="product-image">
-                  <img [src]="pramotion.image" class="img-fluid" alt="product" />
-                </a>
-                 <!-- <span class="featured-text">{{pramotion.brandname}}</span> -->
-
-              </div>
-              <div class="listing-content">
-                <div class="listing-features d-flex align-items-end justify-content-between">
-                  <div class="list-rating">
-
-                    <h3 class="listing-title">
-                      <a>{{ pramotion.title }}</a>
-                    </h3>
-
+      <div class="col-md-12 mt-3">
+        <div class="container-slider nav-center " data-aos="fade-down">
+          <owl-carousel-o [options]="TopBrands">
+            <ng-template carouselSlide>
+              <div class="item offer-sec" (click)="searhProductData('','v21','','','','','')">
+                <div class="listing-item offer-list">
+                  <div class="listing-brand">
+                    <div class="image-slider">
+                      <div class="slide-images">
+                        <a>
+                          <img src="assets/img/brand-product/7 (3).webp" class="img-fluid" alt="img" />
+                        </a>
+                      </div>
+                    </div>
                   </div>
                 </div>
-
-                   <!-- <div class="listing-button">
-                  <div class="listing-price">
-                    <h6>₹{{ pramotion.price }}</h6>
+              </div>
+            </ng-template>
+            <ng-template carouselSlide>
+              <div class="item offer-sec" (click)="searhProductData('','toas','','','','','')">
+                <div class="listing-item offer-list">
+                  <div class="listing-brand">
+                    <div class="image-slider">
+                      <div class="slide-images">
+                        <a>
+                          <img src="assets/img/brand-product/5 (4).webp" class="img-fluid" alt="img" />
+                        </a>
+                      </div>
+                    </div>
                   </div>
-                  <div class="d-flex align-items-center">
-                    <a href="javascript:void(0)" class="fav-icon" (click)="toggleClass(2)" (keydown)="toggleClass(2)"
-                      tabindex="1" [ngClass]="{ selected: isClassAdded[2] }">
-                      <i class="feather icon-heart"></i>
-                    </a>
-                    <a class="btn btn-order">Add to Cart</a>
+                </div>
+              </div>
+            </ng-template>
+            <ng-template carouselSlide>
+              <div class="item offer-sec" (click)="searhProductData('','Dr.Blue','','','','','')">
+                <div class="listing-item offer-list">
+                  <div class="listing-brand">
+                    <div class="image-slider">
+                      <div class="slide-images">
+                        <a>
+                          <img src="assets/img/brand-product/4 (3).webp" class="img-fluid" alt="img" />
+                        </a>
+                      </div>
+                    </div>
                   </div>
-                </div> -->
-
+                </div>
               </div>
-            </div>
-          </div>
-        </ng-template>
-      </ng-container>
-    </owl-carousel-o>
-  </div>
-</section>
-<!-- end Pramotion -->
-<!-- <section class="section facts-number">
-  <div class="facts-right">
-    <img src="assets/img/bg/facts-right.png" class="img-fluid" alt="facts right" />
-  </div>
-  <div class="container">
-    <div class="counter-group">
-      <div class="row">
-        <div class="col-lg-3 col-md-6 col-6" data-aos="fade-down">
-          <div class="count-group flex-fill">
-            <div class="customer-count">
-              <div class="count-img">
-                <img src="assets/img/icons/3d-house.png" alt="" />
+            </ng-template>
+            <ng-template carouselSlide>
+              <div class="item offer-sec" (click)="searhProductData('','lalachuu','','','','','')">
+                <div class="listing-item offer-list">
+                  <div class="listing-brand">
+                    <div class="image-slider">
+                      <div class="slide-images">
+                        <a>
+                          <img src="assets/img/brand-product/3 (3).webp" class="img-fluid" alt="img" />
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
-              <div class="count-content">
-                <h4>
-                  <span class="counter-up" [countUp]="200" [options]="{ duration: 10 }">200</span>+
-                </h4>
-
-                <p>Brands</p>
+            </ng-template>
+            <ng-template carouselSlide>
+              <div class="item offer-sec" (click)="searhProductData('','Oseque','','','','','')">
+                <div class="listing-item offer-list">
+                  <div class="listing-brand">
+                    <div class="image-slider">
+                      <div class="slide-images">
+                        <a>
+                          <img src="assets/img/brand-product/2 (3).webp" class="img-fluid" alt="img" />
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
-            </div>
-          </div>
+            </ng-template>
+            <ng-template carouselSlide>
+              <div class="item offer-sec" (click)="searhProductData('','glossys','','','','','')">
+                <div class="listing-item offer-list">
+                  <div class="listing-brand">
+                    <div class="image-slider">
+                      <div class="slide-images">
+                        <a>
+                          <img src="assets/img/brand-product/1 (3).webp" class="img-fluid" alt="img" />
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </ng-template>
+          </owl-carousel-o>
         </div>
-        <div class="col-lg-3 col-md-6 col-6" data-aos="fade-down">
-          <div class="count-group flex-fill">
-            <div class="customer-count">
-              <div class="count-img">
-                <img src="assets/img/icons/products.png" alt="" />
-              </div>
-              <div class="count-content">
-                <h4>
-                  <span class="counter-up" [countUp]="4" [options]="{ duration: 10 }">4</span>K+
-                </h4>
-                <p>Products</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-6 col-6" data-aos="fade-down">
-          <div class="count-group flex-fill">
-            <div class="customer-count ">
-              <div class="count-img">
-                <img src="assets/img/icons/customer-review.png" alt="" />
-              </div>
-              <div class="count-content">
-                <h4>
-                  <span class="counter-up" [countUp]="174" [options]="{ duration: 10 }">24</span>K+
-                </h4>
-                <p>Customers</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-6 col-6" data-aos="fade-down">
-          <div class="count-group flex-fill">
-            <div class="customer-count">
-              <div class="count-img">
-                <img src="assets/img/icons/star-rating.png" alt="" />
-              </div>
-              <div class="count-content">
-                <h4>
-                  <span class="counter-up" [countUp]="200" [options]="{ duration: 10 }">200</span>K+
-                </h4>
-                <p>POSITIVE REVIEWS</p>
-              </div>
-            </div>
-          </div>
+        <div class="view-all-btn text-center aos" data-aos="fade-down">
+          <a [routerLink]="routes.listingGrid" class="btn btn-secondary">View all Products</a>
         </div>
       </div>
     </div>
   </div>
-</section> -->
+</section>
+<!-- /Brand Slider -->
 
-
-
-
-<div class="affiliates-section container">
-    <h2 class="affiliates-title">Empowering Global Synergies</h2>
-
-<div class="affiliates-wrapper container">
-
-  <!-- GLASSMORPHISM -->
-  <div class="affiliate-card glass">
-    <div class="top mt-4">
-      <a href="https://wholesale.stylekorean.com/?utm_source=stylekorean&utm_medium=referral&utm_campaign=stylekorean_gl_bt_pc">
-                   
-      <img src="assets/img/banners/stylekorean_logo.png" class="logo">
-      </a>
-
-      <h4 class="mt-4">Style Korean</h4>
-      <p>Aesthetic Cosmetics Manufacturing</p>
-    
-    </div>
-   
-    <div class="bottom-circle">
-      <img src="assets/img/banners/2148963960.jpg">
+<!-- Letest Beauty Arrivals -->
+<section class="section features-section our-letest-product">
+  <div class="container">
+    <div class="brand-sec">
+      <div class="section-heading heading-three" data-aos="fade-down">
+        <h2>New At Bellaluna</h2>
+        <p>Letest Beauty Arrivals You'll Want To Own</p>
+      </div>
+      <div class="col-md-12 mt-4">
+        <div class="container-slider nav-center " data-aos="fade-down">
+          <owl-carousel-o [options]="ArrivalLetestDroduct">
+           
+            <ng-template carouselSlide>
+              <div class="item offer-sec" (click)="searhProductData('','lalachuu','','','','','')">
+                <div class="listing-item offer-list">
+                  <div class="listing-brand">
+                    <div class="image-slider">
+                      <div class="slide-images">
+                        <a>
+                          <img src="assets/img/Letest-Product/001.webp" class="img-fluid" alt="img" />
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </ng-template>
+            <!-- <ng-template carouselSlide>
+              <div class="item offer-sec" [routerLink]="routes.comingSoon">
+                <div class="listing-item offer-list">
+                  <div class="listing-brand">
+                    <div class="image-slider">
+                      <div class="slide-images">
+                        <a>
+                          <img src="assets/img/Letest-Product/5.webp" class="img-fluid" alt="img" />
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </ng-template> -->
+            <ng-template carouselSlide>
+              <div class="item offer-sec" (click)="searhProductData('','v21','','','','','')">
+                <div class="listing-item offer-list">
+                  <div class="listing-brand">
+                    <div class="image-slider">
+                      <div class="slide-images">
+                        <a>
+                          <img src="assets/img/Letest-Product/16.webp" class="img-fluid" alt="img" />
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </ng-template>
+            <ng-template carouselSlide>
+              <div class="item offer-sec" (click)="searhProductData('','v21','','','','','')">
+                <div class="listing-item offer-list">
+                  <div class="listing-brand">
+                    <div class="image-slider">
+                      <div class="slide-images">
+                        <a>
+                          <img src="assets/img/Letest-Product/15.webp" class="img-fluid" alt="img" />
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </ng-template>
+            <ng-template carouselSlide>
+              <div class="item offer-sec" (click)="searhProductData('','Oseque','','','','','')">
+                <div class="listing-item offer-list">
+                  <div class="listing-brand">
+                    <div class="image-slider">
+                      <div class="slide-images">
+                        <a>
+                          <img src="assets/img/Letest-Product/14.webp" class="img-fluid" alt="img" />
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </ng-template>
+            <ng-template carouselSlide>
+              <div class="item offer-sec" (click)="searhProductData('','Oseque','','','','','')">
+                <div class="listing-item offer-list">
+                  <div class="listing-brand">
+                    <div class="image-slider">
+                      <div class="slide-images">
+                        <a>
+                          <img src="assets/img/Letest-Product/11.webp" class="img-fluid" alt="img" />
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </ng-template>
+            <ng-template carouselSlide>
+              <div class="item offer-sec" (click)="searhProductData('','Oseque','','','','','')">
+                <div class="listing-item offer-list">
+                  <div class="listing-brand">
+                    <div class="image-slider">
+                      <div class="slide-images">
+                        <a>
+                          <img src="assets/img/Letest-Product/10.webp" class="img-fluid" alt="img" />
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </ng-template>
+            <ng-template carouselSlide>
+              <div class="item offer-sec" (click)="searhProductData('','Oseque','','','','','')">
+                <div class="listing-item offer-list">
+                  <div class="listing-brand">
+                    <div class="image-slider">
+                      <div class="slide-images">
+                        <a>
+                          <img src="assets/img/Letest-Product/9.webp" class="img-fluid" alt="img" />
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </ng-template>
+            <ng-template carouselSlide>
+              <div class="item offer-sec" (click)="searhProductData('','lalachuu','','','','','')">
+                <div class="listing-item offer-list">
+                  <div class="listing-brand">
+                    <div class="image-slider">
+                      <div class="slide-images">
+                        <a>
+                          <img src="assets/img/Letest-Product/8.webp" class="img-fluid" alt="img" />
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </ng-template>
+            <ng-template carouselSlide>
+              <div class="item offer-sec" (click)="searhProductData('','glossys','','','','','')">
+                <div class="listing-item offer-list">
+                  <div class="listing-brand">
+                    <div class="image-slider">
+                      <div class="slide-images">
+                        <a>
+                          <img src="assets/img/Letest-Product/7.webp" class="img-fluid" alt="img" />
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </ng-template>
+             <ng-template carouselSlide>
+              <div class="item offer-sec" (click)="searhProductData('','wolgoo','','','','','')">
+                <div class="listing-item offer-list">
+                  <div class="listing-brand">
+                    <div class="image-slider">
+                      <div class="slide-images">
+                        <a>
+                          <img src="assets/img/Letest-Product/new-got-go.jpeg" class="img-fluid" alt="img" />
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </ng-template>
+            <ng-template carouselSlide>
+              <div class="item offer-sec" (click)="searhProductData('','wolgoo','','','','','')">
+                <div class="listing-item offer-list">
+                  <div class="listing-brand">
+                    <div class="image-slider">
+                      <div class="slide-images">
+                        <a>
+                          <img src="assets/img/Letest-Product/new-got-go2.jpeg" class="img-fluid" alt="img" />
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </ng-template>
+             <ng-template carouselSlide>
+              <div class="item offer-sec" (click)="searhProductData('','pureskin','','','','','')">
+                <div class="listing-item offer-list">
+                  <div class="listing-brand">
+                    <div class="image-slider">
+                      <div class="slide-images">
+                        <a>
+                          <img src="assets/img/Letest-Product/cream.webp" class="img-fluid" alt="img" />
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </ng-template>
+             <ng-template carouselSlide>
+              <div class="item offer-sec" (click)="searhProductData('','pureskin','','','','','')">
+                <div class="listing-item offer-list">
+                  <div class="listing-brand">
+                    <div class="image-slider">
+                      <div class="slide-images">
+                        <a>
+                          <img src="assets/img/Letest-Product/toner.webp" class="img-fluid" alt="img" />
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </ng-template>
+          </owl-carousel-o>
+        </div>
+        <div class="view-all-btn text-center aos" data-aos="fade-down">
+          <a [routerLink]="routes.listingGrid" class="btn btn-secondary">View all</a>
+        </div>
+      </div>
     </div>
   </div>
+</section>
+<!-- /end Letest Beauty Arrivals -->
 
-  <!-- GRADIENT -->
-  <div class="affiliate-card gradient">
-    <div class="top">
-      <a href="https://myindia.co.kr/">
-      <img src="assets/img/loche-logo-white-300x300.png" style="width:70px;" class="logo">
-      </a>
-      <h4>myindia.co.kr</h4>
-      <p>CDSCO Certification, <br> Import Agency Services For 
-        Cosmetics Export And Market Entry To India</p>
+
+
+<!-- shadi section -->
+<section class="shadi-letest-product">
+  <div class="shadi-sec">
+    <div class="heading-three shadi-banner" data-aos="fade-down" [routerLink]="routes.listingGrid">
+      <img src="assets/img/banners/website_banner.png" class="img-fluid">
     </div>
-    <div class="bottom-circle">
-      <img src="assets/img/banners/b2bimg.png">
+    <div class="container-fluid pb-3">
+      <div class="container-slider nav-center " data-aos="fade-down">
+        <owl-carousel-o [options]="ShadiLetestproduct">
+          <ng-template carouselSlide>
+            <div class="item offer-sec" (click)="searhProductData('','Dr.Blue','','','','','')">
+              <div class="listing-item offer-list">
+                <div class="listing-brand">
+                  <div class="image-slider">
+                    <div class="slide-images">
+                      <a>
+                        <img src="assets/img/products/16.webp" class="img-fluid" alt="img" />
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="product-items"> Skincare Repair W Serum </div>
+            </div>
+          </ng-template>
+          <ng-template carouselSlide>
+            <div class="item offer-sec" (click)="searhProductData('','Oseque','','','','','')">
+              <div class="listing-item offer-list">
+                <div class="listing-brand">
+                  <div class="image-slider">
+                    <div class="slide-images">
+                      <a>
+                        <img src="assets/img/products/11.webp" class="img-fluid" alt="img" />
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="product-items"> Lacto Enzyme Wash </div>
+            </div>
+          </ng-template>
+          <ng-template carouselSlide>
+            <div class="item offer-sec" (click)="searhProductData('','Oseque','','','','','')">
+              <div class="listing-item offer-list">
+                <div class="listing-brand">
+                  <div class="image-slider">
+                    <div class="slide-images">
+                      <a>
+                        <img src="assets/img/products/8.webp" class="img-fluid" alt="img" />
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="product-items">Oseque Ultra Recovery Facial Cream</div>
+            </div>
+          </ng-template>
+          <ng-template carouselSlide>
+            <div class="item offer-sec" (click)="searhProductData('','Oseque','','','','','')">
+              <div class="listing-item offer-list">
+                <div class="listing-brand">
+                  <div class="image-slider">
+                    <div class="slide-images">
+                      <a>
+                        <img src="assets/img/products/9.webp" class="img-fluid" alt="img" />
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="product-items"> Osechwangto Signature Bar </div>
+            </div>
+          </ng-template>
+          <ng-template carouselSlide>
+            <div class="item offer-sec" (click)="searhProductData('','Oseque','','','','','')">
+              <div class="listing-item offer-list">
+                <div class="listing-brand">
+                  <div class="image-slider">
+                    <div class="slide-images">
+                      <a>
+                        <img src="assets/img/products/12.webp" class="img-fluid" alt="img" />
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="product-items">Pore Soon Sakk Ready Pad</div>
+            </div>
+          </ng-template>
+          <ng-template carouselSlide>
+            <div class="item offer-sec" (click)="searhProductData('','glossys','','','','','')">
+              <div class="listing-item offer-list">
+                <div class="listing-brand">
+                  <div class="image-slider">
+                    <div class="slide-images">
+                      <a>
+                        <img src="assets/img/products/6.webp" class="img-fluid" alt="img" />
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="product-items">Sweet Shower Duo</div>
+            </div>
+          </ng-template>
+          <ng-template carouselSlide>
+            <div class="item offer-sec" (click)="searhProductData('','lalachuu','','','','','')">
+              <div class="listing-item offer-list">
+                <div class="listing-brand">
+                  <div class="image-slider">
+                    <div class="slide-images">
+                      <a>
+                        <img src="assets/img/products/7.webp" class="img-fluid" alt="img" />
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="product-items">Water Fit Suncream</div>
+            </div>
+          </ng-template>
+        </owl-carousel-o>
+      </div>
     </div>
   </div>
+</section>
+<!-- /end shadi section -->
 
-  <!-- NEUMORPHISM -->
-  <div class="affiliate-card neu">
-    <div class="top">
-      <a href="https://bellaluna.in/">
-      <img src="assets/img/HOTPINKI.webp" class="logo">
-      </a>
-      <h4 class="mt-3">Bellaluna</h4>
-      <p>Cosmetics OEM Manufacturing & Production</p>
+
+<!-- discver Your story -->
+
+<section class="section features-section our-Stores-product">
+  <div class="container">
+
+    <div class="brand-sec">
+      <div class="section-heading heading-three" data-aos="fade-down">
+        <h2>Discover Our Stores</h2>
+        <p>Curated by us, Inspired by you</p>
+      </div>
+      <div class="col-md-12 mt-4">
+        <div class="container-slider nav-center " data-aos="fade-down">
+          <owl-carousel-o [options]="ArrivalLetestDroduct">
+            <ng-template carouselSlide>
+              <div class="item offer-sec" (click)="searhProductData('','glossys','','','','','')">
+                <div class="listing-item">
+                  <div class="listing-brand">
+                    <div class="image-slider">
+                      <div class="slide-images">
+                        <a>
+                          <img src="assets/img/our Strores/1 (4).webp" class="img-fluid" alt="img" />
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </ng-template>
+            <ng-template carouselSlide>
+              <div class="item offer-sec" (click)="searhProductData('','glossys','','','','','')">
+                <div class="listing-item ">
+                  <div class="listing-brand">
+                    <div class="image-slider">
+                      <div class="slide-images">
+                        <a>
+                          <img src="assets/img/our Strores/2 (4).webp" class="img-fluid" alt="img" />
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </ng-template>
+            <ng-template carouselSlide>
+              <div class="item offer-sec" (click)="searhProductData('','glossys','','','','','')">
+                <div class="listing-item">
+                  <div class="listing-brand">
+                    <div class="image-slider">
+                      <div class="slide-images">
+                        <a>
+                          <img src="assets/img/our Strores/3 (4).webp" class="img-fluid" alt="img" />
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </ng-template>
+            <ng-template carouselSlide>
+              <div class="item offer-sec" (click)="searhProductData('','glossys','','','','','')">
+                <div class="listing-item ">
+                  <div class="listing-brand">
+                    <div class="image-slider">
+                      <div class="slide-images">
+                        <a>
+                          <img src="assets/img/our Strores/4 (4).webp" class="img-fluid" alt="img" />
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </ng-template>
+          </owl-carousel-o>
+        </div>
+      </div>
     </div>
-    <div class="bottom-circle">
-      <img src="assets/img/header-bg.png">
-    </div>
+
   </div>
 
-  <!-- SPLIT CARD -->
-  <div class="affiliate-card split">
-    <div class="left">
-      <a href="https://loche.in/">
-      <img src="assets/img/Loche-India-Logo-PNG.png" style="width:70px; " class="logo">
-      </a>
-      <h4>Loche Logistics </h4>
-      <p>International Logistics Air, Sea Transport</p>
-    </div>
-    <div class="bottom-circle">
-      <img src="assets/img/banners/transport.png" class="thumb">
+</section>
+<!-- Category  Section -->
+<section class="section category-section">
+  <div class="category-bg">
+    <img src="assets/img/bg/category-bg.png" class="img-fluid shape-01" alt="image" />
+    <img src="assets/img/bg/ban-bg-05.png" class="img-fluid shape-02" alt="image" />
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <!-- Heading title-->
+        <div class="section-heading heading-three" data-aos="fade-down">
+          <h2 class="text-center mb-5">Trending Categories</h2>
+        </div>
+        <!-- /Heading title -->
+
+        <!-- Category List -->
+        <div class="trending-category-slider nav-center" data-aos="fade-down">
+          <owl-carousel-o [options]="Categories">
+            <ng-template carouselSlide>
+               <div class="item" [routerLink]="routes.comingSoon">
+              <!-- <div class="item" (click)="searhProductData('','','','','','','Acne')"> -->
+                <a class="category-wrap category-images">
+                  <img src="assets/img/Trending Categories/acne.webp" class="img-fluid" alt="image" />
+                  <span class="category-text">
+                    <h6>Acne</h6>
+                    <p>88 Products</p>
+                  </span>
+                </a>
+              </div>
+            </ng-template>
+            <ng-template carouselSlide>
+              <div class="item" (click)="searhProductData('Cleanser','','','','','','')">
+                <a class="category-wrap category-images">
+                  <img src="assets/img/Trending Categories/cleanser.webp" class="img-fluid" alt="image" />
+                  <span class="category-text">
+                    <h6>Cleansers</h6>
+                    <p>150 Products</p>
+                  </span>
+                </a>
+              </div>
+            </ng-template>
+            <ng-template carouselSlide>
+              <div class="item" (click)="searhProductData('','','','','Cream','','')">
+                <a class="category-wrap category-images">
+                  <img src="assets/img/Trending Categories/cream.webp" class="img-fluid" alt="image" />
+                  <span class="category-text">
+                    <h6>Cream</h6>
+                    <p>150 Products</p>
+                  </span>
+                </a>
+              </div>
+            </ng-template>
+            <ng-template carouselSlide>
+              <div class="item" [routerLink]="routes.listingGrid">
+                <a class="category-wrap category-images">
+
+                  <img src="assets/img/Trending Categories/scar  and marks.webp" class="img-fluid" alt="image" />
+                  <span class="category-text">
+                    <h6>Scars and Marks</h6>
+                    <p>17 Products</p>
+                  </span>
+
+                </a>
+              </div>
+            </ng-template>
+            <ng-template carouselSlide>
+              <div class="item" (click)="searhProductData('','','','','Serum','','')">
+                <a class="category-wrap category-images">
+                  <img src="assets/img/Trending Categories/serum.webp" class="img-fluid" alt="image" />
+                  <span class="category-text">
+                    <h6>Serum</h6>
+                    <p>191 Products</p>
+                  </span>
+                </a>
+              </div>
+            </ng-template>
+            <ng-template carouselSlide>
+              <div class="item" [routerLink]="routes.listingGrid">
+                <a class="category-wrap category-images">
+                  <img src="assets/img/Trending Categories/skin routien.webp" class="img-fluid" alt="image" />
+                  <span class="category-text">
+                    <h6>Skin Routine</h6>
+                    <p>30 Products</p>
+                  </span>
+                </a>
+              </div>
+            </ng-template>
+          </owl-carousel-o>
+        </div>
+        <!-- /Category List -->
+
+        <div class="view-all-btn text-center aos" data-aos="fade-down">
+          <a [routerLink]="routes.listingGrid" class="btn btn-secondary">View all Categories</a>
+        </div>
+      </div>
     </div>
   </div>
-
-</div>
-</div>
-
-
+</section>
+<!-- /Category  Section -->

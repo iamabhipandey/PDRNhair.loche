@@ -370,7 +370,15 @@
         }
     }
     .blog-pagination {
-        margin-top: 16px;
+    padding-right: 10px;
+    padding-top: 10px;
+    border-top: 1px solid #cdcdcd;
+     @include respond-below(custom767) {
+                margin-bottom: 10px;
+                padding-bottom: 20px;
+                justify-items: center;
+                margin-top: 15px;
+            }
         @include respond-below(custom479) {
             margin-top: 10px;
         }
@@ -382,10 +390,11 @@
                 margin-bottom: 10px;
             }
             a {
-                height: 38px;
                 @extend %flex-align-center;
                 border-radius: 10px;
-                padding: 0 20px;
+                background: #f7f7f7;
+                border: none;
+                padding: 0 5px;
                 color: $__gray;
                 &:focus {
                     outline: 0;
@@ -430,7 +439,7 @@
 .sorting-div {
     .count-search {
         p {
-            font-size: $__font__size__18;
+            font-size: $__font__size__16;
             font-weight: 600;
             color: #3b3a3a;
         }
@@ -704,7 +713,7 @@
             @include margin-padding(0,0);
             .blog-list-head {
                 @extend %justify-content-between;
-                margin-bottom: 20px;
+                margin-bottom: 5px;
                 @include respond-below(custom767) {
                     margin-bottom: 20px;
                     flex-direction: column;                    
@@ -712,9 +721,8 @@
                 }
                 .blog-list-title {
                     overflow: hidden;
-                    h3 {
-                        margin-bottom: 10px;                                                
-                        font-size: $__font__size__20; 
+                    h3 {                                              
+                        font-size: $__font__size__17; 
                         font-weight: $__medium; 
                         white-space: nowrap;
                         overflow: hidden;
@@ -729,31 +737,9 @@
                             } 
                         }
                     }
-                    h6 {
-                        font-size: $__font__size__14;
-                        color: $__gray_light;
-                        font-weight: $__regular;
-                        i {
-                            margin-right: 5px;
-                        }
-                            @include respond-below(custom767) {
-                                margin-bottom: 10px;
-                                font-size: $__font__size__15;
-                            }
-                    }
-                    .km-count {
-                         background: #127384;
-                        border-radius: 5px;
-                        @include margin-padding(null, 1px 5px);
-                        font-size: $__font__size__12;
-                        color: $__white;
-                        display: inline-block;
-                        white-space: nowrap;
-                        img {
-                            margin-right: 5px;
-                            width: auto;
-                        }
-                    }
+
+
+               
                     h5 {
                         margin-bottom: 3px;
                         a {
@@ -797,6 +783,14 @@
                         }
                     }
                 }
+                                    .opentime{
+                    h6 {
+                        font-size: $__font__size__14;
+                        color: $__gray_light;
+                        font-weight: $__regular;
+                     
+                    }
+                    }
                 .blog-list-rate {
                     h6 {
                         font-weight: $__semibold;
@@ -844,7 +838,7 @@
             }
             
             .listing-details-group {
-                @include margin-padding(0 0 20px,0 0 10px);
+                @include margin-padding(0 0 10px,0 0 5px);
                 border-bottom: 1px solid $__light__gooses;
                 ul {
                     display: flex;
@@ -902,13 +896,14 @@
             }
             .listing-button {
                 .btn-order {
-                    background: $__goose-gray;
-                    color: $__white;
+                    background: #ffffff;
+                    border: 1px solid #e80071;
+                    color: #e80071;
                     -webkit-transition: all 0.5s;
                     -moz-transition: all 0.5s;
                     -o-transition: all 0.5s;
                     transition: all 0.5s;
-                    font-size: $__font__size__16;
+                    font-size: $__font__size__12;
                     font-weight: $__medium;
                     padding: 6px 18px;
                     white-space: nowrap;
@@ -1307,7 +1302,7 @@
     color: inherit;
 }
 .map-listing {
-    height: calc(100vh - 0px);
+       position: sticky;
     width: 100%;
     .listing-item {
         width: 350px !important;
@@ -1344,7 +1339,7 @@
     &.grid-list-map {
         display: $__block;
         padding-right: 0px;
-        top: 80px;
+        top: 150px;
         z-index: 9;
     }
 }
@@ -1362,7 +1357,7 @@
         padding: 0;
     }
     .sortby-sec {
-        padding: 0;
+        padding: 15px;
         box-shadow: none;
         margin-bottom: 25px;
     }

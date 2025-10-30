@@ -130,14 +130,16 @@
       </div>
     </div>
 
-    <div class="order-list">
+    <div class="order-list" *ngIf="allOredersData!=''">
       <div class="card">
         <div class="shared-info hide-for-mobil">
-          <div class="shared-sec"><span> Shruti singh shared this order with you.</span>
+          <div class="shared-sec">
+            <!-- <span> Shruti singh shared this order with you.</span> -->
           </div>
         </div>
-        <div class="row">
-          <div class="col-3 col-sm-2" [routerLink]="routes.trackingOrder">
+        <div class="row"  >
+          <!-- <div class="col-3 col-sm-2" [routerLink]="routes.trackingOrder"> -->
+             <div class="col-3 col-sm-2">
             <div class="product-img-sec">
               <div class="product-img-set">
                 <img class="product-img" alt="" src="assets/img/product/product-3(1).avif">
@@ -181,13 +183,13 @@
       </div>
     </div>
 
-    <div class="order-list">
+     <div class="order-list" *ngIf="!allOredersData ||  allOredersData==''">
       <div class="card">
         <div class="row">
           <div class="col-3 col-sm-2">
             <div class="product-img-sec">
               <div class="product-img-set">
-                <img class="product-img" alt="" src="assets/img/product/product-3(1).avif">
+                <!-- <img class="product-img" alt="" src="assets/img/product/product-3(1).avif"> -->
               </div>
             </div>
           </div>
@@ -195,21 +197,22 @@
             <div class="row">
               <div class="col-sm-5">
                 <div class="product-info-sec">
-                  <span class=" product-name">Simple Kind to Skin Refreshing Facewash Mild Face Wash for Sensitive Skin
-                    (150ml)</span>
+                  <span class=" product-name">
+                    <h3>There is no Orders yet.</h3>
+                   </span>
                   <div class=" product-spacific-info">
                     <div class="d-flex hide-for-mobil">
-                      <span class="info-space">Color: </span><span class="set-size">White</span>
+                      <span class="info-space"> </span><span class="set-size"></span>
                     </div>
                   </div>
                 </div>
               </div>
               <div class="col-sm-2 hide-for-mobil">
                 <div class="product-price">
-                  ₹6,439
+                 
                 </div>
               </div>
-              <div class="col-sm-5">
+              <!-- <div class="col-sm-5">
                 <div>
                   <div class="deli-info-sec">
                     <span class="deli-info-date refund-color">Refund Completed</span>
@@ -220,12 +223,12 @@
                     <span class="rating-text">( Rate & Review Product)</span>
                   </div>
                 </div>
-              </div>
+              </div> -->
             </div>
 
           </div>
         </div>
-        <div class="refund-sec">
+        <!-- <div class="refund-sec">
           <div class="refund-heading">
             <span class="refund-heading1 refund-completed">Refund Completed</span>
             <span class="refund-id"> (<span>Refund ID: </span><span>12203254780699205354</span>)</span>
@@ -258,12 +261,12 @@
               </ul>
             </div>
           </div>
-        </div>
+        </div> -->
 
       </div>
     </div>
 
-    <div class="order-list">
+    <!--<div class="order-list">
       <div class="card">
         <div class="row">
           <div class="col-3 col-sm-2">
@@ -295,12 +298,12 @@
                 <div>
                   <div class="deli-info-sec">
                     <span class="deli-info-date Cancel-color">Cancelled on Oct 09, 2024</span>
-                    <!-- <div class="del-info">You returned this order because you did not like the fit. </div> -->
+                    
                   </div>
-                  <!-- <div class="rating">
+                  <div class="rating">
                     <span class="icon"><i class="fa-solid fa-star-half-stroke"></i></span>
                     <span class="rating-text">( Rate & Review Product)</span>
-                  </div> -->
+                  </div>
                 </div>
               </div>
             </div>
@@ -401,7 +404,7 @@
           </div>
         </div>
       </div>
-    </div>
+    </div> -->
 
 
   </div>

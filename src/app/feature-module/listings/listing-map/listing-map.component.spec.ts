@@ -8,10 +8,10 @@ describe('ListingMapComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ListingMapComponent]
+      imports: [ListingMapComponent]
     })
     .compileComponents();
-    
+
     fixture = TestBed.createComponent(ListingMapComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

@@ -1,570 +1,731 @@
-
-
-
-
-
-
-
-
-<!-- Featured Services -->
-<section class="section features-section top-brand-banners">
-  <div class="container-fluid">
-    <div class="row">
-      <div class="col-md-12">
-        <div class="second-slider nav-center">
-          <owl-carousel-o [options]="secondsection">
-            <ng-template carouselSlide>
-              <div class="item">
-                <div class="offer-sec-two">
-                  <a class="sec-one-img">
-                    <img src="assets/img/banner-section2/OSEQUE.webp" class="img-fluid" alt="img" />
-                  </a>
-                </div>
-              </div>
-            </ng-template>
-            <ng-template carouselSlide>
-              <div class="item">
-                <div class="offer-sec-two">
-                  <a class="sec-one-img">
-                    <img src="assets/img/banner-section2/TOAS.webp" class="img-fluid" alt="img" />
-                  </a>
-                </div>
-              </div>
-            </ng-template>
-            <ng-template carouselSlide>
-              <div class="item">
-                <div class="offer-sec-two">
-                  <a class="sec-one-img">
-                    <img src="assets/img/banner-section2/V21.webp" class="img-fluid" alt="img" />
-                  </a>
-                </div>
-              </div>
-            </ng-template>
-            <ng-template carouselSlide>
-              <div class="item">
-                <div class="offer-sec-two">
-                  <a class="sec-one-img">
-                    <img src="assets/img/banner-section2/BIONES.webp" class="img-fluid" alt="img" />
-                  </a>
-                </div>
-              </div>
-            </ng-template>
-            <ng-template carouselSlide>
-              <div class="item">
-                <div class="offer-sec-two">
-                  <a class="sec-one-img">
-                    <img src="assets/img/banner-section2/DR.BLUE 2.webp" class="img-fluid" alt="img" />
-                  </a>
-                </div>
-              </div>
-            </ng-template>
-            <ng-template carouselSlide>
-              <div class="item">
-                <div class="offer-sec-two">
-                  <a>
-                    <img src="assets/img/banner-section2/DR.BLUE.webp" class="img-fluid" alt="img" />
-                  </a>
-                </div>
-              </div>
-            </ng-template>
-            <ng-template carouselSlide>
-              <div class="item">
-                <div class="offer-sec-two">
-                  <a>
-                    <img src="assets/img/banner-section2/GLOSSYS (2).webp" class="img-fluid" alt="img" />
-                  </a>
-                </div>
-              </div>
-            </ng-template>
-            <ng-template carouselSlide>
-              <div class="item">
-                <div class="offer-sec-two">
-                  <a>
-                    <img src="assets/img/banner-section2/GLOSSYS.webp" class="img-fluid" alt="img" />
-                  </a>
-                </div>
-              </div>
-            </ng-template>
-            <ng-template carouselSlide>
-              <div class="item">
-                <div class="offer-sec-two">
-                  <a>
-                    <img src="assets/img/banner-section2/LALACHUU.webp" class="img-fluid" alt="img" />
-                  </a>
-                </div>
-              </div>
-            </ng-template>
-          </owl-carousel-o>
-        </div>
-      </div>
+<!-- Breadscrumb Section -->
+<div class="head-nav-tital">
+  <div class="breadcrumb-bar big-screen-hide">
+    <div class="container mt-3 pb-2">
+      <h2 class="breadcrumb-title"><span>{{getAllProductData.length}}</span> Products Found</h2>
     </div>
   </div>
-  <div class="feature-bg">
-    <img src="assets/img/bg/destination-bg-01.png" class="img-fluid shape-01" alt="img" />
-    <img src="assets/img/bg/feature-bg.png" class="img-fluid shape-02" alt="img" />
-  </div>
-</section>
-<!-- /Featured Services -->
-<!-- brands -->
-<section class="brand-sec">
-  <div class="container-fluid mb-5">
-    <section class="new-launches-section text-center mb-3">
-      <h2 class="section-title">Global Brands <span class="count">(28)</span></h2>
-      <!-- <button class="btn-gradient mt-3">See All New Launches</button> -->
-    </section>
-    <div class="brands-grid">
-      <div class="brand-card" *ngFor="let brand of brands">
-        <a [routerLink]="brand.link">
-          <img [src]="brand.logo" [alt]="brand.name" class="img-fluid" />
-          <!-- <p>{{ brand.name }}</p> -->
-        </a>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- end brands -->
-<!-- about us  -->
-<!-- about -->
+</div>
+<!-- /Breadscrumb Section -->
 
-<!-- why us  -->
-<section class="brand-sec why-us-container container-fluid">
-  <!-- <div class="floating-shapes">
-            <div class="shape shape-1"></div>
-            <div class="shape shape-2"></div>
-        </div> -->
-  <div class="container-fluid">
-    <div class="section-header">
-      <h2 class="section-title">Why Choose Us</h2>
-      <p class="section-subtitle">We combine innovation with excellence to deliver unmatched services that drive your
-        success forward</p>
-    </div>
-
-    <div class="features-grid">
-      <div class="feature-card">
-        <div class="feature-icon">
-          <i class="fas fa-clock"></i>
-        </div>
-        <h3 class="feature-title">24/7 Access</h3>
-        <p class="feature-desc">Real-time inventory updates and order tracking anytime, anywhere with our cutting-edge
-          platform.</p>
-      </div>
-
-      <div class="feature-card">
-        <div class="feature-icon">
-          <i class="fas fa-globe-americas"></i>
-        </div>
-        <h3 class="feature-title">Global Network</h3>
-        <p class="feature-desc">500+ distribution channels across 60+ countries ensuring seamless worldwide delivery.
-        </p>
-      </div>
-
-      <div class="feature-card">
-        <div class="feature-icon">
-          <i class="fas fa-rocket"></i>
-        </div>
-        <h3 class="feature-title">Growth Partners</h3>
-        <p class="feature-desc">Strategic partnerships with top influencers and brands to accelerate your business
-          growth.</p>
-      </div>
-
-      <div class="feature-card">
-        <div class="feature-icon">
-          <i class="fas fa-language"></i>
-        </div>
-        <h3 class="feature-title">Multilingual Support</h3>
-        <p class="feature-desc">Communicate effortlessly in 9 languages with our dedicated international team.</p>
-        <div class="language-badges">
-          <span class="language-badge">Korean</span>
-          <span class="language-badge">English</span>
-          <span class="language-badge">Hindi</span>
-          <!-- <span class="language-badge">Chinese</span>
-                    <span class="language-badge">Arabic</span>
-                    <span class="language-badge">Spanish</span> -->
-        </div>
-      </div>
-    </div>
-  </div>
-
-
-</section>
-<!-- end why us -->
-
-<!-- Wholesele process -->
-<section class="brand-sec wholesale-section container-fluid py-5">
-  <div class="container-fluid">
-    <h2 class="text-center section-title mb-5 animate__animated animate__fadeInDown">
-      Wholesale Processing
-    </h2>
-
-    <div class="row g-4">
-      <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-3" *ngFor="let step of steps; let i = index">
-        <div class="process-box animate__animated animate__fadeInUp" [ngClass]="'animate__delay-' + (i + 1) + 's'">
-         
-          <h5>{{ step.title }}</h5>
-          <p>{{ step.description }}</p>
-           <div class="icon-wrap">
-            <div class="process-icon">
-              <img  [src]="step.image" alt="Icon" class="step-img">
+<!-- Sort By -->
+<div class="sort-section  mobile-view-hide">
+  <div class="container">
+    <div class="sortby-sec">
+      <div class="sorting-div">
+        <div class="justy-containt">
+          <div class="nav-text-first">
+            <div class="count-search">
+              <p>Displaying Total <span> {{getAllProductData.length}} </span>   <span> Bellaluna's Product</span></p>
             </div>
           </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- Wholesale Process -->
-
-<!-- new arrivel -->
-<section class="brand-sec NewArrival-section our-product-brand">
-  <div class="container-fluid">
-    <h2 class="text-center section-title mb-5 pt-4 animate__animated animate__fadeInDown"> New Arrival </h2>
-    <owl-carousel-o [options]="NewArrival">
-      <ng-container *ngFor="let Newarrival of newArrivalProducts">
-        <ng-template carouselSlide>
-          <div class="product-sec">
-            <div class="listing-item product-list">
-              <div class="listing-img">
-                <a class="product-image">
-                  <img [src]="Newarrival.image" class="img-fluid" alt="product" />
-                </a>
-                <!-- <div class="fav-item justify-content-end">
-                  <a href="javascript:void(0)" class="fav-icon">
-                    <i class="feather icon-heart"></i>
-                  </a>
-                </div> -->
-                <span class="featured-text">{{Newarrival.brandname}}</span>
-
-              </div>
-              <div class="listing-content">
-                <div class="listing-features d-flex align-items-end justify-content-between">
-                  <div class="list-rating">
-
-                    <h3 class="listing-title">
-                      <a>{{ Newarrival.title }}</a>
-                    </h3>
-                    <div class="list-rating">
-                      <i class="fas fa-star filled"></i>
-                      <i class="fas fa-star filled"></i>
-                      <i class="fas fa-star filled"></i>
-                      <i class="fas fa-star filled"></i>
-                      <i class="fas fa-star"></i>
-                      <span>(4.0) 150 Reviews</span>
+          <div class="nav-text-second">
+            <div class="product-filter-group">
+              <div class="sortbyset">
+                <ul>
+                  <li>
+                    <div class="sidebar-section ">
+                      <button class="reset-filter" title="Reset Filter"><i class="fa-solid fa-filter-circle-xmark"></i>
+                        Reset Filter
+                      </button>
                     </div>
-                  </div>
-                </div>
-                <!-- <div class="listing-location-details">
-                  <div class="listing-price">
-                    <h5>₹{{ Newarrival.price }}</h5>
-                    <p *ngIf="Newarrival.oldPrice">{{ Newarrival.oldPrice }}</p>
-                    <span *ngIf="Newarrival.discount">₹{{ Newarrival.discount }}%</span>
-                  </div>
-                </div>
-                <div class="listing-button">
-                  <a   class="btn btn-order"><span><i
-                        class="fa-solid fa-bag-shopping"></i></span>Add to Cart</a>
-                </div> -->
-                <div class="listing-location-details">
-                  <div class="listing-price">
-                    <h5 title="Login To See Wholesale Price">Wholesale Price <i
-                        class="fa-solid fa-circle-exclamation"></i></h5>
-                    <!-- <p *ngIf="Newarrival.oldPrice">{{ Newarrival.oldPrice }}</p>
-                    <span *ngIf="Newarrival.discount">₹{{ Newarrival.discount }}%</span> -->
-                  </div>
-                </div>
+                  </li>
+                  <li>
+                    <!-- <span class="sortbytitle">Sort By </span> -->
+                    <div class="sorting-select select-two">
+                      <mat-select [(ngModel)]="selectedValue2" (selectionChange)="onSortChange($event.value)"
+                        [ngModelOptions]="{ standalone: true }" class="form-control select customcolor"
+                        placeholder="Products">
 
-                <div class="listing-button">
-                  <div class="listing-price">
-                    <h6>₹{{ Newarrival.price }}</h6>
-                  </div>
-                  <div class="d-flex align-items-center">
-                    <a href="javascript:void(0)" class="fav-icon" (click)="toggleClass(2)" (keydown)="toggleClass(2)"
-                      tabindex="1" [ngClass]="{ selected: isClassAdded[2] }">
-                      <i class="feather icon-heart"></i>
-                    </a>
-                    <a class="btn btn-order">Add to Cart</a>
-                  </div>
-                </div>
-
-              </div>
-            </div>
-          </div>
-        </ng-template>
-      </ng-container>
-    </owl-carousel-o>
-    <!-- <div class="view-all-btn mb-5 mt-4 pb-3 text-center aos" data-aos="fade-down">
-    
-      <a [routerLink]="routes.listingGrid" class="btn btn-secondary">View All Products</a>
-    </div> -->
-  </div>
-</section>
-<!-- end new arrival -->
-
-<!-- Pramotion -->
-<section class="brand-sec NewArrival-section our-Stores-product">
-  <div class="container-fluid">
-    <h2 class="text-center section-title mb-5 pt-5 animate__animated animate__fadeInDown"> Promotion </h2>
-    <owl-carousel-o [options]="pramotionsec">
-      <ng-container *ngFor="let pramotion of promotionProducts">
-        <ng-template carouselSlide>
-          <div class="product-sec">
-            <div class="listing-item product-list">
-              <div class="listing-img">
-                <a class="product-image">
-                  <img [src]="pramotion.image" class="img-fluid" alt="product" />
-                </a>
-                <!-- <div class="fav-item justify-content-end">
-                  <a href="javascript:void(0)" class="fav-icon">
-                    <i class="feather icon-heart"></i>
-                  </a>
-                </div> -->
-                  <span class="featured-text">{{pramotion.brandname}}</span>
-
-              </div>
-              <div class="listing-content">
-                <div class="listing-features d-flex align-items-end justify-content-between">
-                  <div class="list-rating">
-
-                    <h3 class="listing-title">
-                      <a>{{ pramotion.title }}</a>
-                    </h3>
-                    <div class="list-rating">
-                      <i class="fas fa-star filled"></i>
-                      <i class="fas fa-star filled"></i>
-                      <i class="fas fa-star filled"></i>
-                      <i class="fas fa-star filled"></i>
-                      <i class="fas fa-star"></i>
-                      <span>(4.0) 150 Reviews</span>
+                        <mat-option *ngFor="let data of selectedList2" [value]="data.value">
+                          {{ data.value }}
+                        </mat-option>
+                      </mat-select>
                     </div>
-                  </div>
-                </div>
-                <!-- <div class="listing-location-details">
-                  <div class="listing-price">
-                    <h5>₹{{ pramotion.price }}</h5>
-                    <p *ngIf="pramotion.oldPrice">{{ pramotion.oldPrice }}</p>
-                    <span *ngIf="pramotion.discount">₹{{ pramotion.discount }}%</span>
-                  </div>
-                </div>
-                <div class="listing-button">
-                  <a class="btn btn-order"><span><i class="fa-solid fa-bag-shopping"></i></span>Add to Cart</a>
-                </div> -->
-                  <div class="listing-location-details">
-                  <div class="listing-price">
-                    <h5 title="Login To See Wholesale Price">Wholesale Price <i
-                        class="fa-solid fa-circle-exclamation"></i></h5>
-                    <!-- <p *ngIf="Newarrival.oldPrice">{{ Newarrival.oldPrice }}</p>
-                    <span *ngIf="Newarrival.discount">₹{{ Newarrival.discount }}%</span> -->
-                  </div>
-                </div>
-
-
- <div class="listing-button">
-                  <div class="listing-price">
-                    <h6>₹{{ pramotion.price }}</h6>
-                  </div>
-                  <div class="d-flex align-items-center">
-                    <a href="javascript:void(0)" class="fav-icon" (click)="toggleClass(2)" (keydown)="toggleClass(2)"
-                      tabindex="1" [ngClass]="{ selected: isClassAdded[2] }">
-                      <i class="feather icon-heart"></i>
-                    </a>
-                    <a class="btn btn-order">Add to Cart</a>
-                  </div>
-                </div>
-
-
+                  </li>
+                </ul>
               </div>
             </div>
           </div>
-        </ng-template>
-      </ng-container>
-    </owl-carousel-o>
-    <!-- <div class="view-all-btn pb-3 text-center aos" data-aos="fade-down">
-      <a [routerLink]="routes.listingGrid" class="btn btn-secondary">View Second page</a>
-    </div> -->
-  </div>
-</section>
-<!-- end Pramotion -->
-
-<!-- most seller product -->
-<section class="brand-sec premium-section py-5">
-  <!-- <div class="container bordered-box px-4"> -->
-    <div class="container-fluid px-4">
-    <!-- <div class="premius-head"> -->
-       <div class="text-center section-title mb-5 animate__animated animate__fadeInDown">
-      <span class="section-title">
-        <span class="lightning-icon">⚡</span> Most Loved Premium Products
-      </span>
+        </div>
+      </div>
     </div>
-
-    <owl-carousel-o [options]="TopBrands">
-      <ng-container *ngFor="let product of mostLovedProducts">
-        <ng-template carouselSlide>
-          <div class="product-sec">
-            <div class="listing-item  product-list">
-              <div class="listing-img">
-                <a class="product-image-container">
-                  <img [src]="product.image" class="img-fluid" alt="product" />
-                </a>
-                <!-- <div class="fav-item justify-content-end">
-                  <a href="javascript:void(0)" class="fav-icon">
-                    <i class="feather icon-heart"></i>
-                  </a>
-                </div> -->
-                 <span class="featured-text">{{product.brandname}}</span>
-
-              </div>
-              <div class="listing-content">
-                <div class="listing-features d-flex align-items-end justify-content-between">
-                  <div class="list-rating">
-
-                    <h3 class="listing-title">
-                      <a>{{ product.title }}</a>
-                    </h3>
-                    <div class="list-rating">
-                      <i class="fas fa-star filled"></i>
-                      <i class="fas fa-star filled"></i>
-                      <i class="fas fa-star filled"></i>
-                      <i class="fas fa-star filled"></i>
-                      <i class="fas fa-star"></i>
-                      <span>(4.0) 150 Reviews</span>
-                    </div>
-                  </div>
-                </div>
-                <!-- <div class="listing-location-details">
-                  <div class="listing-price">
-                    <h5>₹{{ product.price }}</h5>
-                    <p *ngIf="product.oldPrice">{{ product.oldPrice }}</p>
-                    <span *ngIf="product.discount">₹{{ product.discount }}%</span>
-                  </div>
-                </div>
-                <div class="listing-button">
-                  <a href="javascript:void(0)" class="fav-icon" (click)="toggleClass(4)" (keydown)="toggleClass(4)"
-                    tabindex="1" [ngClass]="{ selected: isClassAdded[4] }">
-                    <i class="feather icon-heart"></i>
-                  </a>
-                  <a class="btn btn-order"><span><i class="fa-solid fa-bag-shopping"></i></span>Add to Cart</a>
-                </div> -->
-  <div class="listing-location-details">
-                  <div class="listing-price">
-                    <h5 title="Login To See Wholesale Price">Wholesale Price <i
-                        class="fa-solid fa-circle-exclamation"></i></h5>
-                    <!-- <p *ngIf="Newarrival.oldPrice">{{ Newarrival.oldPrice }}</p>
-                    <span *ngIf="Newarrival.discount">₹{{ Newarrival.discount }}%</span> -->
-                  </div>
-                </div>
-
-                 <div class="listing-button">
-                  <div class="listing-price">
-                    <h6>₹{{ product.price }}</h6>
-                  </div>
-                  <div class="d-flex align-items-center">
-                    <a href="javascript:void(0)" class="fav-icon" (click)="toggleClass(2)" (keydown)="toggleClass(2)"
-                      tabindex="1" [ngClass]="{ selected: isClassAdded[2] }">
-                      <i class="feather icon-heart"></i>
-                    </a>
-                    <a class="btn btn-order">Add to Cart</a>
-                  </div>
-                </div>
-
-              </div>
-            </div>
-          </div>
-        </ng-template>
-      </ng-container>
-    </owl-carousel-o>
   </div>
-</section>
-<!-- end most selling product -->
+</div>
+<!-- /Sort By -->
 
-<!-- Category  Section -->
-<!-- <section class="section category-section">
-  <div class="category-bg">
-    <img src="assets/img/bg/category-bg.png" class="img-fluid shape-01" alt="image" />
-    <img src="assets/img/bg/ban-bg-05.png" class="img-fluid shape-02" alt="image" />
+<!------------- filter for mobile-------------------->
+<div class="big-screen-hide">
+  <div class="button-group">
+    <label class="button-option">
+      <input type="checkbox" name="deal" value="Price-Deals">
+      <div class="button-label">
+        <img src="assets/img/filter-img/best-price.png" alt="Price-Deals">
+        <span class="mobile-filter-name">Price Deals</span>
+      </div>
+    </label>
+    <label class="button-option">
+      <input type="checkbox" name="deal" value="Luxe">
+      <div class="button-label">
+        <img src="assets/img/filter-img/luxe1.png" alt="Luxe">
+        <span class="mobile-filter-name">Luxe</span>
+      </div>
+    </label>
+    <label class="button-option">
+      <input type="checkbox" name="deal" value="On-Offer">
+      <div class="button-label">
+        <img src="assets/img/filter-img/on-offers.png" alt="On-Offer">
+        <span class="mobile-filter-name">On Offer</span>
+      </div>
+    </label>
+    <label class="button-option">
+      <input type="checkbox" name="deal" value="Top-Rated">
+      <div class="button-label">
+        <img src="assets/img/filter-img/top-rated.png" alt="Top-Rated">
+        <span class="mobile-filter-name">Top Rated</span>
+      </div>
+    </label>
+    <label class="button-option">
+      <input type="checkbox" name="deal" value="New">
+      <div class="button-label">
+        <img src="assets/img/filter-img/new-arrivals.png" alt="New">
+        <span class="mobile-filter-name">New</span>
+      </div>
+    </label>
+    <label class="button-option">
+      <input type="checkbox" name="deal" value="Bestseller">
+      <div class="button-label">
+        <img src="assets/img/filter-img/best-seller.png" alt="Bestseller">
+        <span class="mobile-filter-name">Bestseller</span>
+      </div>
+    </label>
   </div>
+</div>
+<!-------------end filter for mobile-------------------->
+
+
+<section class="section sidebar-section pt-0 mt-4">
   <div class="container">
     <div class="row">
-      <div class="col-md-12">
-        <div class="section-heading heading-three" data-aos="fade-down">
-          <h2>Shop By Categories</h2>
-        </div>
-        <div class="trending-category-slider nav-center" data-aos="fade-down">
-          <owl-carousel-o [options]="categorysec">
-            <ng-template carouselSlide>
-              <div class="item">
-                <a class="category-wrap category-images">
-                  <img src="assets/img/Trending Categories/acne.webp" class="img-fluid" alt="image" />
-                  <span class="category-text">
-                    <h6>Acne</h6>
-                    <p>88 Products</p>
-                  </span>
-                </a>
-              </div>
-            </ng-template>
-            <ng-template carouselSlide>
-              <div class="item">
-                <a class="category-wrap category-images">
-                  <img src="assets/img/Trending Categories/cleanser.webp" class="img-fluid" alt="image" />
-                  <span class="category-text">
-                    <h6>Cleansers</h6>
-                    <p>150 Products</p>
-                  </span>
-                </a>
-              </div>
-            </ng-template>
-            <ng-template carouselSlide>
-              <div class="item">
-                <a class="category-wrap category-images">
-                  <img src="assets/img/Trending Categories/cream.webp" class="img-fluid" alt="image" />
-                  <span class="category-text">
-                    <h6>Cream</h6>
-                    <p>150 Products</p>
-                  </span>
-                </a>
-              </div>
-            </ng-template>
-            <ng-template carouselSlide>
-              <div class="item">
-                <a class="category-wrap category-images">
+      <!-- sidebar -->
+     <div class="col-md-4 col-lg-3 col-12 theiaStickySidebar mobile-view-hide">
+        <div class="stickybar">
+          <form action="#" autocomplete="off" class="sidebar-form">
+            <div class="accord-list">
+              <div class="accordion" id="accordionMain9">
+                <div class="card-header-new" id="headingFour">
+                  <h6 class="filter-title">
+                    <a href="javascript:void(0);" class="w-100 collapsed" data-bs-toggle="collapse"
+                      data-bs-target="#collapseFour" aria-expanded="true" aria-controls="collapseFour">
+                      Price
+                      <span class="float-end"><i class="fa-solid fa-chevron-down"></i></span>
+                    </a>
+                  </h6>
+                </div>
+                <div id="collapseFour" class="collapse" aria-labelledby="headingFour"
+                  data-bs-parent="#accordionExample4">
+                  <div class="card-body-chat">
+                    <div class="filter-range">
+                      <input type="range" [min]="minPrice" [max]="maxPrice" [step]="100" [(ngModel)]="selectedMax"
+                        (input)="onPriceChange($event)" class="price-slider" />
 
-                  <img src="assets/img/Trending Categories/scar  and marks.webp" class="img-fluid" alt="image" />
-                  <span class="category-text">
-                    <h6>Scars and Marks</h6>
-                    <p>17 Products</p>
-                  </span>
+                      <div class="price-value">Max Price: ₹{{ selectedMax }}</div>
+                    </div>
+                  </div>
 
-                </a>
+                </div>
+
               </div>
-            </ng-template>
-            <ng-template carouselSlide>
-              <div class="item">
-                <a class="category-wrap category-images">
-                  <img src="assets/img/Trending Categories/serum.webp" class="img-fluid" alt="image" />
-                  <span class="category-text">
-                    <h6>Serume</h6>
-                    <p>191 Products</p>
-                  </span>
-                </a>
+
+              <div class="accordion" id="accordionMain2">
+                <div class="card-header-new" id="headingTwo">
+                  <h6 class="filter-title">
+                    <a href="javascript:void(0);" class="w-100 collapsed" data-bs-toggle="collapse"
+                      data-bs-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+                      Product Type
+                      <span class="float-end"><i class="fa-solid fa-chevron-down"></i></span>
+                    </a>
+                  </h6>
+                </div>
+                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample2">
+                  <div class="card-body-chat">
+                    <div id="checkBoxes2">
+                      <div class="selectBox-cont">
+                        <label class="custom_check w-100">
+                          <input type="checkbox" name="Serum" (change)="onCategoryChange($event, 'Serum')" />
+                          <span class="checkmark"></span> Serum
+                        </label>
+                        <label class="custom_check w-100">
+                          <input type="checkbox" name="Cream" (change)="onCategoryChange($event, 'Cream')" />
+                          <span class="checkmark"></span> Cream
+                        </label>
+                        <label class="custom_check w-100">
+                          <input type="checkbox" name="Gel" (change)="onCategoryChange($event, 'Gel')" />
+                          <span class="checkmark"></span> Gel
+                        </label>
+                         <label class="custom_check w-100">
+                          <input type="checkbox" name="Soap" (change)="onCategoryChange($event, 'Soap')" />
+                          <span class="checkmark"></span> Soap
+                        </label>
+                        <label class="custom_check w-100">
+                          <input type="checkbox" name="Mask" (change)="onCategoryChange($event, 'Mask')" />
+                          <span class="checkmark"></span> Mask
+                        </label>
+                        <!-- View All -->
+                        <div class="view-content">
+                          <div class="viewall-One">
+                            <label class="custom_check w-100">
+                              <input type="checkbox" name="Foam"
+                                (change)="onCategoryChange($event, 'Foam')" />
+                              <span class="checkmark"></span> Foam
+                            </label>
+                            <label class="custom_check w-100">
+                              <input type="checkbox" name="Powder" (change)="onCategoryChange($event, 'Powder')" />
+                              <span class="checkmark"></span> Powder
+                            </label>
+                            <label class="custom_check w-100">
+                              <input type="checkbox" name="PeelPads" (change)="onCategoryChange($event, 'Peel Pads')" />
+                              <span class="checkmark"></span> Peel Pads
+                            </label>
+                          </div>
+                        </div>
+                        <!-- /View All -->
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
-            </ng-template>
-            <ng-template carouselSlide>
-              <div class="item">
-                <a class="category-wrap category-images">
-                  <img src="assets/img/Trending Categories/skin routien.webp" class="img-fluid" alt="image" />
-                  <span class="category-text">
-                    <h6>Skin Routine</h6>
-                    <p>30 Products</p>
-                  </span>
-                </a>
+              <div class="accordion" id="accordionMain04">
+                <div class="card-header-new" id="headingfuel">
+                  <h6 class="filter-title">
+                    <a href="javascript:void(0);" class="w-100 collapsed" data-bs-toggle="collapse"
+                      data-bs-target="#collapsefuel" aria-expanded="true" aria-controls="collapsefuel">
+                      Concern
+                      <span class="float-end"><i class="fa-solid fa-chevron-down"></i></span>
+                    </a>
+                  </h6>
+                </div>
+                <div id="collapsefuel" class="collapse" aria-labelledby="headingfuel"
+                  data-bs-parent="#accordionExample2">
+                  <div class="card-body-chat">
+                    <div id="checkBoxes2">
+                      <div class="selectBox-cont">
+                        <label class="custom_check w-100">
+                          <input type="checkbox" name="Hydration" (change)="onConcernChange($event, 'Hydration')" />
+                          <span class="checkmark"></span> Hydration 24
+                        </label>
+                        <label class="custom_check w-100">
+                          <input type="checkbox" name="DarkSpots" (change)="onConcernChange($event, 'Dark Spots')"/>
+                          <span class="checkmark"></span> Dark Spots/Pigmantations
+                        </label>
+                        <label class="custom_check w-100">
+                          <input type="checkbox" name="Anti-Aging" (change)="onConcernChange($event, 'Anti-Aging')"/>
+                          <span class="checkmark"></span> Anti-Aging
+                        </label>
+                        <label class="custom_check w-100">
+                          <input type="checkbox" name="PoreCare" (change)="onConcernChange($event, ' Pore Care')"/>
+                          <span class="checkmark"></span> Pore Care
+                        </label>
+
+                        <label class="custom_check w-100">
+                          <input type="checkbox" name="FineLines" (change)="onConcernChange($event, 'Fine Lines')" />
+                          <span class="checkmark"></span> Fine Lines & Wrinkles
+                        </label>
+                        <label class="custom_check w-100">
+                          <input type="checkbox" name="Dryness" (change)="onConcernChange($event, 'Dryness')"/>
+                          <span class="checkmark"></span> Dryness
+                        </label>
+                        <label class="custom_check w-100">
+                          <input type="checkbox" name="OilControl" (change)="onConcernChange($event, 'Oil Control')"/>
+                          <span class="checkmark"></span> Oil Control
+                        </label>
+                        <label class="custom_check w-100">
+                          <input type="checkbox" name="SunProtection" (change)="onConcernChange($event, 'Sun Protection')"/>
+                          <span class="checkmark"></span> Sun Protection
+                        </label>
+                        <label class="custom_check w-100">
+                          <input type="checkbox" name="UnevenSkinTone" (change)="onConcernChange($event, 'Uneven Skin Tone')"/>
+                          <span class="checkmark"></span> Uneven Skin Tone
+                        </label>
+                        <label class="custom_check w-100">
+                          <input type="checkbox" name="HairFall" (change)="onConcernChange($event, 'Hair Fall')"/>
+                          <span class="checkmark"></span> Hair Fall & Thinning
+                        </label>
+                        <label class="custom_check w-100">
+                          <input type="checkbox" name="Blackheads" (change)="onConcernChange($event, 'Blackheads')"/>
+                          <span class="checkmark"></span> Blackheads
+                        </label>
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
-            </ng-template>
-          </owl-carousel-o>
+              <div class="accordion" id="accordionMain5">
+                <div class="card-header-new" id="headingmileage">
+                  <h6 class="filter-title">
+                    <a href="javascript:void(0);" class="w-100 collapsed" data-bs-toggle="collapse"
+                      data-bs-target="#collapsemileage" aria-expanded="true" aria-controls="collapsemileage">
+                      Skin Type
+                      <span class="float-end"><i class="fa-solid fa-chevron-down"></i></span>
+                    </a>
+                  </h6>
+                </div>
+                <div id="collapsemileage" class="collapse" aria-labelledby="headingmileage"
+                  data-bs-parent="#accordionExample2">
+                  <div class="card-body-chat">
+                    <div class="fuel-list">
+                      <ul>
+                        <li>
+                          <div class="input-selection">
+                            <input type="radio" name="mileage" id="all" checked="true" (change)="onSkintypeChange($event, 'Hydration')" />
+                            <label for="all">All</label>
+                          </div>
+                        </li>
+                        <li>
+                          <div class="input-selection">
+                            <input type="radio" name="mileage" id="Normal" checked=""   (change)="onSkintypeChange($event, 'Oily')"/>
+                            <label for="Normal">Oily</label>
+                          </div>
+                        </li>
+                        <li>
+                          <div class="input-selection">
+                            <input type="radio" name="mileage" id="limited" checked=""  (change)="onSkintypeChange($event, 'Sensitive')"/>
+                            <label for="limited">Sensitive</label>
+                          </div>
+                        </li>
+                        <li>
+                          <div class="input-selection">
+                            <input type="radio" name="mileage" id="Combination" checked=""  (change)="onSkintypeChange($event, 'Combination')"/>
+                            <label for="Combination">Combination</label>
+                          </div>
+                        </li>
+                        <li>
+                          <div class="input-selection">
+                            <input type="radio" name="mileage" id="Normals" checked=""  (change)="onSkintypeChange($event, 'Normal')" />
+                            <label for="Normals">Normal</label>
+                          </div>
+                        </li>
+                        <li>
+                          <div class="input-selection">
+                            <input type="radio" name="mileage" id="Dry" checked=""  (change)="onSkintypeChange($event, 'Dry')" />
+                            <label for="Dry">Dry</label>
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="accordion" id="accordionMain6">
+                <div class="card-header-new" id="headingrental">
+                  <h6 class="filter-title">
+                    <a href="javascript:void(0);" class="w-100 collapsed" data-bs-toggle="collapse"
+                      data-bs-target="#collapserental" aria-expanded="true" aria-controls="collapserental">
+                      Preference
+                      <span class="float-end"><i class="fa-solid fa-chevron-down"></i></span>
+                    </a>
+                  </h6>
+                </div>
+                <div id="collapserental" class="collapse" aria-labelledby="headingrental"
+                  data-bs-parent="#accordionExample2">
+                  <div class="card-body-chat">
+                    <div id="checkBoxes2">
+                      <div class="selectBox-cont">
+                        <label class="custom_check w-100">
+                          <input type="checkbox" name="username"  (change)="onPreferenceChange($event, 'Paraben Free')" />
+                          <span class="checkmark"></span> Paraben Free
+                        </label>
+                        <label class="custom_check w-100">
+                          <input type="checkbox" name="username" (change)="onPreferenceChange($event, 'Vegan')" />
+                          <span class="checkmark"></span> Vegan
+                        </label>
+                        <label class="custom_check w-100">
+                          <input type="checkbox" name="username" (change)="onPreferenceChange($event, 'Sulphate Free')" />
+                          <span class="checkmark"></span> Sulphate Free
+                        </label>
+                        <label class="custom_check w-100">
+                          <input type="checkbox" name="username" (change)="onPreferenceChange($event, 'Organic')" />
+                          <span class="checkmark"></span> Organic
+                        </label>
+                        <label class="custom_check w-100">
+                          <input type="checkbox" name="username" (change)="onPreferenceChange($event, 'Chemical Free')" />
+                          <span class="checkmark"></span> Chemical Free
+                        </label>
+                        <label class="custom_check w-100">
+                          <input type="checkbox" name="username" (change)="onPreferenceChange($event, 'Fragrance-Free')" />
+                          <span class="checkmark"></span> Fragrance-Free
+                        </label>
+                        <label class="custom_check w-100">
+                          <input type="checkbox" name="username" (change)="onPreferenceChange($event, 'Dermacosmetic')" />
+                          <span class="checkmark"></span> Dermacosmetic
+
+                        </label>
+                        <label class="custom_check w-100">
+                          <input type="checkbox" name="username" (change)="onPreferenceChange($event, 'Mineral Oil-Free')" />
+                          <span class="checkmark"></span> Mineral Oil-Free
+                        </label>
+                        <label class="custom_check w-100">
+                          <input type="checkbox" name="username" (change)="onPreferenceChange($event, 'Cruelty-Free')" />
+                          <span class="checkmark"></span> Cruelty-Free
+                        </label>
+                        <label class="custom_check w-100">
+                          <input type="checkbox" name="username" (change)="onPreferenceChange($event, 'Natural')" />
+                          <span class="checkmark"></span> Natural
+                        </label>
+                        <label class="custom_check w-100">
+                          <input type="checkbox" name="username" (change)="onPreferenceChange($event, 'Herbal')" />
+                          <span class="checkmark"></span> Herbal
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+
+              <div class="accordion" id="accordionMain8">
+                <div class="card-header-new" id="headingThree">
+                  <h6 class="filter-title">
+                    <a href="javascript:void(0);" class="w-100 collapsed" data-bs-toggle="collapse"
+                      data-bs-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
+                      Formulation
+                      <span class="float-end"><i class="fa-solid fa-chevron-down"></i></span>
+                    </a>
+                  </h6>
+                </div>
+                <div id="collapseThree" class="collapse" aria-labelledby="headingThree"
+                  data-bs-parent="#accordionExample3">
+                  <div class="card-body-chat">
+                    <div id="checkBoxes3">
+                      <div class="selectBox-cont">
+                        <label class="custom_check w-100">
+                          <input type="checkbox" name="bystatus" (change)="onFormulationChange($event, 'Liquid')" />
+                          <span class="checkmark"></span> Liquid
+                        </label>
+                        <label class="custom_check w-100">
+                          <input type="checkbox" name="bystatus" (change)="onFormulationChange($event, 'Gel')"   />
+                          <span class="checkmark"></span> Gel
+                        </label>
+                        <label class="custom_check w-100">
+                          <input type="checkbox" name="bystatus" (change)="onFormulationChange($event, 'Cream')" />
+                          <span class="checkmark"></span> Cream
+                        </label>
+                        <label class="custom_check w-100">
+                          <input type="checkbox" name="bystatus" (change)="onFormulationChange($event, 'Foam')" />
+                          <span class="checkmark"></span> Foam
+                        </label>
+                        <label class="custom_check w-100">
+                          <input type="checkbox" name="bystatus" (change)="onFormulationChange($event, 'Water-Based')" />
+                          <span class="checkmark"></span> Water-Based
+                        </label>
+                        <label class="custom_check w-100">
+                          <input type="checkbox" name="bystatus" (change)="onFormulationChange($event, 'Oil-Based')" />
+                          <span class="checkmark"></span> Oil-based
+                        </label>
+                        <label class="custom_check w-100">
+                          <input type="checkbox" name="bystatus" (change)="onFormulationChange($event, 'Balm')" />
+                          <span class="checkmark"></span> Balm
+                        </label>
+                        <label class="custom_check w-100">
+                          <input type="checkbox" name="bystatus" (change)="onFormulationChange($event, 'Powder')" />
+                          <span class="checkmark"></span> Powder
+                        </label>
+                        <label class="custom_check w-100">
+                          <input type="checkbox" name="bystatus" (change)="onFormulationChange($event, 'Spray')" />
+                          <span class="checkmark"></span> Spray
+                        </label>
+                        <label class="custom_check w-100">
+                          <input type="checkbox" name="bystatus" (change)="onFormulationChange($event, 'Mist')" />
+                          <span class="checkmark"></span> Mist
+                        </label>
+                        <label class="custom_check w-100">
+                          <input type="checkbox" name="bystatus" (change)="onFormulationChange($event, 'Stick')" />
+                          <span class="checkmark"></span> Stick
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="accordion" id="accordionMain4">
+                <div class="card-header-new" id="headingtransmiss">
+                  <h6 class="filter-title">
+                    <a href="javascript:void(0);" class="w-100 collapsed" data-bs-toggle="collapse"
+                      data-bs-target="#collapsetransmission" aria-expanded="true" aria-controls="collapsetransmission">
+                      Ingredient
+                      <span class="float-end"><i class="fa-solid fa-chevron-down"></i></span>
+                    </a>
+                  </h6>
+                </div>
+                <div id="collapsetransmission" class="collapse" aria-labelledby="headingtransmiss"
+                  data-bs-parent="#accordionExample2">
+                  <div class="card-body-chat">
+                    <div id="checkBoxes3">
+                      <div class="selectBox-cont">
+                        <label class="custom_check w-100">
+                          <input type="checkbox" name="bystatus" (change)="onIngredientChange($event, 'Vitamin C')" />
+                          <span class="checkmark"></span> Vitamin C
+                        </label>
+                        <label class="custom_check w-100">
+                          <input type="checkbox" name="bystatus" (change)="onIngredientChange($event, 'Aloe Vera')" />
+                          <span class="checkmark"></span> Aloe Vera
+                        </label>
+                        <label class="custom_check w-100">
+                          <input type="checkbox" name="bystatus" (change)="onIngredientChange($event, 'Neem')" />
+                          <span class="checkmark"></span> Neem
+                        </label>
+                        <label class="custom_check w-100">
+                          <input type="checkbox" name="bystatus" (change)="onIngredientChange($event, 'Vitamin E')" />
+                          <span class="checkmark"></span> Vitamin E
+                        </label>
+                        <label class="custom_check w-100">
+                          <input type="checkbox" name="bystatus" (change)="onIngredientChange($event, 'Tea Tree')" />
+                          <span class="checkmark"></span> Tea Tree
+                        </label>
+                        <label class="custom_check w-100">
+                          <input type="checkbox" name="bystatus" (change)="onIngredientChange($event, 'Salicylic Acid')" />
+                          <span class="checkmark"></span> Salicylic Acid
+                        </label>
+                        <label class="custom_check w-100">
+                          <input type="checkbox" name="bystatus" (change)="onIngredientChange($event, 'Turmeric')" />
+                          <span class="checkmark"></span> Turmeric
+                        </label>
+                        <label class="custom_check w-100">
+                          <input type="checkbox" name="bystatus" (change)="onIngredientChange($event, 'Niacinamide')" />
+                          <span class="checkmark"></span> Niacinamide
+                        </label>
+                        <label class="custom_check w-100">
+                          <input type="checkbox" name="bystatus" (change)="onIngredientChange($event, 'Hyaluronic Acid')" />
+                          <span class="checkmark"></span> Hyaluronic Acid
+                        </label>
+                        <label class="custom_check w-100">
+                          <input type="checkbox" name="bystatus" (change)="onIngredientChange($event, 'Charcoal')" />
+                          <span class="checkmark"></span> Charcoal
+                        </label>
+                        <label class="custom_check w-100">
+                          <input type="checkbox" name="bystatus" (change)="onIngredientChange($event, 'Honey')" />
+                          <span class="checkmark"></span> Honey
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="accordion" id="accordionMain10">
+                <div class="card-header-new" id="headingFive">
+                  <h6 class="filter-title">
+                    <a href="javascript:void(0);" class="w-100 collapsed" data-bs-toggle="collapse"
+                      data-bs-target="#collapseFive" aria-expanded="true" aria-controls="collapseFive">
+                      Benefits
+                      <span class="float-end"><i class="fa-solid fa-chevron-down"></i></span>
+                    </a>
+                  </h6>
+                </div>
+                <div id="collapseFive" class="collapse" aria-labelledby="headingFive"
+                  data-bs-parent="#accordionExample5">
+                  <div class="card-body-chat">
+                    <div id="checkBoxes4">
+                      <div class="selectBox-cont">
+                        <label class="custom_check w-100">
+                          <input type="checkbox" name="bystatus" (change)="onConcernChange($event, 'Brightening')" />
+                          <span class="checkmark"></span> Brightening
+                        </label>
+                        <label class="custom_check w-100">
+                          <input type="checkbox" name="bystatus" (change)="onConcernChange($event, 'Hydrating')" />
+                          <span class="checkmark"></span> Hydrating
+                        </label>
+                        <label class="custom_check w-100">
+                          <input type="checkbox" name="bystatus" (change)="onConcernChange($event, 'Moisturising')" />
+                          <span class="checkmark"></span> Moisturising
+                        </label>
+                        <label class="custom_check w-100">
+                          <input type="checkbox" name="bystatus" (change)="onConcernChange($event, 'Nourishing')" />
+                          <span class="checkmark"></span> Nourishing
+                        </label>
+                        <label class="custom_check w-100">
+                          <input type="checkbox" name="bystatus" (change)="onConcernChange($event, 'Fairness')" />
+                          <span class="checkmark"></span> Fairness
+                        </label>
+                        <label class="custom_check w-100">
+                          <input type="checkbox" name="bystatus" (change)="onConcernChange($event, 'Light Weight')" />
+                          <span class="checkmark"></span> Light Weight
+                        </label>
+                        <label class="custom_check w-100">
+                          <input type="checkbox" name="bystatus" (change)="onConcernChange($event, 'Calming')" />
+                          <span class="checkmark"></span> Calming
+                        </label>
+                        <label class="custom_check w-100">
+                          <input type="checkbox" name="bystatus" (change)="onConcernChange($event, 'Long Lasting')" />
+                          <span class="checkmark"></span> Long Lasting
+                        </label>
+                        <label class="custom_check w-100">
+                          <input type="checkbox" name="bystatus" (change)="onConcernChange($event, 'Cooling')" />
+                          <span class="checkmark"></span> Cooling
+                        </label>
+                        <label class="custom_check w-100">
+                          <input type="checkbox" name="bystatus" (change)="onConcernChange($event, 'Anti Ageing')" />
+                          <span class="checkmark"></span> Anti Ageing
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="accordion" id="accordionMain11">
+                <div class="card-header-new" id="headingSix">
+                  <h6 class="filter-title">
+                    <a href="javascript:void(0);" class="w-100 collapsed" data-bs-toggle="collapse"
+                      data-bs-target="#collapseSix" aria-expanded="true" aria-controls="collapseSix">
+                      Conscious
+                      <span class="float-end"><i class="fa-solid fa-chevron-down"></i></span>
+                    </a>
+                  </h6>
+                </div>
+                <div id="collapseSix" class="collapse" aria-labelledby="headingSix" data-bs-parent="#accordionExample6">
+                  <div class="card-body-chat">
+                    <div id="checkBoxes5">
+                      <div class="selectBox-cont">
+                        <label class="custom_check w-100">
+                          <input type="checkbox" name="category" (change)="onCategoryChange($event, 'Cruelty-Free')" />
+                          <span class="checkmark"></span> Cruelty-Free
+                        </label>
+                        <label class="custom_check w-100">
+                          <input type="checkbox" name="category" (change)="onCategoryChange($event, 'Clean')" />
+                          <span class="checkmark"></span> Clean
+                        </label>
+                        <label class="custom_check w-100">
+                          <input type="checkbox" name="category" (change)="onCategoryChange($event, 'Vegan')" />
+                          <span class="checkmark"></span> Vegan
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+      <!-- /sidebar -->
+      <div class=" col-md-8 col-lg-9">
+        <div class="row product-b">
+          <div class="col-xl-4 col-lg-4 col-md-6 col-sm-4 col-6"
+            *ngFor="let item of getAllProductData; trackBy: trackByProductId">
+            <div class="listing-item">
+              <div class="listing-img">
+                <div class="img-slider" (click)="productProfile(item.id)">
+                  <div class="slide-images">
+                    <a class="product-image">
+                      <img *ngIf="!item?.productImageId" src="assets/img/product/glossys1.webp" class="img-fluid"
+                        alt="product" />
+                      <img *ngIf="item?.productImageId" [src]="item?.productImageId" class="img-fluid" alt="product" />
+
+                    </a>
+                  </div>
+                </div>
+                <div class="fav-item justify-content-end">
+                  <a class="fav-icon" (click)="toggleClass(item.id)" tabindex="1"
+                    [ngClass]="{ selected: isClassAdded[item.id] }">
+                    <i class="feather icon-heart" (click)="addToWishlist(item.id)"></i>
+                  </a>
+
+                </div>
+              </div>
+              <div class="listing-content">
+                <div class="listing-features d-flex align-items-end justify-content-between"
+                  (click)="productProfile(item.id)">
+                  <div class="list-rating">
+                    <h3 class="listing-title">
+                      <a>{{item.productName}}</a>
+                    </h3>
+                    <div class="listing-concern">
+                      Use For:- {{item.concern}}
+                    </div>
+                    <div class="list-rating">
+                      <i class="fas fa-star filled me-1"></i>
+                      <i class="fas fa-star filled me-1"></i>
+                      <i class="fas fa-star filled me-1"></i>
+                      <i class="fas fa-star filled me-1"></i>
+                      <i class="fas fa-star"></i>
+                      <span>{{item.reviews}} (4.0) | 138 Reviews</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="listing-location-details" (click)="productProfile(item.id)">
+                  <div class="listing-price">
+                    @if(item.mrp){
+                    <h5> ₹ {{ item?.mrp }}</h5>
+                    }@else{
+                   <div class="outof-stock" style="color: red;"> OUT OF STOCK</div>
+                    }
+
+                    <!-- <p>{{item.mrp}}</p><span>({{item.offPrice}}% Off)</span> -->
+                  </div>
+                </div>
+
+ @if(item.mrp){
+                <div class="listing-button" (click)="addToCart(item.id)">
+                  <a class="btn btn-order">
+                    <span><i class="fa-solid fa-bag-shopping"></i></span>
+                    Add To Cart
+                  </a>
+                </div>
+              }
+              </div>
+              <!-- <div class="feature-text">
+                <span class="bg-warning">Top Rated</span>
+              </div> -->
+            </div>
+          </div>
         </div>
 
-        <div class="view-all-btn text-center aos" data-aos="fade-down">
-            <a [routerLink]="routes.listingGrid" class="btn btn-secondary">View all Categories</a>
+
+
+        <!-- use as loader -->
+
+        <div class="row product-b" *ngIf="getAllProductData.length === 0">
+          <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+            <ngx-spinner bdColor="rgba(0, 0, 0, 0.8)" size="medium" color="#fff" type="ball-scale-multiple">
+            </ngx-spinner>
+          </div>
         </div>
+        <!--end use as loader -->
+
+
+
+        <!--Pagination-->
+        <div class="blog-pagination">
+          <nav>
+            <ul class="pagination page-item justify-content-end">
+              <li class="previtem">
+                <a class="page-link"><i class="fa-solid fa-angles-left"></i></a>
+              </li>
+              <li class="justify-content-center pagination-center">
+                <div class="page-group">
+                  <ul>
+                    <li class="page-item">
+                      <a class="active page-link" href="javascript:void(0);">1</a>
+                    </li>
+                    <li class="page-item">
+                      <a class=" page-link" href="javascript:void(0);">2 <span
+                          class="visually-hidden">(current)</span></a>
+                    </li>
+                    <li class="page-item">
+                      <a class="page-link" href="javascript:void(0);">3</a>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li class="nextlink">
+                <a class="page-link"><i class="fa-solid fa-angles-right"></i></a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+        <!--/Pagination-->
       </div>
     </div>
   </div>
-</section> -->
-<!-- /Category  Section -->
+</section>

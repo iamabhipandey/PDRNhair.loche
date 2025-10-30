@@ -691,9 +691,10 @@
     .review-header {
         position: relative;
         @extend %display-flex-between;
-        border-bottom: 1px solid $__light__gooses;
-        padding: 0 0 15px;
-        margin: 0 0 15px;
+        border-bottom: 1px solid #ededed;
+        font-weight: 500;
+        padding: 0 0 10px;
+        margin: 0 0 10px;
         border-radius: 0;
         background: none;
         h4 {

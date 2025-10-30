@@ -10,6 +10,15 @@ import { routerlink } from 'src/app/shared/services/model/model';
   styleUrls: ['./user.component.css'],
 })
 export class UserComponent {
+ isSidebarOpen = false;
+
+  toggleSidebar() {
+    this.isSidebarOpen = !this.isSidebarOpen;
+  }
+
+  closeSidebar() {
+    this.isSidebarOpen = false;
+  }
   public routes = routes;
   base = '';
   page = '';
@@ -36,8 +45,15 @@ export class UserComponent {
       }
     });
   }
-  ngOnInit() {
+
+    ngOnInit() {
     this.routesActive();
+  }
+
+  logout() {
+    // Implement logout functionality here
+    this.common.logout();
+    this.router.navigate([this.routes.home]);
   }
   public routesActive() {
     if (

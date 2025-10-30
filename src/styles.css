@@ -570,26 +570,3 @@ mat-tooltip-component .mat-mdc-tooltip .mdc-tooltip__surface {
   align-items: center;
   justify-content: center;
  }
- /* custor new */
- .owl-carousel .owl-item img {
-    display: block;
-    width: auto !important;
-}
-
-.carousel-indicators [data-bs-target] {
-    box-sizing: content-box;
-    flex: 0 1 auto;
-    width: 6px !important;
-    height: 6px !important;
-    padding: 0;
-    margin-right: 3px;
-    margin-left: 3px;
-    text-indent: -999px;
-    cursor: pointer;
-    background-color: #f7adad;
-    background-clip: padding-box;
-    border-top: 10px solid transparent;
-    border-bottom: 10px solid transparent;
-    opacity: .5;
-    transition: opacity .6s ease;
-}

@@ -69,11 +69,11 @@ const routes: Routes = [
     loadChildren: () => import('./faq/faq.module').then((m) => m.FaqModule),
   },
   {
-    path: 'B2B',
+    path: 'register-with-us',
     loadChildren: () => import('./b2b/b2b.module').then((m) => m.B2bModule),
   },
   {
-    path: 'B2B-section',
+    path: 'sell-on-bellaluna',
     loadChildren: () => import('./b2b-section/b2b-section.module').then((m) => m.B2bSectionModule),
   },
   {
@@ -91,70 +91,9 @@ const routes: Routes = [
 
 
 
-  {
-    path: 'toas',
-    loadChildren: () => import('./toas/toas.module').then((m) => m.ToasModule),
-  },
-
-  {
-    path: 'lalachuu',
-    loadChildren: () => import('./lalachuu/lalachuu.module').then((m) => m.LalachuuModule),
-  },
-
-  {
-    path: 'glossys',
-    loadChildren: () => import('./glossys/glossys.module').then((m) => m.GlossysModule),
-  },
-
-  {
-    path: 'dr-blue',
-    loadChildren: () => import('./dr-blue/dr-blue.module').then((m) => m.DrBlueModule),
-  },
-
-  {
-    path: 'estilo',
-    loadChildren: () => import('./estilo/estilo.module').then((m) => m.EstiloModule),
-  },
-
-  {
-    path: 'medicell',
-    loadChildren: () => import('./medicell/medicell.module').then((m) => m.MedicellModule),
-  },
-
-  {
-    path: 'oseque',
-    loadChildren: () => import('./oseque/oseque.module').then((m) => m.OsequeModule),
-  },
-
-   {
-    path: 'ones',
-    loadChildren: () => import('./ones/ones.module').then((m) => m.OnesModule),
-  },
-
-   {
-    path: 'v21',
-    loadChildren: () => import('./oseque/oseque.module').then((m) => m.OsequeModule),
-  },
-
-
-  {
-    path: 'rataplan',
-    loadChildren: () => import('./rataplan/rataplan.module').then((m) => m.RataplanModule),
-  },
-
-   {
-    path: 'fabyou',
-    loadChildren: () => import('./fabyou/fabyou.module').then((m) => m.FabyouModule),
-  },
-
-   {
-    path: 'pureSkin',
-    loadChildren: () => import('./pure-skin/pure-skin.module').then((m) => m.PureSkinModule),
-  },
-
-   {
-    path: 'wolgoo',
-    loadChildren: () => import('./wolgoo/wolgoo.module').then((m) => m.WolgooModule),
+     {
+    path: 'ReturnCancellation',
+    loadChildren: () => import('./return-cancellation/return-cancellation.module').then((m) => m.ReturnCancellationModule),
   },
 ];
 

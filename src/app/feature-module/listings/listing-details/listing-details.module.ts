@@ -1,8 +1,9 @@
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA  } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ListingDetailsRoutingModule } from './listing-details-routing.module';
 import { ListingDetailsComponent } from './listing-details.component';
 import { SharedModule } from 'src/app/shared/shared.module';
+import { NgxImageZoomModule } from 'ngx-image-zoom';
 
 
 @NgModule({
@@ -12,7 +13,9 @@ import { SharedModule } from 'src/app/shared/shared.module';
   imports: [
     CommonModule,
     ListingDetailsRoutingModule,
-    SharedModule
-  ]
+    SharedModule,
+    NgxImageZoomModule
+  ],
+   schemas: [CUSTOM_ELEMENTS_SCHEMA] 
 })
 export class ListingDetailsModule { }

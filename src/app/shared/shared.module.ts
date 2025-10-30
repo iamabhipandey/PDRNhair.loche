@@ -20,6 +20,8 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 import { GoogleMapsModule } from '@angular/google-maps';
 import { LightgalleryModule } from 'lightgallery/angular';
 import { FullCalendarModule } from '@fullcalendar/angular';
+import { NgxSpinnerModule } from 'ngx-spinner';
+import { NgxImageZoomModule } from 'ngx-image-zoom';
 @NgModule({ declarations: [],
     exports: [
         CommonModule,
@@ -34,13 +36,15 @@ import { FullCalendarModule } from '@fullcalendar/angular';
         LightboxModule,
         TimepickerModule,
         MatSliderModule,
-        
+        NgxSpinnerModule,
         MatSortModule,
         CustomPaginationModule,
         MatTooltipModule,
         GoogleMapsModule,
         LightgalleryModule,
-        FullCalendarModule
+        FullCalendarModule,
+        NgxImageZoomModule,
+        
     ], imports: [CommonModule,
         materialModule,
         CountUpModule,
@@ -57,6 +61,8 @@ import { FullCalendarModule } from '@fullcalendar/angular';
         CustomPaginationModule,
         MatTooltipModule,
         GoogleMapsModule,
+        NgxSpinnerModule,
         LightgalleryModule,
+        NgxImageZoomModule,
         FullCalendarModule], providers: [DatePipe, BsDatepickerConfig, provideHttpClient(withInterceptorsFromDi())] })
 export class SharedModule {}

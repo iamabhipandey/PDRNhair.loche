@@ -5,9 +5,9 @@
 </section>
 <div class="brands-grid">
   <div class="brand-card" *ngFor="let brand of brands">
-    <a [routerLink]="brand.link">
+    <a href="" (click)="searhProductData('', brand.name); $event.preventDefault()">
       <img [src]="brand.logo" [alt]="brand.name" class="img-fluid" />
-      <!-- <p>{{ brand.name }}</p> -->
+      
     </a>
   </div>
 </div>

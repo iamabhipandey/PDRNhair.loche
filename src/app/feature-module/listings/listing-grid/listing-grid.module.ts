@@ -13,7 +13,8 @@ import { SharedModule } from 'src/app/shared/shared.module';
   imports: [
     CommonModule,
     ListingGridRoutingModule,
-    SharedModule
+    SharedModule,
+    
   ]
 })
 export class ListingGridModule { }
