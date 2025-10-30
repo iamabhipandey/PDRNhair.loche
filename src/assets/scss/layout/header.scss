@@ -215,7 +215,7 @@
             .menu-logo {
                 img {
                     @include respond-below(custom991) {
-                        width: 160px;
+                        width: 95px;
                         margin-left: 10px;
                     }
                 }
@@ -597,6 +597,7 @@
                 font-weight: $__medium;
                 font-size: $__font__size__16;
                 width: 100%;
+                z-index: -1;
                 @include margin-padding(null, 3px 6px);
                 text-align: $__center;
                 @extend %animation-effect;
@@ -790,6 +791,7 @@
         &::-webkit-scrollbar-track {
             box-shadow: inset 0 0 5px rgb(231, 231, 231);
             border-radius: 4px;
+            
         }
         &::-webkit-scrollbar-thumb {
             background: #8A8A95;
