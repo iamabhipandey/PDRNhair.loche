@@ -16,114 +16,106 @@ interface data {
   styleUrls: ['./home1.component.css'],
 })
 export class HomeComponent implements AfterViewInit{
-  public routes = routes
+public routes = routes
   public thumbnails1: thumbnails1[] = [];
   public testimonials: testimonials[] = [];
  
-  constructor(private data: DataService, private datePipe: DatePipe,
-    private commonService:CommonService,
-      private router: Router,
-  ) {
+  constructor(private data: DataService, private datePipe: DatePipe) {
     this.testimonials = this.data.testimonials;
     this.thumbnails1 = this.data.thumbnails1;
     
     
   }
-  Categories: OwlOptions = {
-    loop:true,
-    margin:24,
-    nav:true,
-    dots: false,
-    autoplay:true,
-    smartSpeed: 2000,
-    navText : ["<i class='bx bx-chevron-left'></i>","<i class='bx bx-chevron-right'></i>"],
-    responsive:{
-      0:{
-        items:2
-      },
-      
-      550:{
-        items:3
-      },
-      700:{
-        items:4
-      },
-      1000:{
-        items:5
-      },
-      1200:{
-        items:5
-      }
-    }
-  };
+  contactNow() {
+    alert('Contact form or chat popup triggered!');
+  }
+
+
+
+  newArrivalProducts = [
+  {
+    image: 'assets/img/product/fab-you1.webp',
+    title: 'Retinol Peptide Youthful Serum',
+    brandname:'febyou',
+    price: 1596,
+    oldPrice: null,
+    discount: null
+  },
+  {
+    image: 'assets/img/product/product-2.avif',
+    title: 'Plum Simply Bright 2% Niacinamide Face Wash With',
+    brandname:'Plum',
+    price: 299,
+    oldPrice: null,
+    discount: null,
+  },
+  {
+    image: 'assets/img/product/fab-you2.webp',
+    title: 'Rice Glow Foam Toner',
+    brandname:'febyou',
+    price: 1191,
+    oldPrice: null,
+    discount: null,
+  },
+  {
+    image: 'assets/img/product/fab-you3.webp',
+    title: 'KRice Mask Cleanser',
+    brandname:'febyou',
+    price: 1407,
+    oldPrice: null,
+    discount: null,
+  },
+  {
+    image: 'assets/img/product/ratplan-6.jpg',
+    title: 'Donghae Deep Moisturizing Cream 1+1',
+    brandname:'Ratiplan',
+    price: 2000,
+    oldPrice: null,
+    discount: null,
+  }
+];
+
+  promotionProducts = [
+  {
+    image: 'assets/img/banners/Loche Tox 100Unit.jpg',
+    title: 'Loche Tox 100Unit',
+  },
+  {
+    image: 'assets/img/banners/Loche Tox 200Unit.jpg',
+    title: 'Loche Tox 200Unit ',
+  },
+  {
+    image: 'assets/img/banners/PDRNelle.jpg',
+    title: 'Pdrnelle ',
+  },
+  {
+    image: 'assets/img/banners/IMG-20251025-WA0033.jpg',
+    title: 'Pdrnelle skinbooster',
+  },
+  {
+    image: 'assets/img/banners/Loche injector .jpg',
+    title: 'Loche injector',
+  },
+    {
+    image: 'assets/img/banners/Pdrnelle vega shine.jpg',
+    title: 'Pdrnelle vega shine',
+  },
+      {
+    image: 'assets/img/banners/pdrnelle V .jpg',
+    title: 'Pdrnelle V',
+  },
+  //       {
+  //   image: 'assets/img/banners/rejuvenex_forte_product_image_1.webp',
+  //   title: 'Rejuvenex Forte',
+  // },
+];
   secondsection: OwlOptions = {
     loop:true,
-    margin:10,
-    nav:true,
-    dots: false,
-    autoplay:false,
-    smartSpeed: 2000,
-    items:1,
-    navText : ["<i class='bx bx-chevron-left'></i>","<i class='bx bx-chevron-right'></i>"],
-    responsive:{
-      0:{
-        items:2
-      },
-      
-      550:{
-        items:2
-      },
-      700:{
-        items:3
-      },
-      1000:{
-        items:3
-      },
-      1200:{
-        items:3
-      },
-      1400:{
-        items:3
-      }
-    },
-  };
-  offOwlOptions: OwlOptions = {
-    loop:true,
-    margin:10,
+    margin:15,
     nav:true,
     dots: false,
     autoplay:true,
-    smartSpeed: 2000,
-    items:1,
-    navText : ["<i class='bx bx-chevron-left'></i>","<i class='bx bx-chevron-right'></i>"],
-    responsive:{
-      0:{
-        items:2
-      },
-      550:{
-        items:3
-      },
-      700:{
-        items:4
-      },
-      1000:{
-        items:4
-      },
-      1200:{
-        items:5
-      },
-      1400:{
-        items:5
-      }
-    },
-  };
-    ExploreTopBrands: OwlOptions = {
-    loop:true,
-    margin:10,
-    nav:true,
-    dots: false,
-    autoplay:false,
-    smartSpeed: 2000,
+    smartSpeed: 1000,
     items:1,
     navText : ["<i class='bx bx-chevron-left'></i>","<i class='bx bx-chevron-right'></i>"],
     responsive:{
@@ -132,85 +124,23 @@ export class HomeComponent implements AfterViewInit{
       },
       
       550:{
-        items:3
-      },
-      700:{
-        items:3
-      },
-      1000:{
-        items:3
-      },
-      1200:{
-        items:3
-      },
-   
-    },
-  };
-  TopBrands: OwlOptions = {
-    loop:true,
-    margin:10,
-    nav:true,
-    dots: false,
-    autoplay:false,
-    smartSpeed: 2000,
-    items:1,
-    navText : ["<i class='bx bx-chevron-left'></i>","<i class='bx bx-chevron-right'></i>"],
-    responsive:{
-      0:{
         items:2
       },
-      
-      550:{
-        items:3
-      },
       700:{
         items:3
       },
       1000:{
-        items:4
+        items:3
       },
       1200:{
-        items:4
+        items:3
       },
-      1400:{
-        items:5
-      }
+
     },
   };
-  ArrivalLetestDroduct: OwlOptions = {
+  firstsecOptions: OwlOptions = {
     loop:true,
-    margin:17,
-    nav:true,
-    dots: false,
-    autoplay:false,
-    smartSpeed: 2000,
-    items:1,
-    navText : ["<i class='bx bx-chevron-left'></i>","<i class='bx bx-chevron-right'></i>"],
-    responsive:{
-      0:{
-        items:2
-      },
-      
-      550:{
-        items:4
-      },
-      700:{
-        items:4
-      },
-      1000:{
-        items:5
-      },
-      1200:{
-        items:5
-      },
-      1400:{
-        items:5
-      }
-    },
-  };
-  ShadiLetestproduct: OwlOptions = {
-    loop:true,
-    margin:24,
+    margin:20,
     nav:true,
     dots: false,
     autoplay:false,
@@ -221,191 +151,47 @@ export class HomeComponent implements AfterViewInit{
       0:{
         items:3
       },
-      
       550:{
         items:4
       },
       700:{
-        items:4
-      },
-      1000:{
         items:5
       },
-      1200:{
+      1000:{
         items:6
       },
-      1400:{
+      1200:{
         items:7
-      }
+      },
+
     },
   };
-  blogsliderOwlOptions: OwlOptions = {
-    loop:true,
-      margin:24,
-      nav:true,
-      dots:false,
-      smartSpeed: 2000,
-      autoplay:false,
-      navText: [
-        '<i class="fa-solid fa-chevron-left"></i>',
-        '<i class="fa-solid fa-chevron-right"></i>'
-      ],
-    responsive:{
-      0:{
-        items:1
-      },				
-      550:{
-        items:1
-      },
-      768:{
-        items:3
-      },
-      1200:{
-        items:3
-      }
-    }
-  };
-  brandsliderOwlOptions: OwlOptions = {
-    loop:true,
-      margin:24,
-      nav:false,
-      dots:false,
-      smartSpeed: 2000,
-      autoplay:false,
-      navText: [
-        '<i class="fa-solid fa-chevron-left"></i>',
-        '<i class="fa-solid fa-chevron-right"></i>'
-      ],
-      responsive:{
-        0:{
-          items:1
-        },				
-        550:{
-          items:3
-        },
-        768:{
-          items:4
-        },
-        1000:{
-          items:5
-        },
-        1200:{
-          items:7
-        }
-      }
-  };
-  recommendOwlOptions: OwlOptions = {
-    loop:true,
-      margin:24,
-      nav:false,
-      dots: false,
-      autoplay:true,
-      center: true,
-      smartSpeed: 2000,
-      responsive:{
-        0:{
-          items:1
-        },
-        
-        767:{
-          items:1
-        },
-        992:{
-          items:3
-        },
-        1400:{
-          items:3
-        }
-      }
-  };
-  imageOwlOptions: OwlOptions = {
-    loop:true,
-    margin:27,
-    nav:true,
-    dots:true,
-    smartSpeed: 2000,
-    autoplay:false,
-    navText: [
-      '<i class="fa-solid fa-chevron-left"></i>',
-      '<i class="fa-solid fa-chevron-right"></i>'
-    ],
-    responsive:{
-      0:{
-        items:1
-      },				
-      550:{
-        items:1
-      },
-      768:{
-        items:1
-      },
-      1000:{
-        items:1
-      }
-    }
-  };
-  public selectedValue1!: string;
-  public selectedValue2!: string;
-  public selectedValue3!: string;
-  selectedList1: data[] = [
-    { value: 'Cruiser' },
-    { value: 'Scooters' },
-    
-  ];
-  selectedList2: data[] = [
-    { value: 'KTM 300' },
-    { value: 'KTM RC 390' },
-    
-  ];
-  selectedList3: data[] = [
-    { value: 'Newyork' },
-    { value: 'Los Angeles' },
-    
-  ];
-  carimagesliderOwlOptions: OwlOptions = {
+  categorysec: OwlOptions = {
     loop:true,
     margin:24,
     nav:true,
-    dots: true,
+    dots: false,
     autoplay:false,
     smartSpeed: 2000,
     navText : ["<i class='bx bx-chevron-left'></i>","<i class='bx bx-chevron-right'></i>"],
     responsive:{
       0:{
-        items:1
+        items:2
       },
       
       550:{
-        items:1
+        items:3
       },
       700:{
-        items:2
+        items:4
       },
       1000:{
-        items:6
+        items:5
       },
       1200:{
-        items:6
+        items:5
       }
     }
-  };
-  // public slideConfig = {
-  //   slidesToShow: 1,
-  //   slidesToScroll: 1,
-  //   arrows: false,
-  //   fade: true,
-   
-    
-  // };
-  public slideConfig2 = {
-    slidesToShow: 4,
-    slidesToScroll: 1,
-    asNavFor: '.testimonial-slider',
-    dots: false,
-    arrows: false,
-    centerMode: false,
-    focusOnSelect: true,
-    
   };
   BrandsliderOwlOptions: OwlOptions = {
     loop:true,
@@ -434,33 +220,101 @@ export class HomeComponent implements AfterViewInit{
       }
     }
   };
-  carbrandOwlOptions: OwlOptions = {
-    loop:true,
-    margin:10,
-    nav:false,
+  TopBrands: OwlOptions = {
+   loop:true,
+    margin:20,
+    nav:true,
     dots: false,
     autoplay:false,
     smartSpeed: 2000,
+    items:1,
     navText : ["<i class='bx bx-chevron-left'></i>","<i class='bx bx-chevron-right'></i>"],
     responsive:{
       0:{
-        items:1
+        items:2
       },
       
       550:{
-        items:1
-      },
-      700:{
         items:2
       },
+      700:{
+         items:3
+      },
       1000:{
-        items:7
+        items:4
       },
       1200:{
-        items:7
+        items:5
+      },
+      1400:{
+        items:5
       }
-    }
+    },
   };
+    NewArrival: OwlOptions = {
+   loop:true,
+    margin:10,
+    nav:true,
+    dots: false,
+    autoplay:false,
+    smartSpeed: 2000,
+    items:1,
+    navText : ["<i class='bx bx-chevron-left'></i>","<i class='bx bx-chevron-right'></i>"],
+    responsive:{
+      0:{
+        items:2
+      },
+      
+      550:{
+        items:2
+      },
+      700:{
+         items:3
+      },
+      1000:{
+        items:4
+      },
+      1200:{
+        items:5
+      },
+      1400:{
+        items:5
+      }
+    },
+  };
+  
+  pramotionsec: OwlOptions = {
+   loop:true,
+    margin:10,
+    nav:true,
+    dots: false,
+    autoplay:false,
+    smartSpeed: 2000,
+    items:1,
+    navText : ["<i class='bx bx-chevron-left'></i>","<i class='bx bx-chevron-right'></i>"],
+    responsive:{
+      0:{
+        items:2
+      },
+      
+      550:{
+        items:2
+      },
+      700:{
+         items:3
+      },
+      1000:{
+        items:4
+      },
+      1200:{
+        items:5
+      },
+      1400:{
+        items:5
+      }
+    },
+  };
+
   public ngAfterViewInit(): void{
     window.dispatchEvent(new Event('resize'))
   }
@@ -484,54 +338,4 @@ export class HomeComponent implements AfterViewInit{
     this.isClassAdded[index] = !this.isClassAdded[index];
   }
   public isClassAdded: boolean[] = [false];
-
-
-
-
-
-
-
-
-searhProductData(
-  productName: string = '',
-  brandName: string = '',
-  category: string = '',
-  subCategory: string = '',
-  superSubCategory: string = '',
-  productType: string = '',
-  concern: string = ''
-) {
-  const payload = {
-    productName,
-    brandName,
-    category,
-    subCategory,
-    superSubCategory,
-    productType,
-    concern
-  };
-
-  const formData = new FormData();
-  Object.entries(payload).forEach(([key, value]) => {
-    if (value) {
-      formData.append(key, value);
-    }
-  });
-
-  this.commonService.searhProductData(formData).subscribe({
-    next: (res: any) => {
-      if (res.status === 'true') {
-        // ✅ Redirect based on filter
-        this.router.navigate([this.routes.brandsProducts], {
-          queryParams: payload   // filters as query params
-        });
-        //this.activeCategory = null; 
-      }
-    },
-    error: (err: any) => {
-      console.error(err);
-    }
-  });
-}
-
 }

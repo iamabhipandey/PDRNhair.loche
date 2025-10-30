@@ -1,74 +1,20 @@
-.footer .footer-contact .footer-contact-info .footer-address span {
-    margin-right: 15px;
-    width: 30px;
-    height: 30px;
-    font-size: 17px;
-    border-radius: 25px;
-}
-.footer .footer-contact .footer-contact-info .update-form span {
-    left: 14px;
-}
-.footer .footer-contact .footer-contact-info .update-form .form-control {
-    min-height: 40px;
-    background: #ffffff;
-    border-radius: 25px;
-    border: 1px solid #ffffff;
-    font-size: 14px;
-    margin: 0;
-    padding: 10px 60px 12px 40px;
-    color: #828282;
-}
-.footer .footer-contact .footer-contact-info .update-form .btn {
-    padding: 19px 31px 19px 15px;
-    font-size: 15px;
-    border-radius: 25px;
-    position: absolute;
-    top: 50%;
-    right: 5px;
-    transform: translateY(-49%);
-}
-.footer-social-widget .nav-social {
-    justify-content: center;
-}
-.footer-widget .logo img {
-    margin-bottom: 10px;
-}
-@media only screen and (max-width: 992px) {
-    .footer .footer-widget .footer-title {
-        font-size: 12px !important;
-        margin: 0 0 16px !important;
-    }
-    .footer .footer-widget .footer-title:before {
-        width: 40px;
-        bottom: -45%;
-    }
-    .footer .footer-menu ul li {
-        margin: 0 0 5px;
-    }
-    .footer .footer-menu ul li a {
-        font-size: 11px;
-    }
-    .footer .footer-contact .footer-contact-info .footer-address .addr-info a {
-        font-size: 12px;
-    }
-    .footer-widget .logo img{
-        margin-bottom: 10px;
-       margin-left: 5%;
-        width: 150px;
-    }
-    .footer .footer-contact .footer-contact-info .footer-address {
-        margin-bottom: 10px;
-    }
-  }
-.footer {
-    background: #ffe9f1 !important;
-    position: relative;
-}
-.footer .footer-bottom {
-    background: #ffe9f1;
-}
-.footer .footer-bottom .copyright .copyright-text p {
+h6.footer-tital {
+   color: rgb(36, 35, 35);
     text-align: center;
-    color: #535353;
-    font-size: 14px;
+}
+ .register {
+   color: rgb(44, 44, 44);
+    font-size: 17px;
+    font-weight: 600;
+}
+.logo-img{
+    width: 180px;
+            margin-bottom: 10px;
+}
+@media only screen and (max-width: 600px) {
+  .logo-img{
+    width: 120px;
+        display: flex;
+    justify-self: center;
+}
 }
