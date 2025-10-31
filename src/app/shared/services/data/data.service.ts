@@ -81,159 +81,333 @@ export class DataService {
 
 
   public header: header[] = [
-  
+      {
+      tittle: 'About Us',
+      showAsTab: false,
+      separateRoute: true,
+      // routes: routes.contactUs,
+      hasSubRoute: false,
+      showSubRoute: false,
+    },
     {
-      tittle: 'Categories',
+      
+      tittle: 'Company ',
       showAsTab: false,
       separateRoute: false,
       menu: [
         {
-          menuValue: 'Serum',
+          menuValue: 'CEO greeting',
           hasSubRoute: false,
           showSubRoute: false,
           subMenus: [],
         },
         
         {
-          menuValue: 'Toner',
+          menuValue: 'VISION 2030',
           hasSubRoute: false,
           showSubRoute: false,
           subMenus: [],
         },
         {
-          menuValue: 'Cream',
+          menuValue: 'Company history',
           hasSubRoute: false,
           showSubRoute: false,
           subMenus: [],
         },
         {
-          menuValue: 'Scrub',
+          menuValue: 'Social contribution',
           hasSubRoute: false,
           showSubRoute: false,
           subMenus: [],
         },
-        {
-          menuValue: 'Shop',
-          hasSubRoute: false,
-          showSubRoute: false,
-          subMenus: [],
-        },
-         {
-          menuValue: 'Mask',
-          hasSubRoute: false,
-          showSubRoute: false,
-          subMenus: [],
-        },
-       
-       
         
       ],
     },
   
     {
-      tittle: 'Luxe',
+      tittle: 'Product Informatin ',
       showAsTab: false,
       separateRoute: false,
       menu: [
         {
-          menuValue: 'Toner',
+          menuValue: 'Medical devices',
           // routes: routes.aboutUs,
           hasSubRoute: false,
           showSubRoute: false,
           subMenus: [],
         },
         {
-          menuValue: 'Mask',
+          menuValue: 'Botox',
           // routes: routes.aboutUs,
           hasSubRoute: false,
           showSubRoute: false,
           subMenus: [],
         },
         {
-          menuValue: 'Serum',
+          menuValue: 'Fillers',
           // routes: routes.aboutUs,
           hasSubRoute: false,
           showSubRoute: false,
           subMenus: [],
         },
         {
-          menuValue: 'Cream',
+          menuValue: 'PL',
           // routes: routes.aboutUs,
           hasSubRoute: false,
           showSubRoute: false,
           subMenus: [],
         },
         {
-          menuValue: 'Bath & body',
+          menuValue: 'PDRN',
           // routes: routes.aboutUs,
           hasSubRoute: false,
           showSubRoute: false,
           subMenus: [],
         },
+                {
+          menuValue: '  Skin Boost',
+          // routes: routes.aboutUs,
+          hasSubRoute: false,
+          showSubRoute: false,
+          subMenus: [],
+        },       
+         {
+          menuValue: 'Lipolysis',
+          // routes: routes.aboutUs,
+          hasSubRoute: false,
+          showSubRoute: false,
+          subMenus: [],
+        },     
+           {
+          menuValue: 'PDRN dental implants',
+          // routes: routes.aboutUs,
+          hasSubRoute: false,
+          showSubRoute: false,
+          subMenus: [],
+        },
+                 {
+          menuValue: 'Cosmetics',
+          // routes: routes.aboutUs,
+          hasSubRoute: true,
+          showSubRoute: false,
+          subMenus: [
+                      {
+              menuValue: 'PDRN',
+              routes: routes.register,
+              hasSubRoute: false,
+              showSubRoute: false,
+              subMenus: [],
+            },
+             {
+              menuValue: 'hyaluronic acid',
+              routes: routes.register,
+              hasSubRoute: false,
+              showSubRoute: false,
+              subMenus: [],
+            },
+             {
+              menuValue: 'Exosome',
+              routes: routes.register,
+              hasSubRoute: false,
+              showSubRoute: false,
+              subMenus: [],
+            },
+             {
+              menuValue: 'Spicule',
+              routes: routes.register,
+              hasSubRoute: false,
+              showSubRoute: false,
+              subMenus: [],
+            },
+          ],
+        }, 
+                         {
+          menuValue: 'Health functional food',
+          // routes: routes.aboutUs,
+          hasSubRoute: true,
+          showSubRoute: false,
+          subMenus: [
+                      {
+              menuValue: ' Morning Boost',
+              routes: routes.register,
+              hasSubRoute: false,
+              showSubRoute: false,
+              subMenus: [],
+            },
+            
+            
+          ],
+        }, 
+           {
+          menuValue: 'Business Inquiries',
+          // routes: routes.aboutUs,
+          hasSubRoute: false,
+          showSubRoute: false,
+          subMenus: [],
+        },
+ 
+        
       ]
     },                  
     {
-      tittle: 'Brands',
+      tittle: 'Research and development',
       showAsTab: false,
       separateRoute: false,
       menu: [
         {
-          menuValue: 'GLOSSYS',
-          hasSubRoute: false,
+          menuValue: 'Introduction to Indian Hospitals',
+          // routes: routes.aboutUs,
+          hasSubRoute: true,
           showSubRoute: false,
-          subMenus: [],
-        },
+          subMenus: [
+                      {
+              menuValue: 'Korea Health Center (Antiviral Research Center)',
+              routes: routes.register,
+              hasSubRoute: false,
+              showSubRoute: false,
+              subMenus: [],
+            },
+            
+            
+          ],
+        }, 
         {
-          menuValue: 'OSÈQUE',
+          menuValue: 'R&D and technology',
           // routes: routes.aboutUs,
           hasSubRoute: false,
           showSubRoute: false,
           subMenus: [],
         },
         {
-          menuValue: 'LALACHUU',
+          menuValue: 'Clean room',
           // routes: routes.aboutUs,
           hasSubRoute: false,
           showSubRoute: false,
           subMenus: [],
         },
         {
-          menuValue: 'TOAS',
+          menuValue: 'Certification details',
           // routes: routes.aboutUs,
           hasSubRoute: false,
           showSubRoute: false,
           subMenus: [],
         },
         {
-          menuValue: 'V21',
+          menuValue: 'Cooperative organization',
           // routes: routes.aboutUs,
-          hasSubRoute: false,
+          hasSubRoute: true,
           showSubRoute: false,
-          subMenus: [],
-        },
-        {
-          menuValue: 'BI ONES',
-          // routes: routes.aboutUs,
-          hasSubRoute: false,
-          showSubRoute: false,
-          subMenus: [],
-        },
-        {
-          menuValue: 'DR. BLUE',
-          // routes: routes.aboutUs,
-          hasSubRoute: false,
-          showSubRoute: false,
-          subMenus: [],
-        },
-        {
-          menuValue: 'MEDICELL BIO',
-          // routes: routes.aboutUs,
-          hasSubRoute: false,
-          showSubRoute: false,
-          subMenus: [],
-        },
+          subMenus: [
+                      {
+              menuValue: 'Paras Hospital',
+              routes: routes.register,
+              hasSubRoute: false,
+              showSubRoute: false,
+              subMenus: [],
+            },
+             {
+              menuValue: 'AII Indian College of Medicine',
+              routes: routes.register,
+              hasSubRoute: false,
+              showSubRoute: false,
+              subMenus: [],
+            },
+             {
+              menuValue: 'Alpha Dental Group',
+              routes: routes.register,
+              hasSubRoute: false,
+              showSubRoute: false,
+              subMenus: [],
+            },
+             {
+              menuValue: 'Osong Advanced Medical Care',
+              routes: routes.register,
+              hasSubRoute: false,
+              showSubRoute: false,
+              subMenus: [],
+            },
+             {
+              menuValue: ' Gimhae Advanced Medical Foundation',
+              routes: routes.register,
+              hasSubRoute: false,
+              showSubRoute: false,
+              subMenus: [],
+            },
+
+            
+            
+          ],
+        }, 
+       
       ],
     },
+        {
+      tittle: 'Customer center',
+      showAsTab: false,
+      separateRoute: false,
+      menu: [
+ 
+        {
+          menuValue: 'Affiliate inquiry',
+          // routes: routes.aboutUs,
+          hasSubRoute: false,
+          showSubRoute: false,
+          subMenus: [],
+        },
+        {
+          menuValue: 'Q&A',
+          // routes: routes.aboutUs,
+          hasSubRoute: false,
+          showSubRoute: false,
+          subMenus: [],
+        },
+        {
+          menuValue: 'OEM/ODM Inquiries',
+          // routes: routes.aboutUs,
+          hasSubRoute: false,
+          showSubRoute: false,
+          subMenus: [],
+        },
+
+      ],
+    },
+        {
+      tittle: 'public relations center',
+      showAsTab: false,
+      separateRoute: false,
+      menu: [
+ 
+        {
+          menuValue: 'Loche News',
+          // routes: routes.aboutUs,
+          hasSubRoute: false,
+          showSubRoute: false,
+          subMenus: [],
+        },
+        {
+          menuValue: 'Loche commercial',
+          // routes: routes.aboutUs,
+          hasSubRoute: false,
+          showSubRoute: false,
+          subMenus: [],
+        },
+        {
+          menuValue: 'Introduction of partner companies',
+          // routes: routes.aboutUs,
+          hasSubRoute: false,
+          showSubRoute: false,
+          subMenus: [],
+        },
+                {
+          menuValue: 'Introduction of CI',
+          // routes: routes.aboutUs,
+          hasSubRoute: false,
+          showSubRoute: false,
+          subMenus: [],
+        },
+
+      ],
+    },    
     {
       tittle: 'Beauty advice',
       showAsTab: false,
@@ -243,14 +417,7 @@ export class DataService {
     },
 
     
-    // {
-    //   tittle: 'Contact',
-    //   showAsTab: false,
-    //   separateRoute: true,
-    //   routes: routes.contactUs,
-    //   hasSubRoute: false,
-    //   showSubRoute: false,
-    // },
+
   ];
 
 
