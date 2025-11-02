@@ -75,6 +75,7 @@
                             display: $__block;
                             padding: 10px 15px 10px;
                             clear: both;
+                            font-size: 13px;
                             white-space: nowrap;
                             display: flex;
                             color: $__gray;
@@ -281,6 +282,7 @@
             }
             &:last-child {
                 margin-right: 0;
+                    font-size: 13px;
             }
             > li {
                 @include respond-below(custom1199) {

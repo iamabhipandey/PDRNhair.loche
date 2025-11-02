@@ -407,14 +407,118 @@ export class DataService {
         },
 
       ],
-    },    
+    },  
     {
-      tittle: 'Beauty advice',
+      tittle: 'Recruitment ',
       showAsTab: false,
-      separateRoute: true,
-      hasSubRoute: false,
-      showSubRoute: false,
-    },
+      separateRoute: false,
+      menu: [
+ 
+        {
+          menuValue: 'The personnel system / welfare system',
+          // routes: routes.aboutUs,
+          hasSubRoute: false,
+          showSubRoute: false,
+          subMenus: [],
+        },
+        {
+          menuValue: 'Information on recruitment procedures',
+          // routes: routes.aboutUs,
+          hasSubRoute: false,
+          showSubRoute: false,
+          subMenus: [],
+        },
+        {
+          menuValue: 'Job introduction',
+          // routes: routes.aboutUs,
+          hasSubRoute: false,
+          showSubRoute: false,
+          subMenus: [],
+        },
+
+      ],
+    },  
+        {
+      tittle: 'PR',
+      showAsTab: false,
+      separateRoute: false,
+      menu: [
+ 
+        {
+          menuValue: 'Press release',
+          // routes: routes.aboutUs,
+          hasSubRoute: false,
+          showSubRoute: false,
+          subMenus: [],
+        },
+        {
+          menuValue: 'A promotional video',
+          // routes: routes.aboutUs,
+          hasSubRoute: false,
+          showSubRoute: false,
+          subMenus: [],
+        },
+        {
+          menuValue: 'Advertising',
+          // routes: routes.aboutUs,
+          hasSubRoute: false,
+          showSubRoute: false,
+          subMenus: [],
+        },
+
+      ],
+    },  
+            {
+      tittle: 'Cardalog Archive',
+      showAsTab: false,
+      separateRoute: false,
+      menu: [
+ 
+        {
+          menuValue: 'The entire',
+          // routes: routes.aboutUs,
+          hasSubRoute: false,
+          showSubRoute: false,
+          subMenus: [],
+        },
+        {
+          menuValue: 'Fillers',
+          // routes: routes.aboutUs,
+          hasSubRoute: false,
+          showSubRoute: false,
+          subMenus: [],
+        },
+        {
+          menuValue: 'PL',
+          // routes: routes.aboutUs,
+          hasSubRoute: false,
+          showSubRoute: false,
+          subMenus: [],
+        },
+            {
+          menuValue: 'PDRN',
+          // routes: routes.aboutUs,
+          hasSubRoute: false,
+          showSubRoute: false,
+          subMenus: [],
+        },
+            {
+          menuValue: 'Implant',
+          // routes: routes.aboutUs,
+          hasSubRoute: false,
+          showSubRoute: false,
+          subMenus: [],
+        },
+
+      ],
+    }, 
+    // {
+    //   tittle: 'Beauty advice',
+    //   showAsTab: false,
+    //   separateRoute: true,
+    //   hasSubRoute: false,
+    //   showSubRoute: false,
+    // },
 
     
 
