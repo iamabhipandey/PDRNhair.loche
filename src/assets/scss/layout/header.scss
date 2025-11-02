@@ -8,9 +8,13 @@
 	box-shadow: 0px 10px 40px rgba(202, 202, 202, 0.2);
     left: 0;
     top: 0;
+    height: 160px;
     width: 100%;
     z-index: 999;
     @extend %animation-effect;
+     @include respond-below(custom991) {
+                        height: 70px;
+                    }
     &.fixed {
         background-color: $__white;
         box-shadow: 0px 3px 53px rgb(197 197 197 / 27%);
@@ -39,18 +43,18 @@
         -webkit-justify-content: space-between;
         -ms-flex-pack: space-between;
         position: $__relative;
-        height: 77px;
-        @include margin-padding(null, 0 15px 0 15px);
+        height: 75px;
+        @include margin-padding(null, 0px);
         margin-bottom: 0;
         @include respond-below(custom991) {
-            height: 75px;
+            height: 70px;
             @include margin-padding(null, 0px 10px);
         }
         .main-nav {
             >li {
                 >a {
                     color: $__gray;
-                    line-height: 85px;
+                    line-height: 46px;
                     font-weight: $__medium;
                     @include respond-below(custom991) {
                         font-size: $__font__size__14;
@@ -103,7 +107,6 @@
         }
     }
     .navbar-header {
-        display: flex;
         .navbar-brand {
             display: inline-block;
             padding: 0px;
@@ -178,6 +181,8 @@
     }
     .main-menu-wrapper {
         margin: 0 15px 0;
+        width: 100%;
+        justify-content: space-between;
         @include respond-below(custom991) {
             padding-left: 8px;
             order: 3;
@@ -268,7 +273,9 @@
             display: -webkit-box;
             display: -ms-flexbox;
             display: flex;
-            margin-top: -7px;
+                flex: auto;
+                
+                
             // margin: 0;
             padding: 0;
             @include respond-below(custom991) {
@@ -282,7 +289,7 @@
             }
             &:last-child {
                 margin-right: 0;
-                    font-size: 13px;
+                    font-size: 14px;
             }
             > li {
                 @include respond-below(custom1199) {
