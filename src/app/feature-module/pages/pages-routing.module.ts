@@ -109,6 +109,10 @@ const routes: Routes = [
     path: 'SocialContribution',
     loadChildren: () => import('./social-contribution/social-contribution.module').then( (m) => m.SocialContributionModule),
   },
+            {
+    path: 'AffiliateInquiry',
+    loadChildren: () => import('./affiliate-inquiry/affiliate-inquiry.module').then( (m) => m.AffiliateInquiryModule),
+  },
 ];
 
 @NgModule({

@@ -147,7 +147,16 @@
             .bar-icon {
                 display: inline-block;
                 width: 31px;
-                padding-left: 34%;
+                position: fixed;
+                top: 22px;
+                padding-left: 0%;
+                @include respond-below(custom575) {
+                    display: inline-block;
+                width: 31px;
+                position: fixed;
+                top: 15px;
+                padding-left: 1%;
+                }
                 span {
                     background-color: $__primarycolor;
                     display: $__block;
@@ -175,7 +184,7 @@
             align-items: center;
         } 
         @include respond-below(custom575) {
-        width: 40%;
+        // width: 40%;
         display: flex;
         text-align-last: right;
         }       

@@ -359,7 +359,7 @@ export class DataService {
  
         {
           menuValue: 'Affiliate inquiry',
-          // routes: routes.aboutUs,
+          routes: routes.AffiliateInquiry,
           hasSubRoute: false,
           showSubRoute: false,
           subMenus: [],

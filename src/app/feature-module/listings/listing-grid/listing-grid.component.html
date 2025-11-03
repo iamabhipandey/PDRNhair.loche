@@ -14,9 +14,266 @@
       </ul>
     </div>
     <div class="filterbutton">
-      <button class="btn btn-filter">Filter</button>
+      <button class="btn btn-filter" (click)="toggleSidebar()">Filter</button>
     </div>
   </div>
+
+  <!-------------- Sidebar -->
+  <div class="sidebar" [class.open]="isSidebarOpen">
+    <div class="sidebar-header d-flex align-items-center justify-content-between">
+      <!-- Logo -->
+      <div class="sidebar-logo">
+        <img src="assets/img/Loche-India-Logo-PNG.png" alt="Logo" width="75px" />
+      </div>
+
+      <!-- Close Button -->
+      <button class="btn-close" (click)="toggleSidebar()">
+        <span>&times;</span>
+      </button>
+    </div>
+
+    <div class="sidebar-content">
+      <div class="theiaStickySidebar">
+        <div class="stickybar">
+          <form action="#" autocomplete="off" class="sidebar-form">
+            <div class="sidebar-heading">
+              <h5 class="py-3">What Are You Looking For</h5>
+            </div>
+            <div class="product-search">
+              <div class="form-custom">
+                <input type="text" class="form-control" id="member_search1" placeholder="">
+                <span><img src="assets/img/icons/search.svg" alt="img"></span>
+              </div>
+            </div>
+            <div class="product-availability">
+              <h6>Availability</h6>
+              <div class="status-toggle">
+                <input id="mobile_notifications" class="check" type="checkbox" checked="">
+                <label for="mobile_notifications" class="checktoggle">checkbox</label>
+              </div>
+            </div>
+            <div class="accord-list">
+              <div class="accordion" id="accordionMain1">
+                <div class="card-header-new" id="headingOne">
+                  <h6 class="filter-title">
+                    <a href="javascript:void(0);" class="w-100" data-bs-toggle="collapse" data-bs-target="#collapseOne"
+                      aria-expanded="true" aria-controls="collapseOne">
+                      Product Category
+                      <span class="float-end"><i class="fa-solid fa-chevron-down"></i></span>
+                    </a>
+                  </h6>
+                </div>
+
+                <div id="collapseOne" class="collapse show" aria-labelledby="headingOne"
+                  data-bs-parent="#accordionMain1">
+                  <div class="card-body-chat">
+                    <div class="row">
+                      <div class="col-md-12">
+                        <div id="checkBoxes1">
+                          <div class="selectBox-cont">
+                            <!-- Manually add product categories -->
+                            <label class="custom_check w-100">
+                              <input type="checkbox" name="category">
+                              <span class="checkmark"></span> All
+                            </label>
+                            <label class="custom_check w-100">
+                              <input type="checkbox" name="category">
+                              <span class="checkmark"></span> Medical Devices
+                            </label>
+                            <label class="custom_check w-100">
+                              <input type="checkbox" name="category">
+                              <span class="checkmark"></span> Botox
+                            </label>
+                            <label class="custom_check w-100">
+                              <input type="checkbox" name="category">
+                              <span class="checkmark"></span> Fillers
+                            </label>
+                            <label class="custom_check w-100">
+                              <input type="checkbox" name="category">
+                              <span class="checkmark"></span> PL
+                            </label>
+                            <label class="custom_check w-100">
+                              <input type="checkbox" name="category">
+                              <span class="checkmark"></span> PDRN
+                            </label>
+                            <label class="custom_check w-100">
+                              <input type="checkbox" name="category">
+                              <span class="checkmark"></span> Skin Boost
+                            </label>
+                            <label class="custom_check w-100">
+                              <input type="checkbox" name="category">
+                              <span class="checkmark"></span> Lipolysis
+                            </label>
+                            <label class="custom_check w-100">
+                              <input type="checkbox" name="category">
+                              <span class="checkmark"></span> PDRN Dental Implants
+                            </label>
+                            <label class="custom_check w-100">
+                              <input type="checkbox" name="category">
+                              <span class="checkmark"></span> Cosmetics
+                            </label>
+                            <label class="custom_check w-100">
+                              <input type="checkbox" name="category">
+                              <span class="checkmark"></span> Health Functional Food
+                            </label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+
+              <div class="accordion" id="accordionMain9">
+                <div class="card-header-new" id="headingFour">
+                  <h6 class="filter-title">
+                    <a href="javascript:void(0);" class="w-100 collapsed" data-bs-toggle="collapse"
+                      data-bs-target="#collapseFour" aria-expanded="true" aria-controls="collapseFour">
+                      Price
+                      <span class="float-end"><i class="fa-solid fa-chevron-down"></i></span>
+                    </a>
+                  </h6>
+                </div>
+                <div id="collapseFour" class="collapse" aria-labelledby="headingFour"
+                  data-bs-parent="#accordionExample4">
+                  <div class="card-body-chat">
+                    <div class="filter-range">
+                      <mat-slider min="0" max="100" discrete [displayWith]="formatLabel">
+                        <input value="50" matSliderThumb />
+                      </mat-slider>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="accordion" id="accordionMain10">
+                <div class="card-header-new" id="headingFive">
+                  <h6 class="filter-title">
+                    <a href="javascript:void(0);" class="w-100 collapsed" data-bs-toggle="collapse"
+                      data-bs-target="#collapseFive" aria-expanded="true" aria-controls="collapseFive">
+                      Rating
+                      <span class="float-end"><i class="fa-solid fa-chevron-down"></i></span>
+                    </a>
+                  </h6>
+                </div>
+                <div id="collapseFive" class="collapse" aria-labelledby="headingFive"
+                  data-bs-parent="#accordionExample5">
+                  <div class="card-body-chat">
+                    <div id="checkBoxes4">
+                      <div class="selectBox-cont">
+                        <label class="custom_check w-100">
+                          <input type="checkbox" name="category">
+                          <span class="checkmark"></span>
+                          <i class="fas fa-star filled me-1"></i>
+                          <i class="fas fa-star filled me-1"></i>
+                          <i class="fas fa-star filled me-1"></i>
+                          <i class="fas fa-star filled me-1"></i>
+                          <i class="fas fa-star filled me-1"></i>
+                          <span class="rating-count">5.0</span>
+                        </label>
+                        <label class="custom_check w-100">
+                          <input type="checkbox" name="category">
+                          <span class="checkmark"></span>
+                          <i class="fas fa-star filled me-1"></i>
+                          <i class="fas fa-star filled me-1"></i>
+                          <i class="fas fa-star filled me-1"></i>
+                          <i class="fas fa-star filled me-1"></i>
+                          <i class="fas fa-star"></i>
+                          <span class="rating-count">4.0</span>
+                        </label>
+                        <label class="custom_check w-100">
+                          <input type="checkbox" name="category">
+                          <span class="checkmark"></span>
+                          <i class="fas fa-star filled me-1"></i>
+                          <i class="fas fa-star filled me-1"></i>
+                          <i class="fas fa-star filled me-1"></i>
+                          <i class="fas fa-star"></i>
+                          <i class="fas fa-star"></i>
+                          <span class="rating-count">3.0</span>
+                        </label>
+                        <label class="custom_check w-100">
+                          <input type="checkbox" name="category">
+                          <span class="checkmark"></span>
+                          <i class="fas fa-star filled me-1"></i>
+                          <i class="fas fa-star filled me-1"></i>
+                          <i class="fas fa-star"></i>
+                          <i class="fas fa-star"></i>
+                          <i class="fas fa-star"></i>
+                          <span class="rating-count">2.0</span>
+                        </label>
+                        <label class="custom_check w-100">
+                          <input type="checkbox" name="username">
+                          <span class="checkmark"></span>
+                          <i class="fas fa-star filled me-1"></i>
+                          <i class="fas fa-star"></i>
+                          <i class="fas fa-star"></i>
+                          <i class="fas fa-star"></i>
+                          <i class="fas fa-star"></i>
+                          <span class="rating-count">1.0</span>
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="accordion" id="accordionMain11">
+                <div class="card-header-new" id="headingSix">
+                  <h6 class="filter-title">
+                    <a href="javascript:void(0);" class="w-100 collapsed" data-bs-toggle="collapse"
+                      data-bs-target="#collapseSix" aria-expanded="true" aria-controls="collapseSix">
+                      Customer Recommendation
+                      <span class="float-end"><i class="fa-solid fa-chevron-down"></i></span>
+                    </a>
+                  </h6>
+                </div>
+                <div id="collapseSix" class="collapse" aria-labelledby="headingSix" data-bs-parent="#accordionExample6">
+                  <div class="card-body-chat">
+                    <div id="checkBoxes5">
+                      <div class="selectBox-cont">
+                        <label class="custom_check w-100">
+                          <input type="checkbox" name="category">
+                          <span class="checkmark"></span> 70% & up
+                        </label>
+                        <label class="custom_check w-100">
+                          <input type="checkbox" name="category">
+                          <span class="checkmark"></span> 60% & up
+                        </label>
+                        <label class="custom_check w-100">
+                          <input type="checkbox" name="category">
+                          <span class="checkmark"></span> 50% & up
+                        </label>
+                        <label class="custom_check w-100">
+                          <input type="checkbox" name="category">
+                          <span class="checkmark"></span> 40% & up
+                        </label>
+                        <div class="viewall-Two">
+                          <label class="custom_check w-100">
+                            <input type="checkbox" name="username">
+                            <span class="checkmark"></span>30% & up
+                          </label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <button type="submit"
+              class="d-inline-flex align-items-center justify-content-center btn w-100 btn-primary filter-btn">
+              <span><i class="feather icon-filter me-2"></i></span>Filter results
+            </button>
+            <a href="javascript:void(0);" class="reset-filter">Reset Filter</a>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Optional: overlay -->
+  <div class="overlay" *ngIf="isSidebarOpen" (click)="toggleSidebar()"></div>
+
+  <!--------------close Sidebar -->
 
   <!-- Sort By -->
   <div class="sort-section  mobile-view-hide">
@@ -72,11 +329,10 @@
               </div>
               <div class="fav-item justify-content-end">
                 <a class="fav-icon" tabindex="1">
-                  <i class="feather icon-heart"></i> 
+                  <i class="feather icon-heart"></i>
                 </a>
               </div>
             </div>
-
             <div class="listing-content">
               <div class="listing-features d-flex align-items-end justify-content-between">
                 <div class="list-rating">
@@ -86,7 +342,8 @@
                   <div class="list-rating">
                     <i class="fas fa-star filled me-1" *ngFor="let i of [1,2,3,4]"></i>
                     <i class="fas fa-star"></i>
-                    <span>{{ product.reviews }} ({{ product.rating }}) | {{ product.reviews }} Reviews</span>
+                    <!-- <span>{{ product.reviews }} ({{ product.rating }}) | {{ product.reviews }} Reviews</span> -->
+                  <span>({{ product.rating }}) | {{ product.reviews }} Reviews</span>
                   </div>
                 </div>
               </div>
@@ -98,7 +355,7 @@
               </div>
 
               <div class="listing-button">
-                <a class="btn btn-order" >
+                <a class="btn btn-order">
                   <span><i class="fa-solid fa-bag-shopping"></i></span>
                   Add To Cart
                 </a>

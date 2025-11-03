@@ -134,12 +134,15 @@ section.product-category {
     align-items: center;
 }
 .reset-filter {
-    background: white;
-    border: none;
+       background: #ffffff;
+    border: 1px solid gray;
+    border-radius: 6px;
+    margin-top: 5px;
     display: block;
     text-align: center;
     font-size: 15px;
-    color: #292929;/*#e80071*/
+    padding: 8px;
+    color: #292929;
 }
 .reset-filter:hover{
     color:red;

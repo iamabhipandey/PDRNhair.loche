@@ -540,7 +540,7 @@
                     }
                 }
                 &.select-two {
-                    width: 145px;
+                    min-width: 140px;
                     @include respond-below(custom575) {
                         width: 100%;
                     }

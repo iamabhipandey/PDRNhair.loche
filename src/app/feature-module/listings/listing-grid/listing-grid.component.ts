@@ -118,6 +118,14 @@ get filteredProducts() {
 selectTab(tabId: string) {
   this.activeTab = tabId;
 }
+// close product tabs 
+// open sidebar ts
+  isSidebarOpen = false;
+
+  toggleSidebar() {
+    this.isSidebarOpen = !this.isSidebarOpen;
+  }
+// close sidebar ts
 
 
 

@@ -48,7 +48,19 @@ $__whitecolor: #ffffff;
     font-size: 10px;
 }
 }
-
+@media (max-width: 567px) {
+.smallest-hide {
+    display: none;
+}
+a.nav-link.header-user {
+    padding: 0px;
+}
+.header .header-navbar-rht {
+    width: 100%;
+    place-content: flex-end;
+    flex-flow: nowrap;
+}
+}
 
 
 /* ----------------end header one--------------------------------- */

@@ -130,6 +130,9 @@ public static get allbrands(): string {
     public static get SocialContribution(): string {
     return this.baseUrl + '/pages/SocialContribution';
   }
+      public static get AffiliateInquiry(): string {
+    return this.baseUrl + '/pages/AffiliateInquiry';
+  }
   public static get comingSoon(): string {
     return this.baseUrl + '/pages/coming-soon';
   }

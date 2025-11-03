@@ -77,6 +77,7 @@ body {
 span.mat-mdc-select-min-line {
   font-size: 14px;
   color:#111;
+  padding-right: 10px;
 }
 .custom-timepicker {
   position: absolute;
