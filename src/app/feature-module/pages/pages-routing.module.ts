@@ -89,11 +89,13 @@ const routes: Routes = [
     loadChildren: () => import('./global-store/global-store.module').then((m) => m.GlobalStoreModule),
   },
 
-
-
      {
     path: 'ReturnCancellation',
     loadChildren: () => import('./return-cancellation/return-cancellation.module').then((m) => m.ReturnCancellationModule),
+  },
+    {
+    path: 'CeoGreeting',
+    loadChildren: () => import('./ceo-greeting/ceo-greeting.module').then( (m) => m.CeoGreetingModule),
   },
 ];
 

@@ -118,6 +118,9 @@ public static get allbrands(): string {
   public static get contactUs(): string {
     return this.baseUrl + '/pages/contact-us';
   }
+    public static get CeoGreeting(): string {
+    return this.baseUrl + '/pages/CeoGreeting';
+  }
   public static get comingSoon(): string {
     return this.baseUrl + '/pages/coming-soon';
   }

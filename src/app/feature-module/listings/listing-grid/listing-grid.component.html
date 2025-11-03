@@ -1,68 +1,56 @@
-<!-- Banner Section -->
-<section class="product-banner text-center text-white">
-  <div class="product-banner-content">
-    <h2>Product</h2>
-    <p>Reliable Medical Devices from Official Vendors</p>
+<section class="product-tabs container-fluid py-5">
+  <!-- Banner -->
+  <div class="product-banner text-center">
+    <h2 class="fw-bold mb-2">Product</h2>
+    <p class="text-muted">Reliable Medical Devices from Official Vendors</p>
   </div>
-</section>
 
-<section class="product-tabs container-fluid py-3">
   <!-- Tabs Navigation -->
-  <ul class="nav tab-sec justify-content-center flex-wrap mb-4 tab-nav">
-    <li class="nav-item" *ngFor="let tab of tabs" (click)="selectTab(tab.id)">
-      <a class="nav-link" [class.active]="activeTab === tab.id" href="javascript:void(0)">
-        {{ tab.label }}
-      </a>
-    </li>
-  </ul>
-
-  <!-- Tab Content -->
-  <div class="tab-content text-center">
-    <div class="tab-pane fade" [class.show]="activeTab === tab.id" [class.active]="activeTab === tab.id"
-      *ngFor="let tab of tabs">
-      <div class="tab-banner card shadow-sm border-0 p-5 mx-auto">
-        <h3 class="tab-title mb-2">{{ tab.title }}</h3>
-        <p class="tab-description mb-4">{{ tab.description }}</p>
-        <a href="#" class="btn btn-outline-primary rounded-pill px-4 py-2">
-          Explore {{ tab.label }}
+  <div class="nabsec d-flex justify-content-between">
+    <ul class="nav justify-content-center  flex-wrap tab-nav">
+      <li class="nav-item " *ngFor="let tab of tabs" (click)="selectTab(tab.id)">
+        <a class="nav-link px-4 py-2" [class.active]="activeTab === tab.id" href="javascript:void(0)">
+          {{ tab.label }}
         </a>
-      </div>
+      </li>
+    </ul>
+    <div class="filterbutton">
+      <button>Filter</button>
     </div>
+
   </div>
-</section>
 
-
-
-<!-- Sort By -->
-<div class="sort-section  mobile-view-hide">
-  <div class="container-fluid">
-    <div class="sortby-sec">
-      <div class="sorting-div">
-        <div class="justy-containt">
-          <div class="nav-text-first">
-            <div class="count-search">
-              <p>Displaying Total <span> {{getAllProductData.length}} </span> <span> Bellaluna's Product</span></p>
+  <!-- Sort By -->
+  <div class="sort-section  mobile-view-hide">
+    <div class="container-fluid">
+      <div class="sortby-sec">
+        <div class="sorting-div">
+          <div class="justy-containt">
+            <div class="nav-text-first">
+              <div class="count-search">
+                <p>Displaying Total <span> {{getAllProductData.length}} </span> <span> Loche Bio Products</span></p>
+              </div>
             </div>
-          </div>
-          <div class="nav-text-second">
-            <div class="product-filter-group">
-              <div class="sortbyset">
-                <ul>
+            <div class="nav-text-second">
+              <div class="product-filter-group">
+                <div class="sortbyset">
+                  <ul>
 
-                  <li>
-                    <!-- <span class="sortbytitle">Sort By </span> -->
-                    <div class="sorting-select select-two">
-                      <mat-select [(ngModel)]="selectedValue2" (selectionChange)="onSortChange($event.value)"
-                        [ngModelOptions]="{ standalone: true }" class="form-control select customcolor"
-                        placeholder="Products">
+                    <li>
+                      <!-- <span class="sortbytitle">Sort By </span> -->
+                      <div class="sorting-select select-two">
+                        <mat-select [(ngModel)]="selectedValue2" (selectionChange)="onSortChange($event.value)"
+                          [ngModelOptions]="{ standalone: true }" class="form-control select customcolor"
+                          placeholder="Products">
 
-                        <mat-option *ngFor="let data of selectedList2" [value]="data.value">
-                          {{ data.value }}
-                        </mat-option>
-                      </mat-select>
-                    </div>
-                  </li>
-                </ul>
+                          <mat-option *ngFor="let data of selectedList2" [value]="data.value">
+                            {{ data.value }}
+                          </mat-option>
+                        </mat-select>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
               </div>
             </div>
           </div>
@@ -70,8 +58,271 @@
       </div>
     </div>
   </div>
-</div>
-<!-- /Sort By -->
+  <!-- /Sort By -->
+
+  <!-- Tab Content -->
+  <div class="tab-container mt-4">
+    <!-- 🟣 ALL PRODUCTS TAB -->
+    <div *ngIf="activeTab === 'all'" class="tab-section fade-in">
+      <div class="row">
+        <!-- Product 1 -->
+        <div class="col-xl-3 col-lg-4 col-md-6 col-sm-4 col-6">
+          <div class="listing-item">
+            <div class="listing-img">
+              <div class="img-slider">
+                <div class="slide-images">
+                  <a class="product-image">
+                    <img src="assets/img/product/glossys1.webp" class="img-fluid" alt="product" />
+                  </a>
+                </div>
+              </div>
+              <div class="fav-item justify-content-end">
+                <a class="fav-icon" tabindex="1">
+                  <i class="feather icon-heart"></i>
+                </a>
+              </div>
+            </div>
+
+            <div class="listing-content">
+              <div class="listing-features d-flex align-items-end justify-content-between">
+                <div class="list-rating">
+                  <h3 class="listing-title"><a>Hydra Glow Serum</a></h3>
+                  <div class="list-rating">
+                    <i class="fas fa-star filled me-1"></i>
+                    <i class="fas fa-star filled me-1"></i>
+                    <i class="fas fa-star filled me-1"></i>
+                    <i class="fas fa-star filled me-1"></i>
+                    <i class="fas fa-star"></i>
+                    <span>120 (4.0) | 138 Reviews</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="listing-location-details">
+                <div class="listing-price">
+                  <h5>₹ 1,299</h5>
+                </div>
+              </div>
+
+              <div class="listing-button">
+                <a class="btn btn-order">
+                  <span><i class="fa-solid fa-bag-shopping"></i></span>
+                  Add To Cart
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 2 -->
+        <div class="col-xl-3 col-lg-4 col-md-6 col-sm-4 col-6">
+          <div class="listing-item">
+            <div class="listing-img">
+              <div class="img-slider">
+                <div class="slide-images">
+                  <a class="product-image">
+                    <img src="assets/img/product/glossys2.webp" class="img-fluid" alt="product" />
+                  </a>
+                </div>
+              </div>
+              <div class="fav-item justify-content-end">
+                <a class="fav-icon" tabindex="1">
+                  <i class="feather icon-heart"></i>
+                </a>
+              </div>
+            </div>
+
+            <div class="listing-content">
+              <div class="listing-features d-flex align-items-end justify-content-between">
+                <div class="list-rating">
+                  <h3 class="listing-title"><a>Vitamin C Cream</a></h3>
+                  <div class="list-rating">
+                    <i class="fas fa-star filled me-1"></i>
+                    <i class="fas fa-star filled me-1"></i>
+                    <i class="fas fa-star filled me-1"></i>
+                    <i class="fas fa-star filled me-1"></i>
+                    <i class="fas fa-star"></i>
+                    <span>88 (4.0) | 97 Reviews</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="listing-location-details">
+                <div class="listing-price">
+                  <h5>₹ 899</h5>
+                </div>
+              </div>
+
+              <div class="listing-button">
+                <a class="btn btn-order">
+                  <span><i class="fa-solid fa-bag-shopping"></i></span>
+                  Add To Cart
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 3 -->
+        <div class="col-xl-3 col-lg-4 col-md-6 col-sm-4 col-6">
+          <div class="listing-item">
+            <div class="listing-img">
+              <div class="img-slider">
+                <div class="slide-images">
+                  <a class="product-image">
+                    <img src="assets/img/product/glossys3.webp" class="img-fluid" alt="product" />
+                  </a>
+                </div>
+              </div>
+              <div class="fav-item justify-content-end">
+                <a class="fav-icon" tabindex="1">
+                  <i class="feather icon-heart"></i>
+                </a>
+              </div>
+            </div>
+
+            <div class="listing-content">
+              <div class="listing-features d-flex align-items-end justify-content-between">
+                <div class="list-rating">
+                  <h3 class="listing-title"><a>Collagen Booster</a></h3>
+                  <div class="list-rating">
+                    <i class="fas fa-star filled me-1"></i>
+                    <i class="fas fa-star filled me-1"></i>
+                    <i class="fas fa-star filled me-1"></i>
+                    <i class="fas fa-star filled me-1"></i>
+                    <i class="fas fa-star"></i>
+                    <span>160 (4.0) | 110 Reviews</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="listing-location-details">
+                <div class="listing-price">
+                  <h5>₹ 1,499</h5>
+                </div>
+              </div>
+
+              <div class="listing-button">
+                <a class="btn btn-order">
+                  <span><i class="fa-solid fa-bag-shopping"></i></span>
+                  Add To Cart
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-3 col-lg-4 col-md-6 col-sm-4 col-6">
+          <div class="listing-item">
+            <div class="listing-img">
+              <div class="img-slider">
+                <div class="slide-images">
+                  <a class="product-image">
+                    <img src="assets/img/product/glossys3.webp" class="img-fluid" alt="product" />
+                  </a>
+                </div>
+              </div>
+              <div class="fav-item justify-content-end">
+                <a class="fav-icon" tabindex="1">
+                  <i class="feather icon-heart"></i>
+                </a>
+              </div>
+            </div>
+
+            <div class="listing-content">
+              <div class="listing-features d-flex align-items-end justify-content-between">
+                <div class="list-rating">
+                  <h3 class="listing-title"><a>Collagen Booster</a></h3>
+                  <div class="list-rating">
+                    <i class="fas fa-star filled me-1"></i>
+                    <i class="fas fa-star filled me-1"></i>
+                    <i class="fas fa-star filled me-1"></i>
+                    <i class="fas fa-star filled me-1"></i>
+                    <i class="fas fa-star"></i>
+                    <span>160 (4.0) | 110 Reviews</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="listing-location-details">
+                <div class="listing-price">
+                  <h5>₹ 1,499</h5>
+                </div>
+              </div>
+
+              <div class="listing-button">
+                <a class="btn btn-order">
+                  <span><i class="fa-solid fa-bag-shopping"></i></span>
+                  Add To Cart
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 🟡 OTHER TABS -->
+    <div *ngIf="activeTab === 'botox'" class="tab-section fade-in">
+      <div class="col-xl-4 col-lg-4 col-md-6 col-sm-4 col-6">
+        <div class="listing-item">
+          <div class="listing-img">
+            <div class="img-slider">
+              <div class="slide-images">
+                <a class="product-image">
+                  <img src="assets/img/product/glossys2.webp" class="img-fluid" alt="product" />
+                </a>
+              </div>
+            </div>
+            <div class="fav-item justify-content-end">
+              <a class="fav-icon" tabindex="1">
+                <i class="feather icon-heart"></i>
+              </a>
+            </div>
+          </div>
+
+          <div class="listing-content">
+            <div class="listing-features d-flex align-items-end justify-content-between">
+              <div class="list-rating">
+                <h3 class="listing-title"><a>Vitamin C Cream</a></h3>
+                <div class="list-rating">
+                  <i class="fas fa-star filled me-1"></i>
+                  <i class="fas fa-star filled me-1"></i>
+                  <i class="fas fa-star filled me-1"></i>
+                  <i class="fas fa-star filled me-1"></i>
+                  <i class="fas fa-star"></i>
+                  <span>88 (4.0) | 97 Reviews</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="listing-location-details">
+              <div class="listing-price">
+                <h5>₹ 899</h5>
+              </div>
+            </div>
+
+            <div class="listing-button">
+              <a class="btn btn-order">
+                <span><i class="fa-solid fa-bag-shopping"></i></span>
+                Add To Cart
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div *ngIf="activeTab === 'pn'" class="tab-section fade-in">
+      <div class="text-center p-5 bg-light rounded">PN Injection products displayed here.</div>
+    </div>
+  </div>
+</section>
+
+
+
+
+
 
 
 <section class="section sidebar-section pt-0 mt-4">

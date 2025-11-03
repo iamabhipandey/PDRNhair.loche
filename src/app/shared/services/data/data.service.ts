@@ -81,14 +81,14 @@ export class DataService {
 
 
   public header: header[] = [
-      {
-      tittle: 'About Us',
-      showAsTab: false,
-      separateRoute: true,
-      // routes: routes.contactUs,
-      hasSubRoute: false,
-      showSubRoute: false,
-    },
+    //   {
+    //   tittle: 'About Us',
+    //   showAsTab: false,
+    //   separateRoute: true,
+    //   routes: routes.contactUs,
+    //   hasSubRoute: false,
+    //   showSubRoute: false,
+    // },
     {
       
       tittle: 'Company ',
@@ -97,29 +97,36 @@ export class DataService {
       menu: [
         {
           menuValue: 'CEO greeting',
+          routes: routes.CeoGreeting,
+          hasSubRoute: false,
+          showSubRoute: false,
+          subMenus: [],
+        },
+         {
+          menuValue: 'About Us',
           hasSubRoute: false,
           showSubRoute: false,
           subMenus: [],
         },
         
-        {
-          menuValue: 'VISION 2030',
-          hasSubRoute: false,
-          showSubRoute: false,
-          subMenus: [],
-        },
-        {
-          menuValue: 'Company history',
-          hasSubRoute: false,
-          showSubRoute: false,
-          subMenus: [],
-        },
-        {
-          menuValue: 'Social contribution',
-          hasSubRoute: false,
-          showSubRoute: false,
-          subMenus: [],
-        },
+        // {
+        //   menuValue: 'VISION 2030',
+        //   hasSubRoute: false,
+        //   showSubRoute: false,
+        //   subMenus: [],
+        // },
+        // {
+        //   menuValue: 'Company history',
+        //   hasSubRoute: false,
+        //   showSubRoute: false,
+        //   subMenus: [],
+        // },
+        // {
+        //   menuValue: 'Social contribution',
+        //   hasSubRoute: false,
+        //   showSubRoute: false,
+        //   subMenus: [],
+        // },
         
       ],
     },

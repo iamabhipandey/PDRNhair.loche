@@ -44,10 +44,15 @@
   color: #fff;
   box-shadow: 0 4px 15px rgba(164, 110, 241, 0.3);
 }
-
+.nabsec{
+  background: #fff;
+  border-radius: 20px;
+  padding: 15px;
+      align-items: center;
+  transition: all 0.4s ease-in-out;
+}
 /* Tab Content */
 .tab-banner {
-  max-width: 600px;
   background: #fff;
   border-radius: 20px;
   transition: all 0.4s ease-in-out;
