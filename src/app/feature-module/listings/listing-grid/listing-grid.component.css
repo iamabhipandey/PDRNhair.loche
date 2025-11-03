@@ -1,41 +1,117 @@
-/* Banner Section */
+/* 🌟 Product Banner */
 .product-banner {
   background: linear-gradient(135deg, #f57c9b, #a46ef1);
   padding: 100px 0 70px;
   color: #fff;
+  text-align: center;
 }
 
-.tab-sec{
-        background: #fff;
-    border-radius: 20px;
-    padding: 20px;
-    transition: all 0.4s ease-in-out;
-}
-
-.product-banner-content h2 {
+.product-banner h2 {
   font-size: 2.5rem;
   font-weight: 700;
   letter-spacing: 1px;
+  margin-bottom: 10px;
 }
 
-.product-banner-content p {
+.product-banner p {
   font-size: 1.1rem;
   opacity: 0.9;
+  margin: 0;
 }
 
-/* Tabs Navigation */
+/* 🌈 Filter Button */
+.filterbutton {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.btn-filter {
+  background: linear-gradient(90deg, #a855f7, #6d28d9);
+  color: #fff;
+  border: none;
+  padding: 10px 22px;
+  font-size: 15px;
+  font-weight: 500;
+  border-radius: 50px;
+  box-shadow: 0 4px 10px rgba(109, 40, 217, 0.3);
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  text-transform: capitalize;
+  cursor: pointer;
+}
+
+.btn-filter:hover {
+  background: linear-gradient(90deg, #9333ea, #5b21b6);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(109, 40, 217, 0.4);
+}
+
+.btn-filter:active {
+  transform: scale(0.97);
+  box-shadow: 0 2px 8px rgba(109, 40, 217, 0.2);
+}
+
+@media (max-width: 768px) {
+  .btn-filter {
+    padding: 8px 16px;
+    font-size: 14px;
+  }
+}
+
+/* ⚙️ Tabs Section */
+.tabs-wrap {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  background: #fff;
+  border-radius: 20px;
+  padding: 15px;
+}
+
+.tab-scroll {
+  flex: 1 1 auto;
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  cursor: grab;
+}
+
+.tab-scroll:active {
+  cursor: grabbing;
+}
+
+/* 🧭 Tab Nav */
+.tab-nav {
+  display: flex !important;
+  flex-wrap: nowrap !important;
+  margin: 0;
+  white-space: nowrap;
+  align-items: center;
+  padding: 6px 8px;
+}
+
 .tab-nav .nav-item {
+  flex: 0 0 auto;
+  display: inline-block;
   margin: 6px 10px;
 }
 
 .tab-nav .nav-link {
-  border: none;
+  border: 0.5px solid #c1c1c1;
   border-radius: 50px;
   padding: 10px 25px;
   color: #444;
   background: #f5f5f5;
   font-weight: 500;
   transition: all 0.3s ease;
+  white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
 }
 
 .tab-nav .nav-link.active,
@@ -44,107 +120,65 @@
   color: #fff;
   box-shadow: 0 4px 15px rgba(164, 110, 241, 0.3);
 }
-.nabsec{
-  background: #fff;
-  border-radius: 20px;
-  padding: 15px;
-      align-items: center;
-  transition: all 0.4s ease-in-out;
+
+/* 🌐 Scrollbar Style */
+.tab-scroll::-webkit-scrollbar {
+  height: 3px;
 }
-/* Tab Content */
-.tab-banner {
-  background: #fff;
-  border-radius: 20px;
-  transition: all 0.4s ease-in-out;
+.tab-scroll::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.12);
+  border-radius: 6px;
+}
+.tab-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(0, 0, 0, 0.12) transparent;
 }
 
-.tab-banner:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
-}
-
-.tab-title {
-  font-size: 1.8rem;
-  font-weight: 600;
-  color: #333;
-}
-
-.tab-description {
-  color: #666;
-  font-size: 1rem;
-}
-
-.btn-outline-primary {
-  border-color: #a46ef1;
-  color: #a46ef1;
-  transition: all 0.3s ease;
-}
-
-.btn-outline-primary:hover {
-  background: linear-gradient(135deg, #ff7ea5, #a46ef1);
-  border: none;
-  color: #fff;
-}
-
-/* Smooth fade animation */
-.tab-pane {
-  display: none;
-  opacity: 0;
-  transition: opacity 0.5s ease;
-}
-
-.tab-pane.active.show {
-  display: block;
-  opacity: 1;
-}
-/* product css */
-
+/* 🛍️ Product Card */
 .product-image {
-    width: 100%;
-    height: 300px;
-    display: flex;
-    overflow: hidden;
-    border-radius: 8px;
-    align-items: anchor-center;
+  width: 100%;
+  height: 300px;
+  display: flex;
+  overflow: hidden;
+  border-radius: 8px;
 }
+
+.product-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* 🧩 Responsive Product Image Height */
 @media (min-width: 1200px) {
   .product-image {
     height: 300px;
   }
 }
-
-/* 💻 Tablets (768px to 1199px) */
 @media (max-width: 1199px) and (min-width: 768px) {
   .product-image {
     height: 250px;
   }
 }
-
-/* 📱 Mobile devices (below 768px) */
 @media (max-width: 767px) {
   .product-image {
     height: 200px;
   }
 }
-
-/* 📱 Small mobile (below 480px) */
 @media (max-width: 480px) {
   .product-image {
     height: 180px;
   }
 }
-.product-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover; /* ensures image fills the box */
-  display: block;
+
+/* 📄 Pagination (used at bottom) */
+.blog-pagination {
+  border-top: 1px solid #b4b4b4;
+  padding: 12px;
 }
 
-.blog-pagination {
-    border-top: 1px solid #b4b4b4;
-    padding: 12px;
-}
-.paginationarrow{
+.paginationarrow {
   padding: 5px;
   color: black;
 }

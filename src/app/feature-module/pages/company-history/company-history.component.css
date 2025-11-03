@@ -5,7 +5,7 @@ body {
 
 .timeline-section {
   position: relative;
-  padding: 80px 0;
+  padding: 60px 0;
 }
 
 .timeline-header h2 {
@@ -87,6 +87,7 @@ body {
 
 .timeline-content h4 {
   color: #004aad;
+  font-size: 22px;
   font-weight: 600;
   margin-bottom: 10px;
 }
@@ -118,4 +119,12 @@ body {
   .timeline-item.right {
     left: 0;
   }
+  .timeline-item.right::before {
+    left: -15px;
+}
+.timeline-header h2 {
+    font-weight: 700;
+    color: #004aad;
+    font-size: 1.5rem;
+}
 }

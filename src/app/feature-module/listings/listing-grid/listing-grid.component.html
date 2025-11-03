@@ -4,20 +4,18 @@
     <h2 class="fw-bold mb-2">Product</h2>
     <p class="text-muted">Reliable Medical Devices from Official Vendors</p>
   </div>
-
   <!-- Tabs Navigation -->
-  <div class="nabsec d-flex justify-content-between">
-    <ul class="nav justify-content-center  flex-wrap tab-nav">
-      <li class="nav-item " *ngFor="let tab of tabs" (click)="selectTab(tab.id)">
-        <a class="nav-link px-4 py-2" [class.active]="activeTab === tab.id" href="javascript:void(0)">
-          {{ tab.label }}
-        </a>
-      </li>
-    </ul>
-    <div class="filterbutton">
-      <button>Filter</button>
+  <div class="tabs-wrap">
+    <div class="tab-scroll">
+      <ul class="nav flex-wrap tab-nav">
+        <li class="nav-item" *ngFor="let tab of tabs" (click)="selectTab(tab.id)">
+          <a class="nav-link" [class.active]="activeTab === tab.id" href="javascript:void(0)">{{ tab.label }}</a>
+        </li>
+      </ul>
     </div>
-
+    <div class="filterbutton">
+      <button class="btn btn-filter">Filter</button>
+    </div>
   </div>
 
   <!-- Sort By -->
@@ -35,14 +33,12 @@
               <div class="product-filter-group">
                 <div class="sortbyset">
                   <ul>
-
                     <li>
                       <!-- <span class="sortbytitle">Sort By </span> -->
                       <div class="sorting-select select-two">
                         <mat-select [(ngModel)]="selectedValue2" (selectionChange)="onSortChange($event.value)"
                           [ngModelOptions]="{ standalone: true }" class="form-control select customcolor"
                           placeholder="Products">
-
                           <mat-option *ngFor="let data of selectedList2" [value]="data.value">
                             {{ data.value }}
                           </mat-option>
@@ -62,17 +58,15 @@
 
   <!-- Tab Content -->
   <div class="tab-container mt-4">
-    <!-- 🟣 ALL PRODUCTS TAB -->
-    <div *ngIf="activeTab === 'all'" class="tab-section fade-in">
+    <div *ngIf="filteredProducts.length > 0" class="tab-section fade-in">
       <div class="row">
-        <!-- Product 1 -->
-        <div class="col-xl-3 col-lg-4 col-md-4 col-sm-4 col-6">
+        <div class="col-xl-3 col-lg-4 col-md-4 col-sm-4 col-6" *ngFor="let product of filteredProducts">
           <div class="listing-item">
             <div class="listing-img">
               <div class="img-slider">
                 <div class="slide-images">
-                  <a class="product-image">
-                    <img src="assets/img/banners/Loche Tox 100Unit.jpg" class="img-fluid" alt="product" />
+                  <a class="product-image" [routerLink]="routes.listingDetails">
+                    <img [src]="product.image" class="img-fluid" [alt]="product.name" />
                   </a>
                 </div>
               </div>
@@ -86,171 +80,25 @@
             <div class="listing-content">
               <div class="listing-features d-flex align-items-end justify-content-between">
                 <div class="list-rating">
-                  <h3 class="listing-title"><a>Loche Tox 100Unit</a></h3>
+                  <h3 class="listing-title">
+                    <a>{{ product.name }}</a>
+                  </h3>
                   <div class="list-rating">
-                    <i class="fas fa-star filled me-1"></i>
-                    <i class="fas fa-star filled me-1"></i>
-                    <i class="fas fa-star filled me-1"></i>
-                    <i class="fas fa-star filled me-1"></i>
+                    <i class="fas fa-star filled me-1" *ngFor="let i of [1,2,3,4]"></i>
                     <i class="fas fa-star"></i>
-                    <span>120 (4.0) | 138 Reviews</span>
+                    <span>{{ product.reviews }} ({{ product.rating }}) | {{ product.reviews }} Reviews</span>
                   </div>
                 </div>
               </div>
 
               <div class="listing-location-details">
                 <div class="listing-price">
-                  <h5>₹ 1,299</h5>
+                  <h5>₹ {{ product.price }}</h5>
                 </div>
               </div>
 
               <div class="listing-button">
-                <a class="btn btn-order">
-                  <span><i class="fa-solid fa-bag-shopping"></i></span>
-                  Add To Cart
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Product 2 -->
-        <div class="col-xl-3 col-lg-4 col-md-4 col-sm-4 col-6">
-          <div class="listing-item">
-            <div class="listing-img">
-              <div class="img-slider">
-                <div class="slide-images">
-                  <a class="product-image">
-                    <img src="assets/img/product/glossys2.webp" class="img-fluid" alt="product" />
-                  </a>
-                </div>
-              </div>
-              <div class="fav-item justify-content-end">
-                <a class="fav-icon" tabindex="1">
-                  <i class="feather icon-heart"></i>
-                </a>
-              </div>
-            </div>
-
-            <div class="listing-content">
-              <div class="listing-features d-flex align-items-end justify-content-between">
-                <div class="list-rating">
-                  <h3 class="listing-title"><a>Vitamin C Cream</a></h3>
-                  <div class="list-rating">
-                    <i class="fas fa-star filled me-1"></i>
-                    <i class="fas fa-star filled me-1"></i>
-                    <i class="fas fa-star filled me-1"></i>
-                    <i class="fas fa-star filled me-1"></i>
-                    <i class="fas fa-star"></i>
-                    <span>88 (4.0) | 97 Reviews</span>
-                  </div>
-                </div>
-              </div>
-
-              <div class="listing-location-details">
-                <div class="listing-price">
-                  <h5>₹ 899</h5>
-                </div>
-              </div>
-
-              <div class="listing-button">
-                <a class="btn btn-order">
-                  <span><i class="fa-solid fa-bag-shopping"></i></span>
-                  Add To Cart
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Product 3 -->
-        <div class="col-xl-3 col-lg-4 col-md-4 col-sm-4 col-6">
-          <div class="listing-item">
-            <div class="listing-img">
-              <div class="img-slider">
-                <div class="slide-images">
-                  <a class="product-image">
-                    <img src="assets/img/product/glossys3.webp" class="img-fluid" alt="product" />
-                  </a>
-                </div>
-              </div>
-              <div class="fav-item justify-content-end">
-                <a class="fav-icon" tabindex="1">
-                  <i class="feather icon-heart"></i>
-                </a>
-              </div>
-            </div>
-
-            <div class="listing-content">
-              <div class="listing-features d-flex align-items-end justify-content-between">
-                <div class="list-rating">
-                  <h3 class="listing-title"><a>Collagen Booster</a></h3>
-                  <div class="list-rating">
-                    <i class="fas fa-star filled me-1"></i>
-                    <i class="fas fa-star filled me-1"></i>
-                    <i class="fas fa-star filled me-1"></i>
-                    <i class="fas fa-star filled me-1"></i>
-                    <i class="fas fa-star"></i>
-                    <span>160 (4.0) | 110 Reviews</span>
-                  </div>
-                </div>
-              </div>
-
-              <div class="listing-location-details">
-                <div class="listing-price">
-                  <h5>₹ 1,499</h5>
-                </div>
-              </div>
-
-              <div class="listing-button">
-                <a class="btn btn-order">
-                  <span><i class="fa-solid fa-bag-shopping"></i></span>
-                  Add To Cart
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-xl-3 col-lg-4 col-md-4 col-sm-4 col-6">
-          <div class="listing-item">
-            <div class="listing-img">
-              <div class="img-slider">
-                <div class="slide-images">
-                  <a class="product-image">
-                    <img src="assets/img/product/glossys3.webp" class="img-fluid" alt="product" />
-                  </a>
-                </div>
-              </div>
-              <div class="fav-item justify-content-end">
-                <a class="fav-icon" tabindex="1">
-                  <i class="feather icon-heart"></i>
-                </a>
-              </div>
-            </div>
-
-            <div class="listing-content">
-              <div class="listing-features d-flex align-items-end justify-content-between">
-                <div class="list-rating">
-                  <h3 class="listing-title"><a>Collagen Booster</a></h3>
-                  <div class="list-rating">
-                    <i class="fas fa-star filled me-1"></i>
-                    <i class="fas fa-star filled me-1"></i>
-                    <i class="fas fa-star filled me-1"></i>
-                    <i class="fas fa-star filled me-1"></i>
-                    <i class="fas fa-star"></i>
-                    <span>160 (4.0) | 110 Reviews</span>
-                  </div>
-                </div>
-              </div>
-
-              <div class="listing-location-details">
-                <div class="listing-price">
-                  <h5>₹ 1,499</h5>
-                </div>
-              </div>
-
-              <div class="listing-button">
-                <a class="btn btn-order">
+                <a class="btn btn-order" >
                   <span><i class="fa-solid fa-bag-shopping"></i></span>
                   Add To Cart
                 </a>
@@ -261,94 +109,49 @@
       </div>
     </div>
 
-    <!-- 🟡 OTHER TABS -->
-    <div *ngIf="activeTab === 'botox'" class="tab-section fade-in">
-      <div class="col-xl-3 col-lg-3 col-md-4 col-sm-4 col-6">
-        <div class="listing-item">
-          <div class="listing-img">
-            <div class="img-slider">
-              <div class="slide-images">
-                <a class="product-image">
-                  <img src="assets/img/product/glossys2.webp" class="img-fluid" alt="product" />
-                </a>
-              </div>
-            </div>
-            <div class="fav-item justify-content-end">
-              <a class="fav-icon" tabindex="1">
-                <i class="feather icon-heart"></i>
-              </a>
-            </div>
-          </div>
-
-          <div class="listing-content">
-            <div class="listing-features d-flex align-items-end justify-content-between">
-              <div class="list-rating">
-                <h3 class="listing-title"><a>Vitamin C Cream</a></h3>
-                <div class="list-rating">
-                  <i class="fas fa-star filled me-1"></i>
-                  <i class="fas fa-star filled me-1"></i>
-                  <i class="fas fa-star filled me-1"></i>
-                  <i class="fas fa-star filled me-1"></i>
-                  <i class="fas fa-star"></i>
-                  <span>88 (4.0) | 97 Reviews</span>
-                </div>
-              </div>
-            </div>
-
-            <div class="listing-location-details">
-              <div class="listing-price">
-                <h5>₹ 899</h5>
-              </div>
-            </div>
-
-            <div class="listing-button">
-              <a class="btn btn-order">
-                <span><i class="fa-solid fa-bag-shopping"></i></span>
-                Add To Cart
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-    </div>
-
-    <div *ngIf="activeTab === 'pn'" class="tab-section fade-in">
-      <div class="text-center p-5 bg-light rounded">PN Injection products displayed here.</div>
+    <!-- 🟡 Optional: if no products found -->
+    <div *ngIf="filteredProducts.length === 0" class="text-center p-5 bg-light rounded">
+      No products available for this category.
     </div>
   </div>
-</section>
 
-        <!--Pagination-->
-        <div class="blog-pagination">
-          <nav>
-            <ul class="pagination page-item justify-content-end">
-              <li class="previtem">
-                <a class="paginationarrow"><i class="fa-solid fa-angles-left"></i></a>
+
+
+
+
+  <!--Pagination-->
+  <div class="blog-pagination">
+    <nav>
+      <ul class="pagination page-item justify-content-end">
+        <li class="previtem">
+          <a class="paginationarrow"><i class="fa-solid fa-angles-left"></i></a>
+        </li>
+        <li class="justify-content-center pagination-center">
+          <div class="page-group">
+            <ul>
+              <li class="page-item">
+                <a class="active page-link" href="javascript:void(0);">1</a>
               </li>
-              <li class="justify-content-center pagination-center">
-                <div class="page-group">
-                  <ul>
-                    <li class="page-item">
-                      <a class="active page-link" href="javascript:void(0);">1</a>
-                    </li>
-                    <li class="page-item">
-                      <a class=" page-link" href="javascript:void(0);">2 <span
-                          class="visually-hidden">(current)</span></a>
-                    </li>
-                    <li class="page-item">
-                      <a class="page-link" href="javascript:void(0);">3</a>
-                    </li>
-                  </ul>
-                </div>
+              <li class="page-item">
+                <a class=" page-link" href="javascript:void(0);">2 <span class="visually-hidden">(current)</span></a>
               </li>
-              <li class="nextlink">
-                <a class="paginationarrow"><i class="fa-solid fa-angles-right"></i></a>
+              <li class="page-item">
+                <a class="page-link" href="javascript:void(0);">3</a>
               </li>
             </ul>
-          </nav>
-        </div>
-        <!--/Pagination-->
+          </div>
+        </li>
+        <li class="nextlink">
+          <a class="paginationarrow"><i class="fa-solid fa-angles-right"></i></a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+  <!--/Pagination-->
+
+</section>
+
+
 
 
 

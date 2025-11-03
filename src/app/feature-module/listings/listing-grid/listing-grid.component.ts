@@ -20,21 +20,105 @@ interface data {
 })
 export class ListingGridComponent {
 
-  activeTab = 'all';
+activeTab = 'all';
 
-  tabs = [
-    { id: 'all', label: 'All' },
-    { id: 'botox', label: 'Botox' },
-    { id: 'pn', label: 'PN Injections' },
-    { id: 'skin', label: 'Skin Booster' },
-    { id: 'lipo', label: 'Lipolysis' },
-    { id: 'equip', label: 'Equipment' },
-    { id: 'supplement', label: 'Supplement' },
-  ];
+tabs = [
+  { id: 'all', label: 'All' },
+  { id: 'medical', label: 'Medical Devices' },
+  { id: 'botox', label: 'Botox' },
+  { id: 'fillers', label: 'Fillers' },
+  { id: 'pl', label: 'PL' },
+  { id: 'pdrn', label: 'PDRN' },
+  { id: 'skin', label: 'Skin Boost' },
+  { id: 'lipo', label: 'Lipolysis' },
+  { id: 'pdrn-dental', label: 'PDRN Dental Implants' },
+  { id: 'cosmetics', label: 'Cosmetics' },
+  { id: 'supplement', label: 'Health Functional Food' },
+];
 
-  selectTab(tabId: string) {
-    this.activeTab = tabId;
+products = [
+  { id:1,
+    category: 'medical', 
+    name: 'Pdrnelle ', 
+    price: 1299, rating: 4.0, reviews: 138, 
+    image: 'assets/img/banners/PDRNelle.jpg' 
+  },
+  { id:2,
+    category: 'medical', 
+    name: 'Loche injector', 
+    price: 1799, rating: 4.0, reviews: 138, 
+    image: 'assets/img/banners/Loche injector .jpg' 
+  },
+  { id:3,
+    category: 'botox', 
+    name: 'Loche Tox 100Unit', 
+    price: 899, rating: 4.0, reviews: 97, 
+    image: 'assets/img/banners/Loche Tox 100Unit.jpg' 
+  },
+  { category: 'botox', 
+    name: 'Loche Tox 200Unit ', 
+    price: 899, rating: 4.0, reviews: 97, 
+    image: 'assets/img/banners/Loche Tox 200Unit.jpg' 
+  },
+  // { category: 'fillers', 
+  //   name: 'Hydra Filler 1.0ml', 
+  //   price: 1100, rating: 4.5, reviews: 75, 
+  //   image: 'assets/img/product/filler1.webp' 
+  // },
+  // { category: 'pdrn', 
+  //   name: 'PDRN Revital Injection', 
+  //   price: 1399, rating: 4.4, reviews: 89, 
+  //   image: 'assets/img/product/pdrn1.webp' 
+  // },
+  { category: 'skin', 
+    name: 'Pdrnelle skinbooster', 
+    price: 1100, rating: 4.5, reviews: 65, 
+    image: 'assets/img/banners/IMG-20251025-WA0033.jpg' 
+  },
+    { category: 'skin', 
+    name: 'Pdrnelle vega shine', 
+    price: 2200, rating: 4.5, reviews: 65, 
+    image: 'assets/img/banners/Pdrnelle vega shine.jpg' 
+  },
+      { category: 'skin', 
+    name: 'Pdrnelle V', 
+    price: 2200, rating: 4.5, reviews: 65, 
+    image: 'assets/img/banners/pdrnelle V .jpg' 
+  },
+  // { category: 'lipo', 
+  //   name: 'Lipolysis Plus', 
+  //   price: 999, rating: 4.3, reviews: 52, 
+  //   image: 'assets/img/product/lipo1.webp' 
+  // },
+  // { category: 'pdrn-dental', 
+  //   name: 'Dental PDRN Kit', 
+  //   price: 2500, rating: 4.6, reviews: 40, 
+  //   image: 'assets/img/product/dental1.webp' 
+  // },
+  // { category: 'cosmetics', 
+  //   name: 'Cosmetic Glow', 
+  //   price: 1199, rating: 4.6, reviews: 105, 
+  //   image: 'assets/img/product/cosmetic1.webp' 
+  // },
+  // { category: 'supplement', 
+  //   name: 'Health Supplement Y', 
+  //   price: 749, rating: 4.2, reviews: 80, 
+  //   image: 'assets/img/product/supplement1.webp' 
+  // }
+];
+
+get filteredProducts() {
+  if (this.activeTab === 'all') {
+    return this.products;
+  } else {
+    return this.products.filter(p => p.category === this.activeTab);
   }
+}
+
+selectTab(tabId: string) {
+  this.activeTab = tabId;
+}
+
 
 
   public selectedValue1!: string;
