@@ -121,6 +121,15 @@ public static get allbrands(): string {
     public static get CeoGreeting(): string {
     return this.baseUrl + '/pages/CeoGreeting';
   }
+      public static get Vision2030Module(): string {
+    return this.baseUrl + '/pages/Vision2030';
+  }
+    public static get CompanyHistory(): string {
+    return this.baseUrl + '/pages/CompanyHistory';
+  }
+    public static get SocialContribution(): string {
+    return this.baseUrl + '/pages/SocialContribution';
+  }
   public static get comingSoon(): string {
     return this.baseUrl + '/pages/coming-soon';
   }

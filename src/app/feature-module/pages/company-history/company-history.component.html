@@ -1,0 +1,20 @@
+<section class="timeline-section">
+  <div class="container">
+    <div class="timeline-header text-center">
+      <h2>🏢 Company History: <span class="text-dark">LocheBNH Timeline</span></h2>
+      <p class="text-muted">A journey of innovation and global medical excellence</p>
+    </div>
+
+    <div class="timeline">
+      <div *ngFor="let item of timelineData" 
+           class="timeline-item" 
+           [ngClass]="item.position" 
+           [attr.data-year]="item.year">
+        <div class="timeline-content">
+          <h4>{{ item.title }}</h4>
+          <p>{{ item.description }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

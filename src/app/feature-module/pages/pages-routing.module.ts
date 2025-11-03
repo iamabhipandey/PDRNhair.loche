@@ -97,6 +97,18 @@ const routes: Routes = [
     path: 'CeoGreeting',
     loadChildren: () => import('./ceo-greeting/ceo-greeting.module').then( (m) => m.CeoGreetingModule),
   },
+      {
+    path: 'Vision2030',
+    loadChildren: () => import('./vision-2030/vision-2030.module').then( (m) => m.Vision2030Module),
+  },
+        {
+    path: 'CompanyHistory',
+    loadChildren: () => import('./company-history/company-history.module').then( (m) => m.CompanyHistoryModule),
+  },
+          {
+    path: 'SocialContribution',
+    loadChildren: () => import('./social-contribution/social-contribution.module').then( (m) => m.SocialContributionModule),
+  },
 ];
 
 @NgModule({

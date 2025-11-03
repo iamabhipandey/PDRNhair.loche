@@ -102,31 +102,34 @@ export class DataService {
           showSubRoute: false,
           subMenus: [],
         },
-         {
-          menuValue: 'About Us',
+        //  {
+        //   menuValue: 'About Us',
+        //   hasSubRoute: false,
+        //   showSubRoute: false,
+        //   subMenus: [],
+        // },
+        
+        {
+          menuValue: 'VISION 2030',
+          routes: routes.Vision2030Module,
           hasSubRoute: false,
           showSubRoute: false,
           subMenus: [],
         },
-        
-        // {
-        //   menuValue: 'VISION 2030',
-        //   hasSubRoute: false,
-        //   showSubRoute: false,
-        //   subMenus: [],
-        // },
-        // {
-        //   menuValue: 'Company history',
-        //   hasSubRoute: false,
-        //   showSubRoute: false,
-        //   subMenus: [],
-        // },
-        // {
-        //   menuValue: 'Social contribution',
-        //   hasSubRoute: false,
-        //   showSubRoute: false,
-        //   subMenus: [],
-        // },
+        {
+          menuValue: 'Company history',
+          routes: routes.CompanyHistory,
+          hasSubRoute: false,
+          showSubRoute: false,
+          subMenus: [],
+        },
+        {
+          menuValue: 'Social contribution',
+           routes: routes.SocialContribution,
+          hasSubRoute: false,
+          showSubRoute: false,
+          subMenus: [],
+        },
         
       ],
     },
