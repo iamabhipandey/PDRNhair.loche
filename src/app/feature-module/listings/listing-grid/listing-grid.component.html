@@ -1,35 +1,54 @@
-<!-- Breadscrumb Section -->
-<div class="head-nav-tital">
-  <div class="breadcrumb-bar big-screen-hide">
-    <div class="container mt-3 pb-2">
-      <h2 class="breadcrumb-title"><span>{{getAllProductData.length}}</span> Products Found</h2>
+<!-- Banner Section -->
+<section class="product-banner text-center text-white">
+  <div class="product-banner-content">
+    <h2>Product</h2>
+    <p>Reliable Medical Devices from Official Vendors</p>
+  </div>
+</section>
+
+<section class="product-tabs container-fluid py-3">
+  <!-- Tabs Navigation -->
+  <ul class="nav tab-sec justify-content-center flex-wrap mb-4 tab-nav">
+    <li class="nav-item" *ngFor="let tab of tabs" (click)="selectTab(tab.id)">
+      <a class="nav-link" [class.active]="activeTab === tab.id" href="javascript:void(0)">
+        {{ tab.label }}
+      </a>
+    </li>
+  </ul>
+
+  <!-- Tab Content -->
+  <div class="tab-content text-center">
+    <div class="tab-pane fade" [class.show]="activeTab === tab.id" [class.active]="activeTab === tab.id"
+      *ngFor="let tab of tabs">
+      <div class="tab-banner card shadow-sm border-0 p-5 mx-auto">
+        <h3 class="tab-title mb-2">{{ tab.title }}</h3>
+        <p class="tab-description mb-4">{{ tab.description }}</p>
+        <a href="#" class="btn btn-outline-primary rounded-pill px-4 py-2">
+          Explore {{ tab.label }}
+        </a>
+      </div>
     </div>
   </div>
-</div>
-<!-- /Breadscrumb Section -->
+</section>
+
+
 
 <!-- Sort By -->
 <div class="sort-section  mobile-view-hide">
-  <div class="container">
+  <div class="container-fluid">
     <div class="sortby-sec">
       <div class="sorting-div">
         <div class="justy-containt">
           <div class="nav-text-first">
             <div class="count-search">
-              <p>Displaying Total <span> {{getAllProductData.length}} </span>   <span> Bellaluna's Product</span></p>
+              <p>Displaying Total <span> {{getAllProductData.length}} </span> <span> Bellaluna's Product</span></p>
             </div>
           </div>
           <div class="nav-text-second">
             <div class="product-filter-group">
               <div class="sortbyset">
                 <ul>
-                  <li>
-                    <div class="sidebar-section ">
-                      <button class="reset-filter" title="Reset Filter"><i class="fa-solid fa-filter-circle-xmark"></i>
-                        Reset Filter
-                      </button>
-                    </div>
-                  </li>
+
                   <li>
                     <!-- <span class="sortbytitle">Sort By </span> -->
                     <div class="sorting-select select-two">
@@ -54,61 +73,12 @@
 </div>
 <!-- /Sort By -->
 
-<!------------- filter for mobile-------------------->
-<div class="big-screen-hide">
-  <div class="button-group">
-    <label class="button-option">
-      <input type="checkbox" name="deal" value="Price-Deals">
-      <div class="button-label">
-        <img src="assets/img/filter-img/best-price.png" alt="Price-Deals">
-        <span class="mobile-filter-name">Price Deals</span>
-      </div>
-    </label>
-    <label class="button-option">
-      <input type="checkbox" name="deal" value="Luxe">
-      <div class="button-label">
-        <img src="assets/img/filter-img/luxe1.png" alt="Luxe">
-        <span class="mobile-filter-name">Luxe</span>
-      </div>
-    </label>
-    <label class="button-option">
-      <input type="checkbox" name="deal" value="On-Offer">
-      <div class="button-label">
-        <img src="assets/img/filter-img/on-offers.png" alt="On-Offer">
-        <span class="mobile-filter-name">On Offer</span>
-      </div>
-    </label>
-    <label class="button-option">
-      <input type="checkbox" name="deal" value="Top-Rated">
-      <div class="button-label">
-        <img src="assets/img/filter-img/top-rated.png" alt="Top-Rated">
-        <span class="mobile-filter-name">Top Rated</span>
-      </div>
-    </label>
-    <label class="button-option">
-      <input type="checkbox" name="deal" value="New">
-      <div class="button-label">
-        <img src="assets/img/filter-img/new-arrivals.png" alt="New">
-        <span class="mobile-filter-name">New</span>
-      </div>
-    </label>
-    <label class="button-option">
-      <input type="checkbox" name="deal" value="Bestseller">
-      <div class="button-label">
-        <img src="assets/img/filter-img/best-seller.png" alt="Bestseller">
-        <span class="mobile-filter-name">Bestseller</span>
-      </div>
-    </label>
-  </div>
-</div>
-<!-------------end filter for mobile-------------------->
-
 
 <section class="section sidebar-section pt-0 mt-4">
-  <div class="container">
+  <div class="container-fluid">
     <div class="row">
       <!-- sidebar -->
-     <div class="col-md-4 col-lg-3 col-12 theiaStickySidebar mobile-view-hide">
+      <div class="col-md-4 col-lg-3 col-12 theiaStickySidebar mobile-view-hide">
         <div class="stickybar">
           <form action="#" autocomplete="off" class="sidebar-form">
             <div class="accord-list">
@@ -163,7 +133,7 @@
                           <input type="checkbox" name="Gel" (change)="onCategoryChange($event, 'Gel')" />
                           <span class="checkmark"></span> Gel
                         </label>
-                         <label class="custom_check w-100">
+                        <label class="custom_check w-100">
                           <input type="checkbox" name="Soap" (change)="onCategoryChange($event, 'Soap')" />
                           <span class="checkmark"></span> Soap
                         </label>
@@ -175,8 +145,7 @@
                         <div class="view-content">
                           <div class="viewall-One">
                             <label class="custom_check w-100">
-                              <input type="checkbox" name="Foam"
-                                (change)="onCategoryChange($event, 'Foam')" />
+                              <input type="checkbox" name="Foam" (change)="onCategoryChange($event, 'Foam')" />
                               <span class="checkmark"></span> Foam
                             </label>
                             <label class="custom_check w-100">
@@ -215,15 +184,15 @@
                           <span class="checkmark"></span> Hydration 24
                         </label>
                         <label class="custom_check w-100">
-                          <input type="checkbox" name="DarkSpots" (change)="onConcernChange($event, 'Dark Spots')"/>
+                          <input type="checkbox" name="DarkSpots" (change)="onConcernChange($event, 'Dark Spots')" />
                           <span class="checkmark"></span> Dark Spots/Pigmantations
                         </label>
                         <label class="custom_check w-100">
-                          <input type="checkbox" name="Anti-Aging" (change)="onConcernChange($event, 'Anti-Aging')"/>
+                          <input type="checkbox" name="Anti-Aging" (change)="onConcernChange($event, 'Anti-Aging')" />
                           <span class="checkmark"></span> Anti-Aging
                         </label>
                         <label class="custom_check w-100">
-                          <input type="checkbox" name="PoreCare" (change)="onConcernChange($event, ' Pore Care')"/>
+                          <input type="checkbox" name="PoreCare" (change)="onConcernChange($event, ' Pore Care')" />
                           <span class="checkmark"></span> Pore Care
                         </label>
 
@@ -232,27 +201,29 @@
                           <span class="checkmark"></span> Fine Lines & Wrinkles
                         </label>
                         <label class="custom_check w-100">
-                          <input type="checkbox" name="Dryness" (change)="onConcernChange($event, 'Dryness')"/>
+                          <input type="checkbox" name="Dryness" (change)="onConcernChange($event, 'Dryness')" />
                           <span class="checkmark"></span> Dryness
                         </label>
                         <label class="custom_check w-100">
-                          <input type="checkbox" name="OilControl" (change)="onConcernChange($event, 'Oil Control')"/>
+                          <input type="checkbox" name="OilControl" (change)="onConcernChange($event, 'Oil Control')" />
                           <span class="checkmark"></span> Oil Control
                         </label>
                         <label class="custom_check w-100">
-                          <input type="checkbox" name="SunProtection" (change)="onConcernChange($event, 'Sun Protection')"/>
+                          <input type="checkbox" name="SunProtection"
+                            (change)="onConcernChange($event, 'Sun Protection')" />
                           <span class="checkmark"></span> Sun Protection
                         </label>
                         <label class="custom_check w-100">
-                          <input type="checkbox" name="UnevenSkinTone" (change)="onConcernChange($event, 'Uneven Skin Tone')"/>
+                          <input type="checkbox" name="UnevenSkinTone"
+                            (change)="onConcernChange($event, 'Uneven Skin Tone')" />
                           <span class="checkmark"></span> Uneven Skin Tone
                         </label>
                         <label class="custom_check w-100">
-                          <input type="checkbox" name="HairFall" (change)="onConcernChange($event, 'Hair Fall')"/>
+                          <input type="checkbox" name="HairFall" (change)="onConcernChange($event, 'Hair Fall')" />
                           <span class="checkmark"></span> Hair Fall & Thinning
                         </label>
                         <label class="custom_check w-100">
-                          <input type="checkbox" name="Blackheads" (change)="onConcernChange($event, 'Blackheads')"/>
+                          <input type="checkbox" name="Blackheads" (change)="onConcernChange($event, 'Blackheads')" />
                           <span class="checkmark"></span> Blackheads
                         </label>
 
@@ -278,37 +249,43 @@
                       <ul>
                         <li>
                           <div class="input-selection">
-                            <input type="radio" name="mileage" id="all" checked="true" (change)="onSkintypeChange($event, 'Hydration')" />
+                            <input type="radio" name="mileage" id="all" checked="true"
+                              (change)="onSkintypeChange($event, 'Hydration')" />
                             <label for="all">All</label>
                           </div>
                         </li>
                         <li>
                           <div class="input-selection">
-                            <input type="radio" name="mileage" id="Normal" checked=""   (change)="onSkintypeChange($event, 'Oily')"/>
+                            <input type="radio" name="mileage" id="Normal" checked=""
+                              (change)="onSkintypeChange($event, 'Oily')" />
                             <label for="Normal">Oily</label>
                           </div>
                         </li>
                         <li>
                           <div class="input-selection">
-                            <input type="radio" name="mileage" id="limited" checked=""  (change)="onSkintypeChange($event, 'Sensitive')"/>
+                            <input type="radio" name="mileage" id="limited" checked=""
+                              (change)="onSkintypeChange($event, 'Sensitive')" />
                             <label for="limited">Sensitive</label>
                           </div>
                         </li>
                         <li>
                           <div class="input-selection">
-                            <input type="radio" name="mileage" id="Combination" checked=""  (change)="onSkintypeChange($event, 'Combination')"/>
+                            <input type="radio" name="mileage" id="Combination" checked=""
+                              (change)="onSkintypeChange($event, 'Combination')" />
                             <label for="Combination">Combination</label>
                           </div>
                         </li>
                         <li>
                           <div class="input-selection">
-                            <input type="radio" name="mileage" id="Normals" checked=""  (change)="onSkintypeChange($event, 'Normal')" />
+                            <input type="radio" name="mileage" id="Normals" checked=""
+                              (change)="onSkintypeChange($event, 'Normal')" />
                             <label for="Normals">Normal</label>
                           </div>
                         </li>
                         <li>
                           <div class="input-selection">
-                            <input type="radio" name="mileage" id="Dry" checked=""  (change)="onSkintypeChange($event, 'Dry')" />
+                            <input type="radio" name="mileage" id="Dry" checked=""
+                              (change)="onSkintypeChange($event, 'Dry')" />
                             <label for="Dry">Dry</label>
                           </div>
                         </li>
@@ -333,7 +310,8 @@
                     <div id="checkBoxes2">
                       <div class="selectBox-cont">
                         <label class="custom_check w-100">
-                          <input type="checkbox" name="username"  (change)="onPreferenceChange($event, 'Paraben Free')" />
+                          <input type="checkbox" name="username"
+                            (change)="onPreferenceChange($event, 'Paraben Free')" />
                           <span class="checkmark"></span> Paraben Free
                         </label>
                         <label class="custom_check w-100">
@@ -341,7 +319,8 @@
                           <span class="checkmark"></span> Vegan
                         </label>
                         <label class="custom_check w-100">
-                          <input type="checkbox" name="username" (change)="onPreferenceChange($event, 'Sulphate Free')" />
+                          <input type="checkbox" name="username"
+                            (change)="onPreferenceChange($event, 'Sulphate Free')" />
                           <span class="checkmark"></span> Sulphate Free
                         </label>
                         <label class="custom_check w-100">
@@ -349,24 +328,29 @@
                           <span class="checkmark"></span> Organic
                         </label>
                         <label class="custom_check w-100">
-                          <input type="checkbox" name="username" (change)="onPreferenceChange($event, 'Chemical Free')" />
+                          <input type="checkbox" name="username"
+                            (change)="onPreferenceChange($event, 'Chemical Free')" />
                           <span class="checkmark"></span> Chemical Free
                         </label>
                         <label class="custom_check w-100">
-                          <input type="checkbox" name="username" (change)="onPreferenceChange($event, 'Fragrance-Free')" />
+                          <input type="checkbox" name="username"
+                            (change)="onPreferenceChange($event, 'Fragrance-Free')" />
                           <span class="checkmark"></span> Fragrance-Free
                         </label>
                         <label class="custom_check w-100">
-                          <input type="checkbox" name="username" (change)="onPreferenceChange($event, 'Dermacosmetic')" />
+                          <input type="checkbox" name="username"
+                            (change)="onPreferenceChange($event, 'Dermacosmetic')" />
                           <span class="checkmark"></span> Dermacosmetic
 
                         </label>
                         <label class="custom_check w-100">
-                          <input type="checkbox" name="username" (change)="onPreferenceChange($event, 'Mineral Oil-Free')" />
+                          <input type="checkbox" name="username"
+                            (change)="onPreferenceChange($event, 'Mineral Oil-Free')" />
                           <span class="checkmark"></span> Mineral Oil-Free
                         </label>
                         <label class="custom_check w-100">
-                          <input type="checkbox" name="username" (change)="onPreferenceChange($event, 'Cruelty-Free')" />
+                          <input type="checkbox" name="username"
+                            (change)="onPreferenceChange($event, 'Cruelty-Free')" />
                           <span class="checkmark"></span> Cruelty-Free
                         </label>
                         <label class="custom_check w-100">
@@ -404,7 +388,7 @@
                           <span class="checkmark"></span> Liquid
                         </label>
                         <label class="custom_check w-100">
-                          <input type="checkbox" name="bystatus" (change)="onFormulationChange($event, 'Gel')"   />
+                          <input type="checkbox" name="bystatus" (change)="onFormulationChange($event, 'Gel')" />
                           <span class="checkmark"></span> Gel
                         </label>
                         <label class="custom_check w-100">
@@ -416,7 +400,8 @@
                           <span class="checkmark"></span> Foam
                         </label>
                         <label class="custom_check w-100">
-                          <input type="checkbox" name="bystatus" (change)="onFormulationChange($event, 'Water-Based')" />
+                          <input type="checkbox" name="bystatus"
+                            (change)="onFormulationChange($event, 'Water-Based')" />
                           <span class="checkmark"></span> Water-Based
                         </label>
                         <label class="custom_check w-100">
@@ -485,7 +470,8 @@
                           <span class="checkmark"></span> Tea Tree
                         </label>
                         <label class="custom_check w-100">
-                          <input type="checkbox" name="bystatus" (change)="onIngredientChange($event, 'Salicylic Acid')" />
+                          <input type="checkbox" name="bystatus"
+                            (change)="onIngredientChange($event, 'Salicylic Acid')" />
                           <span class="checkmark"></span> Salicylic Acid
                         </label>
                         <label class="custom_check w-100">
@@ -497,7 +483,8 @@
                           <span class="checkmark"></span> Niacinamide
                         </label>
                         <label class="custom_check w-100">
-                          <input type="checkbox" name="bystatus" (change)="onIngredientChange($event, 'Hyaluronic Acid')" />
+                          <input type="checkbox" name="bystatus"
+                            (change)="onIngredientChange($event, 'Hyaluronic Acid')" />
                           <span class="checkmark"></span> Hyaluronic Acid
                         </label>
                         <label class="custom_check w-100">
@@ -610,7 +597,7 @@
       </div>
       <!-- /sidebar -->
       <div class=" col-md-8 col-lg-9">
-        <div class="row product-b">
+        <!-- <div class="row product-b">
           <div class="col-xl-4 col-lg-4 col-md-6 col-sm-4 col-6"
             *ngFor="let item of getAllProductData; trackBy: trackByProductId">
             <div class="listing-item">
@@ -658,28 +645,182 @@
                     @if(item.mrp){
                     <h5> ₹ {{ item?.mrp }}</h5>
                     }@else{
-                   <div class="outof-stock" style="color: red;"> OUT OF STOCK</div>
+                    <div class="outof-stock" style="color: red;"> OUT OF STOCK</div>
                     }
-
-                    <!-- <p>{{item.mrp}}</p><span>({{item.offPrice}}% Off)</span> -->
                   </div>
                 </div>
 
- @if(item.mrp){
+                @if(item.mrp){
                 <div class="listing-button" (click)="addToCart(item.id)">
                   <a class="btn btn-order">
                     <span><i class="fa-solid fa-bag-shopping"></i></span>
                     Add To Cart
                   </a>
                 </div>
-              }
+                }
               </div>
-              <!-- <div class="feature-text">
-                <span class="bg-warning">Top Rated</span>
-              </div> -->
+            </div>
+          </div>
+        </div> -->
+
+
+        <div class="row">
+          <!-- Product 1 -->
+          <div class="col-xl-4 col-lg-4 col-md-6 col-sm-4 col-6">
+            <div class="listing-item">
+              <div class="listing-img">
+                <div class="img-slider">
+                  <div class="slide-images">
+                    <a class="product-image">
+                      <img src="assets/img/product/glossys1.webp" class="img-fluid" alt="product" />
+                    </a>
+                  </div>
+                </div>
+                <div class="fav-item justify-content-end">
+                  <a class="fav-icon" tabindex="1">
+                    <i class="feather icon-heart"></i>
+                  </a>
+                </div>
+              </div>
+
+              <div class="listing-content">
+                <div class="listing-features d-flex align-items-end justify-content-between">
+                  <div class="list-rating">
+                    <h3 class="listing-title">
+                      <a>Hydra Glow Serum</a>
+                    </h3>
+                    <div class="list-rating">
+                      <i class="fas fa-star filled me-1"></i>
+                      <i class="fas fa-star filled me-1"></i>
+                      <i class="fas fa-star filled me-1"></i>
+                      <i class="fas fa-star filled me-1"></i>
+                      <i class="fas fa-star"></i>
+                      <span>120 (4.0) | 138 Reviews</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="listing-location-details">
+                  <div class="listing-price">
+                    <h5>₹ 1,299</h5>
+                  </div>
+                </div>
+
+                <div class="listing-button">
+                  <a class="btn btn-order">
+                    <span><i class="fa-solid fa-bag-shopping"></i></span>
+                    Add To Cart
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Product 2 -->
+          <div class="col-xl-4 col-lg-4 col-md-6 col-sm-4 col-6">
+            <div class="listing-item">
+              <div class="listing-img">
+                <div class="img-slider">
+                  <div class="slide-images">
+                    <a class="product-image">
+                      <img src="assets/img/product/glossys2.webp" class="img-fluid" alt="product" />
+                    </a>
+                  </div>
+                </div>
+                <div class="fav-item justify-content-end">
+                  <a class="fav-icon" tabindex="1">
+                    <i class="feather icon-heart"></i>
+                  </a>
+                </div>
+              </div>
+
+              <div class="listing-content">
+                <div class="listing-features d-flex align-items-end justify-content-between">
+                  <div class="list-rating">
+                    <h3 class="listing-title">
+                      <a>Vitamin C Cream</a>
+                    </h3>
+
+                    <div class="list-rating">
+                      <i class="fas fa-star filled me-1"></i>
+                      <i class="fas fa-star filled me-1"></i>
+                      <i class="fas fa-star filled me-1"></i>
+                      <i class="fas fa-star filled me-1"></i>
+                      <i class="fas fa-star"></i>
+                      <span>88 (4.0) | 97 Reviews</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="listing-location-details">
+                  <div class="listing-price">
+                    <h5>₹ 899</h5>
+                  </div>
+                </div>
+
+                <div class="listing-button">
+                  <a class="btn btn-order">
+                    <span><i class="fa-solid fa-bag-shopping"></i></span>
+                    Add To Cart
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Product 3 -->
+          <div class="col-xl-4 col-lg-4 col-md-6 col-sm-4 col-6">
+            <div class="listing-item">
+              <div class="listing-img">
+                <div class="img-slider">
+                  <div class="slide-images">
+                    <a class="product-image">
+                      <img src="assets/img/product/glossys3.webp" class="img-fluid" alt="product" />
+                    </a>
+                  </div>
+                </div>
+                <div class="fav-item justify-content-end">
+                  <a class="fav-icon" tabindex="1">
+                    <i class="feather icon-heart"></i>
+                  </a>
+                </div>
+              </div>
+
+              <div class="listing-content">
+                <div class="listing-features d-flex align-items-end justify-content-between">
+                  <div class="list-rating">
+                    <h3 class="listing-title">
+                      <a>Collagen Booster</a>
+                    </h3>
+
+                    <div class="list-rating">
+                      <i class="fas fa-star filled me-1"></i>
+                      <i class="fas fa-star filled me-1"></i>
+                      <i class="fas fa-star filled me-1"></i>
+                      <i class="fas fa-star filled me-1"></i>
+                      <i class="fas fa-star"></i>
+                      <span>160 (4.0) | 110 Reviews</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="listing-location-details">
+                  <div class="listing-price">
+                    <h5>₹ 1,499</h5>
+                  </div>
+                </div>
+
+                <div class="listing-button">
+                  <a class="btn btn-order">
+                    <span><i class="fa-solid fa-bag-shopping"></i></span>
+                    Add To Cart
+                  </a>
+                </div>
+              </div>
             </div>
           </div>
         </div>
+
 
 
 

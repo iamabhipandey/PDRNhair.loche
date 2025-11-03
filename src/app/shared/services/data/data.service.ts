@@ -131,7 +131,7 @@ export class DataService {
       menu: [
         {
           menuValue: 'Medical devices',
-          // routes: routes.aboutUs,
+          routes: routes.listingGrid,
           hasSubRoute: false,
           showSubRoute: false,
           subMenus: [],

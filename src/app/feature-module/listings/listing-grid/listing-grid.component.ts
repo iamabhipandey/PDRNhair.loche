@@ -19,6 +19,24 @@ interface data {
   styleUrls: ['./listing-grid.component.css'],
 })
 export class ListingGridComponent {
+
+activeTab = 'all';
+
+  tabs = [
+    { id: 'all', label: 'All', title: 'All Products', description: 'Explore our complete range of medical beauty products.' },
+    { id: 'botox', label: 'Botox', title: 'Botox Collection', description: 'Enhance beauty with trusted botox brands.' },
+    { id: 'pn', label: 'PN Injections', title: 'PN Injections', description: 'Premium PN injections for skin rejuvenation.' },
+    { id: 'skin', label: 'Skin Booster', title: 'Skin Boosters', description: 'Give your skin the glow it deserves.' },
+    { id: 'lipo', label: 'Lipolysis', title: 'Lipolysis Products', description: 'Effective solutions for fat reduction and contouring.' },
+    { id: 'equip', label: 'Equipment', title: 'Medical Equipment', description: 'High-quality tools for clinical and beauty care.' },
+    { id: 'supplement', label: 'Supplement', title: 'Supplements', description: 'Support your health and beauty from within.' },
+  ];
+
+  selectTab(tabId: string) {
+    this.activeTab = tabId;
+  }
+
+
   public selectedValue1!: string;
   
   public selectedValue3!: string;
