@@ -416,6 +416,7 @@
     .header-navbar-rht {
         margin: 0;
         padding: 0;
+            flex-flow: nowrap;
         // @include respond-below(custom575) {
         //     display: none;
         // }

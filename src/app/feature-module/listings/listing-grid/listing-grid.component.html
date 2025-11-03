@@ -1,4 +1,4 @@
-<section class="product-tabs container-fluid py-5">
+<section class="product-tabs container-fluid">
   <!-- Banner -->
   <div class="product-banner text-center">
     <h2 class="fw-bold mb-2">Product</h2>
@@ -66,13 +66,13 @@
     <div *ngIf="activeTab === 'all'" class="tab-section fade-in">
       <div class="row">
         <!-- Product 1 -->
-        <div class="col-xl-3 col-lg-4 col-md-6 col-sm-4 col-6">
+        <div class="col-xl-3 col-lg-4 col-md-4 col-sm-4 col-6">
           <div class="listing-item">
             <div class="listing-img">
               <div class="img-slider">
                 <div class="slide-images">
                   <a class="product-image">
-                    <img src="assets/img/product/glossys1.webp" class="img-fluid" alt="product" />
+                    <img src="assets/img/banners/Loche Tox 100Unit.jpg" class="img-fluid" alt="product" />
                   </a>
                 </div>
               </div>
@@ -86,7 +86,7 @@
             <div class="listing-content">
               <div class="listing-features d-flex align-items-end justify-content-between">
                 <div class="list-rating">
-                  <h3 class="listing-title"><a>Hydra Glow Serum</a></h3>
+                  <h3 class="listing-title"><a>Loche Tox 100Unit</a></h3>
                   <div class="list-rating">
                     <i class="fas fa-star filled me-1"></i>
                     <i class="fas fa-star filled me-1"></i>
@@ -115,7 +115,7 @@
         </div>
 
         <!-- Product 2 -->
-        <div class="col-xl-3 col-lg-4 col-md-6 col-sm-4 col-6">
+        <div class="col-xl-3 col-lg-4 col-md-4 col-sm-4 col-6">
           <div class="listing-item">
             <div class="listing-img">
               <div class="img-slider">
@@ -164,7 +164,7 @@
         </div>
 
         <!-- Product 3 -->
-        <div class="col-xl-3 col-lg-4 col-md-6 col-sm-4 col-6">
+        <div class="col-xl-3 col-lg-4 col-md-4 col-sm-4 col-6">
           <div class="listing-item">
             <div class="listing-img">
               <div class="img-slider">
@@ -211,7 +211,7 @@
             </div>
           </div>
         </div>
-        <div class="col-xl-3 col-lg-4 col-md-6 col-sm-4 col-6">
+        <div class="col-xl-3 col-lg-4 col-md-4 col-sm-4 col-6">
           <div class="listing-item">
             <div class="listing-img">
               <div class="img-slider">
@@ -263,7 +263,7 @@
 
     <!-- 🟡 OTHER TABS -->
     <div *ngIf="activeTab === 'botox'" class="tab-section fade-in">
-      <div class="col-xl-4 col-lg-4 col-md-6 col-sm-4 col-6">
+      <div class="col-xl-3 col-lg-3 col-md-4 col-sm-4 col-6">
         <div class="listing-item">
           <div class="listing-img">
             <div class="img-slider">
@@ -319,16 +319,44 @@
   </div>
 </section>
 
+        <!--Pagination-->
+        <div class="blog-pagination">
+          <nav>
+            <ul class="pagination page-item justify-content-end">
+              <li class="previtem">
+                <a class="paginationarrow"><i class="fa-solid fa-angles-left"></i></a>
+              </li>
+              <li class="justify-content-center pagination-center">
+                <div class="page-group">
+                  <ul>
+                    <li class="page-item">
+                      <a class="active page-link" href="javascript:void(0);">1</a>
+                    </li>
+                    <li class="page-item">
+                      <a class=" page-link" href="javascript:void(0);">2 <span
+                          class="visually-hidden">(current)</span></a>
+                    </li>
+                    <li class="page-item">
+                      <a class="page-link" href="javascript:void(0);">3</a>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li class="nextlink">
+                <a class="paginationarrow"><i class="fa-solid fa-angles-right"></i></a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+        <!--/Pagination-->
 
 
 
 
 
-
-<section class="section sidebar-section pt-0 mt-4">
+<!-- <section class="section sidebar-section pt-0 mt-4">
   <div class="container-fluid">
     <div class="row">
-      <!-- sidebar -->
       <div class="col-md-4 col-lg-3 col-12 theiaStickySidebar mobile-view-hide">
         <div class="stickybar">
           <form action="#" autocomplete="off" class="sidebar-form">
@@ -392,7 +420,6 @@
                           <input type="checkbox" name="Mask" (change)="onCategoryChange($event, 'Mask')" />
                           <span class="checkmark"></span> Mask
                         </label>
-                        <!-- View All -->
                         <div class="view-content">
                           <div class="viewall-One">
                             <label class="custom_check w-100">
@@ -409,7 +436,6 @@
                             </label>
                           </div>
                         </div>
-                        <!-- /View All -->
                       </div>
                     </div>
                   </div>
@@ -846,9 +872,9 @@
           </form>
         </div>
       </div>
-      <!-- /sidebar -->
+
       <div class=" col-md-8 col-lg-9">
-        <!-- <div class="row product-b">
+        <div class="row product-b">
           <div class="col-xl-4 col-lg-4 col-md-6 col-sm-4 col-6"
             *ngFor="let item of getAllProductData; trackBy: trackByProductId">
             <div class="listing-item">
@@ -912,170 +938,7 @@
               </div>
             </div>
           </div>
-        </div> -->
-
-
-        <div class="row">
-          <!-- Product 1 -->
-          <div class="col-xl-4 col-lg-4 col-md-6 col-sm-4 col-6">
-            <div class="listing-item">
-              <div class="listing-img">
-                <div class="img-slider">
-                  <div class="slide-images">
-                    <a class="product-image">
-                      <img src="assets/img/product/glossys1.webp" class="img-fluid" alt="product" />
-                    </a>
-                  </div>
-                </div>
-                <div class="fav-item justify-content-end">
-                  <a class="fav-icon" tabindex="1">
-                    <i class="feather icon-heart"></i>
-                  </a>
-                </div>
-              </div>
-
-              <div class="listing-content">
-                <div class="listing-features d-flex align-items-end justify-content-between">
-                  <div class="list-rating">
-                    <h3 class="listing-title">
-                      <a>Hydra Glow Serum</a>
-                    </h3>
-                    <div class="list-rating">
-                      <i class="fas fa-star filled me-1"></i>
-                      <i class="fas fa-star filled me-1"></i>
-                      <i class="fas fa-star filled me-1"></i>
-                      <i class="fas fa-star filled me-1"></i>
-                      <i class="fas fa-star"></i>
-                      <span>120 (4.0) | 138 Reviews</span>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="listing-location-details">
-                  <div class="listing-price">
-                    <h5>₹ 1,299</h5>
-                  </div>
-                </div>
-
-                <div class="listing-button">
-                  <a class="btn btn-order">
-                    <span><i class="fa-solid fa-bag-shopping"></i></span>
-                    Add To Cart
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Product 2 -->
-          <div class="col-xl-4 col-lg-4 col-md-6 col-sm-4 col-6">
-            <div class="listing-item">
-              <div class="listing-img">
-                <div class="img-slider">
-                  <div class="slide-images">
-                    <a class="product-image">
-                      <img src="assets/img/product/glossys2.webp" class="img-fluid" alt="product" />
-                    </a>
-                  </div>
-                </div>
-                <div class="fav-item justify-content-end">
-                  <a class="fav-icon" tabindex="1">
-                    <i class="feather icon-heart"></i>
-                  </a>
-                </div>
-              </div>
-
-              <div class="listing-content">
-                <div class="listing-features d-flex align-items-end justify-content-between">
-                  <div class="list-rating">
-                    <h3 class="listing-title">
-                      <a>Vitamin C Cream</a>
-                    </h3>
-
-                    <div class="list-rating">
-                      <i class="fas fa-star filled me-1"></i>
-                      <i class="fas fa-star filled me-1"></i>
-                      <i class="fas fa-star filled me-1"></i>
-                      <i class="fas fa-star filled me-1"></i>
-                      <i class="fas fa-star"></i>
-                      <span>88 (4.0) | 97 Reviews</span>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="listing-location-details">
-                  <div class="listing-price">
-                    <h5>₹ 899</h5>
-                  </div>
-                </div>
-
-                <div class="listing-button">
-                  <a class="btn btn-order">
-                    <span><i class="fa-solid fa-bag-shopping"></i></span>
-                    Add To Cart
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Product 3 -->
-          <div class="col-xl-4 col-lg-4 col-md-6 col-sm-4 col-6">
-            <div class="listing-item">
-              <div class="listing-img">
-                <div class="img-slider">
-                  <div class="slide-images">
-                    <a class="product-image">
-                      <img src="assets/img/product/glossys3.webp" class="img-fluid" alt="product" />
-                    </a>
-                  </div>
-                </div>
-                <div class="fav-item justify-content-end">
-                  <a class="fav-icon" tabindex="1">
-                    <i class="feather icon-heart"></i>
-                  </a>
-                </div>
-              </div>
-
-              <div class="listing-content">
-                <div class="listing-features d-flex align-items-end justify-content-between">
-                  <div class="list-rating">
-                    <h3 class="listing-title">
-                      <a>Collagen Booster</a>
-                    </h3>
-
-                    <div class="list-rating">
-                      <i class="fas fa-star filled me-1"></i>
-                      <i class="fas fa-star filled me-1"></i>
-                      <i class="fas fa-star filled me-1"></i>
-                      <i class="fas fa-star filled me-1"></i>
-                      <i class="fas fa-star"></i>
-                      <span>160 (4.0) | 110 Reviews</span>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="listing-location-details">
-                  <div class="listing-price">
-                    <h5>₹ 1,499</h5>
-                  </div>
-                </div>
-
-                <div class="listing-button">
-                  <a class="btn btn-order">
-                    <span><i class="fa-solid fa-bag-shopping"></i></span>
-                    Add To Cart
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
-
-
-
-
-        <!-- use as loader -->
 
         <div class="row product-b" *ngIf="getAllProductData.length === 0">
           <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
@@ -1083,11 +946,7 @@
             </ngx-spinner>
           </div>
         </div>
-        <!--end use as loader -->
 
-
-
-        <!--Pagination-->
         <div class="blog-pagination">
           <nav>
             <ul class="pagination page-item justify-content-end">
@@ -1116,8 +975,7 @@
             </ul>
           </nav>
         </div>
-        <!--/Pagination-->
       </div>
     </div>
   </div>
-</section>
+</section> -->
