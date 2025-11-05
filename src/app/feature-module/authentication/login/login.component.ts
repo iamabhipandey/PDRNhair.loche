@@ -13,128 +13,68 @@ import Swal from 'sweetalert2';
   styleUrls: ['./login.component.css'],
 })
 export class LoginComponent implements OnInit {
-
-  returnUrl: string = '';
-
-  public routes = routes;
+ public routes = routes;
   public show_password = true;
+  public loginWithOtp = false; // checkbox toggle ke liye
+  public otpSent = false; // verify button ke baad OTP field show karna
 
-  loginForm = new FormGroup({
-    email: new FormControl('', [
+  form = new FormGroup({
+    email: new FormControl('abhishek@gmail.com', [
       Validators.email,
       Validators.required,
     ]),
-    password: new FormControl('', [Validators.required]),
+    password: new FormControl('123456', [Validators.required]),
+
+    // ✅ Mobile aur OTP ke liye extra controls
+    mobileNo: new FormControl('', [
+      Validators.required,
+      Validators.pattern(/^[0-9]{10}$/), // exactly 10 digit ka validation
+    ]),
+    otp: new FormControl('', [Validators.required]),
   });
 
   get f() {
-    return this.loginForm.controls;
+    return this.form.controls;
   }
 
-  constructor(private authService: AuthService,
-    private commonService: CommonService,
-    private router: Router,
+  constructor(private auth: AuthService) {}
 
-    private route: ActivatedRoute
-  ) { }
-
-
-  ngOnInit() {
-    this.route.queryParams.subscribe(params => {
-      this.returnUrl = params['returnUrl'] || '';
-    });
-  }
-
-
-  loginData: any[] = [];
-  login() {
-    const formData = new FormData();
-    formData.append('email', this.loginForm.get('email')?.value ?? '');
-    formData.append('password', this.loginForm.get('password')?.value ?? '');
-
-    this.authService.userSignIn(formData).subscribe({
-      next: (res: any) => {
-        if (res.status === 'true') {
-          this.loginData = res.data;
-
-          // ✅ User login subject update yaha karo
-          this.commonService.setUserLoggedIn();
-
-          Swal.fire({
-            title: 'Success',
-            text: `${res.message}`,
-            icon: 'success',
-            confirmButtonColor: '#0E82FD',
-          }).then((result) => {
-            if (result.isConfirmed) {
-
-              if (this.returnUrl) {
-                this.router.navigateByUrl(this.returnUrl);
-              } else {
-                this.router.navigate([this.routes.listingGrid]);
-              }
-              
-            }
-          });
-        }
-      },
-      error: (err: any) => {
-        Swal.fire({
-          title: 'Error',
-          text: 'Login failed. Wrong credentials!',
-          icon: 'error',
-          confirmButtonColor: '#0E82FD',
-        });
-        this.commonService.logout();
+  signin() {
+    if (this.loginWithOtp) {
+      // ✅ Login with OTP
+      if (this.form.controls['mobileNo'].invalid) {
+        this.form.controls['mobileNo'].markAsTouched();
+        return;
       }
-    });
+      if (this.otpSent && this.form.controls['otp'].invalid) {
+        this.form.controls['otp'].markAsTouched();
+        return;
+      }
+      console.log('OTP Login Success ✅', this.form.value);
+    } else {
+      // ✅ Normal Email-Password Login
+      if (this.form.valid) {
+        this.auth.signin();
+      }
+    }
   }
-
-
-
-
-
-
-
-  // NEW: Google login flow
-  googleLogin() {
-    // this.commonService.signIn(GoogleLoginProvider.PROVIDER_ID)
-    //   .then((user: SocialUser) => {
-    //     // IMPORTANT: use the Google ID token from the popup
-    //     const idToken = user.idToken; // <-- send this to backend to verify
-    //     // Option A: send JSON
-    //     this.authService.googleSignIn({ idToken }).subscribe({
-    //       next: (res: any) => {
-    //         if (res.status === 'true') {
-    //           this.loginData = res.data;
-    //           this.router.navigate(['/user-dashboard']);
-    //         } else {
-    //           this.onLoginError();
-    //         }
-    //       },
-    //       error: () => this.onLoginError()
-    //     });
-    //   })
-    //   .catch(() => this.onLoginError());
-  }
-
-  private onLoginError() {
-    Swal.fire({
-      title: 'Error',
-      text: 'Login failed. Wrong credentials!',
-      icon: 'error',
-      confirmButtonColor: '#0E82FD',
-    });
-    this.commonService.logout();
-  }
-
 
   togglePassword() {
     this.show_password = !this.show_password;
   }
 
+  sendOtp() {
+    if (this.form.controls['mobileNo'].valid) {
+      this.otpSent = true;
+      console.log('OTP sent to:', this.form.controls['mobileNo'].value);
+    } else {
+      this.form.controls['mobileNo'].markAsTouched();
+    }
+  }
 
-
-
-
+  ngOnInit(): void {
+    if (localStorage.getItem('authenticated')) {
+      localStorage.removeItem('authenticated');
+    }
+  }
 }

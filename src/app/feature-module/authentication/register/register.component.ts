@@ -13,67 +13,28 @@ declare var initSendOTP: any;
   styleUrls: ['./register.component.css'],
 })
 export class RegisterComponent {
-
   public routes = routes;
   public CustomControler!: string | number;
   public isValidConfirmPassword = false;
   public show_password = true;
   registerForm = new FormGroup({
-    userName: new FormControl('', [Validators.required]),
+    Username: new FormControl('', [Validators.required]),
     email: new FormControl('', [Validators.required, Validators.email,]),
     password: new FormControl('', [Validators.required]),
-    confirmPassword: new FormControl('', [Validators.required]),
-    //mobileNo: new FormControl('', [Validators.required]),
-    userType: new FormControl('admin', [Validators.required]),
-    //otp: new FormControl('', [Validators.required]),
+    mobileNo: new FormControl('', [Validators.required]),
+    userType: new FormControl('user', [Validators.required]),
+    otp: new FormControl('user', [Validators.required]),
   });
 
   get f() {
     return this.registerForm.controls;
   }
 
-  constructor(private authService: AuthService,
-    private router: Router,
-  ) {}
+  constructor(private auth: AuthService) {}
 
   signup() {
     if (this.registerForm.valid) {
-       const formData = new FormData();
-       formData.append('userName', this.registerForm.get('userName')?.value ?? '');
-             formData.append('email', this.registerForm.get('email')?.value ?? '');
-             formData.append('password', this.registerForm.get('password')?.value ?? '');
-            formData.append('userType',  'user');
-
-
-          this.authService.userSignUp(formData).subscribe({
-            next: (res: any) => {
-              if (res.status === 'true') {
-                 Swal.fire({
-                title: 'Success',
-                text: 'User Registered Successfully!',
-                icon: 'success',
-                confirmButtonColor: '#0E82FD',
-              });
-              this.router.navigate([this.routes.login]);
-              }else{
-                 Swal.fire({
-                title: 'error',
-                text: `${res.message}`,
-                icon: 'error',
-                confirmButtonColor: '#0E82FD',
-              });
-              }
-            },
-            error: (err: any) => {
-              Swal.fire({
-                title: 'Error',
-                text: 'Login failed. Wrong credentials!',
-                icon: 'error',
-                confirmButtonColor: '#0E82FD',
-              });
-
-            }
-          });
+      this.auth.signup();
     }
   }
   togglePassword() {
@@ -83,12 +44,12 @@ export class RegisterComponent {
 
 
 
-   // const formData = new FormData();
+   // const formData = new FormData();  
       // formData.append('tokenAuth', "455915TCsfvWlX68663744P1");
-      // formData.append('identifier', this.registerForm.get('mobileNo')?.value ?? ' ');
+      // formData.append('identifier', this.registerForm.get('mobileNo')?.value ?? ' ');    
       // formData.append('widgetId', "356763673141333430323537");
 
-//  sendOtp() {
+//  sendOtp() {  
 //       const payload={
 //         tokenAuth:"455915TCsfvWlX68663744P1",
 //         widgetId:"356763673141333430323537",
@@ -103,14 +64,14 @@ export class RegisterComponent {
 //                       text: `${res.message}`,
 //                       icon: 'success',
 //                       confirmButtonColor: '#0E82FD',
-//             });
+//             });             
 //           }else{
 //              Swal.fire({
 //                       title: `${res.message}`,
 //                       text: '',
 //                       icon: 'error',
 //                       confirmButtonColor: '#0E82FD',
-//             });
+//             });             
 //           }
 //       },
 //       error: (err: any) => {
@@ -119,13 +80,13 @@ export class RegisterComponent {
 //       }
 //     });
 
-
+ 
 
 //   }
 
 
 
-
+ 
 receivedAccessToken:any;
 sendOtpUsingWidget() {
   const config = {
@@ -136,13 +97,13 @@ sendOtpUsingWidget() {
     success: (data: any) => {
       console.log('OTP Success', data);
       this.receivedAccessToken= data.message;
-
+      
        Swal.fire({
                       title: '',
                       text: `OTP send on your Mobile No succesfully!`,
                       icon: 'success',
                       confirmButtonColor: '#0E82FD',
-            });
+            });  
       // You can store data.token if needed
     },
     failure: (error: any) => {
@@ -152,7 +113,7 @@ sendOtpUsingWidget() {
                       text: `Server error while sending otp`,
                       icon: 'success',
                       confirmButtonColor: '#0E82FD',
-            });
+            });  
     }
   };
 
@@ -165,10 +126,10 @@ sendOtpUsingWidget() {
 verifyOtp() {
   const payload = {
     authkey: '455915ArbCN443s685d33ddP1',
-    accesstoken: this.receivedAccessToken
+    accesstoken: this.receivedAccessToken 
   };
 
-  this.authService.verifyOtp(payload).subscribe({
+  this.auth.verifyOtp(payload).subscribe({
     next: (res) => {
       console.log('OTP Verified:', res);
       Swal.fire({

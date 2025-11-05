@@ -3,38 +3,7 @@
 }
 .login-wrapper .loginbox .login-auth {
     background: #ffffff;
-}
-.login-wrapper {
-  justify-content: center !important;
-  align-items: center;
-  background-size: cover !important;
-  background-position: center !important;
-  background-repeat: no-repeat !important;
-  padding: 30px;
-  min-height: 100%;
-  position: relative;
-  overflow: hidden;
-  font-family: 'Poppins', sans-serif;
-}
-
-/* transparent css */
-.card-container {
-  background: transparent !important;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
-}
-
-.loginbox {
-  background: #ffffff;;
-  backdrop-filter: blur(12px);
-  padding: 15px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
-}
-/* close */
-.form-section {
-  padding: 40px;
-  background: #ffffff80;
-  border-radius: 20px;
+    box-shadow: #2e84da33 0px 8px 24px;
 }
 
 .visual-section {
@@ -45,53 +14,23 @@
   align-items: center;
   justify-content: center;
   text-align: center;
+  position: relative;
 }
-
-
-/* form css */
-
-.login-auth-wrap h1 {
-  font-size: 28px;
-  font-weight: 600;
-  margin-bottom: 1.5rem;
-  text-align: center;
-  color: #003366;
+.visual-section img {
+    max-height: 500px;
+    min-width: 425px;
 }
-
-.input-block {
-  margin-bottom: 10px;
-}
-
-.form-control:focus {
-  border-color: #00aaff;
-  box-shadow: 0 0 0 3px rgba(0, 170, 255, 0.2);
-}
-@media screen and (max-width: 992px) {
- .hide-for-mobile{
+@media screen and (max-width: 767px) {
+   .hide-for-mobile{
     display: none !important;
  }
- .form-section {
-    padding: 0px;
-    background:none;
-}
-.login-auth-wrap h1 {
-    font-size: 22px;
-}
-.card-container{
-    box-shadow: none;
-}
-}
-@media screen and (max-width: 600px) {
-.login-wrapper{
-    padding: 0px;
-}
+
 .container{
     padding: 0px;
 }
-.card-container{
-    border-radius: 0px;
-}
-.loginbox {
-    border-radius: 0px;
+
+.login-wrapper .loginbox .login-auth {
+    margin-top: 30px ;
+    margin-bottom: 20px;
 }
 }
