@@ -136,6 +136,9 @@ public static get allbrands(): string {
         public static get LocheNews(): string {
     return this.baseUrl + '/pages/LocheNews';
   }
+          public static get CleanRoom(): string {
+    return this.baseUrl + '/pages/CleanRoom';
+  }
   public static get comingSoon(): string {
     return this.baseUrl + '/pages/coming-soon';
   }

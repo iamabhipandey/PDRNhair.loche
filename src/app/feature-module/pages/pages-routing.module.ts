@@ -117,6 +117,10 @@ const routes: Routes = [
     path: 'LocheNews',
     loadChildren: () => import('./loche-news/loche-news.module').then( (m) => m.LocheNewsModule ),
   },
+        {
+    path: 'CleanRoom',
+    loadChildren: () => import('./clean-room/clean-room.module').then( (m) => m.CleanRoomModule),
+  },
 ];
 
 @NgModule({

@@ -290,7 +290,7 @@ export class DataService {
         },
         {
           menuValue: 'Clean room',
-          // routes: routes.aboutUs,
+          routes: routes.CleanRoom,
           hasSubRoute: false,
           showSubRoute: false,
           subMenus: [],
