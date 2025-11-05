@@ -456,7 +456,7 @@ export class DataService {
  
         {
           menuValue: 'Press release',
-          // routes: routes.aboutUs,
+          routes: routes.LocheNews,
           hasSubRoute: false,
           showSubRoute: false,
           subMenus: [],

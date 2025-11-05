@@ -113,6 +113,10 @@ const routes: Routes = [
     path: 'AffiliateInquiry',
     loadChildren: () => import('./affiliate-inquiry/affiliate-inquiry.module').then( (m) => m.AffiliateInquiryModule),
   },
+      {
+    path: 'LocheNews',
+    loadChildren: () => import('./loche-news/loche-news.module').then( (m) => m.LocheNewsModule ),
+  },
 ];
 
 @NgModule({

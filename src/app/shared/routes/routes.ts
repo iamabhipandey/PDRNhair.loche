@@ -133,6 +133,9 @@ public static get allbrands(): string {
       public static get AffiliateInquiry(): string {
     return this.baseUrl + '/pages/AffiliateInquiry';
   }
+        public static get LocheNews(): string {
+    return this.baseUrl + '/pages/LocheNews';
+  }
   public static get comingSoon(): string {
     return this.baseUrl + '/pages/coming-soon';
   }
