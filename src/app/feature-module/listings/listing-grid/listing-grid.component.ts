@@ -68,6 +68,7 @@ export class ListingGridComponent {
     }
     this.listingGrid = this.data.listingGrid;
     this.getAllVerifiedProductData();
+     this.getAllActiveProductData();
    
   }
 
@@ -167,9 +168,7 @@ tabs = [
 
 
 
-ngOnInit() {
-  this.getAllActiveProductData();
-}
+
 
 // getAllActiveProductData() {
 //   this.commonService.getAllActiveProductData().subscribe({
