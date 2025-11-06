@@ -15,7 +15,7 @@
           <div class="login-auth">
             <div class="login-auth-wrap">
               <h1>Sign In</h1>
-              <form [formGroup]="form" (ngSubmit)="signin()">
+              <form [formGroup]="form" (ngSubmit)="login()">
 
                 <!-- Email & Password Login -->
                 <div *ngIf="!loginWithOtp">
@@ -82,13 +82,13 @@
                 </div>
 
                 <!-- Toggle Login Method -->
-                <div class="input-block mt-3">
+                <!-- <div class="input-block mt-3">
                   <label class="custom_check d-inline-flex">
                     <span>Login with OTP instead of Password</span>
                     <input type="checkbox" (change)="loginWithOtp = !loginWithOtp" />
                     <span class="checkmark"></span>
                   </label>
-                </div>
+                </div> -->
 
 
                 <!-- Submit Button -->

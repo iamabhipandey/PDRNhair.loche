@@ -74,42 +74,7 @@
   </div>
 
 
-  <div class="header-two-to">
-    <div class="container-fluid">
-      <div class="header-top-items">
-        <div class="header-top-right d-flex justify-content-end">
-          <ul class="header-address" *ngIf="!userLogin">
-          </ul>
-          <ul class="nav header-navbar-rht" *ngIf="userLogin">
-            <li class="nav-item dropdown has-arrow logged-item">
-              <a href="#" class="dropdown-toggle nav-link" data-bs-toggle="dropdown" aria-expanded="false">
-                <span class="user-img">
-                  <img class="rounded-circle" src="assets/img/profiles/profile.png" alt="Profile">
-                </span>
-                <span class="user-text">{{loggedUserName}}</span>
-              </a>
-              <div class="dropdown-menu dropdown-menu-end">
-                <a class="dropdown-item" [routerLink]="routes.userDashboard">
-                  <i class="feather-user-check"></i> Edit Profile
-                </a>
-                <a class="dropdown-item" [routerLink]="routes.userWishlist">
-                  <i class="feather-user-check"></i> Wishlist
-                </a>
-                <a class="dropdown-item" [routerLink]="routes.order">
-                  <i class="feather-settings"></i> Orders
-                </a>
-                <a class="dropdown-item" (click)="logout()">
-                  <i class="feather-power"></i> Logout
-                </a>
-              </div>
-            </li>
-          </ul>
-
-
-        </div>
-      </div>
-    </div>
-  </div>
+ 
 
   <!-- ------------------------------- end head two ----------------------------------------- -->
   <div class="main-head">
@@ -165,11 +130,52 @@
             </div>
           </a>
         </li>
-        <li class="nav-item user-link" [routerLink]="routes.login">
+
+        <li class="nav-item user-link" *ngIf="userLogin">
+           <div class="header-two-to">
+    <div class="container-fluid">
+      <div class="header-top-items">
+        <div class="header-top-right d-flex justify-content-end">
+          <ul class="header-address" *ngIf="!userLogin">
+          </ul>
+          <ul class="nav header-navbar-rht" *ngIf="userLogin">
+            <li class="nav-item dropdown has-arrow logged-item">
+              <a href="#" class="dropdown-toggle nav-link" data-bs-toggle="dropdown" aria-expanded="false">
+                <span class="user-img">
+                  <img class="rounded-circle" src="assets/img/profiles/profile.png" alt="Profile">
+                </span>
+                <span class="user-text">{{loggedUserName}}</span>
+              </a>
+              <div class="dropdown-menu dropdown-menu-end">
+                <a class="dropdown-item" [routerLink]="routes.userDashboard">
+                  <i class="feather-user-check"></i> Edit Profile
+                </a>
+                <a class="dropdown-item" [routerLink]="routes.userWishlist">
+                  <i class="feather-user-check"></i> Wishlist
+                </a>
+                <a class="dropdown-item" [routerLink]="routes.order">
+                  <i class="feather-settings"></i> Orders
+                </a>
+                <a class="dropdown-item" (click)="logout()">
+                  <i class="feather-power"></i> Logout
+                </a>
+              </div>
+            </li>
+          </ul>
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+        </li>
+
+        <li class="nav-item user-link" [routerLink]="routes.login" *ngIf="!userLogin">
           <a class="nav-link header-user">
             <i class="bx bx-user"></i>
           </a>
         </li>
+
         <!-- <li class="nav-item" [routerLink]="routes.userWishlist">
       <a class="nav-link header-login  notification"><span>
           <img src="assets/img/icons/heart.png" alt="Logo" class="img-fluid" width="25px">

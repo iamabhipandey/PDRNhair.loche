@@ -26,7 +26,7 @@
         <img src="assets/img/Loche-India-Logo-PNG.png" alt="Logo" width="75px" />
       </div>
 
-      <!-- Close Button -->
+      <!-- Close Button --> 
       <button class="btn-close" (click)="toggleSidebar()">
         <span>&times;</span>
       </button>
@@ -321,23 +321,23 @@
           <div class="listing-item">
             <div class="listing-img">
               <div class="img-slider">
-                <div class="slide-images">
-                  <a class="product-image" [routerLink]="routes.listingDetails">
-                    <img [src]="product.image" class="img-fluid" [alt]="product.name" />
+                <div class="slide-images" (click)="productProfile(product.id)">
+                  <a class="product-image" >
+                    <img class="img-fluid" [src]="product.productImageId || product.imageInfo?.imageUrl" [alt]="product.productName"/>
                   </a>
                 </div>
               </div>
-              <div class="fav-item justify-content-end">
+              <div class="fav-item justify-content-end" (click)="addToWishlist(product.id)">
                 <a class="fav-icon" tabindex="1">
                   <i class="feather icon-heart"></i>
                 </a>
               </div>
             </div>
-            <div class="listing-content">
-              <div class="listing-features d-flex align-items-end justify-content-between">
+            <div class="listing-content" >
+              <div class="listing-features d-flex align-items-end justify-content-between"  (click)="productProfile(product.id)">
                 <div class="list-rating">
                   <h3 class="listing-title">
-                    <a>{{ product.name }}</a>
+                    <a>{{ product.productName }}</a>
                   </h3>
                   <div class="list-rating">
                     <i class="fas fa-star filled me-1" *ngFor="let i of [1,2,3,4]"></i>
@@ -348,18 +348,25 @@
                 </div>
               </div>
 
-              <div class="listing-location-details">
-                <div class="listing-price">
-                  <h5>₹ {{ product.price }}</h5>
-                </div>
+              <div class="listing-location-details"  (click)="productProfile(product.id)">
+                 <div class="listing-price">
+                    @if(product.mrp){
+                    <h5> ₹ {{ product?.mrp }}</h5>
+                    }@else{
+                   <div class="outof-stock" style="color: red;"> OUT OF STOCK</div>
+                    }
+                  </div>
               </div>
 
-              <div class="listing-button">
-                <a class="btn btn-order">
-                  <span><i class="fa-solid fa-bag-shopping"></i></span>
-                  Add To Cart
-                </a>
-              </div>
+              @if(product.mrp){
+                <div class="listing-button" (click)="addToCart(product.id)">
+                  <a class="btn btn-order">
+                    <span><i class="fa-solid fa-bag-shopping"></i></span>
+                    Add To Cart
+                  </a>
+                </div>
+              }
+              
             </div>
           </div>
         </div>
@@ -377,7 +384,7 @@
 
 
   <!--Pagination-->
-  <div class="blog-pagination">
+  <!-- <div class="blog-pagination">
     <nav>
       <ul class="pagination page-item justify-content-end">
         <li class="previtem">
@@ -403,7 +410,7 @@
         </li>
       </ul>
     </nav>
-  </div>
+  </div> -->
   <!--/Pagination-->
 
 </section>

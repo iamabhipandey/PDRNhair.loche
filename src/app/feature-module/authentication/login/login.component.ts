@@ -18,12 +18,13 @@ export class LoginComponent implements OnInit {
   public loginWithOtp = false; // checkbox toggle ke liye
   public otpSent = false; // verify button ke baad OTP field show karna
 
+   returnUrl: string = '';
   form = new FormGroup({
-    email: new FormControl('abhishek@gmail.com', [
+    email: new FormControl('', [
       Validators.email,
       Validators.required,
     ]),
-    password: new FormControl('123456', [Validators.required]),
+    password: new FormControl('', [Validators.required]),
 
     // ✅ Mobile aur OTP ke liye extra controls
     mobileNo: new FormControl('', [
@@ -37,7 +38,12 @@ export class LoginComponent implements OnInit {
     return this.form.controls;
   }
 
-  constructor(private auth: AuthService) {}
+  constructor(private auth: AuthService,
+     private commonService: CommonService,
+    private router: Router,
+
+    private route: ActivatedRoute
+  ) {}
 
   signin() {
     if (this.loginWithOtp) {
@@ -72,9 +78,56 @@ export class LoginComponent implements OnInit {
     }
   }
 
-  ngOnInit(): void {
-    if (localStorage.getItem('authenticated')) {
-      localStorage.removeItem('authenticated');
-    }
+
+
+  ngOnInit() {
+    this.route.queryParams.subscribe(params => {
+      this.returnUrl = params['returnUrl'] || '';
+    });
+  }
+
+
+  loginData: any[] = [];
+  login() {
+    const formData = new FormData();
+    formData.append('email', this.form.get('email')?.value ?? '');
+    formData.append('password', this.form.get('password')?.value ?? '');
+
+    this.auth.userSignIn(formData).subscribe({
+      next: (res: any) => {
+        if (res.status === 'true') {
+          this.loginData = res.data;
+
+          // ✅ User login subject update yaha karo
+          this.commonService.setUserLoggedIn();
+
+          Swal.fire({
+            title: 'Success',
+            text: `${res.message}`,
+            icon: 'success',
+            confirmButtonColor: '#0E82FD',
+          }).then((result) => {
+            if (result.isConfirmed) {
+
+              if (this.returnUrl) {
+                this.router.navigateByUrl(this.returnUrl);
+              } else {
+                this.router.navigate([this.routes.listingGrid]);
+              }
+              
+            }
+          });
+        }
+      },
+      error: (err: any) => {
+        Swal.fire({
+          title: 'Error',
+          text: 'Login failed. Wrong credentials!',
+          icon: 'error',
+          confirmButtonColor: '#0E82FD',
+        });
+        this.commonService.logout();
+      }
+    });
   }
 }
