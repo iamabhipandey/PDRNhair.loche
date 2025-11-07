@@ -96,7 +96,7 @@ export class DataService {
       separateRoute: false,
       menu: [
         {
-          menuValue: 'CEO greeting',
+          menuValue: 'CEO Greeting',
           routes: routes.CeoGreeting,
           hasSubRoute: false,
           showSubRoute: false,
@@ -117,14 +117,14 @@ export class DataService {
           subMenus: [],
         },
         {
-          menuValue: 'Company history',
+          menuValue: 'Company History',
           routes: routes.CompanyHistory,
           hasSubRoute: false,
           showSubRoute: false,
           subMenus: [],
         },
         {
-          menuValue: 'Social contribution',
+          menuValue: 'Social Contribution',
            routes: routes.SocialContribution,
           hasSubRoute: false,
           showSubRoute: false,
@@ -175,7 +175,7 @@ export class DataService {
           subMenus: [],
         },
                 {
-          menuValue: '  Skin Boost',
+          menuValue: 'Skin Boost',
           routes: routes.listingGrid,
           hasSubRoute: false,
           showSubRoute: false,
@@ -189,7 +189,7 @@ export class DataService {
           subMenus: [],
         },     
            {
-          menuValue: 'PDRN dental implants',
+          menuValue: 'PDRN Dental Implants',
           routes: routes.listingGrid,
           hasSubRoute: false,
           showSubRoute: false,
@@ -209,7 +209,7 @@ export class DataService {
               subMenus: [],
             },
              {
-              menuValue: 'hyaluronic acid',
+              menuValue: 'Hyaluronic Acid',
               routes: routes.listingGrid,
               hasSubRoute: false,
               showSubRoute: false,
@@ -232,7 +232,7 @@ export class DataService {
           ],
         }, 
                          {
-          menuValue: 'Health functional food',
+          menuValue: 'Health Functional Food',
           routes: routes.listingGrid,
           hasSubRoute: true,
           showSubRoute: false,
@@ -260,7 +260,7 @@ export class DataService {
       ]
     },                  
     {
-      tittle: 'Research and development',
+      tittle: 'Research and Development',
       showAsTab: false,
       separateRoute: false,
       menu: [
@@ -282,28 +282,28 @@ export class DataService {
           ],
         }, 
         {
-          menuValue: 'R&D and technology',
+          menuValue: 'R&D and Technology',
            routes: routes.CeoGreeting,
           hasSubRoute: false,
           showSubRoute: false,
           subMenus: [],
         },
         {
-          menuValue: 'Clean room',
+          menuValue: 'Clean Room',
           routes: routes.CleanRoom,
           hasSubRoute: false,
           showSubRoute: false,
           subMenus: [],
         },
         {
-          menuValue: 'Certification details',
+          menuValue: 'Certification Details',
            routes: routes.CeoGreeting,
           hasSubRoute: false,
           showSubRoute: false,
           subMenus: [],
         },
         {
-          menuValue: 'Cooperative organization',
+          menuValue: 'Cooperative Organization',
           routes: routes.CeoGreeting,
           hasSubRoute: true,
           showSubRoute: false,
@@ -337,7 +337,7 @@ export class DataService {
               subMenus: [],
             },
              {
-              menuValue: ' Gimhae Advanced Medical Foundation',
+              menuValue: 'Gimhae Advanced Medical Foundation',
               routes: routes.CeoGreeting,
               hasSubRoute: false,
               showSubRoute: false,
@@ -352,13 +352,13 @@ export class DataService {
       ],
     },
         {
-      tittle: 'Customer center',
+      tittle: 'Customer Center',
       showAsTab: false,
       separateRoute: false,
       menu: [
  
         {
-          menuValue: 'Affiliate inquiry',
+          menuValue: 'Affiliate Inquiry',
           routes: routes.AffiliateInquiry,
           hasSubRoute: false,
           showSubRoute: false,
@@ -382,7 +382,7 @@ export class DataService {
       ],
     },
         {
-      tittle: 'public relations center',
+      tittle: 'Public Relations Center',
       showAsTab: false,
       separateRoute: false,
       menu: [
@@ -395,21 +395,21 @@ export class DataService {
           subMenus: [],
         },
         {
-          menuValue: 'Loche commercial',
+          menuValue: 'Loche Commercial',
           routes: routes.LocheNews,
           hasSubRoute: false,
           showSubRoute: false,
           subMenus: [],
         },
         {
-          menuValue: 'Introduction of partner companies',
+          menuValue: 'Introduction Of Partner Companies',
           routes: routes.LocheNews,
           hasSubRoute: false,
           showSubRoute: false,
           subMenus: [],
         },
                 {
-          menuValue: 'Introduction of CI',
+          menuValue: 'Introduction Of CI',
            routes: routes.CeoGreeting,
           hasSubRoute: false,
           showSubRoute: false,
@@ -419,27 +419,27 @@ export class DataService {
       ],
     },  
     {
-      tittle: 'Recruitment ',
+      tittle: 'Recruitment',
       showAsTab: false,
       separateRoute: false,
       menu: [
  
         {
-          menuValue: 'The personnel system / welfare system',
+          menuValue: 'The Personnel System / Welfare System',
           routes: routes.LocheNews,
           hasSubRoute: false,
           showSubRoute: false,
           subMenus: [],
         },
         {
-          menuValue: 'Information on recruitment procedures',
+          menuValue: 'Information on Recruitment Procedures',
           // routes: routes.aboutUs,
           hasSubRoute: false,
           showSubRoute: false,
           subMenus: [],
         },
         {
-          menuValue: 'Job introduction',
+          menuValue: 'Job Introduction',
           // routes: routes.aboutUs,
           hasSubRoute: false,
           showSubRoute: false,
@@ -455,14 +455,14 @@ export class DataService {
       menu: [
  
         {
-          menuValue: 'Press release',
+          menuValue: 'Press Release',
           routes: routes.LocheNews,
           hasSubRoute: false,
           showSubRoute: false,
           subMenus: [],
         },
         {
-          menuValue: 'A promotional video',
+          menuValue: 'A Promotional Video',
           // routes: routes.aboutUs,
           hasSubRoute: false,
           showSubRoute: false,
@@ -485,7 +485,7 @@ export class DataService {
       menu: [
  
         {
-          menuValue: 'The entire',
+          menuValue: 'The Entire Catalog',
            routes: routes.listingGrid,
           hasSubRoute: false,
           showSubRoute: false,
