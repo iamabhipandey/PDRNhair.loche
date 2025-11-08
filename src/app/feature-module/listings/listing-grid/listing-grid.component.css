@@ -66,6 +66,7 @@
 .tabs-wrap {
   display: flex;
   align-items: center;
+  margin: 15px 0px;
   gap: 12px;
   width: 100%;
   background: #fff;
@@ -165,11 +166,33 @@
   .product-image {
     height: 200px;
   }
+    .product-banner {
+    padding: 15px 0 15px;
+}
+.tabs-wrap {
+    gap: 6px;
+    padding: 6px;
+}
+.tab-nav .nav-item {
+    flex: 0 0 auto;
+    display: inline-block;
+    margin: 1px 3px;
+}
+.tab-nav .nav-link {
+    padding: 5px 13px;
+    font-size: 14px;
+}
 }
 @media (max-width: 480px) {
   .product-image {
     height: 180px;
   }
+  .product-banner {display: none;
+}
+.tabs-wrap {
+    gap: 6px;
+    padding: 6px;
+}
 }
 
 /* 📄 Pagination (used at bottom) */
