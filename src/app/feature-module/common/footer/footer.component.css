@@ -7,10 +7,10 @@ h6.footer-tital {
     font-size: 17px;
     font-weight: 600;
 }
-.logo-img{
+/* .logo-img{
     width: 180px;
             margin-bottom: 10px;
-}
+} */
 @media only screen and (max-width: 600px) {
   .logo-img{
     width: 120px;
@@ -18,3 +18,5 @@ h6.footer-tital {
     justify-self: center;
 }
 }
+
+
