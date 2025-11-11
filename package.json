@@ -26,6 +26,8 @@
     "@fullcalendar/angular": "^6.1.15",
     "@fullcalendar/core": "^6.1.15",
     "@fullcalendar/daygrid": "^6.1.15",
+    "@ngx-translate/core": "^17.0.0",
+    "@ngx-translate/http-loader": "^17.0.0",
     "@types/aos": "^3.0.4",
     "@types/google.maps": "^3.55.9",
     "aos": "^2.3.4",
