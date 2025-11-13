@@ -9,7 +9,7 @@
         box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
     left: 0;
     top: 0;
-    height: 160px;
+    height: 115px;
     width: 100%;
     z-index: 999;
     @extend %animation-effect;
@@ -55,7 +55,7 @@
             >li {
                 >a {
                     color: $__gray;
-                    line-height: 46px;
+                    line-height: 67px;
                     font-weight: $__medium;
                     @include respond-below(custom991) {
                         font-size: $__font__size__14;

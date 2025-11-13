@@ -154,17 +154,10 @@ activeTab = 'all';
 
 tabs = [
   { id: 'all', label: 'All' },
-  { id: 'medical', label: 'Medical Devices' },
-  { id: 'botox', label: 'Botox' },
-  { id: 'filler', label: 'Fillers' },
-  { id: 'pl', label: 'PL' },
-  { id: 'pdrn', label: 'PDRN' },
-  { id: 'PN Injector', label: 'PN Injector' },
-  { id: 'skin booster', label: 'Skin Booster' },
-  { id: 'lipolysis', label: 'Lipolysis' },
-  { id: 'pdrn-dental', label: 'PDRN Dental Implants' },
-  { id: 'cosmetics', label: 'Cosmetics' },
-  { id: 'supplement', label: 'Health Functional Food' },
+  { id: 'Derma-PN-Eye', label: 'Derma PN Eye' },
+  { id: 'Derma-1', label: 'Derma PN 1' },
+  { id: 'Derma-2', label: 'Derma PN 2' },
+  { id: 'Derma-3', label: 'Derma PN 3' },
 ];
 
 

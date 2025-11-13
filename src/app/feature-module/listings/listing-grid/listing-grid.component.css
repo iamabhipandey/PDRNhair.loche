@@ -1,23 +1,57 @@
 /* 🌟 Product Banner */
 .product-banner {
-  background: linear-gradient(135deg, #f57c9b, #a46ef1);
-  padding: 100px 0 70px;
-  color: #fff;
-  text-align: center;
+  position: relative;
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 16px;
+  overflow: hidden;
+  background: linear-gradient(270deg, #f57c9b, #a46ef1, #8fd3f4, #fbc2eb);
+  background-size: 600% 600%;
+  animation: gradientShift 10s ease infinite;
 }
 
-.product-banner h2 {
-  font-size: 2.5rem;
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.banner-content {
+  position: relative;
+  z-index: 2;
+  color: #fff;
+  text-align: center;
+  animation: fadeUp 1.5s ease;
+}
+
+.banner-title {
+  font-size: 3rem;
   font-weight: 700;
-  letter-spacing: 1px;
   margin-bottom: 10px;
 }
 
-.product-banner p {
-  font-size: 1.1rem;
+.banner-subtitle {
+  font-size: 1.2rem;
   opacity: 0.9;
-  margin: 0;
 }
+
+.underline {
+  width: 80px;
+  height: 4px;
+  margin: 15px auto 0;
+  border-radius: 3px;
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+/* fade animation */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+
 
 /* 🌈 Filter Button */
 .filterbutton {

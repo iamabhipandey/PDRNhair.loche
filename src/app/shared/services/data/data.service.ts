@@ -81,14 +81,7 @@ export class DataService {
 
 
   public header: header[] = [
-    //   {
-    //   tittle: 'About Us',
-    //   showAsTab: false,
-    //   separateRoute: true,
-    //   routes: routes.contactUs,
-    //   hasSubRoute: false,
-    //   showSubRoute: false,
-    // },
+
     {
       
       tittle: 'Company ',
@@ -102,12 +95,6 @@ export class DataService {
           showSubRoute: false,
           subMenus: [],
         },
-        //  {
-        //   menuValue: 'About Us',
-        //   hasSubRoute: false,
-        //   showSubRoute: false,
-        //   subMenus: [],
-        // },
         
         {
           menuValue: 'VISION 2030',
@@ -130,225 +117,92 @@ export class DataService {
           showSubRoute: false,
           subMenus: [],
         },
+                {
+          menuValue: 'R&D & Tech',
+           routes: routes.SocialContribution,
+          hasSubRoute: false,
+          showSubRoute: false,
+          subMenus: [],
+        },
         
       ],
     },
-  
-    {
-      tittle: 'Product Informatin ',
+        {
+      tittle: 'Brand',
       showAsTab: false,
       separateRoute: false,
       menu: [
         {
-          menuValue: 'Medical devices',
-          routes: routes.listingGrid,
-          hasSubRoute: false,
-          showSubRoute: false,
-          subMenus: [],
-        },
-        {
-          menuValue: 'Botox',
-          routes: routes.listingGrid,
-          hasSubRoute: false,
-          showSubRoute: false,
-          subMenus: [],
-        },
-        {
-          menuValue: 'Fillers',
-          routes: routes.listingGrid,
-          hasSubRoute: false,
-          showSubRoute: false,
-          subMenus: [],
-        },
-        {
-          menuValue: 'PL',
-          routes: routes.listingGrid,
-          hasSubRoute: false,
-          showSubRoute: false,
-          subMenus: [],
-        },
-        {
-          menuValue: 'PDRN',
-          routes: routes.listingGrid,
-          hasSubRoute: false,
-          showSubRoute: false,
-          subMenus: [],
-        },
-                {
-          menuValue: 'Skin Boost',
-          routes: routes.listingGrid,
-          hasSubRoute: false,
-          showSubRoute: false,
-          subMenus: [],
-        },       
-         {
-          menuValue: 'Lipolysis',
+          menuValue: 'Loche Derma Micro9',
           routes: routes.listingGrid,
           hasSubRoute: false,
           showSubRoute: false,
           subMenus: [],
         },     
-           {
-          menuValue: 'PDRN Dental Implants',
-          routes: routes.listingGrid,
-          hasSubRoute: false,
-          showSubRoute: false,
-          subMenus: [],
-        },
-                 {
-          menuValue: 'Cosmetics',
-          routes: routes.listingGrid,
-          hasSubRoute: true,
-          showSubRoute: false,
-          subMenus: [
-                      {
-              menuValue: 'PDRN',
-              routes: routes.listingGrid,
-              hasSubRoute: false,
-              showSubRoute: false,
-              subMenus: [],
-            },
-             {
-              menuValue: 'Hyaluronic Acid',
-              routes: routes.listingGrid,
-              hasSubRoute: false,
-              showSubRoute: false,
-              subMenus: [],
-            },
-             {
-              menuValue: 'Exosome',
-              routes: routes.listingGrid,
-              hasSubRoute: false,
-              showSubRoute: false,
-              subMenus: [],
-            },
-             {
-              menuValue: 'Spicule',
-              routes: routes.listingGrid,
-              hasSubRoute: false,
-              showSubRoute: false,
-              subMenus: [],
-            },
-          ],
-        }, 
-                         {
-          menuValue: 'Health Functional Food',
-          routes: routes.listingGrid,
-          hasSubRoute: true,
-          showSubRoute: false,
-          subMenus: [
-                      {
-              menuValue: ' Morning Boost',
-              routes: routes.listingGrid,
-              hasSubRoute: false,
-              showSubRoute: false,
-              subMenus: [],
-            },
-            
-            
-          ],
-        }, 
-           {
-          menuValue: 'Business Inquiries',
-           routes: routes.CeoGreeting,
-          hasSubRoute: false,
-          showSubRoute: false,
-          subMenus: [],
-        },
- 
-        
       ]
-    },                  
+    }, 
+  
     {
-      tittle: 'Research and Development',
+      tittle: 'Product',
       showAsTab: false,
       separateRoute: false,
       menu: [
         {
-          menuValue: 'Introduction to Indian Hospitals',
-          // routes: routes.aboutUs,
-          hasSubRoute: true,
+          menuValue: 'Derma PN Eye',
+          routes: routes.listingGrid,
+          hasSubRoute: false,
           showSubRoute: false,
-          subMenus: [
-                      {
-              menuValue: 'Korea Health Center (Antiviral Research Center)',
-              routes: routes.CeoGreeting,
-              hasSubRoute: false,
-              showSubRoute: false,
-              subMenus: [],
-            },
-            
-            
-          ],
-        }, 
+          subMenus: [],
+        },
         {
-          menuValue: 'R&D and Technology',
+          menuValue: 'Derma PN 1',
+          routes: routes.listingGrid,
+          hasSubRoute: false,
+          showSubRoute: false,
+          subMenus: [],
+        },
+        {
+          menuValue: 'Derma PN 2',
+          routes: routes.listingGrid,
+          hasSubRoute: false,
+          showSubRoute: false,
+          subMenus: [],
+        },
+        {
+          menuValue: 'Derma PN 3',
+          routes: routes.listingGrid,
+          hasSubRoute: false,
+          showSubRoute: false,
+          subMenus: [],
+        },      
+      ]
+    },                  
+    {
+      tittle: 'Franchise',
+      showAsTab: false,
+      separateRoute: false,
+      menu: [
+     {
+          menuValue: 'Rental',
+          routes: routes.listingGrid,
+          hasSubRoute: false,
+          showSubRoute: false,
+          subMenus: [],
+        },
+        {
+          menuValue: 'Purchase',
            routes: routes.CeoGreeting,
           hasSubRoute: false,
           showSubRoute: false,
           subMenus: [],
         },
         {
-          menuValue: 'Clean Room',
+          menuValue: 'Affiliate',
           routes: routes.CleanRoom,
           hasSubRoute: false,
           showSubRoute: false,
           subMenus: [],
         },
-        {
-          menuValue: 'Certification Details',
-           routes: routes.CeoGreeting,
-          hasSubRoute: false,
-          showSubRoute: false,
-          subMenus: [],
-        },
-        {
-          menuValue: 'Cooperative Organization',
-          routes: routes.CeoGreeting,
-          hasSubRoute: true,
-          showSubRoute: false,
-          subMenus: [
-                      {
-              menuValue: 'Paras Hospital',
-              routes: routes.CeoGreeting,
-              hasSubRoute: false,
-              showSubRoute: false,
-              subMenus: [],
-            },
-             {
-              menuValue: 'AII Indian College of Medicine',
-              routes: routes.CeoGreeting,
-              hasSubRoute: false,
-              showSubRoute: false,
-              subMenus: [],
-            },
-             {
-              menuValue: 'Alpha Dental Group',
-              routes: routes.CeoGreeting,
-              hasSubRoute: false,
-              showSubRoute: false,
-              subMenus: [],
-            },
-             {
-              menuValue: 'Osong Advanced Medical Care',
-              routes: routes.CeoGreeting,
-              hasSubRoute: false,
-              showSubRoute: false,
-              subMenus: [],
-            },
-             {
-              menuValue: 'Gimhae Advanced Medical Foundation',
-              routes: routes.CeoGreeting,
-              hasSubRoute: false,
-              showSubRoute: false,
-              subMenus: [],
-            },
-
-            
-            
-          ],
-        }, 
-       
       ],
     },
         {
@@ -381,73 +235,7 @@ export class DataService {
 
       ],
     },
-        {
-      tittle: 'Public Relations Center',
-      showAsTab: false,
-      separateRoute: false,
-      menu: [
- 
-        {
-          menuValue: 'Loche News',
-          routes: routes.LocheNews,
-          hasSubRoute: false,
-          showSubRoute: false,
-          subMenus: [],
-        },
-        {
-          menuValue: 'Loche Commercial',
-          routes: routes.LocheNews,
-          hasSubRoute: false,
-          showSubRoute: false,
-          subMenus: [],
-        },
-        {
-          menuValue: 'Introduction Of Partner Companies',
-          routes: routes.LocheNews,
-          hasSubRoute: false,
-          showSubRoute: false,
-          subMenus: [],
-        },
-                {
-          menuValue: 'Introduction Of CI',
-           routes: routes.CeoGreeting,
-          hasSubRoute: false,
-          showSubRoute: false,
-          subMenus: [],
-        },
 
-      ],
-    },  
-    {
-      tittle: 'Recruitment',
-      showAsTab: false,
-      separateRoute: false,
-      menu: [
- 
-        {
-          menuValue: 'The Personnel System / Welfare System',
-          routes: routes.LocheNews,
-          hasSubRoute: false,
-          showSubRoute: false,
-          subMenus: [],
-        },
-        {
-          menuValue: 'Information on Recruitment Procedures',
-          // routes: routes.aboutUs,
-          hasSubRoute: false,
-          showSubRoute: false,
-          subMenus: [],
-        },
-        {
-          menuValue: 'Job Introduction',
-          // routes: routes.aboutUs,
-          hasSubRoute: false,
-          showSubRoute: false,
-          subMenus: [],
-        },
-
-      ],
-    },  
         {
       tittle: 'PR',
       showAsTab: false,
@@ -455,21 +243,21 @@ export class DataService {
       menu: [
  
         {
-          menuValue: 'Press Release',
-          routes: routes.LocheNews,
+          menuValue: 'Affiliate Inquiry',
+          // routes: routes.LocheNews,
           hasSubRoute: false,
           showSubRoute: false,
           subMenus: [],
         },
         {
-          menuValue: 'A Promotional Video',
+          menuValue: 'Q&A',
           // routes: routes.aboutUs,
           hasSubRoute: false,
           showSubRoute: false,
           subMenus: [],
         },
         {
-          menuValue: 'Advertising',
+          menuValue: 'OEM/ODM Inquiry',
           // routes: routes.aboutUs,
           hasSubRoute: false,
           showSubRoute: false,
@@ -478,50 +266,7 @@ export class DataService {
 
       ],
     },  
-            {
-      tittle: 'Cardalog Archive',
-      showAsTab: false,
-      separateRoute: false,
-      menu: [
- 
-        {
-          menuValue: 'The Entire Catalog',
-           routes: routes.listingGrid,
-          hasSubRoute: false,
-          showSubRoute: false,
-          subMenus: [],
-        },
-        {
-          menuValue: 'Fillers',
-           routes: routes.listingGrid,
-          hasSubRoute: false,
-          showSubRoute: false,
-          subMenus: [],
-        },
-        {
-          menuValue: 'PL',
-           routes: routes.listingGrid,
-          hasSubRoute: false,
-          showSubRoute: false,
-          subMenus: [],
-        },
-            {
-          menuValue: 'PDRN',
-           routes: routes.listingGrid,
-          hasSubRoute: false,
-          showSubRoute: false,
-          subMenus: [],
-        },
-            {
-          menuValue: 'Implant',
-           routes: routes.listingGrid,
-          hasSubRoute: false,
-          showSubRoute: false,
-          subMenus: [],
-        },
 
-      ],
-    }, 
     // {
     //   tittle: 'Beauty advice',
     //   showAsTab: false,
