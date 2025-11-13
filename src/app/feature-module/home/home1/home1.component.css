@@ -1,6 +1,89 @@
 .sec-one-img img {
   border-radius: 10px;
 }
+.business-section {
+  background-color: #faf9fc;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: #333;
+}
+
+.section-subtitle {
+  color: #777;
+  font-size: 1.1rem;
+}
+
+.business-card {
+  transition: all 0.4s ease;
+}
+
+.business-card:hover {
+  transform: translateY(-6px);
+}
+
+.img-wrap {
+  position: relative;
+  overflow: hidden;
+  border-radius: 16px;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.1);
+}
+
+.img-wrap img {
+  transition: transform 0.7s ease;
+}
+
+.img-wrap:hover img {
+  transform: scale(1.1);
+  filter: brightness(80%);
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0,0,0,0.2), rgba(0,0,0,0.7));
+  opacity: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: opacity 0.5s ease;
+  border-radius: 16px;
+}
+
+.img-wrap:hover .overlay {
+  opacity: 1;
+}
+
+.overlay span {
+  color: #fff;
+  font-size: 1.1rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-weight: 500;
+  animation: fadeInUp 0.8s ease forwards;
+}
+
+@keyframes fadeInUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.business-card h5 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #333;
+  margin-top: 15px;
+  text-transform: capitalize;
+}
 
 
 
@@ -294,7 +377,6 @@
   font-weight: 700;
   font-family: sans-serif;
   color: #303351;
-  display: flex;
   align-items: center;
 }
 .section-title span {

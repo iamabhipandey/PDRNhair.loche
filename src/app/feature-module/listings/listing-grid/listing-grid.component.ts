@@ -22,6 +22,10 @@ export class ListingGridComponent {
 
 
 
+
+
+  
+
 // close product tabs 
 // open sidebar ts
   isSidebarOpen = false;
@@ -29,7 +33,7 @@ export class ListingGridComponent {
   toggleSidebar() {
     this.isSidebarOpen = !this.isSidebarOpen;
   }
-// close sidebar ts
+
 
 
 
@@ -80,7 +84,7 @@ export class ListingGridComponent {
 
    showSpinner() {
           this.spinner.show();
-          // Simulate data loading
+          
           setTimeout(() => {
             this.spinner.hide();
           }, 2000);
@@ -98,30 +102,11 @@ slidevalue = 55;
   }
 
   
- isClassAdded: { [key: number]: boolean } = {}; // object jisme har product id ka state rahega
+ isClassAdded: { [key: number]: boolean } = {}; 
 
 toggleClass(productId: number) {
   this.isClassAdded[productId] = !this.isClassAdded[productId];
 }
-
-
-
-
-
-// toggleClass(productId: number) {
-//   this.isClassAdded[productId] = !this.isClassAdded[productId];
-
-//   if (this.isClassAdded[productId]) {
-//     this.addToWishlist(productId);  // wishlist me add
-//   } else {
-//     this.removeFromWishlist(productId);  // wishlist se remove (agar API support karti hai)
-//   }
-// }
-
-// removeFromWishlist(productId:any){
-
-// }
-
 
   getAllverifiedData: any = [];
 getAllVerifiedProductData() {
@@ -162,39 +147,15 @@ tabs = [
 
 
 
-
-
-// getAllActiveProductData() {
-//   this.commonService.getAllActiveProductData().subscribe({
-//     next: (res: any) => {
-//       if (res.status === 'true') {
-//         // Store API data
-//         this.originalProducts = res.data;
-//         this.getAllProductData = [...this.originalProducts];
-//       } else {
-//         console.warn('No active products found');
-//       }
-//     },
-//     error: (err: any) => {
-//       console.error(err);
-//     }
-//   });
-// }
-
-// 💡 Computed getter for filtered products
-
-
 getAllActiveProductData() {
   this.commonService.getAllActiveProductData().subscribe({
     next: (res: any) => {
       if (res.status === 'true' && Array.isArray(res.data)) {
 
-        // Filter products with countryOrigin = "LocheBio"
         this.originalProducts = res.data.filter(
           (item: any) => item.countryOrigin?.toLowerCase() === 'lochebio'.toLowerCase()
         );
 
-        // Copy to display array
         this.getAllProductData = [...this.originalProducts];
 
       } else {
@@ -213,24 +174,15 @@ get filteredProducts() {
   if (this.activeTab === 'all') {
     return this.getAllProductData;
   } else {
-    // Match category ignoring case (e.g., "Skin" === "skin")
     return this.getAllProductData.filter(
       (p) => p.superSubCategory?.toLowerCase() === this.activeTab.toLowerCase()
     );
   }
 }
 
-// 💡 Change tab
 selectTab(tabId: string) {
   this.activeTab = tabId;
 }
-
-
-// productProfile(product: any) {
-//   this.commonService.setUserProductData(product);
-//   this.router.navigate([this.routes.listingDetails]);  // navigate bhi karo
-// }
-
 
 productProfile(productId: any) {
   this.router.navigate(
@@ -238,50 +190,11 @@ productProfile(productId: any) {
     {
       queryParams: {
         id: productId,   
-        // name: product.productName
       }
     }
   );
 }
 
-
-  // addToCart(productId: number) {
-  //   const payload = {
-  //     productId: productId,
-  //     userId: this.currentLoggedUserId,
-  //   }
-
-  //   this.commonService.addToCart(payload).subscribe({
-  //     next: (res: any) => {
-  //       if (res.status === 'true') {
-         
-  //         // ✅ cart count update service me push 
-  //       this.commonService.updateCartCount(res.data.totalQuantity);
-
-  //         Swal.fire({
-  //         title: 'Success',
-  //         text: `Item added  to Cart`,
-  //         icon: 'success',
-  //         confirmButtonColor: '#0E82FD',
-  //       }).then((result) => {
-  //         if (result.isConfirmed) {
-           
-  //         }
-  //       });
-
-  //       } else {
-
-  //       }
-  //     },
-  //     error: (err: any) => {
-  //       console.error(err);
-  //     }
-  //   });
-
-  // }
-
-  
-  
     addToCart(productId: number) {
       if(this.currentLoggedUserId){
       const payload = {
@@ -293,7 +206,6 @@ productProfile(productId: any) {
         next: (res: any) => {
           if (res.status === 'true') {
            
-            // ✅ cart count update service me push 
           this.commonService.updateCartCount(res.data.totalQuantity);
   
             Swal.fire({
@@ -354,7 +266,6 @@ productProfile(productId: any) {
           confirmButtonColor: '#0E82FD',
         });
         
-        // service ke through update
         this.commonService.updateWishlistCount(res.data.wishlistCount);
 
         
@@ -495,34 +406,27 @@ onPreferenceChange(event: any, preference: string) {
 applyFilters() {
   let filtered = [...this.originalProducts];
 
-  // Price filter
   filtered = filtered.filter(p => Number(p.sellingPrice) <= this.selectedMax);
-
-    // Category filter
   if (this.selectedCategories.length > 0) {
     filtered = filtered.filter(p => this.selectedCategories.includes(p.productType));
   }
 
-   // Concern filter
   if (this.selectedConcerns.length > 0) {
     filtered = filtered.filter(p => this.selectedConcerns.includes(p.concern));
   }
 
-  // Skin type  filter
   if (this.selectedSkintype.length > 0) {
     filtered = filtered.filter(p => this.selectedSkintype.includes(p.skinType));
   }
 
-   // Ingredient filter
   if (this.selectedIngredient.length > 0) {
     filtered = filtered.filter(p => this.selectedIngredient.includes(p.keyIngredients));
   }
 
-   // Formulation  filter
   if (this.selectedFormulation.length > 0) {
     filtered = filtered.filter(p => this.selectedFormulation.includes(p.productType));
   }
-    // Preference  filter
+
   if (this.selectedPreference.length > 0) {
     filtered = filtered.filter(p => this.selectedPreference.includes(p.keyIngredients));
   }

@@ -76,34 +76,31 @@ public routes = routes
 ];
 
   promotionProducts = [
+
   {
-    image: 'assets/img/banners/Loche Tox 100Unit.jpg',
-    title: 'Loche Tox 100Unit',
-  },
-  {
-    image: 'assets/img/banners/Loche Tox 200Unit.jpg',
-    title: 'Loche Tox 200Unit ',
+    image: 'assets/img/videos/product.png',
+    title: 'Derma PN Eye',
   },
   {
-    image: 'assets/img/banners/PDRNelle.jpg',
-    title: 'Pdrnelle ',
+    image: 'assets/img/videos/product.png',
+    title: 'Derma PN 1',
   },
   {
-    image: 'assets/img/banners/IMG-20251025-WA0033.jpg',
-    title: 'Pdrnelle skinbooster',
+    image: 'assets/img/videos/product.png',
+    title: 'Derma PN 2',
   },
   {
-    image: 'assets/img/banners/Loche injector .jpg',
-    title: 'Loche injector',
+    image: 'assets/img/videos/product.png',
+    title: 'Derma PN 3',
   },
-    {
-    image: 'assets/img/banners/Pdrnelle vega shine.jpg',
-    title: 'Pdrnelle vega shine',
-  },
-      {
-    image: 'assets/img/banners/pdrnelle V .jpg',
-    title: 'Pdrnelle V',
-  },
+  //   {
+  //   image: 'assets/img/banners/Pdrnelle vega shine.jpg',
+  //   title: 'Pdrnelle vega shine',
+  // },
+  //     {
+  //   image: 'assets/img/banners/pdrnelle V .jpg',
+  //   title: 'Pdrnelle V',
+  // },
   //       {
   //   image: 'assets/img/banners/rejuvenex_forte_product_image_1.webp',
   //   title: 'Rejuvenex Forte',
