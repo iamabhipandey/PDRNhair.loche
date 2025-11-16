@@ -75,37 +75,30 @@ public routes = routes
   }
 ];
 
-  promotionProducts = [
-
+promotionProducts = [
   {
-    image: 'assets/img/videos/product.png',
-    title: 'Derma PN Eye',
+    image: 'assets/img/banners/cream.jpg',
+    title: 'Dewy Glow Hyaluronic Acid Soothing Cream',
+    price: 2570,
+    rating: 4.0,
+    reviews: 150,
   },
   {
-    image: 'assets/img/videos/product.png',
-    title: 'Derma PN 1',
+    image: 'assets/img/banners/sirum.jpg',
+    title: 'Dewy Glow Hyaluronic Acid Serum',
+    price: 1899,
+    rating: 4.3,
+    reviews: 112,
   },
   {
-    image: 'assets/img/videos/product.png',
-    title: 'Derma PN 2',
+    image: 'assets/img/banners/tonar.jpg',
+    title: 'Dewy Glow Hyaluronic Acid Toner',
+    price: 1430,
+    rating: 4.2,
+    reviews: 97,
   },
-  {
-    image: 'assets/img/videos/product.png',
-    title: 'Derma PN 3',
-  },
-  //   {
-  //   image: 'assets/img/banners/Pdrnelle vega shine.jpg',
-  //   title: 'Pdrnelle vega shine',
-  // },
-  //     {
-  //   image: 'assets/img/banners/pdrnelle V .jpg',
-  //   title: 'Pdrnelle V',
-  // },
-  //       {
-  //   image: 'assets/img/banners/rejuvenex_forte_product_image_1.webp',
-  //   title: 'Rejuvenex Forte',
-  // },
 ];
+
   secondsection: OwlOptions = {
     loop:true,
     margin:15,

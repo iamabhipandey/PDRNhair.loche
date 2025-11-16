@@ -579,7 +579,7 @@
         }
         .listing-title {
             a {                
-                color: $__dark__blues !important;
+                color: $__secondarycolor !important;
             }
         }
     }
@@ -776,7 +776,8 @@
             .btn-order {
                 @extend %display-flex-center;
                 @extend %justify-content-center;
-                background: $__primarycolorsecondry;
+                // background: $__primarycolorsecondry;
+                background: linear-gradient(135deg, #6dc7f7, #469cc7);
                 position: $__relative;
                 border-radius: 5px;
                 font-weight: $__medium;
@@ -805,7 +806,7 @@
         -o-transition: all 0.5s;
         transition: all 0.5s;
         .btn-order {
-            background-color: $__dark__blues !important;
+                background: linear-gradient(135deg, #469cc7, #337a9c) !important;
             color: $__white;
             border-radius: 5px;
         }    

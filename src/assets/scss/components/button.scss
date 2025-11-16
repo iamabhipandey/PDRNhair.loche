@@ -190,7 +190,7 @@
 .btn-check:checked+.btn, .btn.active, .btn.show, .btn:first-child:active, :not(.btn-check)+.btn:active {
     color:$__white;
     background-color: $__gray__dark;
-    border-color: $__gray__dark;
+    border-color: $__secondarycolor;
 }
 .btn-secondary {
     border: 1px solid $__gray__dark;

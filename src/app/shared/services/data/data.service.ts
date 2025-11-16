@@ -82,65 +82,58 @@ export class DataService {
 
   public header: header[] = [
 
-    {
+    // {
       
-      tittle: 'Company ',
+    //   tittle: 'Company ',
+    //   showAsTab: false,
+    //   separateRoute: false,
+    //   menu: [
+    //     {
+    //       menuValue: 'CEO Greeting',
+    //       routes: routes.CeoGreeting,
+    //       hasSubRoute: false,
+    //       showSubRoute: false,
+    //       subMenus: [],
+    //     },
+        
+    //     {
+    //       menuValue: 'VISION 2030',
+    //       routes: routes.Vision2030Module,
+    //       hasSubRoute: false,
+    //       showSubRoute: false,
+    //       subMenus: [],
+    //     },
+    //     {
+    //       menuValue: 'Company History',
+    //       routes: routes.CompanyHistory,
+    //       hasSubRoute: false,
+    //       showSubRoute: false,
+    //       subMenus: [],
+    //     },
+    //     {
+    //       menuValue: 'Social Contribution',
+    //        routes: routes.SocialContribution,
+    //       hasSubRoute: false,
+    //       showSubRoute: false,
+    //       subMenus: [],
+    //     },
+    //             {
+    //       menuValue: 'R&D & Tech',
+    //        routes: routes.SocialContribution,
+    //       hasSubRoute: false,
+    //       showSubRoute: false,
+    //       subMenus: [],
+    //     },
+        
+    //   ],
+    // },
+        {
+      tittle: 'Company',
       showAsTab: false,
-      separateRoute: false,
-      menu: [
-        {
-          menuValue: 'CEO Greeting',
-          routes: routes.CeoGreeting,
-          hasSubRoute: false,
-          showSubRoute: false,
-          subMenus: [],
-        },
-        
-        {
-          menuValue: 'VISION 2030',
-          routes: routes.Vision2030Module,
-          hasSubRoute: false,
-          showSubRoute: false,
-          subMenus: [],
-        },
-        {
-          menuValue: 'Company History',
-          routes: routes.CompanyHistory,
-          hasSubRoute: false,
-          showSubRoute: false,
-          subMenus: [],
-        },
-        {
-          menuValue: 'Social Contribution',
-           routes: routes.SocialContribution,
-          hasSubRoute: false,
-          showSubRoute: false,
-          subMenus: [],
-        },
-                {
-          menuValue: 'R&D & Tech',
-           routes: routes.SocialContribution,
-          hasSubRoute: false,
-          showSubRoute: false,
-          subMenus: [],
-        },
-        
-      ],
+      separateRoute: true,
+      hasSubRoute: false,
+      showSubRoute: false,
     },
-        {
-      tittle: 'Brand',
-      showAsTab: false,
-      separateRoute: false,
-      menu: [
-        {
-          menuValue: 'Loche Derma Micro9',
-          routes: routes.listingGrid,
-          hasSubRoute: false,
-          showSubRoute: false,
-          subMenus: [],
-        },     
-      ]
-    }, 
   
     {
       tittle: 'Product',
@@ -148,124 +141,68 @@ export class DataService {
       separateRoute: false,
       menu: [
         {
-          menuValue: 'Derma PN Eye',
-          routes: routes.listingGrid,
+          menuValue: 'Cream',
+          // routes: routes.listingGrid,
           hasSubRoute: false,
           showSubRoute: false,
           subMenus: [],
         },
         {
-          menuValue: 'Derma PN 1',
-          routes: routes.listingGrid,
+          menuValue: 'Toner',
+          // routes: routes.listingGrid,
           hasSubRoute: false,
           showSubRoute: false,
           subMenus: [],
         },
         {
-          menuValue: 'Derma PN 2',
-          routes: routes.listingGrid,
+          menuValue: 'Serum',
+          // routes: routes.listingGrid,
           hasSubRoute: false,
           showSubRoute: false,
           subMenus: [],
-        },
-        {
-          menuValue: 'Derma PN 3',
-          routes: routes.listingGrid,
-          hasSubRoute: false,
-          showSubRoute: false,
-          subMenus: [],
-        },      
+        },     
       ]
     },                  
     {
-      tittle: 'Franchise',
-      showAsTab: false,
-      separateRoute: false,
-      menu: [
-     {
-          menuValue: 'Rental',
-          routes: routes.listingGrid,
-          hasSubRoute: false,
-          showSubRoute: false,
-          subMenus: [],
-        },
-        {
-          menuValue: 'Purchase',
-           routes: routes.CeoGreeting,
-          hasSubRoute: false,
-          showSubRoute: false,
-          subMenus: [],
-        },
-        {
-          menuValue: 'Affiliate',
-          routes: routes.CleanRoom,
-          hasSubRoute: false,
-          showSubRoute: false,
-          subMenus: [],
-        },
-      ],
+      tittle: 'FAQ',
+            showAsTab: false,
+      separateRoute: true,
+      hasSubRoute: false,
+      showSubRoute: false,
+      // showAsTab: false,
+      // separateRoute: false,
+    //   menu: [
+    //  {
+    //       menuValue: 'Rental',
+    //       routes: routes.listingGrid,
+    //       hasSubRoute: false,
+    //       showSubRoute: false,
+    //       subMenus: [],
+    //     },
+    //     {
+    //       menuValue: 'Purchase',
+    //        routes: routes.CeoGreeting,
+    //       hasSubRoute: false,
+    //       showSubRoute: false,
+    //       subMenus: [],
+    //     },
+    //     {
+    //       menuValue: 'Affiliate',
+    //       routes: routes.CleanRoom,
+    //       hasSubRoute: false,
+    //       showSubRoute: false,
+    //       subMenus: [],
+    //     },
+    //   ],
     },
         {
       tittle: 'Customer Center',
       showAsTab: false,
-      separateRoute: false,
-      menu: [
- 
-        {
-          menuValue: 'Affiliate Inquiry',
-          routes: routes.AffiliateInquiry,
-          hasSubRoute: false,
-          showSubRoute: false,
-          subMenus: [],
-        },
-        {
-          menuValue: 'Q&A',
-           routes: routes.CeoGreeting,
-          hasSubRoute: false,
-          showSubRoute: false,
-          subMenus: [],
-        },
-        {
-          menuValue: 'OEM/ODM Inquiries',
-          // routes: routes.aboutUs,
-          hasSubRoute: false,
-          showSubRoute: false,
-          subMenus: [],
+      separateRoute: true,
+      hasSubRoute: false,
+      showSubRoute: false,
         },
 
-      ],
-    },
-
-        {
-      tittle: 'PR',
-      showAsTab: false,
-      separateRoute: false,
-      menu: [
- 
-        {
-          menuValue: 'Affiliate Inquiry',
-          // routes: routes.LocheNews,
-          hasSubRoute: false,
-          showSubRoute: false,
-          subMenus: [],
-        },
-        {
-          menuValue: 'Q&A',
-          // routes: routes.aboutUs,
-          hasSubRoute: false,
-          showSubRoute: false,
-          subMenus: [],
-        },
-        {
-          menuValue: 'OEM/ODM Inquiry',
-          // routes: routes.aboutUs,
-          hasSubRoute: false,
-          showSubRoute: false,
-          subMenus: [],
-        },
-
-      ],
-    },  
 
     // {
     //   tittle: 'Beauty advice',

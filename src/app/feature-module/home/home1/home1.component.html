@@ -1,39 +1,92 @@
 <!-- for tab banners -->
-  <section class="slider-for-ta">
-<div id="carouselExample" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
-  <div class="carousel-inner">
-    <div class="carousel-item active" [routerLink]="routes.listingGrid">
-      <img src="assets/img/banners/11.jpg" class="d-block w-100" alt="Slide 1">
+<section class="slider-for-ta">
+  <div id="carouselExample" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
+    <div class="carousel-inner">
+      <div class="carousel-item active" [routerLink]="routes.listingGrid">
+        <img src="assets/img/banners/glossys1.png" class="d-block w-100" alt="Slide 1">
+      </div>
+      <div class="carousel-item" [routerLink]="routes.listingGrid">
+        <img src="assets/img/banners/glossys2.png" class="d-block w-100" alt="Slide 6">
+      </div>
+      <div class="carousel-item" [routerLink]="routes.listingGrid">
+        <img src="assets/img/banners/glossys3.png" class="d-block w-100" alt="Slide 2">
+      </div>
     </div>
-    <div class="carousel-item" [routerLink]="routes.listingGrid">
-      <img src="assets/img/banners/9.jpg" class="d-block w-100" alt="Slide 6">
-    </div>
-    <div class="carousel-item" [routerLink]="routes.listingGrid">
-      <img src="assets/img/banners/4.jpg" class="d-block w-100" alt="Slide 2">
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="0" class="active"
+        aria-current="true"></button>
+      <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="1"></button>
+      <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="2"></button>
     </div>
   </div>
-  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Previous</span>
-  </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Next</span>
-  </button>
-  <div class="carousel-indicators">
-    <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="0" class="active"
-      aria-current="true"></button>
-    <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="1"></button>
-    <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="2"></button>
+</section>
+
+<section class="glossys-3product">
+  <div class="section-head">
+    <h2>Glossys • Korean Skincare Essentials</h2>
+    <p>Deep Hydration • Gentle Soothing • Pure Korean Beauty</p>
   </div>
-</div>
- </section>
+
+  <div class="product-flex">
+
+    <!-- Serum -->
+    <div class="p-card">
+      <div class="p-img">
+        <img src="assets/img/banners/sirum-removebg.png" alt="Serum">
+      </div>
+      <h3 class="p-title">Hydra Boost Serum</h3>
+      <p class="p-desc">
+        Deep hydration for inner dryness with multi-molecular Hyaluronic Acid.
+        Niacinamide + Centella brighten, soothe and restore a youthful glow.
+        <strong>50ml / 1.69 fl. oz.</strong>
+      </p>
+      <a href="#" class="p-btn">Discover Serum</a>
+    </div>
+
+    <!-- Cream -->
+    <div class="p-card">
+      <div class="p-img">
+        <img src="assets/img/banners/cream-removebg.png" alt="Cream">
+      </div>
+      <h3 class="p-title">Moisture Seal Cream</h3>
+      <p class="p-desc">
+        Ceramides + Jojoba Oil lock in hydration for long-lasting comfort.
+        Calm & nourish with Moringa + soothing botanicals.
+        <strong>100ml / 3.38 fl. oz.</strong>
+      </p>
+      <a href="#" class="p-btn">Explore Cream</a>
+    </div>
+
+    <!-- Toner -->
+    <div class="p-card">
+      <div class="p-img">
+        <img src="assets/img/banners/tonar-removebg.png" alt="Toner">
+      </div>
+      <h3 class="p-title">Refresh & Calm Toner</h3>
+      <p class="p-desc">
+        Green Tea + HA refine texture & deeply hydrate.
+        Preps skin for a soft, smooth, radiant finish.
+        <strong>200ml / 6.76 fl. oz.</strong>
+      </p>
+      <a href="#" class="p-btn">View Toner</a>
+    </div>
+
+  </div>
+</section>
 
 <!-- section2  -->
- <section class="business-section py-5">
+<section class="business-section py-5">
   <div class="container text-center">
-    <h2 class="section-title mb-3">BUSINESS</h2>
-    <p class="section-subtitle mb-5">Global #1 Medical Aesthetic Platform Company</p>
+    <h2 class="section-title mb-3">Our Beauty Solutions</h2>
+    <p class="section-subtitle mb-5">Discover Global-Standard Skincare Powered by Korean Innovation</p>
 
     <div class="row g-4">
       <!-- Card 1 -->
@@ -42,10 +95,10 @@
           <div class="img-wrap">
             <img src="assets/img/videos/Skin-Tightening-Laxity_.jpg" alt="Skin Tightening" class="img-fluid rounded-4">
             <div class="overlay">
-              <span>Advanced Technology</span>
+              <span>Youthful Confidence</span>
             </div>
           </div>
-          <h5 class="mt-3">Skin Tightening / Laxity</h5>
+          <h5 class="mt-3">Skin Tightening / Anty Aging</h5>
         </div>
       </div>
 
@@ -117,222 +170,213 @@
   </div>
 </section>
 
-  <!-- section 3 -->
-
-
-
-
-
-
- 
-<div class="lenisna-section">
-    <div class="container">
-        <div class="row align-items-center">
-
-            <!-- LEFT IMAGES (Zinzap Grid) -->
-            <div class="col-lg-8 mb-5 mb-lg-0">
-                <div class="lenisna-grid">
-                    <img src="assets/img/banners/PDRNelle.jpg" class="grid-img">
-                    <img src="assets/img/banners/section two 3.jpg" class="grid-img">
-                    <img src="assets/img/banners/Loche Tox 200Unit.jpg" class="grid-img">
-                </div>
-            </div>
-
-            <!-- RIGHT TEXT -->
-            <div class="col-lg-4 ps-lg-5" [routerLink]="routes.listingGrid">
-                <h2 class="lenisna-title">Restore your<br>natural volume</h2>
-                <p class="lenisna-tagline">Fullness, naturally restored.</p>
-                <button class="lenisna-button">Learn More About Loche derma Micro 9</button>
-            </div>
-        </div>
-    </div>
-</div>
-<!----------------------- about section --------------->
-<section class="about-section py-5">
-  <div class="container-fluid position-relative">
-    <div class="section-header text-center mb-5">
-      <h2 class="fw-bold">About <span class="text-gradient">PDRNhair.Loche</span></h2>
-      <p class="subtext">Innovating K-Beauty & Medical Aesthetics for Skin & Hair</p>
-      <div class="header-underline mx-auto mt-3"></div>
-    </div>
-
-    <div class="row align-items-stretch text-center gx-4 gy-4">
-      <!-- K-Skin Section -->
-  <div class="col-lg-4 col-md-6">
-        <div class="about-card text-center p-4 rounded-4 shadow-sm position-relative">
-         <div class="icon-glow mb-3">
-  <div class="icon-circle">
-    <span class="icon-font">&#x2728;</span> <!-- Sparkle symbol -->
-  </div>
-</div>
-
-          <h4 class="fw-bold mb-2">Korean Innovation in Skin Care</h4>
-          <p class="">
-            Our skincare line blends advanced Korean bio-technology with natural ingredients to
-            deliver visible rejuvenation. Each formula is clinically tested to target signs of aging,
-            pigmentation, and dullness — revealing smoother, brighter, and more radiant skin.
-          </p>
-          <ul class="list-unstyled ">
-            <li><i class="bi bi-droplet-half text-gradient me-2"></i>Hydrating peptide complexes</li>
-            <li><i class="bi bi-shield-check text-gradient me-2"></i>Dermatologist-tested safety</li>
-            <li><i class="bi bi-flower3 text-gradient me-2"></i>Infused with Korean botanical extracts</li>
-          </ul>
-          <a href="#" class="btn btn-gradient mt-3 px-4">Explore Skin</a>
-        </div>
-      </div>
-
-      <!-- Hair Care Section -->
-      <div class="col-lg-4 col-md-6">
-        <div class="about-card text-center p-4 rounded-4 shadow-sm position-relative">
-     <div class="icon-glow mb-3">
-  <div class="icon-circle">
-    <span class="icon-symbol">💆‍♀️</span>
-  </div>
-</div>
-
-
-          <h4 class="fw-bold mb-2">Professional Hair Restoration</h4>
-          <p class="">
-            Backed by advanced Korean stem-cell science, our hair care range helps rebuild
-            follicle strength, revive the scalp’s natural balance, and encourage long-lasting regrowth.
-            Ideal for professionals and home use alike.
-          </p>
-          <ul class="list-unstyled">
-            <li><i class="bi bi-lightning-charge text-gradient me-2"></i>PDRN + Peptide Infusion</li>
-            <li><i class="bi bi-heart-pulse text-gradient me-2"></i>Improves scalp microcirculation</li>
-            <li><i class="bi bi-stars text-gradient me-2"></i>Restores hair shine & density</li>
-          </ul>
-          <a href="#" class="btn btn-gradient mt-3 px-4">Discover Hair</a>
-        </div>
-      </div>
-
-      <!-- Video Section -->
-      <div class="col-lg-4 col-md-12">
-        <div class="about-card p-0 rounded-4 overflow-hidden video-card">
-          <video autoplay muted loop playsinline class="about-video">
-            <source src="assets/img/videos/KakaoTalk_20251110_082852303.mp4" type="video/mp4" />
-            Your browser does not support video playback.
-          </video>
-          <div class="video-overlay">
-            <div class="video-text">
-              <h4 class="fw-bold">Science Meets Beauty</h4>
-              <p>See how PDRNhair.Loche redefines medical aesthetics for modern skincare and hair restoration.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Animated Background -->
-  <div class="bg-circle circle-1"></div>
-  <div class="bg-circle circle-2"></div>
-  <div class="bg-circle circle-3"></div>
-</section>
-
-
+<!-- section 3 -->
 
 <section class="NewArrival-section our-Stores-product">
   <div class="container mb-5">
-    <h2 class="text-left section-title mb-5 pt-4 animate__animated animate__fadeInDown"> Loche Derma Micro9 Products
-      <span [routerLink]="routes.listingGrid">See All Products </span> <i class="fa-solid fa-chevron-right"></i>
+    <h2 class="text-center section-title mb-2 pt-4 animate__animated animate__fadeInDown">
+      Our Featured Products
     </h2>
+    <p class="mb-5 text-center fs-11">Get the skin you want to feel</p>
+
     <owl-carousel-o [options]="pramotionsec">
-      <ng-container *ngFor="let pramotion of promotionProducts">
+      <ng-container *ngFor="let item of promotionProducts">
         <ng-template carouselSlide>
           <div class="product-sec" [routerLink]="routes.listingGrid">
+
             <div class="listing-item product-list">
+              
               <div class="listing-img">
                 <a class="product-image">
-                  <img [src]="pramotion.image" class="img-fluid" alt="product" />
+                  <img [src]="item.image" class="img-fluid" alt="product" />
                 </a>
-                 <!-- <span class="featured-text">{{pramotion.brandname}}</span> -->
               </div>
+
               <div class="listing-content">
+                
                 <div class="listing-features d-flex align-items-end justify-content-between">
                   <div class="list-rating">
-
                     <h3 class="listing-title">
-                      <a>{{ pramotion.title }}</a>
+                      <a>{{ item.title }}</a>
                     </h3>
 
+                    <div class="list-rating">
+                      <i class="fas fa-star filled"></i>
+                      <i class="fas fa-star filled"></i>
+                      <i class="fas fa-star filled"></i>
+                      <i class="fas fa-star filled"></i>
+                      <i class="fas fa-star"></i>
+                      <span>({{ item.rating }}) {{ item.reviews }} Reviews</span>
+                    </div>
                   </div>
                 </div>
+
+                <div class="listing-location-details">
+                  <div class="listing-price">
+                    <h5>₹ {{ item.price }} </h5>
+                  </div>
+                </div>
+
+                <div class="listing-button">
+                  <a class="btn btn-order">
+                    <span><i class="fa-solid fa-bag-shopping"></i></span>
+                    Add to Cart
+                  </a>
+                </div>
+
               </div>
             </div>
+
           </div>
         </ng-template>
       </ng-container>
     </owl-carousel-o>
   </div>
 </section>
-<div class="affiliates-section container">
-    <h2 class="affiliates-title">Empowering Global Synergies</h2>
 
-<div class="affiliates-wrapper container">
 
-  <!-- GLASSMORPHISM -->
-  <div class="affiliate-card glass">
-    <div class="top mt-4">
-      <a href="https://wholesale.stylekorean.com/?utm_source=stylekorean&utm_medium=referral&utm_campaign=stylekorean_gl_bt_pc">
-                   
-      <img src="assets/img/banners/stylekorean_logo.png" class="logo">
-      </a>
+<section class="glossys-section">
+  <div class="glossys-container">
 
-      <h4 class="mt-4">Style Korean</h4>
-      <p>Aesthetic Cosmetics Manufacturing</p>
-    
+    <!-- Left Content -->
+    <div class="glossys-left">
+      <h2 class="brand-title">Glossys</h2>
+      <h3 class="brand-tagline">Where Korean Beauty Meets Global Luxury</h3>
+
+      <p class="brand-desc">
+        Glossys is a premium Korean skincare and cosmetics brand inspired by
+        dermatology-grade formulations and the softness of natural botanicals.
+        Designed in Korea, trusted internationally — our products deliver
+        high-performance results while maintaining the purity your skin deserves.
+      </p>
+
+      <p class="brand-desc">
+        We craft innovative skincare using micro-active technology,
+        lightweight textures, and deep-absorbing ingredients that
+        restore your skin’s natural clarity and glow.
+      </p>
+
+      <p class="brand-desc">
+        Today, Glossys proudly serves beauty lovers across Korea, India,
+        and multiple global markets — shaping the future of modern K-Beauty.
+      </p>
+
+      <div class="glossys-links">
+        <a href="#" class="glossys-link">Our Vision</a>
+        <a href="#" class="glossys-link">The Glossys Story</a>
+        <a href="#" class="glossys-link">Our Technology</a>
+        <a href="#" class="glossys-link">Explore Products</a>
+      </div>
     </div>
-   
-    <div class="bottom-circle">
-      <img src="assets/img/banners/2148963960.jpg">
+
+    <!-- Right Image -->
+    <div class="glossys-right">
+      <img src="assets/img/banners/banner-21.webp" alt="Glossys Models" />
+    </div>
+
+  </div>
+</section>
+
+<!-- About section -->
+<section class="glossys-products">
+  <div class="container">
+    <h2 class="title">Why Choose Glossys?</h2>
+    <p class="subtitle">Korean Cosmetic Excellence — Now in India & Worldwide</p>
+
+    <div class="product-grid">
+
+      <!-- Product 1 -->
+      <div class="product-card">
+        <div class="icon-box">
+          <i class="bi bi-stars"></i>
+        </div>
+        <h3>Advanced K-Beauty Formulas</h3>
+        <p>
+          Glossys brings premium Korean skincare innovation designed to give
+          glass-skin glow with dermatologist-approved ingredients.
+        </p>
+      </div>
+
+      <!-- Product 2 -->
+      <div class="product-card">
+        <div class="icon-box">
+          <i class="bi bi-droplet-half"></i>
+        </div>
+        <h3>Pure & Skin-Friendly</h3>
+        <p>
+          Our products are made with clean, gentle, and effective ingredients —
+          suitable for all Indian skin types and climates.
+        </p>
+      </div>
+
+      <!-- Product 3 -->
+      <div class="product-card">
+        <div class="icon-box">
+          <i class="bi bi-gem"></i>
+        </div>
+        <h3>Global Quality Standards</h3>
+        <p>
+          Manufactured in Korea and distributed worldwide — Glossys ensures
+          luxury quality at every step.
+        </p>
+      </div>
+
     </div>
   </div>
 
-  <!-- GRADIENT -->
-  <div class="affiliate-card gradient">
-    <div class="top">
-      <a href="https://myindia.co.kr/">
-      <img src="assets/img/loche-logo-white-300x300.png" style="width:70px;" class="logo">
-      </a>
-      <h4>myindia.co.kr</h4>
-      <p>CDSCO Certification, <br> Import Agency Services For 
-        Cosmetics Export And Market Entry To India</p>
-    </div>
-    <div class="bottom-circle">
-      <img src="assets/img/banners/b2bimg.png">
+  <!-- Animated Background Layer -->
+  <div class="bg-animated"></div>
+</section>
+
+
+<section class="py-5 feature-section">
+  <div class="container">
+    <div class="row g-4 text-center">
+
+      <!-- Feature 1 -->
+      <div class="col-6 col-md-3">
+        <div class="feature-box p-4">
+          <i class="bi bi-box-seam feature-icon"></i>
+          <h5 class="fw-bold mt-3">Smooth Delivery</h5>
+          <p class="text-muted small mb-0">
+            Doorstep delivery with care on every Glossys order.
+          </p>
+        </div>
+      </div>
+
+      <!-- Feature 2 -->
+      <div class="col-6 col-md-3">
+        <div class="feature-box p-4">
+          <i class="bi bi-arrow-repeat feature-icon"></i>
+          <h5 class="fw-bold mt-3">Easy Replacement</h5>
+          <p class="text-muted small mb-0">
+            Simple exchange for a seamless beauty experience.
+          </p>
+        </div>
+      </div>
+
+      <!-- Feature 3 -->
+      <div class="col-6 col-md-3">
+        <div class="feature-box p-4">
+          <i class="bi bi-chat-dots feature-icon"></i>
+          <h5 class="fw-bold mt-3">Beauty Assistance</h5>
+          <p class="text-muted small mb-0">
+            Expert help with skincare & cosmetics anytime.
+          </p>
+        </div>
+      </div>
+
+      <!-- Feature 4 -->
+      <div class="col-6 col-md-3">
+        <div class="feature-box p-4">
+          <i class="bi bi-credit-card feature-icon"></i>
+          <h5 class="fw-bold mt-3">Secure Checkout</h5>
+          <p class="text-muted small mb-0">
+            Smooth & secure payments for Glossys favourites.
+          </p>
+        </div>
+      </div>
+
     </div>
   </div>
-
-  <!-- NEUMORPHISM -->
-  <div class="affiliate-card neu">
-    <div class="top">
-      <a href="https://bellaluna.in/">
-      <img src="assets/img/bellaluna-logo.webp" class="logo">
-      </a>
-      <h4 class="mt-2">Bellaluna</h4>
-      <p>Cosmetics OEM Manufacturing & Production</p>
-    </div>
-    <div class="bottom-circle">
-      <img src="assets/img/header-bg.png">
-    </div>
-  </div>
-
-  <!-- SPLIT CARD -->
-  <div class="affiliate-card split">
-    <div class="top">
-      <a href="https://loche.in/">
-      <img src="assets/img/Loche-India-Logo-PNG.png" style="width:70px; " class="logo">
-      </a>
-      <h4>Loche Logistics </h4>
-      <p>International Logistics Air, Sea Transport</p>
-    </div>
-    <div class="bottom-circle">
-      <img src="assets/img/banners/transport.png" class="thumb">
-    </div>
-  </div>
-
-</div>
-</div>
-
-
+</section>
